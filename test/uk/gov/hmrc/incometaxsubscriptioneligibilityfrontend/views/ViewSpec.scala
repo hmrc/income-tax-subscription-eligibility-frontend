@@ -19,8 +19,6 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
-import org.scalatest
-import org.scalatest.Matchers
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 import org.scalatestplus.play.PlaySpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
@@ -29,7 +27,7 @@ import play.api.test.Helpers._
 
 import scala.concurrent.Future
 
-trait ViewSpec extends PlaySpec with Matchers with GuiceOneAppPerSuite {
+trait ViewSpec extends PlaySpec with GuiceOneAppPerSuite {
   playSpec: PlaySpec =>
 
   implicit class DocumentTest(doc: Document) {
@@ -75,8 +73,6 @@ trait ViewSpec extends PlaySpec with Matchers with GuiceOneAppPerSuite {
     def paras: Elements = doc.select("p")
 
     def bulletPointList: Elements = doc.select("ul[class=list list-bullet]")
-
-    def testElementExists(elementId: String): scalatest.Assertion = doc.getElementById(elementId) should not be null
 
   }
 
