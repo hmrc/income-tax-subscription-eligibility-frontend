@@ -1,4 +1,4 @@
-import uk.gov.hmrc.DefaultBuildSettings.{addTestReportOption, integrationTestSettings}
+import uk.gov.hmrc.DefaultBuildSettings.addTestReportOption
 import uk.gov.hmrc.SbtArtifactory
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
 
@@ -55,4 +55,4 @@ unmanagedSourceDirectories in IntegrationTest := (baseDirectory in IntegrationTe
 javaOptions in IntegrationTest += "-Dlogger.resource=logback-test.xml"
 addTestReportOption(IntegrationTest, "int-test-reports")
 parallelExecution in IntegrationTest := false
-//majorVersion := 1
+majorVersion := 1
