@@ -17,10 +17,11 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets
 
 object MessageLookup {
+  val suffix = " - Report your income and expenses quarterly - GOV.UK"
 
   object Overview {
-    val title = "The way you record Self Assessment is changing"
-    val heading: String = title
+    val heading: String = "The way you record Self Assessment is changing"
+    val title = s"$heading$suffix"
     val line1 = "Making Tax Digital for Income Tax is a new way for self-employed businesses (sole traders) and landlords to send income tax updates to HMRC."
     val line2 = "You can use software to keep your business records digitally and send income tax updates to HMRC, instead of filing a Self Assessment tax return."
     val linkText = "Find out more about Making Tax Digital for income tax (opens in a new tab)"
@@ -28,8 +29,8 @@ object MessageLookup {
   }
 
   object Terms {
-    val title = "Terms of participation"
-    val heading: String = title
+    val heading: String = "Terms of participation"
+    val title = s"$heading$suffix"
     val line1 = "By taking part in this pilot, you agree that you will:"
     val bullet1 = "use relevant software to record income and expenses"
     val bullet2 = "provide an email address so your client can be contacted by HMRC"
@@ -43,12 +44,21 @@ object MessageLookup {
   }
 
   object GetSoftware {
-    val title = "You will need to get compatible software after signing up"
     val header = "You will need to get compatible software after signing up"
+    val title = s"$header$suffix"
     val line1 = "The software you use must be able to send income and expense reports to HMRC."
     val continue = "Continue"
     val findSoftware = "Find software that's compatible with Making Tax Digital for Income Tax (opens in a new tab)"
     val findSoftwareLink = "https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
+  }
+
+  object HaveYouGotSoftware {
+    val heading = "Do you currently use accounting software?"
+    val title = s"$heading$suffix"
+    val hint = "This does not include any spreadsheet software."
+    val yes = "Yes"
+    val no = "No"
+    val continue = "Continue"
   }
 
 }

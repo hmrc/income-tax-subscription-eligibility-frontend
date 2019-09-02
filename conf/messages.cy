@@ -1,6 +1,11 @@
 ## Base ##
 base.back                                                       = Yn ôl
+base.service_name                                               = Rhoi gwybod am eich incwm a''ch treuliau bob chwarter
 base.continue                                                   = Yn eich blaen
+base.yes                                                        = Iawn
+base.no                                                         = Na
+base.title_error_prefix                                         = 'Gwall: '
+base.govuk                                                      = GOV.UK
 
 ## Overview Page Content
 overview.title                                                  = Mae''r ffordd rydych yn cofnodi Hunanasesiad yn newid
@@ -28,3 +33,9 @@ get_software.title                                              = Bydd angen i c
 get_software.heading                                            = Bydd angen i chi gael meddalwedd sy''n cydweddu ar ôl cofrestru
 get_software.line_1                                             = Rhaid i''r feddalwedd a ddefnyddiwch allu anfon adroddiadau incwm a threuliau i CThEM.
 get_software.find_software                                      = Dod o hyd i feddalwedd sy''n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor mewn tab newydd)
+get_software.continue                                           = Yn eich blaen
+
+## "Have you got software" page messages ##
+have_you_got_software.title                                     = A ydych yn defnyddio meddalwedd gyfrifyddu ar hyn o bryd?
+have_you_got_software.hint                                      = Nid yw hyn yn cynnwys unrhyw feddalwedd daenlen.
+have_you_got_software.error                                     = Dewiswch ''Iawn'' os ydych yn defnyddio meddalwedd gyfrifyddu ar hyn o bryd

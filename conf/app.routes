@@ -3,8 +3,12 @@
 ## Overview
 GET        /overview                            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.OverviewController.show
 
+## Have you got software
+GET        /have-you-got-software   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.HaveYouGotSoftwareController.show
+POST       /have-you-got-software   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.HaveYouGotSoftwareController.submit
+
+## Get software
+GET        /get-software            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.GetSoftwareController.show
+
 ## Terms of Participation
 GET        /terms-of-participation              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.TermsController.show
-
-## Get Software
-GET        /get-software                        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.GetSoftwareController.show
