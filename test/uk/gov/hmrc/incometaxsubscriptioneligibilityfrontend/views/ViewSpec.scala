@@ -22,57 +22,62 @@ import org.jsoup.select.Elements
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 import org.scalatestplus.play.PlaySpec
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
+import play.api.{Configuration, Environment, Mode}
+import play.api.i18n.{Lang, MessagesApi, MessagesImpl, MessagesProvider}
 import play.api.libs.ws.WSResponse
+import play.api.test.FakeRequest
 import play.api.test.Helpers._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+import uk.gov.hmrc.play.bootstrap.config.{RunMode, ServicesConfig}
 
 import scala.concurrent.Future
 
 trait ViewSpec extends PlaySpec with GuiceOneAppPerSuite {
   playSpec: PlaySpec =>
 
+  private val env = Environment.simple()
+  private val config = Configuration.load(env)
+  private val runMode = new RunMode(config, Mode.Test)
+  private val servicesConfig = new ServicesConfig(config, runMode)
+  private val messagesApi = app.injector.instanceOf[MessagesApi]
+
+  def lang: Lang = Lang("en")
+
+  private val messagesProvider: MessagesProvider = MessagesImpl(lang, messagesApi)
+
+  implicit val testAppConfig = new AppConfig(config, servicesConfig)
+
+  implicit val testRequest = FakeRequest()
+
+  implicit val testMessages = messagesProvider.messages
+
   implicit class DocumentTest(doc: Document) {
 
-    val getParagraphAsText: String = doc.getElementsByTag("p").text()
+    val getParagraphs: Elements = doc.getElementsByTag("p")
 
-    val getBulletPointsAsText: String = doc.getElementsByTag("li").text()
+    val getBulletPoints: Elements = doc.getElementsByTag("li")
 
-    val getH1ElementAsText: String = doc.getElementsByTag("h1").text()
+    val getH1Element: Elements = doc.getElementsByTag("h1")
 
-    val getH2ElementAsText: String = doc.getElementsByTag("h2").text()
-
-    val getFirstH2ElementAsText: String = doc.getElementsByTag("h2").first().text()
+    val getH2Elements: Elements = doc.getElementsByTag("h2")
 
     val getFormElements: Elements = doc.getElementsByClass("form-field-group")
 
-    val getErrorSummaryMessage: String = doc.select("#error-summary-display ul").text()
+    val getErrorSummaryMessage: Elements = doc.select("#error-summary-display ul")
 
-    val getButtonContentAsText: String = doc.select("button[type=submit]").text()
+    val getSubmitButton: Elements = doc.select("button[type=submit")
 
-    val getHintAsText: String = doc.select(s"""span[class=form-hint]""").text()
+    val getHintText: String = doc.select(s"""span[class=form-hint]""").text()
 
-    val getFieldErrorMessageHeading: String = doc.select("#error-summary-heading").text()
+    def getSpan(id: String): Elements = doc.select(s"""span[id=$id]""")
 
-    def getSpanAsText: String = doc.select("span").text()
+    def getLink(id: String): Elements = doc.select(s"""a[id=$id]""")
 
-    def getSpanAsText(id: String): String = doc.select(s"""span[id=$id]""").text()
+    def getTextFieldInput(id: String): Elements = doc.select(s"""input[id=$id]""")
 
-    def getALinkText(id: String): String = doc.select(s"""a[id=$id]""").text()
+    def getFieldErrorMessage(id: String): Elements = doc.select(s"""a[id=$id-error-summary]""")
 
-    def getLinkHrefAsText(id: String): String = doc.select(s"""a[id=$id]""").attr("href")
-
-    def getLinkTextFromHref(href: String): String = doc.select(s"""a[href=$href]""").text()
-
-    def hasTextFieldInput(name: String): Boolean = doc.select(s"input[id=$name]").hasAttr("name")
-
-    def getTextFieldInput(name: String): Elements = doc.select(s"""input[name=$name]""")
-
-    def getTextFieldLabel(name: String): String = doc.select(s"label[for=$name]").select("span").text()
-
-    def getFieldErrorMessageContent(fieldName: String): String = doc.select(s"""a[id=$fieldName-error-summary]""").text()
-
-    def paras: Elements = doc.select("p")
-
-    def bulletPointList: Elements = doc.select("ul[class=list list-bullet]")
+    def getBulletPointList: Elements = doc.select("ul[class=list list-bullet]")
 
   }
 
