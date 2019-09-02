@@ -15,10 +15,9 @@ terms.bullet7                                                   = submit reports
 terms.line2                                                     = You can stop taking part in this pilot at any time.
 terms.button                                                    = Accept and continue
 
-
-
-
-
-
-
-
+## Get Software
+get_software.title                                              = You will need to get compatible software after signing up
+get_software.heading                                            = You will need to get compatible software after signing up
+get_software.line_1                                             = The software you use must be able to send income and expense reports to HMRC.
+get_software.find_software                                      = Find software that''s compatible with Making Tax Digital for Income Tax (opens in a new tab)
+get_software.continue                                           = Continue
