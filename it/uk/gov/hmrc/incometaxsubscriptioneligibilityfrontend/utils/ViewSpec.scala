@@ -1,55 +1,15 @@
-/*
- * Copyright 2019 HM Revenue & Customs
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
-import org.scalatestplus.play.PlaySpec
-import org.scalatestplus.play.guice.GuiceOneAppPerSuite
-import play.api.{Configuration, Environment, Mode}
-import play.api.i18n.{Lang, MessagesApi, MessagesImpl, MessagesProvider}
 import play.api.libs.ws.WSResponse
-import play.api.test.FakeRequest
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.play.bootstrap.config.{RunMode, ServicesConfig}
 
 import scala.concurrent.Future
 
-trait ViewSpec extends PlaySpec with GuiceOneAppPerSuite {
-  playSpec: PlaySpec =>
-
-  private val env = Environment.simple()
-  private val config = Configuration.load(env)
-  private val runMode = new RunMode(config, Mode.Test)
-  private val servicesConfig = new ServicesConfig(config, runMode)
-  private val messagesApi = app.injector.instanceOf[MessagesApi]
-
-  def lang: Lang = Lang("en")
-
-  private val messagesProvider: MessagesProvider = MessagesImpl(lang, messagesApi)
-
-  implicit val testAppConfig = new AppConfig(config, servicesConfig)
-
-  implicit val testRequest = FakeRequest()
-
-  implicit val testMessages = messagesProvider.messages
+trait ViewSpec {
 
   implicit class DocumentTest(doc: Document) {
 

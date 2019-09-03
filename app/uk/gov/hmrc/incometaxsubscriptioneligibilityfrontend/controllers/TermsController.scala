@@ -17,20 +17,22 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
 
 import javax.inject.{Inject, Singleton}
+import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.hello_world
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.terms
 
 import scala.concurrent.Future
 
 @Singleton
-class HelloWorldController @Inject()(appConfig: AppConfig, mcc: MessagesControllerComponents) extends FrontendController(mcc) {
+class TermsController @Inject()(implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
-  implicit val config: AppConfig = appConfig
-
-  val helloWorld: Action[AnyContent] = Action.async { implicit request =>
-    Future.successful(Ok(hello_world()))
+  val show: Action[AnyContent] = Action.async {
+    implicit request =>
+      Future.successful(
+        Ok(terms(postAction = routes.TermsController.show()))
+        //TODO: Change POST action to show method "Do you have other source of income?" controller
+      )
   }
-
 }

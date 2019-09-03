@@ -73,6 +73,9 @@
     @if(contentHeader.isDefined) {
         @uiLayouts.main_content_header(contentHeader = contentHeader.get)
     }
+
+        <div><a id="back" class="link-back" href="javascript:history.back()">@messages("base.back")</a></div>
+
 }
 
 @getHelpForm = @{uiHelpers.reportAProblemLink(appConfig.reportAProblemPartialUrl, appConfig.reportAProblemNonJSUrl)}
