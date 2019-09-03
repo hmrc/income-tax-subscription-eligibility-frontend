@@ -3,15 +3,15 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import org.scalatestplus.play.guice.GuiceOneServerPerSuite
+import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{GetSoftware => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 
-class GetSoftwareControllerISpec extends ComponentSpecBase with ViewSpec with GuiceOneServerPerSuite {
+class GetSoftwareControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result = get("/get-software")
+  lazy val result: WSResponse = get("/get-software")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /get-software" should {

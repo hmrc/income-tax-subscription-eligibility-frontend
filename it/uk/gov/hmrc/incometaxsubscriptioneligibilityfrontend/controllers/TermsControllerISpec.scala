@@ -18,14 +18,14 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import org.scalatestplus.play.guice.GuiceOneServerPerSuite
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Terms => messages}
+import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Terms => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
-class TermsControllerISpec extends ComponentSpecBase with ViewSpec with GuiceOneServerPerSuite {
+class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result = get("/terms-of-participation")
+  lazy val result: WSResponse = get("/terms-of-participation")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /terms-of-participation" should {
@@ -35,26 +35,22 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec with GuiceOne
       )
     }
 
-    "have a view with an Accept and continue button" in {
-      doc.getSubmitButton.text mustBe messages.button
-    }
-
-    "have a view with a title" in {
+    "return a view with a title" in {
       doc.title mustBe messages.title
     }
 
-    "have a view with a heading" in {
+    "return a view with a heading" in {
       doc.getH1Element.text mustBe messages.heading
     }
 
-    "have a view with two paragraph lines" in {
+    "return a view with two paragraph lines" in {
       doc.getParagraphs must have(
         elementWithValue(messages.line1),
         elementWithValue(messages.line2)
       )
     }
 
-    "have a view with a bullet point list" in {
+    "return a view with a bullet point list" in {
       doc.getBulletPoints must have(
         elementWithValue(messages.bullet1),
         elementWithValue(messages.bullet2),
@@ -64,6 +60,17 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec with GuiceOne
         elementWithValue(messages.bullet6),
         elementWithValue(messages.bullet7)
       )
+    }
+
+    "return a view with an accept and continue button" in {
+      doc.getSubmitButton.text mustBe messages.button
+    }
+
+    "have the correct form" in {
+      doc.getForm must have(
+        method("GET"),
+        action(routes.TermsController.show().url)
+      ) // TODO action should be do you have other income sources controller
     }
   }
 }

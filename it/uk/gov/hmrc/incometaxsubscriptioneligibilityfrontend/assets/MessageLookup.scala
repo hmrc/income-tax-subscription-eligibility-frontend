@@ -18,6 +18,15 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets
 
 object MessageLookup {
 
+  object Overview {
+    val title = "The way you record Self Assessment is changing"
+    val heading: String = title
+    val line1 = "Making Tax Digital for Income Tax is a new way for self-employed businesses (sole traders) and landlords to send income tax updates to HMRC."
+    val line2 = "You can use software to keep your business records digitally and send income tax updates to HMRC, instead of filing a Self Assessment tax return."
+    val linkText = "Find out more about Making Tax Digital for income tax (opens in a new tab)"
+    val button = "Continue"
+  }
+
   object Terms {
     val title = "Terms of participation"
     val heading: String = title

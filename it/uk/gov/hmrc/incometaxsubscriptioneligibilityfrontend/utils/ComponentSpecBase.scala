@@ -6,6 +6,7 @@ import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.libs.ws.{WSClient, WSRequest, WSResponse}
 import play.api.test.Helpers._
 import play.api.{Application, Environment, Mode}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 
 trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServerPerSuite {
 
@@ -13,6 +14,8 @@ trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServer
     .in(Environment.simple(mode = Mode.Dev))
     .configure(config)
     .build
+
+  implicit val appConfig = app.injector.instanceOf[AppConfig]
 
   implicit val ws: WSClient = app.injector.instanceOf[WSClient]
 

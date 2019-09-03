@@ -18,21 +18,23 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
 
 import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
-import play.api.mvc._
+import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.overview
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.terms
 
 import scala.concurrent.Future
 
+
 @Singleton
-class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class OverviewController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(terms(postAction = routes.TermsController.show()))
-        //TODO: Change POST action to show method "Do you have other source of income?" controller
+        Ok(overview(postAction = routes.OverviewController.show()))
       )
+    //TODO: postAction should be have you got software controller
   }
+
 }
