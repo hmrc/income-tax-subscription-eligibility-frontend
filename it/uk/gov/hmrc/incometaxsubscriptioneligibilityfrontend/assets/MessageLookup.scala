@@ -25,7 +25,10 @@ object MessageLookup {
     val line1 = "Making Tax Digital for Income Tax is a new way for self-employed businesses (sole traders) and landlords to send income tax updates to HMRC."
     val line2 = "You can use software to keep your business records digitally and send income tax updates to HMRC, instead of filing a Self Assessment tax return."
     val linkText = "Find out more about Making Tax Digital for income tax (opens in a new tab)"
-    val button = "Continue"
+  }
+
+  object Base {
+    val continue = "Continue"
   }
 
   object Terms {
@@ -47,7 +50,6 @@ object MessageLookup {
     val header = "You will need to get compatible software after signing up"
     val title = s"$header$suffix"
     val line1 = "The software you use must be able to send income and expense reports to HMRC."
-    val continue = "Continue"
     val findSoftware = "Find software that's compatible with Making Tax Digital for Income Tax (opens in a new tab)"
     val findSoftwareLink = "https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
   }
@@ -59,6 +61,15 @@ object MessageLookup {
     val yes = "Yes"
     val no = "No"
     val continue = "Continue"
+  }
+
+  object CheckCompatibleSoftware {
+    val heading = "Check that the software you use is compatible with Making Tax Digital for Income Tax"
+    val title = s"$heading$suffix"
+    val line = "You must check that your software can connect and send income and expense reports to HMRC."
+    val link = "Check if your software is compatible (opens in a new tab)"
+    val linkHref = "https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
+
   }
 
 }

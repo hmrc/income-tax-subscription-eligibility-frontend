@@ -5,7 +5,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Overview => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Overview => messages, Base => base}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -43,7 +43,7 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with a continue button" in {
-      doc.getSubmitButton.text mustBe messages.button
+      doc.getSubmitButton.text mustBe base.continue
     }
 
     "have the correct form" in {

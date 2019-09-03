@@ -41,4 +41,7 @@ class AppConfig @Inject()(config: Configuration, servicesConfig: ServicesConfig)
 
   lazy val softwareOptionsUrl: String = s"$govUkUrl/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
 
+  val checkCompatibleSoftware: String = s"$govUkUrl/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
+
+
 }

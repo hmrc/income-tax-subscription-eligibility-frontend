@@ -1,3 +1,4 @@
+
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
