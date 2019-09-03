@@ -6,6 +6,7 @@ base.yes                                                        = Iawn
 base.no                                                         = Na
 base.title_error_prefix                                         = 'Gwall: '
 base.govuk                                                      = GOV.UK
+base.error_heading                                              = Mae problem wedi codi
 
 ## Overview Page Content
 overview.title                                                  = Mae''r ffordd rydych yn cofnodi Hunanasesiad yn newid
@@ -45,3 +46,19 @@ check_compatible_software.heading                               = Gwirio bod y f
 check_compatible_software.line                                  = Rhaid i chi wirio y gall eich meddalwedd gysylltu ac anfon adroddiadau incwm a threuliau i CThEM.
 check_compatible_software.link                                  = Gwirio a yw''ch meddalwedd yn cydweddu (yn agor mewn tab newydd)
 
+
+## Do you have any other income page
+have_any_other_income.title                                     = A oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo?
+have_any_other_income.include                                   = Gallai hyn gynnwys:
+have_any_other_income.notInclude                                = Nid yw hyn yn cynnwys:
+have_any_other_income.includePoint1                             = fel cyflogai i fusnes arall
+have_any_other_income.includePoint2                             = pensiynau neu flwydd-daliadau''r DU
+have_any_other_income.includePoint3                             = buddsoddiadau y tu allan i''r DU
+have_any_other_income.includePoint4                             = enillion cyfalaf
+have_any_other_income.includePoint5                             = budd-daliadau trethadwy''r Wladwriaeth
+have_any_other_income.notIncludePoint1                          = llog banc neu gymdeithas adeiladu
+have_any_other_income.notIncludePoint2                          = difidendau
+have_any_other_income.error.summary                             = Dewiswch ''Iawn'' os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo
+## Do you have any other income page errors
+have_any_other_income_error.title                               = Ni allwch ddefnyddio''r gwasanaeth hwn
+have_any_other_income_error.line1                               = Mae hwn yn wasanaeth sy''n cael ei brofi. Efallai y gallwch ddefnyddio''r gwasanaeth ''Defnyddio meddalwedd i anfon diweddariadau Treth Incwm'' yn y dyfodol.
