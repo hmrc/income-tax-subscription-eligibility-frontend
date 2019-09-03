@@ -37,14 +37,13 @@
       headScripts = None)
     <meta name="format-detection" content="telephone=no" />
     <link href=@controllers.routes.Assets.versioned("stylesheets/local-overrides.css") media="all" rel="stylesheet" type="text/css" />
-
 }
 
 @headerNavLinks = {}
 
 @insideHeader = {
     @uiLayouts.header_nav(
-      navTitle = Some("income-tax-subscription-eligibility-frontend"),
+      navTitle = Some(messages("service_name.title")),
       navTitleLink = None,
       showBetaLink = false,
       navLinks = Some(headerNavLinks))

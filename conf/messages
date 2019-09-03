@@ -1,5 +1,17 @@
 ## Base ##
 base.back                                                       = Back
+base.continue                                                   = Continue
+
+## Service Name
+
+service_name.title                                              = Use software to send Income Tax updates
+
+## Overview Page Content
+overview.title                                                  = The way you record Self Assessment is changing
+overview.heading                                                = The way you record Self Assessment is changing
+overview.line_1                                                 = Making Tax Digital for Income Tax is a new way for self-employed businesses (sole traders) and landlords to send income tax updates to HMRC.
+overview.line_2                                                 = You can use software to keep your business records digitally and send income tax updates to HMRC, instead of filing a Self Assessment tax return.
+overview.link_text                                              = Find out more about Making Tax Digital for income tax (opens in a new tab)
 
 ## Terms and Conditions Page ##
 terms.title                                                     = Terms of participation
@@ -20,4 +32,3 @@ get_software.title                                              = You will need 
 get_software.heading                                            = You will need to get compatible software after signing up
 get_software.line_1                                             = The software you use must be able to send income and expense reports to HMRC.
 get_software.find_software                                      = Find software that''s compatible with Making Tax Digital for Income Tax (opens in a new tab)
-get_software.continue                                           = Continue

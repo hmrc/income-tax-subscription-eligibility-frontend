@@ -18,31 +18,32 @@
 @import views.html.helper.form
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.main_template
 
-@(action: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+
+@(postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @main_template(
-title = messages("get_software.title"),
-mainClass = Some("full-width")
+    title = messages("overview.title"),
+    mainClass = Some("full-width")
 ) {
 
-<div class="grid-row interrupt-card">
-    <div class="column-two-thirds">
-        <div class="form-group">
+    <div class="grid-row interrupt-card">
+        <div class="column-two-thirds">
 
-            <h1 class="heading-large">@messages("get_software.heading")</h1>
+            <h1>@messages("overview.heading")</h1>
 
-            <p>@messages("get_software.line_1")</p>
+            <div class="form-group">
+                <p>@messages("overview.line_1")</p>
+                <p>@messages("overview.line_2")</p>
+                <a id="guidance" href="@appConfig.guidanceUrl">@messages("overview.link_text")</a>
+            </div>
 
-            <a id="find-software-link" href=@appConfig.softwareOptionsUrl target="_blank">@messages("get_software.find_software")</a>
+            <div class="actions">
+                @form(action = postAction) {
+                    <button class="button" type="submit" id="continue-button">@messages("base.continue")</button>
+                }
+            </div>
 
         </div>
-
-        @form(action) {
-            <div class="actions">
-                <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
-            </div>
-        }
     </div>
-</div>
 
 }

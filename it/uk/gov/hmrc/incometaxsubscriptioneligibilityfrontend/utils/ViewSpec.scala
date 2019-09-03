@@ -1,14 +1,9 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
-import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
-import play.api.libs.ws.WSResponse
-import play.api.test.Helpers._
-
-import scala.concurrent.Future
 
 trait ViewSpec {
 
@@ -176,8 +171,5 @@ trait ViewSpec {
         )
       }
     }
-
-  def getDocFromResponse(response: Future[WSResponse]): Document =
-    Jsoup.parse(await(response).body)
 
 }

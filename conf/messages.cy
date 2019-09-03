@@ -1,5 +1,13 @@
 ## Base ##
 base.back                                                       = Yn ôl
+base.continue                                                   = Yn eich blaen
+
+## Overview Page Content
+overview.title                                                  = Mae''r ffordd rydych yn cofnodi Hunanasesiad yn newid
+overview.heading                                                = Mae''r ffordd rydych yn cofnodi Hunanasesiad yn newid
+overview.line_1                                                 = Mae''r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm yn ffordd newydd i fusnesau hunangyflogedig (unig fasnachwyr) a landlordiaid anfon diweddariadau treth incwm i CThEM.
+overview.line_2                                                 = Yn hytrach na chyflwyno Ffurflen Dreth Hunanasesiad, gallwch ddefnyddio meddalwedd i gadw''ch cofnodion busnes yn ddigidol ac anfon diweddariadau ynghylch Treth Incwm i CThEM.
+overview.link_text                                              = Dysgu mwy ynghylch y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor mewn tab newydd)
 
 ## Terms and Conditions Page ##
 terms.title                                                     = Telerau cymryd rhan
@@ -20,4 +28,3 @@ get_software.title                                              = Bydd angen i c
 get_software.heading                                            = Bydd angen i chi gael meddalwedd sy''n cydweddu ar ôl cofrestru
 get_software.line_1                                             = Rhaid i''r feddalwedd a ddefnyddiwch allu anfon adroddiadau incwm a threuliau i CThEM.
 get_software.find_software                                      = Dod o hyd i feddalwedd sy''n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor mewn tab newydd)
-get_software.continue                                           = Yn eich blaen
