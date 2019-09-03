@@ -27,11 +27,15 @@ class AppConfig @Inject()(config: Configuration, servicesConfig: ServicesConfig)
   private val assetsUrl = config.get[String]("assets.url")
   private val serviceIdentifier = "MyService"
 
+  lazy val govUK: String = config.get[String]("gov-uk.url")
+
   val assetsPrefix: String = assetsUrl + config.get[String]("assets.version")
   val analyticsToken: String = config.get[String](s"google-analytics.token")
   val analyticsHost: String = config.get[String](s"google-analytics.host")
 
   val reportAProblemPartialUrl: String = s"$contactBaseUrl/contact/problem_reports_ajax?service=$serviceIdentifier"
   val reportAProblemNonJSUrl: String = s"$contactBaseUrl/contact/problem_reports_nonjs?service=$serviceIdentifier"
+
+  val softwareOptionsUrl: String = govUK + "/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
 
 }

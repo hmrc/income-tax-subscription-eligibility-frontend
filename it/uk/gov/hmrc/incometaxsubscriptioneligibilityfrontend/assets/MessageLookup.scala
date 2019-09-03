@@ -33,4 +33,13 @@ object MessageLookup {
     val button = "Accept and continue"
   }
 
+  object GetSoftware {
+    val title = "You will need to get compatible software after signing up"
+    val header = "You will need to get compatible software after signing up"
+    val line1 = "The software you use must be able to send income and expense reports to HMRC."
+    val continue = "Continue"
+    val findSoftware = "Find software that's compatible with Making Tax Digital for Income Tax (opens in a new tab)"
+    val findSoftwareLink = "https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
+  }
+
 }

@@ -1,3 +1,4 @@
+
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
 import org.jsoup.Jsoup
@@ -25,9 +26,11 @@ trait ViewSpec {
 
     val getErrorSummaryMessage: Elements = doc.select("#error-summary-display ul")
 
-    val getSubmitButton: Elements = doc.select("button[type=submit")
+    val getSubmitButton: Elements = doc.select("button[type=submit]")
 
     val getHintText: String = doc.select(s"""span[class=form-hint]""").text()
+
+    val getForm: Elements = doc.select("form")
 
     def getSpan(id: String): Elements = doc.select(s"""span[id=$id]""")
 
@@ -60,6 +63,28 @@ trait ViewSpec {
           "href",
           url,
           element.attr("href")
+        )
+    }
+
+  def method(method: String): HavePropertyMatcher[Elements, String] =
+    new HavePropertyMatcher[Elements, String] {
+      def apply(element: Elements) =
+        HavePropertyMatchResult(
+          element.attr("method") == method,
+          "method",
+          method,
+          element.attr("method")
+        )
+    }
+
+  def action(action: String): HavePropertyMatcher[Elements, String] =
+    new HavePropertyMatcher[Elements, String] {
+      def apply(element: Elements) =
+        HavePropertyMatchResult(
+          element.attr("action") == action,
+          "action",
+          action,
+          element.attr("action")
         )
     }
 

@@ -15,10 +15,9 @@ terms.bullet7                                                   = cyflwyno adrod
 terms.line2                                                     = Gallwch roi’r gorau i gymryd rhan yn y cynllun hwn ar unrhyw adeg.
 terms.button                                                    = Derbyn ac yn eich blaen
 
-
-
-
-
-
-
-
+## Get Software
+get_software.title                                              = Bydd angen i chi gael meddalwedd sy''n cydweddu ar ôl cofrestru
+get_software.heading                                            = Bydd angen i chi gael meddalwedd sy''n cydweddu ar ôl cofrestru
+get_software.line_1                                             = Rhaid i''r feddalwedd a ddefnyddiwch allu anfon adroddiadau incwm a threuliau i CThEM.
+get_software.find_software                                      = Dod o hyd i feddalwedd sy''n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor mewn tab newydd)
+get_software.continue                                           = Yn eich blaen

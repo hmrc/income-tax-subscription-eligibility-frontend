@@ -1,3 +1,7 @@
 # microservice specific routes
 
+## Terms of Participation
 GET        /terms-of-participation  uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.TermsController.show
+
+## Get Software
+GET        /get-software            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.GetSoftwareController.show
