@@ -15,12 +15,16 @@
  *@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.views.helpers.PageTitleHelper._
+
 @(title: String,
   sidebarLinks: Option[Html] = None,
   contentHeader: Option[Html] = None,
   bodyClasses: Option[String] = None,
   mainClass: Option[String] = None,
-  scriptElem: Option[Html] = None)(mainContent: Html)(implicit request : Request[_], messages: Messages, appConfig: AppConfig)
+  scriptElem: Option[Html] = None,
+  form: Option[Form[_]] = None
+)(mainContent: Html)(implicit request : Request[_], messages: Messages, appConfig: AppConfig)
 
 @import uk.gov.hmrc.play.views.html.layouts
 
@@ -35,7 +39,7 @@
 
 
 @govuk_wrapper(appConfig = appConfig,
-               title = title,
+               title = formatTitle(form, Messages("base.service_name"), title),
                mainClass = mainClass,
                bodyClasses = bodyClasses,
                sidebar = sidebar,
