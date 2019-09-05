@@ -49,8 +49,7 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
     "have the correct form" in {
       doc.getForm must have(
         method("GET"),
-        action(routes.OverviewController.show().url)
-        // TODO the action should be the do you have software controller
+        action(routes.HaveYouGotSoftwareController.show().url)
       )
     }
   }

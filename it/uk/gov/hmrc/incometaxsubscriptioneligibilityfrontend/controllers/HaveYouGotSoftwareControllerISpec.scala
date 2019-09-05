@@ -62,21 +62,22 @@ class HaveYouGotSoftwareControllerISpec extends ComponentSpecBase with ViewSpec 
 
   "POST /have-you-got-software" when {
     "the answer is Yes" should {
-      "redirect to the \"You will need to get software\" page" in {
+      "redirect to the \"Check software is compatible\" page" in {
         lazy val res = post(uri)("yes-no" -> "yes")
 
         res must have(
           httpStatus(SEE_OTHER),
-          redirectUri(routes.GetSoftwareController.show().url)
+          redirectUri(routes.CheckCompatibleSoftwareController.show().url)
         )
       }
     }
     "the answer is No" should {
-      "redirect to the \"Check software is compatible\" page" in {
+      "redirect to the \"You will need to get software\" page" in {
         lazy val res = post(uri)("yes-no" -> "no")
 
         res must have(
-          httpStatus(NOT_IMPLEMENTED)
+          httpStatus(SEE_OTHER),
+          redirectUri(routes.GetSoftwareController.show().url)
         )
         /*
         res must have(
