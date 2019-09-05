@@ -5,7 +5,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{GetSoftware => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{GetSoftware => messages, Base => base}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 
@@ -36,7 +36,7 @@ class GetSoftwareControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "have the continue button" in {
-      doc.getSubmitButton.text() mustBe messages.continue
+      doc.getSubmitButton.text() mustBe base.continue
     }
 
     "have the correct hyperlink" in {

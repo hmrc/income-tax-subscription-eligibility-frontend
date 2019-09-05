@@ -1,3 +1,4 @@
+
 ## Base ##
 base.back                                                       = Back
 base.service_name                                               = Report your income and expenses quarterly
@@ -37,9 +38,17 @@ get_software.title                                              = You will need 
 get_software.heading                                            = You will need to get compatible software after signing up
 get_software.line_1                                             = The software you use must be able to send income and expense reports to HMRC.
 get_software.find_software                                      = Find software that''s compatible with Making Tax Digital for Income Tax (opens in a new tab)
-get_software.continue                                           = Continue
 
 ## "Have you got software" page messages ##
 have_you_got_software.title                                     = Do you currently use accounting software?
 have_you_got_software.hint                                      = This does not include any spreadsheet software.
 have_you_got_software.error                                     = Select yes if you currently use accounting software
+
+## Check for Compatible Software
+check_compatible_software.title                                 = Check that the software you use is compatible with Making Tax Digital for Income Tax
+check_compatible_software.heading                               = Check that the software you use is compatible with Making Tax Digital for Income Tax
+check_compatible_software.line                                  = You must check that your software can connect and send income and expense reports to HMRC.
+check_compatible_software.link                                  = Check if your software is compatible (opens in a new tab)
+
+
+
