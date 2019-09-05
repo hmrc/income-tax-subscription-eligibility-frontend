@@ -42,10 +42,9 @@ class HaveYouGotSoftwareController @Inject()(mcc: MessagesControllerComponents,
         BadRequest(have_you_got_software(formWithErrors, routes.HaveYouGotSoftwareController.submit()))
       ), {
         case Yes =>
-          Future.successful(Redirect(routes.GetSoftwareController.show()))
+          Future.successful(Redirect(routes.CheckCompatibleSoftwareController.show()))
         case No =>
-          //Future.successful(Redirect(routes.CheckCompatibleSoftwareController.show()))
-          Future.successful(NotImplemented)
+          Future.successful(Redirect(routes.GetSoftwareController.show()))
       }
     )
   }

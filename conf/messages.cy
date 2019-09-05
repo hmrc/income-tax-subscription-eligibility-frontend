@@ -17,15 +17,15 @@ overview.link_text                                              = Dysgu mwy yngh
 ## Terms and Conditions Page ##
 terms.title                                                     = Telerau cymryd rhan
 terms.heading                                                   = Telerau cymryd rhan
-terms.line1                                                     = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y naill neu’r llall o’r canlynol:
-terms.bullet1                                                   = defnyddio meddalwedd berthnasol i gofnodi’ch incwm a’ch treuliau
-terms.bullet2                                                   = darparu cyfeiriad e-bost fel y gall CThEM gysylltu â’ch cleient
+terms.line1                                                     = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y naill neu''r llall o''r canlynol:
+terms.bullet1                                                   = defnyddio meddalwedd berthnasol i gofnodi''ch incwm a''ch treuliau
+terms.bullet2                                                   = darparu cyfeiriad e-bost fel y gall CThEM gysylltu â''ch cleient
 terms.bullet3                                                   = cyflwyno adroddiad chwarterol o ddechrau eich cyfnod cyfrifyddu
 terms.bullet4                                                   = anfon eich adroddiad terfynol erbyn 31 Ionawr ar ddiwedd ei flwyddyn dreth
 terms.bullet5                                                   = datgan unrhyw ffynonellau eraill o incwm a rhyddhad sydd gennych
-terms.bullet6                                                   = rhoi gwybod i CThEM os ydych yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
-terms.bullet7                                                   = cyflwyno adroddiadau gan ddefnyddio’ch dull arferol os byddwch yn gadael y cynllun peilot hwn
-terms.line2                                                     = Gallwch roi’r gorau i gymryd rhan yn y cynllun hwn ar unrhyw adeg.
+terms.bullet6                                                   = rhoi gwybod i CThEM os ydych yn rhoi''r gorau i fasnachu neu''n dechrau busnes newydd
+terms.bullet7                                                   = cyflwyno adroddiadau gan ddefnyddio''ch dull arferol os byddwch yn gadael y cynllun peilot hwn
+terms.line2                                                     = Gallwch roi''r gorau i gymryd rhan yn y cynllun hwn ar unrhyw adeg.
 terms.button                                                    = Derbyn ac yn eich blaen
 
 ## Get Software
@@ -40,8 +40,8 @@ have_you_got_software.hint                                      = Nid yw hyn yn 
 have_you_got_software.error                                     = Dewiswch ''Iawn'' os ydych yn defnyddio meddalwedd gyfrifyddu ar hyn o bryd
 
 ## Check for Compatible Software
-check_compatible_software.title                                 = Gwirio bod y feddalwedd rydych yn ei defnyddio yn cydweddu â’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-check_compatible_software.heading                               = Gwirio bod y feddalwedd rydych yn ei defnyddio yn cydweddu â’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
+check_compatible_software.title                                 = Gwirio bod y feddalwedd rydych yn ei defnyddio yn cydweddu â''r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
+check_compatible_software.heading                               = Gwirio bod y feddalwedd rydych yn ei defnyddio yn cydweddu â''r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
 check_compatible_software.line                                  = Rhaid i chi wirio y gall eich meddalwedd gysylltu ac anfon adroddiadau incwm a threuliau i CThEM.
-check_compatible_software.link                                  = Gwirio a yw’ch meddalwedd yn cydweddu (yn agor mewn tab newydd)
+check_compatible_software.link                                  = Gwirio a yw''ch meddalwedd yn cydweddu (yn agor mewn tab newydd)
 
