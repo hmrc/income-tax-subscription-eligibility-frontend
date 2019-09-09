@@ -31,6 +31,28 @@ object MessageLookup {
     val continue = "Continue"
   }
 
+  object Common {
+    val yes = "Yes"
+    val no  = "No"
+    val continue = "Continue"
+  }
+
+  object HaveAnyOtherIncome {
+    val title = s"Do you have any sources of income other than self employment or property income?"
+    val include = "This could include:"
+    val notInclude = "This does not include:"
+    val includePoints: Seq[String] =
+      Seq("as an employee for another business", "UK pensions or annuities", "investments from outside the UK",
+        "capital gains", "taxable state benefits")
+    val notIncludePoints: Seq[String] = Seq("bank and building society interest", "dividends")
+    val error = "Select yes if you have any sources of income other than self employment or property income"
+  }
+
+  object HaveAnyOtherIncomeError {
+    val title = "You cannot use this service yet"
+    val line1 = "This is a trial service. You may be able to use the 'Use software to send Income Tax updates' service in the future."
+  }
+
   object Terms {
     val heading: String = "Terms of participation"
     val title = s"$heading$suffix"

@@ -2,15 +2,13 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
 
 import org.jsoup.Jsoup
-import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{HaveYouGotSoftware => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class HaveYouGotSoftwareControllerISpec extends ComponentSpecBase with ViewSpec {
 
   val uri = "/have-you-got-software"
-  def bodyAsString(res: WSResponse): String = res.bodyAsBytes.map(b => b toChar).mkString
 
   "GET /have-you-got-software" should {
     lazy val res = get(uri)

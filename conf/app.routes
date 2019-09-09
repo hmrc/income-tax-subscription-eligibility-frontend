@@ -1,5 +1,10 @@
 ## microservice specific routes
 
+## Have you got other income
+GET        /other-income                        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.HaveAnyOtherIncomeController.show
+POST       /other-income                        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.HaveAnyOtherIncomeController.submit
+
+GET        /error/other-income-error            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.OtherIncomeErrorController.show
 ## Overview
 GET        /overview                            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.OverviewController.show
 

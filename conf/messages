@@ -7,6 +7,7 @@ base.yes                                                        = Yes
 base.no                                                         = No
 base.title_error_prefix                                         = 'Error: '
 base.govuk                                                      = GOV.UK
+base.error_heading                                              = There''s a problem
 
 ## Service Name
 
@@ -52,3 +53,21 @@ check_compatible_software.link                                  = Check if your 
 
 
 
+
+## Do you have any other income page
+have_any_other_income.title                                     = Do you have any sources of income other than self employment or property income?
+have_any_other_income.include                                   = This could include:
+have_any_other_income.notInclude                                = This does not include:
+have_any_other_income.includePoint1                             = as an employee for another business
+have_any_other_income.includePoint2                             = UK pensions or annuities
+have_any_other_income.includePoint3                             = investments from outside the UK
+have_any_other_income.includePoint4                             = capital gains
+have_any_other_income.includePoint5                             = taxable state benefits
+have_any_other_income.notIncludePoint1                          = bank and building society interest
+have_any_other_income.notIncludePoint2                          = dividends
+have_any_other_income.error.summary                             = Select yes if you have any sources of income other than self employment or property income
+
+
+## Do you have any other income page errors
+have_any_other_income_error.title                               = You cannot use this service yet
+have_any_other_income_error.line1                               = This is a trial service. You may be able to use the ''Use software to send Income Tax updates'' service in the future.
