@@ -18,24 +18,28 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config
 
 import javax.inject.{Inject, Singleton}
 import play.api.Configuration
+import play.api.i18n.Lang
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.routes
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 
 @Singleton
-class AppConfig @Inject()(config: Configuration, servicesConfig: ServicesConfig) {
+class AppConfig @Inject()(config: ServicesConfig) {
 
-  private val contactBaseUrl = servicesConfig.baseUrl("contact-frontend")
+  private def loadConfig(key: String) = config.getString(key)
 
-  private val assetsUrl = config.get[String]("assets.url")
+  private val contactBaseUrl = config.baseUrl("contact-frontend")
+
+  private val assetsUrl = loadConfig("assets.url")
   private val serviceIdentifier = "MyService"
 
-  val assetsPrefix: String = assetsUrl + config.get[String]("assets.version")
-  val analyticsToken: String = config.get[String](s"google-analytics.token")
-  val analyticsHost: String = config.get[String](s"google-analytics.host")
+  val assetsPrefix: String = assetsUrl + loadConfig("assets.version")
+  val analyticsToken: String = loadConfig(s"google-analytics.token")
+  val analyticsHost: String = loadConfig(s"google-analytics.host")
 
   val reportAProblemPartialUrl: String = s"$contactBaseUrl/contact/problem_reports_ajax?service=$serviceIdentifier"
   val reportAProblemNonJSUrl: String = s"$contactBaseUrl/contact/problem_reports_nonjs?service=$serviceIdentifier"
 
-  lazy val govUkUrl: String = config.get[String]("gov-uk.url")
+  lazy val govUkUrl: String = loadConfig("gov-uk.url")
 
   lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"
 
@@ -43,5 +47,10 @@ class AppConfig @Inject()(config: Configuration, servicesConfig: ServicesConfig)
 
   val checkCompatibleSoftware: String = s"$govUkUrl/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
 
+  def languageMap: Map[String, Lang] = Map(
+    "english" -> Lang("en"),
+    "cymraeg" -> Lang("cy"))
+
+  def routeToSwitchLanguage = (lang: String) => routes.LanguageSwitchController.switchToLanguage(lang)
 
 }

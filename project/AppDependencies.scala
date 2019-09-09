@@ -1,12 +1,16 @@
 import play.core.PlayVersion.current
 import sbt._
 
+
 object AppDependencies {
+
+  private val playLanguageVersion = "3.4.0"
 
   val compile = Seq(
     "uk.gov.hmrc" %% "govuk-template" % "5.38.0-play-26",
     "uk.gov.hmrc" %% "play-ui" % "7.40.0-play-26",
-    "uk.gov.hmrc" %% "bootstrap-play-26" % "0.45.0"
+    "uk.gov.hmrc" %% "bootstrap-play-26" % "0.45.0",
+    "uk.gov.hmrc" %% "play-language" % playLanguageVersion
   )
 
   val test = Seq(
