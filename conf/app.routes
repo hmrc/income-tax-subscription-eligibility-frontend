@@ -16,3 +16,6 @@ GET        /terms-of-participation              uk.gov.hmrc.incometaxsubscriptio
 ## Check Compatible Software
 GET        /check-compatible-software           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.CheckCompatibleSoftwareController.show
 
+## Welsh language support
+GET     /language/:lang                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
+

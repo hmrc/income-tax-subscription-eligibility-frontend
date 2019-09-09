@@ -71,6 +71,10 @@
 }
 
 @mainContentHeader = {
+        @uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.language_selection(
+                            appConfig.languageMap,
+                            appConfig.routeToSwitchLanguage,
+                            None)
     @if(contentHeader.isDefined) {
         @uiLayouts.main_content_header(contentHeader = contentHeader.get)
     }
