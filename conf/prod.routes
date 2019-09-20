@@ -1,8 +1,9 @@
-# Add all the application routes to the app.routes file
-->         /report-quarterly/income-and-expenses/sign-up/eligibility            app.Routes
+# Add all the application routes to the principal.routes file
+->         /report-quarterly/income-and-expenses/sign-up/eligibility            principal.Routes
+->         /report-quarterly/income-and-expenses/sign-up/client/eligibility     agent.Routes
 ->         /                                                                    health.Routes
 ->         /template                                                            template.Routes
 
 GET        /admin/metrics                                                       com.kenshoo.play.metrics.MetricsController.metrics
 
-GET        /vat-through-software/sign-up/assets/*file                           controllers.Assets.versioned(path="/public", file)
+GET        /assets/*file                                                        controllers.Assets.versioned(path="/public", file)

@@ -17,7 +17,8 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets
 
 object MessageLookup {
-  val suffix = " - Report your income and expenses quarterly - GOV.UK"
+  val suffix = " - Use software to send Income Tax updates - GOV.UK"
+  val agentSuffix = " - Use software to report your client's Income Tax - GOV.UK"
 
   object Overview {
     val heading: String = "The way you record Self Assessment is changing"
@@ -29,12 +30,9 @@ object MessageLookup {
 
   object Base {
     val continue = "Continue"
-  }
-
-  object Common {
     val yes = "Yes"
-    val no  = "No"
-    val continue = "Continue"
+    val no = "No"
+    val acceptAndContinue = "Accept and continue"
   }
 
   object HaveAnyOtherIncome {
@@ -65,7 +63,6 @@ object MessageLookup {
     val bullet6 = "tell HMRC if you stop trading or start a new business"
     val bullet7 = "submit reports using your usual method if you leave this pilot"
     val line2 = "You can stop taking part in this pilot at any time."
-    val button = "Accept and continue"
   }
 
   object GetSoftware {
@@ -91,7 +88,19 @@ object MessageLookup {
     val line = "You must check that your software can connect and send income and expense reports to HMRC."
     val link = "Check if your software is compatible (opens in a new tab)"
     val linkHref = "https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
+  }
 
+  object AgentTerms {
+    val heading: String = "Terms of participation"
+    val title = s"$heading$agentSuffix"
+    val line1 = "By taking part in this pilot, you agree that either you or your client will:"
+    val bullet1 = "use relevant software to record income and expenses"
+    val bullet2 = "provide an email address so your client can be contacted by HMRC"
+    val bullet3 = "submit a quarterly report from the start of your client's accounting period"
+    val bullet4 = "send your client's final report by the 31 January at the end of their tax year"
+    val bullet5 = "tell HMRC if your client stops trading or starts a new business"
+    val bullet6 = "submit reports using your usual method if your client leaves this pilot"
+    val line2 = "These terms are not contractual and your client can stop taking part in this pilot at any time."
   }
 
 }

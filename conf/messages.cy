@@ -1,12 +1,15 @@
 ## Base ##
 base.back                                                       = Yn ôl
-base.service_name                                               = Rhoi gwybod am eich incwm a''ch treuliau bob chwarter
 base.continue                                                   = Yn eich blaen
 base.yes                                                        = Iawn
 base.no                                                         = Na
 base.title_error_prefix                                         = 'Gwall: '
 base.govuk                                                      = GOV.UK
 base.error_heading                                              = Mae problem wedi codi
+base.accept_and_continue                                        = Derbyn ac yn eich blaen
+
+## Service name
+principal.service_name.title                                    = Defnyddio meddalwedd i anfon diweddariadau Treth Incwm
 
 ## Overview Page Content
 overview.title                                                  = Mae''r ffordd rydych yn cofnodi Hunanasesiad yn newid
@@ -27,7 +30,6 @@ terms.bullet5                                                   = datgan unrhyw 
 terms.bullet6                                                   = rhoi gwybod i CThEM os ydych yn rhoi''r gorau i fasnachu neu''n dechrau busnes newydd
 terms.bullet7                                                   = cyflwyno adroddiadau gan ddefnyddio''ch dull arferol os byddwch yn gadael y cynllun peilot hwn
 terms.line2                                                     = Gallwch roi''r gorau i gymryd rhan yn y cynllun hwn ar unrhyw adeg.
-terms.button                                                    = Derbyn ac yn eich blaen
 
 ## Get Software
 get_software.title                                              = Bydd angen i chi gael meddalwedd sy''n cydweddu ar ôl cofrestru
@@ -46,7 +48,6 @@ check_compatible_software.heading                               = Gwirio bod y f
 check_compatible_software.line                                  = Rhaid i chi wirio y gall eich meddalwedd gysylltu ac anfon adroddiadau incwm a threuliau i CThEM.
 check_compatible_software.link                                  = Gwirio a yw''ch meddalwedd yn cydweddu (yn agor mewn tab newydd)
 
-
 ## Do you have any other income page
 have_any_other_income.title                                     = A oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo?
 have_any_other_income.include                                   = Gallai hyn gynnwys:
@@ -59,6 +60,19 @@ have_any_other_income.includePoint5                             = budd-daliadau 
 have_any_other_income.notIncludePoint1                          = llog banc neu gymdeithas adeiladu
 have_any_other_income.notIncludePoint2                          = difidendau
 have_any_other_income.error.summary                             = Dewiswch ''Iawn'' os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo
+
 ## Do you have any other income page errors
 have_any_other_income_error.title                               = Ni allwch ddefnyddio''r gwasanaeth hwn
 have_any_other_income_error.line1                               = Mae hwn yn wasanaeth sy''n cael ei brofi. Efallai y gallwch ddefnyddio''r gwasanaeth ''Defnyddio meddalwedd i anfon diweddariadau Treth Incwm'' yn y dyfodol.
+
+## Agent Terms and Conditions Page ##
+agent.terms.title                                               = Telerau cymryd rhan
+agent.terms.heading                                             = Telerau cymryd rhan
+agent.terms.line1                                               = Drwy gymryd rhan yn y peilot hwn, rydych yn cytuno y byddwch chi neu''ch cleient yn gwneud y canlynol:
+agent.terms.bullet1                                             = defnyddio meddalwedd berthnasol i gofnodi''ch incwm a''ch treuliau
+agent.terms.bullet2                                             = darparu cyfeiriad e-bost fel y gall CThEM gysylltu â''ch cleient
+agent.terms.bullet3                                             = cyflwyno adroddiad chwarterol o ddechrau cyfnod cyfrifyddu eich cleient
+agent.terms.bullet4                                             = anfon adroddiad terfynol eich cleient erbyn 31 Ionawr ar ddiwedd ei flwyddyn dreth
+agent.terms.bullet5                                             = rhoi gwybod i CThEM os yw''ch cleient yn rhoi''r gorau i fasnachu neu''n dechrau busnes newydd
+agent.terms.bullet6                                             = cyflwyno adroddiadau gan ddefnyddio''ch dull arferol os bydd eich cleient yn gadael y cynllun peilot hwn
+agent.terms.line2                                               = Nid yw''r telerau hyn yn gontractiol, a gall eich cleient roi''r gorau i gymryd rhan yn y peilot hwn ar unrhyw adeg.

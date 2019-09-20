@@ -18,6 +18,7 @@
 @import play.twirl.api.HtmlFormat
 @(appConfig: AppConfig,
   title: String,
+  navigationTitle: Option[String] = None,
   mainClass: Option[String] = None,
   mainDataAttributes: Option[Html] = None,
   bodyClasses: Option[String] = None,
@@ -43,7 +44,7 @@
 
 @insideHeader = {
     @uiLayouts.header_nav(
-      navTitle = Some(messages("service_name.title")),
+      navTitle = navigationTitle,
       navTitleLink = None,
       showBetaLink = false,
       navLinks = Some(headerNavLinks))

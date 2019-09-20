@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Terms => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Terms => messages, Base => commonMessages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/terms-of-participation")
+  lazy val result: WSResponse = get("/eligibility/terms-of-participation")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /terms-of-participation" should {
@@ -63,7 +63,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with an accept and continue button" in {
-      doc.getSubmitButton.text mustBe messages.button
+      doc.getSubmitButton.text mustBe commonMessages.acceptAndContinue
     }
 
     "have the correct form" in {

@@ -24,14 +24,14 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.play.language.LanguageUtils
 
 // TODO, upstream this into play-language
-class LanguageSwitchController @Inject() (
-                                           configuration: Configuration,
-                                           appConfig: AppConfig,
-                                           val controllerComponents: ControllerComponents
-                                         ) extends BaseController with I18nSupport {
+class LanguageSwitchController @Inject()(configuration: Configuration,
+                                         appConfig: AppConfig,
+                                         val controllerComponents: ControllerComponents
+                                        ) extends BaseController with I18nSupport {
 
   private def langToCall(lang: String): String => Call = appConfig.routeToSwitchLanguage
-  private def fallbackURL: String = routes.OverviewController.show().url
+
+  private def fallbackURL: String = principal.routes.OverviewController.show().url
 
   private def languageMap: Map[String, Lang] = appConfig.languageMap
 

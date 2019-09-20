@@ -14,26 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents
 
 import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.check_compatible_software
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.agents.terms
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 
 import scala.concurrent.Future
 
 @Singleton
-class CheckCompatibleSoftwareController @Inject()(mcc: MessagesControllerComponents)
-                                                 (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(check_compatible_software(routes.TermsController.show()))
+        Ok(terms(postAction = routes.TermsController.show())) // TODO redirect to next page in agent flow
       )
-  }
 
+  }
 }

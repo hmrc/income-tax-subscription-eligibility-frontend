@@ -39,7 +39,8 @@
 
 
 @govuk_wrapper(appConfig = appConfig,
-               title = formatTitle(form, Messages("base.service_name"), title),
+               title = formatTitle(form, Messages("agent_service_name.title"), title),
+               navigationTitle = Some(Messages("agent_service_name.title")),
                mainClass = mainClass,
                bodyClasses = bodyClasses,
                sidebar = sidebar,

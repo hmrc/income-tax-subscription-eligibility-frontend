@@ -1,17 +1,18 @@
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{GetSoftware => messages, Base => base}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => base, GetSoftware => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.routes
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 
 class GetSoftwareControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/get-software")
+  lazy val result: WSResponse = get("/eligibility/get-software")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /get-software" should {

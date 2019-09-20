@@ -1,16 +1,17 @@
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import org.jsoup.Jsoup
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{HaveYouGotSoftware => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.routes
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class HaveYouGotSoftwareControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  val uri = "/have-you-got-software"
+  val uri = "/eligibility/have-you-got-software"
 
-  "GET /have-you-got-software" should {
+  "GET /eligibility/have-you-got-software" should {
     lazy val res = get(uri)
     lazy val doc = Jsoup.parse(res.body)
 
@@ -58,7 +59,7 @@ class HaveYouGotSoftwareControllerISpec extends ComponentSpecBase with ViewSpec 
     }
   }
 
-  "POST /have-you-got-software" when {
+  "POST /eligibility/have-you-got-software" when {
     "the answer is Yes" should {
       "redirect to the \"Check software is compatible\" page" in {
         lazy val res = post(uri)("yes-no" -> "yes")
@@ -77,12 +78,6 @@ class HaveYouGotSoftwareControllerISpec extends ComponentSpecBase with ViewSpec 
           httpStatus(SEE_OTHER),
           redirectUri(routes.GetSoftwareController.show().url)
         )
-        /*
-        res must have(
-          httpStatus(NOT_IMPLEMENTED),
-          redirectUri(routes.CheckCompatibleSoftwareController.show().url)
-        )
-         */
       }
     }
     "no answer is provided" should {

@@ -14,26 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import javax.inject.{Inject, Singleton}
-
 import play.api.i18n.I18nSupport
-import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
+import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.have_any_other_income_error
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.terms
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 
 import scala.concurrent.Future
 
 @Singleton
-class OtherIncomeErrorController @Inject()(implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(have_any_other_income_error())
+        Ok(terms(postAction = routes.HaveAnyOtherIncomeController.show()))
       )
   }
-
 }

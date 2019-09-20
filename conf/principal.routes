@@ -1,0 +1,25 @@
+## microservice specific routes
+
+## Have you got other income
+GET         /other-income                        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.show
+POST        /other-income                        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.submit
+
+GET         /error/other-income-error            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OtherIncomeErrorController.show
+## Overview
+GET         /overview                            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OverviewController.show
+
+## Have you got software
+GET         /have-you-got-software               uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveYouGotSoftwareController.show
+POST        /have-you-got-software               uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveYouGotSoftwareController.submit
+
+## Get software
+GET         /get-software                        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.GetSoftwareController.show
+
+## Terms of Participation
+GET         /terms-of-participation              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.show
+
+## Check Compatible Software
+GET         /check-compatible-software           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckCompatibleSoftwareController.show
+
+## Welsh language support
+GET         /language/:lang                      uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)

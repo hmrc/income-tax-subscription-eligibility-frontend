@@ -1,17 +1,17 @@
 
 ## Base ##
 base.back                                                       = Back
-base.service_name                                               = Report your income and expenses quarterly
 base.continue                                                   = Continue
 base.yes                                                        = Yes
 base.no                                                         = No
 base.title_error_prefix                                         = 'Error: '
 base.govuk                                                      = GOV.UK
 base.error_heading                                              = There''s a problem
+base.accept_and_continue                                        = Accept and continue
 
 ## Service Name
-
-service_name.title                                              = Use software to send Income Tax updates
+principal_service_name.title                                    = Use software to send Income Tax updates
+agent_service_name.title                                        = Use software to report your client''s Income Tax
 
 ## Overview Page Content
 overview.title                                                  = The way you record Self Assessment is changing
@@ -32,7 +32,6 @@ terms.bullet5                                                   = declare any ot
 terms.bullet6                                                   = tell HMRC if you stop trading or start a new business
 terms.bullet7                                                   = submit reports using your usual method if you leave this pilot
 terms.line2                                                     = You can stop taking part in this pilot at any time.
-terms.button                                                    = Accept and continue
 
 ## Get Software
 get_software.title                                              = You will need to get compatible software after signing up
@@ -51,9 +50,6 @@ check_compatible_software.heading                               = Check that the
 check_compatible_software.line                                  = You must check that your software can connect and send income and expense reports to HMRC.
 check_compatible_software.link                                  = Check if your software is compatible (opens in a new tab)
 
-
-
-
 ## Do you have any other income page
 have_any_other_income.title                                     = Do you have any sources of income other than self employment or property income?
 have_any_other_income.include                                   = This could include:
@@ -67,7 +63,18 @@ have_any_other_income.notIncludePoint1                          = bank and build
 have_any_other_income.notIncludePoint2                          = dividends
 have_any_other_income.error.summary                             = Select yes if you have any sources of income other than self employment or property income
 
-
 ## Do you have any other income page errors
 have_any_other_income_error.title                               = You cannot use this service yet
 have_any_other_income_error.line1                               = This is a trial service. You may be able to use the ''Use software to send Income Tax updates'' service in the future.
+
+## Terms and Conditions Page ##
+agent.terms.title                                               = Terms of participation
+agent.terms.heading                                             = Terms of participation
+agent.terms.line1                                               = By taking part in this pilot, you agree that either you or your client will:
+agent.terms.bullet1                                             = use relevant software to record income and expenses
+agent.terms.bullet2                                             = provide an email address so your client can be contacted by HMRC
+agent.terms.bullet3                                             = submit a quarterly report from the start of your client''s accounting period
+agent.terms.bullet4                                             = send your client''s final report by the 31 January at the end of their tax year
+agent.terms.bullet5                                             = tell HMRC if your client stops trading or starts a new business
+agent.terms.bullet6                                             = submit reports using your usual method if your client leaves this pilot
+agent.terms.line2                                               = These terms are not contractual and your client can stop taking part in this pilot at any time.

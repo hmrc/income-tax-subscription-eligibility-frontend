@@ -1,0 +1,7 @@
+## microservice specific routes
+
+## Terms of Participation
+GET         /terms-of-participation              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
+
+## Welsh language support
+GET         /language/:lang                      uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
