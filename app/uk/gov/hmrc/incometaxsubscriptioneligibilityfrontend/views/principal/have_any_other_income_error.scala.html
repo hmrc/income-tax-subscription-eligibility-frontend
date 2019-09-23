@@ -15,11 +15,11 @@
  *@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.main_template
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.principal_main_template
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@main_template(title = messages("have_any_other_income_error.title")) {
+@principal_main_template(title = messages("have_any_other_income_error.title")) {
 <h1>@messages("have_any_other_income_error.title")</h1>
 <p>@messages("have_any_other_income_error.line1")</p>
 

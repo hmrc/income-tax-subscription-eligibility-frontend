@@ -15,13 +15,13 @@
  *@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-@import views.html.helper.form
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.main_template
+@import uk.gov.hmrc.play.views.html.helpers.form
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.principal_main_template
 
 
 @(postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@main_template(
+@principal_main_template(
     title = messages("overview.title"),
     mainClass = Some("full-width")
 ) {

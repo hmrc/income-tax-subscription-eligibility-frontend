@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import javax.inject.{Inject, Singleton}
-
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.have_any_other_income
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.have_any_other_income
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 
 import scala.concurrent.Future

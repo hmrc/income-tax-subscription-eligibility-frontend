@@ -16,13 +16,13 @@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveSoftwareForm._
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.main_template
 @import uk.gov.hmrc.play.views.html.helpers.form
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveSoftwareForm._
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.principal_main_template
 
 @(haveSoftwareForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@main_template(title = messages("have_you_got_software.title"), mainClass = Some("full-width")) {
+@principal_main_template(title = messages("have_you_got_software.title"), mainClass = Some("full-width")) {
 
   <div class="grid-row interrupt-card">
     <div class="column-two-thirds">

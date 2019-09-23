@@ -25,7 +25,7 @@ trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServer
     "play.filters.csrf.header.bypassHeaders.Csrf-Token" -> "nocheck"
   )
 
-  val baseUrl: String = "/report-quarterly/income-and-expenses/sign-up/eligibility"
+  val baseUrl: String = "/report-quarterly/income-and-expenses/sign-up"
 
   def buildClient(path: String): WSRequest =
     ws.url(s"http://localhost:$port$baseUrl$path").withFollowRedirects(false)
