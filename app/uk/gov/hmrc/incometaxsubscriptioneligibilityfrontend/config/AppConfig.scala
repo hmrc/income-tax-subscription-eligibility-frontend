@@ -29,11 +29,13 @@ class AppConfig @Inject()(config: ServicesConfig) {
 
   private val incometaxSubscriptionFrontendHost =  loadConfig("income-tax-subscription-frontend.host")
   private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up/user-details"
+  private val incometaxSubscriptionFrontendAgentFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/client-details"
 
   private val contactBaseUrl = config.baseUrl("contact-frontend")
 
   private val assetsUrl = loadConfig("assets.url")
   val incometaxSubscriptionFrontendFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendFirstPageUrl}"
+  val incometaxSubscriptionFrontendAgentFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentFirstPageUrl}"
   private val serviceIdentifier = "MyService"
 
   val assetsPrefix: String = assetsUrl + loadConfig("assets.version")
