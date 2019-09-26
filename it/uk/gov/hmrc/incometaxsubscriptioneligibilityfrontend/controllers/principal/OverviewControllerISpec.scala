@@ -11,7 +11,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/eligibility/overview")
+  lazy val result: WSResponse = get("/overview")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /overview" should {

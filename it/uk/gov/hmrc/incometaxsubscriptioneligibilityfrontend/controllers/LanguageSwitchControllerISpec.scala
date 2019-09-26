@@ -8,7 +8,7 @@ class LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
 
   "GET /language/cymraeg" should {
     "update the PLAY_LANG cookie to cy" in {
-      lazy val resultCy: WSResponse = get("/eligibility/language/cymraeg")
+      lazy val resultCy: WSResponse = get("/language/cymraeg")
       resultCy.headers.isDefinedAt("Set-Cookie") mustBe true
       resultCy.headers.toString.contains("PLAY_LANG=cy;") mustBe true
     }
@@ -16,7 +16,7 @@ class LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
 
   "GET /language/english" should {
     "update the PLAY_LANG cookie to en" in {
-      lazy val resultEn: WSResponse = get("/eligibility/language/english")
+      lazy val resultEn: WSResponse = get("/language/english")
       resultEn.headers.isDefinedAt("Set-Cookie") mustBe true
       resultEn.headers.toString.contains("PLAY_LANG=en;") mustBe true
     }
@@ -24,7 +24,7 @@ class LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
 
   "GET /client/language/cymraeg" should {
     "update the PLAY_LANG cookie to cy" in {
-      lazy val resultCy: WSResponse = get("/client/eligibility/language/cymraeg")
+      lazy val resultCy: WSResponse = get("/client/language/cymraeg")
       resultCy.headers.isDefinedAt("Set-Cookie") mustBe true
       resultCy.headers.toString.contains("PLAY_LANG=cy;") mustBe true
     }
@@ -32,7 +32,7 @@ class LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
 
   "GET /client/language/english" should {
     "update the PLAY_LANG cookie to en" in {
-      lazy val resultEn: WSResponse = get("/client/eligibility/language/english")
+      lazy val resultEn: WSResponse = get("/client/language/english")
       resultEn.headers.isDefinedAt("Set-Cookie") mustBe true
       resultEn.headers.toString.contains("PLAY_LANG=en;") mustBe true
     }

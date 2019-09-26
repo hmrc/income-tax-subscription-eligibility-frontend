@@ -25,7 +25,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/eligibility/terms-of-participation")
+  lazy val result: WSResponse = get("/terms-of-participation")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /terms-of-participation" should {

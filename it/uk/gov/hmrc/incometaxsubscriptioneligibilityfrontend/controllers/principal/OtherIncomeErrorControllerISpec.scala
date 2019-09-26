@@ -8,7 +8,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class OtherIncomeErrorControllerISpec extends ComponentSpecBase with ViewSpec {
   "GET /error/other-income-error" should {
-    lazy val result = get("/eligibility/error/other-income-error")
+    lazy val result = get("/error/other-income-error")
     lazy val doc: Document = Jsoup.parse(result.body)
 
     "return OK" in {

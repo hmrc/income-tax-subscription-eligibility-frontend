@@ -25,7 +25,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec {
 
   "GET /eligibility/other-income" should {
-    lazy val result = get("/eligibility/other-income")
+    lazy val result = get("/other-income")
     lazy val doc: Document = Jsoup.parse(result.body)
 
     "return OK" in {
@@ -84,7 +84,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
   "POST /eligibility/other-income" should {
 
     "return SEE_OTHER when selecting yes" in {
-      val result = post("/eligibility/other-income")("yes-no" -> "yes")
+      val result = post("/other-income")("yes-no" -> "yes")
 
       result must have(
         httpStatus(SEE_OTHER)
@@ -92,7 +92,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     }
 
     "return SEE_OTHER when selecting No" in {
-      val result = post("/eligibility/other-income")("yes-no" -> "no")
+      val result = post("/other-income")("yes-no" -> "no")
 
       result must have(
         httpStatus(SEE_OTHER)
@@ -101,7 +101,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     }
 
     "return BADREQUEST when no Answer is given" in {
-      val result = post("/eligibility/other-income")("yes-no" -> " ")
+      val result = post("/other-income")("yes-no" -> " ")
       val doc: Document = Jsoup.parse(result.body)
 
       result must have(
@@ -113,7 +113,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     }
 
     "have the correct form" in {
-      val result = post("/eligibility/other-income")("yes-no" -> " ")
+      val result = post("/other-income")("yes-no" -> " ")
       lazy val doc: Document = Jsoup.parse(result.body)
       doc.getForm must have(
         method("POST"),
