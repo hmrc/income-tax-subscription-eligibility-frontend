@@ -1,6 +1,6 @@
 # Add all the application routes to the principal.routes file
 ->         /report-quarterly/income-and-expenses/sign-up/eligibility            principal.Routes
-->         /report-quarterly/income-and-expenses/sign-up/client/eligibility     agent.Routes
+->         /report-quarterly/income-and-expenses/sign-up/eligibility/client     agent.Routes
 ->         /                                                                    health.Routes
 ->         /template                                                            template.Routes
 

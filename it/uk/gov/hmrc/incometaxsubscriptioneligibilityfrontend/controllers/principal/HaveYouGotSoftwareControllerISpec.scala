@@ -9,9 +9,9 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class HaveYouGotSoftwareControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  val uri = "/eligibility/have-you-got-software"
+  val uri = "/have-you-got-software"
 
-  "GET /eligibility/have-you-got-software" should {
+  "GET /have-you-got-software" should {
     lazy val res = get(uri)
     lazy val doc = Jsoup.parse(res.body)
 
@@ -59,7 +59,7 @@ class HaveYouGotSoftwareControllerISpec extends ComponentSpecBase with ViewSpec 
     }
   }
 
-  "POST /eligibility/have-you-got-software" when {
+  "POST /have-you-got-software" when {
     "the answer is Yes" should {
       "redirect to the \"Check software is compatible\" page" in {
         lazy val res = post(uri)("yes-no" -> "yes")

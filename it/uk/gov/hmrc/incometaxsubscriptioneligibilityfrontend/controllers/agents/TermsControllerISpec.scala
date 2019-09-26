@@ -25,10 +25,10 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/client/eligibility/terms-of-participation")
+  lazy val result: WSResponse = get("/client/terms-of-participation")
   lazy val doc: Document = Jsoup.parse(result.body)
 
-  "GET /client/eligibility/terms-of-participation" should {
+  "GET /client/terms-of-participation" should {
     "return OK" in {
       result must have(
         httpStatus(OK)
@@ -73,9 +73,9 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
   }
 
-  "POST /client/eligibility/terms-of-participation" should {
+  "POST /client/terms-of-participation" should {
     "Redirect to the 'Other Income' page in Income Tax Subscription" in {
-      val result = post("/client/eligibility/terms-of-participation")()
+      val result = post("/client/terms-of-participation")()
       result must have(
         httpStatus(SEE_OTHER),
         redirectUri("/report-quarterly/income-and-expenses/sign-up/client/client-details")

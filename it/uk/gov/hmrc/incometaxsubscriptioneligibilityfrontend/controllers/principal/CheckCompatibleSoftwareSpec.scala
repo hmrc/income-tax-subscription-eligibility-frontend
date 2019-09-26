@@ -10,7 +10,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class CheckCompatibleSoftwareSpec extends ComponentSpecBase with ViewSpec with GuiceOneServerPerSuite {
 
-  lazy val result = get("/eligibility/check-compatible-software")
+  lazy val result = get("/check-compatible-software")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /check-compatible-software" should {

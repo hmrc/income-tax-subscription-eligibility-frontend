@@ -12,7 +12,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class GetSoftwareControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/eligibility/get-software")
+  lazy val result: WSResponse = get("/get-software")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /get-software" should {
