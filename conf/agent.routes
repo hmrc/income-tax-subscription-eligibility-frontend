@@ -1,8 +1,12 @@
 ## microservice specific routes
 
+## Index route
+
+GET         /                              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.IndexController.index
+
 ## Terms of Participation
-GET         /terms-of-participation              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
-POST        /terms-of-participation              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
+GET         /terms-of-participation        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
+POST        /terms-of-participation        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
 
 ## Welsh language support
-GET         /language/:lang                      uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
+GET         /language/:lang                uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
