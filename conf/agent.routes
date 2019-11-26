@@ -8,5 +8,8 @@ GET         /                              uk.gov.hmrc.incometaxsubscriptionelig
 GET         /terms-of-participation        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
 POST        /terms-of-participation        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
 
+## Other Sources of Income Error
+GET         /other-sources-of-income-error uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.OtherIncomeSourcesErrorController.show
+
 ## Welsh language support
 GET         /language/:lang                uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
