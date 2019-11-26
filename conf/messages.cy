@@ -61,6 +61,23 @@ have_any_other_income.notIncludePoint1                          = llog banc neu 
 have_any_other_income.notIncludePoint2                          = difidendau
 have_any_other_income.error.summary                             = Dewiswch ''Iawn'' os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo
 
+## Agent do you have any other income page
+agent.have_any_other_income.title                               = A oes gan eich cleient unrhyw un o''r ffynonellau canlynol o incwm?
+agent.have_any_other_income.heading                             = A oes gan eich cleient unrhyw un o''r ffynonellau canlynol o incwm?
+agent.have_any_other_income.text1                               = Bydd rhai ffynonellau o incwm yn eithrio busnesau rhag cymryd rhan yn y peilot.
+agent.have_any_other_income.include                             = Gall hyn gynnwys incwm o''r canlynol:
+agent.have_any_other_income.notInclude                          = Nid yw hyn yn cynnwys incwm o''r canlynol:
+agent.have_any_other_income.includePoint1                       = bod yn gyflogai
+agent.have_any_other_income.includePoint2                       = mwy nag un busnes hunan-gyflogedig
+agent.have_any_other_income.includePoint3                       = pensiynau neu flwydd-daliadau''r DU (cael neu dalu mewn iddynt)
+agent.have_any_other_income.includePoint4                       = buddsoddiadau y tu allan i''r DU
+agent.have_any_other_income.includePoint5                       = enillion cyfalaf
+agent.have_any_other_income.includePoint6                       = budd-daliadau trethadwy''r Wladwriaeth
+agent.have_any_other_income.notIncludePoint1                    = llog banc neu gymdeithas adeiladu
+agent.have_any_other_income.notIncludePoint2                    = difidendau
+agent.have_any_other_income.error.summary                       = Dewiswch ''iawn'' os oes gan eich cleient incwm o unrhyw un o''r ffynonellau canlynol
+
+
 ## Do you have any other income page errors
 have_any_other_income_error.title                               = Ni allwch ddefnyddio''r gwasanaeth hwn
 have_any_other_income_error.line1                               = Mae hwn yn wasanaeth sy''n cael ei brofi. Efallai y gallwch ddefnyddio''r gwasanaeth ''Defnyddio meddalwedd i anfon diweddariadau Treth Incwm'' yn y dyfodol.

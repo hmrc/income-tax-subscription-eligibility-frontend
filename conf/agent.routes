@@ -2,14 +2,18 @@
 
 ## Index route
 
-GET         /                              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.IndexController.index
+GET         /                                 uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.IndexController.index
 
 ## Terms of Participation
-GET         /terms-of-participation        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
-POST        /terms-of-participation        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
+GET         /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
+POST        /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
+
+## Have you got other income
+GET         /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.HaveAnyOtherIncomeController.show
+POST        /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.HaveAnyOtherIncomeController.submit
 
 ## Other Sources of Income Error
-GET         /other-sources-of-income-error uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.OtherIncomeSourcesErrorController.show
+GET         /other-sources-of-income-error    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.OtherIncomeSourcesErrorController.show
 
 ## Welsh language support
-GET         /language/:lang                uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
+GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)

@@ -63,6 +63,22 @@ have_any_other_income.notIncludePoint1                          = bank and build
 have_any_other_income.notIncludePoint2                          = dividends
 have_any_other_income.error.summary                             = Select yes if you have any sources of income other than self employment or property income
 
+## Agent do you have any other income page
+agent.have_any_other_income.title                               = Does your client have any of the following sources of income?
+agent.have_any_other_income.heading                             = Does your client have any of the following sources of income?
+agent.have_any_other_income.text1                               = Some sources of income will exclude businesses from participating in the pilot.
+agent.have_any_other_income.include                             = This could include income from:
+agent.have_any_other_income.notInclude                          = This does not include income from:
+agent.have_any_other_income.includePoint1                       = being an employee
+agent.have_any_other_income.includePoint2                       = more than one self-employed business
+agent.have_any_other_income.includePoint3                       = UK pensions or annuities (receiving or paying into)
+agent.have_any_other_income.includePoint4                       = investments from outside the UK
+agent.have_any_other_income.includePoint5                       = capital gains
+agent.have_any_other_income.includePoint6                       = taxable state benefits
+agent.have_any_other_income.notIncludePoint1                    = bank and building society interest
+agent.have_any_other_income.notIncludePoint2                    = dividends
+agent.have_any_other_income.error.summary                       = Select yes if your client has any of the following sources of income
+
 ## Do you have any other income page errors
 have_any_other_income_error.title                               = You cannot use this service yet
 have_any_other_income_error.line1                               = This is a trial service. You may be able to use the ''Use software to send Income Tax updates'' service in the future.
