@@ -28,13 +28,10 @@ import scala.concurrent.Future
 @Singleton
 class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
-  val show: Action[AnyContent] = Action.async { implicit request =>
-    Future.successful(
-      Ok(terms(postAction = routes.TermsController.submit()))
-    )
-  }
-
-  val submit: Action[AnyContent] = Action.async { implicit request =>
-    Future.successful(Redirect(appConfig.incometaxSubscriptionFrontendAgentFirstPageFullUrl))
+  val show: Action[AnyContent] = Action.async {
+    implicit request =>
+      Future.successful(
+        Ok(terms(postAction = routes.HaveAnyOtherIncomeController.show()))
+      )
   }
 }
