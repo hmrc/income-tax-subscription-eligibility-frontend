@@ -78,3 +78,14 @@ agent.terms.bullet4                                             = send your clie
 agent.terms.bullet5                                             = tell HMRC if your client stops trading or starts a new business
 agent.terms.bullet6                                             = submit reports using your usual method if your client leaves this pilot
 agent.terms.line2                                               = These terms are not contractual and your client can stop taking part in this pilot at any time.
+
+## Other sources of income error page ##
+agent.income-sources-error.title                                      = Your client can''t use this service
+agent.income-sources-error.heading                                    = You cannot use this service
+agent.income-sources-error.para1                                      = You can only report Income Tax through software for clients that either:
+agent.income-sources-error.bullet1                                    = have a sole trader business
+agent.income-sources-error.bullet2                                    = rent out a UK property
+agent.income-sources-error.bullet3                                    = have a sole trader business and rent out a UK property
+agent.income-sources-error.para2.part1                                = If your client has other sources of income, they need to
+agent.income-sources-error.para2.link                                 = send a Self Assessment tax return
+agent.income-sources-error.para2.part2                                = instead.

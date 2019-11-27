@@ -76,3 +76,14 @@ agent.terms.bullet4                                             = anfon adroddia
 agent.terms.bullet5                                             = rhoi gwybod i CThEM os yw''ch cleient yn rhoi''r gorau i fasnachu neu''n dechrau busnes newydd
 agent.terms.bullet6                                             = cyflwyno adroddiadau gan ddefnyddio''ch dull arferol os bydd eich cleient yn gadael y cynllun peilot hwn
 agent.terms.line2                                               = Nid yw''r telerau hyn yn gontractiol, a gall eich cleient roi''r gorau i gymryd rhan yn y peilot hwn ar unrhyw adeg.
+
+## Other sources of income error page ##
+agent.income-sources-error.title                                      = Your client can''t use this service
+agent.income-sources-error.heading                                    = You cannot use this service
+agent.income-sources-error.para1                                      = You can only report Income Tax through software for clients that either:
+agent.income-sources-error.bullet1                                    = have a sole trader business
+agent.income-sources-error.bullet2                                    = rent out a UK property
+agent.income-sources-error.bullet3                                    = have a sole trader business and rent out a UK property
+agent.income-sources-error.para2.part1                                = If your client has other sources of income, they need to
+agent.income-sources-error.para2.link                                 = send a Self Assessment tax return
+agent.income-sources-error.para2.part2                                = instead.

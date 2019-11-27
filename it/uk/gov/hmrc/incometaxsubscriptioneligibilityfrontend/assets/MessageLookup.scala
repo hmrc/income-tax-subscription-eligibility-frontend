@@ -103,4 +103,14 @@ object MessageLookup {
     val line2 = "These terms are not contractual and your client can stop taking part in this pilot at any time."
   }
 
+  object OtherSourcesOfIncomeError {
+    val title = s"Your client can't use this service$agentSuffix"
+    val heading = "You cannot use this service"
+    val para1 = "You can only report Income Tax through software for clients that either:"
+    val bullet1 = "have a sole trader business"
+    val bullet2 = "rent out a UK property"
+    val bullet3 = "have a sole trader business and rent out a UK property"
+    val para2 = "If your client has other sources of income, they need to send a Self Assessment tax return instead."
+    val linkText = "send a Self Assessment tax return"
+  }
 }
