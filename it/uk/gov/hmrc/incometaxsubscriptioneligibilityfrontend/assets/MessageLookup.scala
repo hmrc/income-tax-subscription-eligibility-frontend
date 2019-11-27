@@ -36,7 +36,7 @@ object MessageLookup {
   }
 
   object HaveAnyOtherIncome {
-    val title = s"Do you have any sources of income other than self employment or property income?"
+    val title = "Do you have any sources of income other than self employment or property income?"
     val include = "This could include:"
     val notInclude = "This does not include:"
     val includePoints: Seq[String] =
@@ -44,6 +44,19 @@ object MessageLookup {
         "capital gains", "taxable state benefits")
     val notIncludePoints: Seq[String] = Seq("bank and building society interest", "dividends")
     val error = "Select yes if you have any sources of income other than self employment or property income"
+  }
+
+  object AgentHaveAnyOtherIncome {
+    val heading: String = "Does your client have any of the following sources of income?"
+    val title = s"$heading$agentSuffix"
+    val text1 = "Some sources of income will exclude businesses from participating in the pilot."
+    val include = "This could include income from:"
+    val notInclude = "This does not include income from:"
+    val includePoints: Seq[String] =
+      Seq("being an employee", "more than one self-employed business", "UK pensions or annuities (receiving or paying into)", "investments from outside the UK",
+        "capital gains", "taxable state benefits")
+    val notIncludePoints: Seq[String] = Seq("bank and building society interest", "dividends")
+    val error = "Select yes if your client has any of the following sources of income"
   }
 
   object HaveAnyOtherIncomeError {
