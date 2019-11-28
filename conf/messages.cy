@@ -10,6 +10,7 @@ base.accept_and_continue                                        = Derbyn ac yn e
 
 ## Service name
 principal.service_name.title                                    = Defnyddio meddalwedd i anfon diweddariadau Treth Incwm
+agent_service_name.title                                        = Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient
 
 ## Overview Page Content
 overview.title                                                  = Mae''r ffordd rydych yn cofnodi Hunanasesiad yn newid

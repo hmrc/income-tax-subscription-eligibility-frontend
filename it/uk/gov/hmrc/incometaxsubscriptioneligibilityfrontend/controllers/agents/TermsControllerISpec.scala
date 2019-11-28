@@ -67,18 +67,8 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "have the correct form" in {
       doc.getForm must have(
-        method("POST"),
-        action(routes.TermsController.show().url) // TODO redirect to next page in agent flow
-      )
-    }
-  }
-
-  "POST /client/terms-of-participation" should {
-    "Redirect to the 'Other Income' page in Income Tax Subscription" in {
-      val result = post("/client/terms-of-participation")()
-      result must have(
-        httpStatus(SEE_OTHER),
-        redirectUri("/report-quarterly/income-and-expenses/sign-up/client/client-details")
+        method("GET"),
+        action(routes.HaveAnyOtherIncomeController.show().url)
       )
     }
   }
