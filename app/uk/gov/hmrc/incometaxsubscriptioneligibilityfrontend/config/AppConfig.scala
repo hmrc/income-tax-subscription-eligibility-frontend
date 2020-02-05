@@ -31,7 +31,7 @@ class AppConfig @Inject()(config: ServicesConfig) {
   private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up/user-details"
   private val incometaxSubscriptionFrontendAgentFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/client-details"
 
-  private val contactBaseUrl = config.baseUrl("contact-frontend")
+  private val contactBaseUrl = loadConfig("contact-frontend.host")
 
   private val assetsUrl = loadConfig("assets.url")
   val incometaxSubscriptionFrontendFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendFirstPageUrl}"
