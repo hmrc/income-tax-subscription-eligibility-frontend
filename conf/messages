@@ -4,14 +4,14 @@ base.back                                                       = Back
 base.continue                                                   = Continue
 base.yes                                                        = Yes
 base.no                                                         = No
-base.title_error_prefix                                         = 'Error: '
+base.title_error_prefix                                         = Error:
 base.govuk                                                      = GOV.UK
-base.error_heading                                              = There''s a problem
+base.error_heading                                              = There’s a problem
 base.accept_and_continue                                        = Accept and continue
 
 ## Service Name
 principal_service_name.title                                    = Use software to send Income Tax updates
-agent_service_name.title                                        = Use software to report your client''s Income Tax
+agent_service_name.title                                        = Use software to report your client’s Income Tax
 
 ## Overview Page Content
 overview.title                                                  = The way you record Self Assessment is changing
@@ -37,7 +37,7 @@ terms.line2                                                     = You can stop t
 get_software.title                                              = You will need to get compatible software after signing up
 get_software.heading                                            = You will need to get compatible software after signing up
 get_software.line_1                                             = The software you use must be able to send income and expense reports to HMRC.
-get_software.find_software                                      = Find software that''s compatible with Making Tax Digital for Income Tax (opens in a new tab)
+get_software.find_software                                      = Find software that’s compatible with Making Tax Digital for Income Tax (opens in a new tab)
 
 ## "Have you got software" page messages ##
 have_you_got_software.title                                     = Do you currently use accounting software?
@@ -81,7 +81,7 @@ agent.have_any_other_income.error.summary                       = Select yes if 
 
 ## Do you have any other income page errors
 have_any_other_income_error.title                               = You cannot use this service yet
-have_any_other_income_error.line1                               = This is a trial service. You may be able to use the ''Use software to send Income Tax updates'' service in the future.
+have_any_other_income_error.line1                               = This is a trial service. You may be able to use the ‘Use software to send Income Tax updates’ service in the future.
 
 ## Terms and Conditions Page ##
 agent.terms.title                                               = Terms of participation
@@ -89,14 +89,14 @@ agent.terms.heading                                             = Terms of parti
 agent.terms.line1                                               = By taking part in this pilot, you agree that either you or your client will:
 agent.terms.bullet1                                             = use relevant software to record income and expenses
 agent.terms.bullet2                                             = provide an email address so your client can be contacted by HMRC
-agent.terms.bullet3                                             = submit a quarterly report from the start of your client''s accounting period
-agent.terms.bullet4                                             = send your client''s final report by the 31 January at the end of their tax year
+agent.terms.bullet3                                             = submit a quarterly report from the start of your client’s accounting period
+agent.terms.bullet4                                             = send your client’s final report by the 31 January at the end of their tax year
 agent.terms.bullet5                                             = tell HMRC if your client stops trading or starts a new business
 agent.terms.bullet6                                             = submit reports using your usual method if your client leaves this pilot
 agent.terms.line2                                               = These terms are not contractual and your client can stop taking part in this pilot at any time.
 
 ## Other sources of income error page ##
-agent.income-sources-error.title                                      = Your client can''t use this service
+agent.income-sources-error.title                                      = Your client can’t use this service
 agent.income-sources-error.heading                                    = You cannot use this service
 agent.income-sources-error.para1                                      = You can only report Income Tax through software for clients that either:
 agent.income-sources-error.bullet1                                    = have a sole trader business
