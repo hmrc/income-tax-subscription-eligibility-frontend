@@ -96,12 +96,12 @@ agent.terms.bullet6                                             = cyflwyno adrod
 agent.terms.line2                                               = Nid yw’r telerau hyn yn gontractiol, a gall eich cleient roi’r gorau i gymryd rhan yn y peilot hwn ar unrhyw adeg.
 
 ## Other sources of income error page ##
-agent.income-sources-error.title                                      = Your client can’t use this service
-agent.income-sources-error.heading                                    = You cannot use this service
-agent.income-sources-error.para1                                      = You can only report Income Tax through software for clients that either:
-agent.income-sources-error.bullet1                                    = have a sole trader business
-agent.income-sources-error.bullet2                                    = rent out a UK property
-agent.income-sources-error.bullet3                                    = have a sole trader business and rent out a UK property
-agent.income-sources-error.para2.part1                                = If your client has other sources of income, they need to
-agent.income-sources-error.para2.link                                 = send a Self Assessment tax return
-agent.income-sources-error.para2.part2                                = instead.
+agent.income-sources-error.title                                      = Ni allwch ddefnyddio’r gwasanaeth hwn
+agent.income-sources-error.heading                                    = Ni allwch ddefnyddio’r gwasanaeth hwn
+agent.income-sources-error.para1                                      = Gallwch dim ond rhoi gwybod am Dreth Incwm drwy feddalwedd ar gyfer y canlynol:
+agent.income-sources-error.bullet1                                    = cleientiaid sydd â busnes unig fasnachwr
+agent.income-sources-error.bullet2                                    = cleientiaid sy’n rhoi eiddo yn y DU ar osod
+agent.income-sources-error.bullet3                                    = cleientiaid sydd â busnes unig fasnachwr ac yn gosod eiddo yn y DU
+agent.income-sources-error.para2.part1                                = Os oes gan eich cleient ffynonellau eraill o incwm, mae’n rhaid iddo anfon
+agent.income-sources-error.para2.link                                 = Ffurflen Dreth Hunanasesiad
+agent.income-sources-error.para2.part2                                = yn lle hynny.
