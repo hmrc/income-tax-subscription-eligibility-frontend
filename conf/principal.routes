@@ -26,3 +26,7 @@ GET         /check-compatible-software        uk.gov.hmrc.incometaxsubscriptione
 
 ## Welsh language support
 GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
+
+## Check accounting period
+GET         /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.show
+POST        /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.submit
