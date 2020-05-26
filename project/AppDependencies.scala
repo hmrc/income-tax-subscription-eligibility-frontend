@@ -4,7 +4,7 @@ import sbt._
 
 object AppDependencies {
 
-  private val playLanguageVersion = "3.4.0"
+  private val playLanguageVersion = "4.3.0-play-26"
 
   val compile = Seq(
     "uk.gov.hmrc" %% "govuk-template" % "5.38.0-play-26",

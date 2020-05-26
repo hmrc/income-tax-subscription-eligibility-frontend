@@ -46,6 +46,11 @@ object MessageLookup {
     val error = "Select yes if you have any sources of income other than self employment or property income"
   }
 
+  object SoleTraderStartAfter {
+    def title(date: String) = s"Are you a sole trader that began trading on or after $date?"
+    def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date"
+  }
+
   object AgentHaveAnyOtherIncome {
     val heading: String = "Does your client have any of the following sources of income?"
     val title = s"$heading$agentSuffix"
