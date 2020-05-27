@@ -24,7 +24,7 @@ form.errors
 }
 
 @errMsg(err: FormError) = {
-<li role="tooltip" data-metrics="itsa:error:@err.message"><a href="#@err.key" class="bold">@{Messages(s"${err.message}.summary")}</a></li>
+<li role="tooltip" data-metrics="itsa:error:@err.message"><a href="#@err.key" class="bold">@{messages(s"${err.message}.summary", err.args: _*)}</a></li>
 }
 
 @if(form.hasErrors) {
@@ -34,7 +34,7 @@ form.errors
      role="alert"
      aria-labelledby="error-summary-heading"
      tabindex="-1">
-    <h2 id="error-summary-heading" class="h3-heading">@Messages("base.error_heading")</h2>
+    <h2 id="error-summary-heading" class="h3-heading">@messages("base.error_heading")</h2>
     <ul>
         @errors.map(errMsg)
     </ul>

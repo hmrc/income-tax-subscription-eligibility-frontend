@@ -63,6 +63,11 @@ have_any_other_income.notIncludePoint1                          = bank and build
 have_any_other_income.notIncludePoint2                          = dividends
 have_any_other_income.error.summary                             = Select yes if you have any sources of income other than self employment or property income
 
+## Are you a sole trader after page ##
+are_you_sole_trader_after.title                                    = Are you a sole trader that began trading on or after {0}?
+are_you_sole_trader_after.heading                                  = Are you a sole trader that began trading on or after {0}?
+are_you_sole_trader_after.error.summary                            = Select yes if you are a sole trader that began trading on or after {0}
+
 ## Agent do you have any other income page
 agent.have_any_other_income.title                               = Does your client have any of the following sources of income?
 agent.have_any_other_income.heading                             = Does your client have any of the following sources of income?

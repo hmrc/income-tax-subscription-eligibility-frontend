@@ -25,12 +25,12 @@ object YesNoMapping {
   val option_yes: String = "yes"
   val option_no: String = "no"
 
-  def yesNoMapping(error: String): Formatter[YesNo] = new Formatter[YesNo] {
+  def yesNoMapping(error: String, args: Seq[Any] = Seq.empty): Formatter[YesNo] = new Formatter[YesNo] {
     override def bind(key: String, data: Map[String, String]): Either[Seq[FormError], YesNo] = {
       data.get(key) match {
         case Some(`option_yes`) => Right(Yes)
         case Some(`option_no`) => Right(No)
-        case _ => Left(Seq(FormError(key, error)))
+        case _ => Left(Seq(FormError(key, error, args)))
       }
     }
 

@@ -21,8 +21,11 @@ GET         /get-software                     uk.gov.hmrc.incometaxsubscriptione
 ## Terms of Participation
 GET         /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.show
 
+## Are you sole trader after
+GET         /sole-trader-start-after            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.show
+POST        /sole-trader-start-after            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.submit
+
 ## Check Compatible Software
 GET         /check-compatible-software        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckCompatibleSoftwareController.show
-
 ## Welsh language support
 GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)

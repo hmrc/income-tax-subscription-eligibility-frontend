@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.views.helpers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.helpers
 
 import play.api.data.Form
 import play.api.i18n.Messages
@@ -32,4 +32,5 @@ object PageTitleHelper {
 
     prefix + body + suffix
   }
+  
 }

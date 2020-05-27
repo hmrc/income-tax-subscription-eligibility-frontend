@@ -62,6 +62,11 @@ have_any_other_income.notIncludePoint1                          = llog banc neu 
 have_any_other_income.notIncludePoint2                          = difidendau
 have_any_other_income.error.summary                             = Dewiswch ’Iawn’ os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo
 
+## Are you a sole trader after page ##
+are_you_sole_trader_after.title                                 = A ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}?
+are_you_sole_trader_after.heading                               = A ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}?
+are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}
+
 ## Agent do you have any other income page
 agent.have_any_other_income.title                               = A oes gan eich cleient unrhyw un o’r ffynonellau canlynol o incwm?
 agent.have_any_other_income.heading                             = A oes gan eich cleient unrhyw un o’r ffynonellau canlynol o incwm?
