@@ -68,6 +68,12 @@ have_any_other_income.notIncludePoint1                          = llog banc neu 
 have_any_other_income.notIncludePoint2                          = difidendau
 have_any_other_income.error.summary                             = Dewiswch ’Iawn’ os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo
 
+## Accounting period check
+accounting_period_check.title                                     = A yw’ch holl gyfnodau cyfrifyddu busnes rhwng 6 Ebrill a 5 Ebrill?
+accounting_period_check.title.hint                                = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae’ch cyfnod cyfrifyddu yr un peth, oni bai eich bod wedi dewis dyddiadau gwahanol yn flaenorol.
+accounting_period_check.error                                     = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill
+accounting_period_check.error.summary                             = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill
+
 ## Are you a sole trader after page ##
 are_you_sole_trader_after.title                                 = A ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}?
 are_you_sole_trader_after.heading                               = A ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}?
