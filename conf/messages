@@ -32,13 +32,12 @@ overview.bullet_line_4                                          = business accou
 terms.title                                                     = Terms of participation
 terms.heading                                                   = Terms of participation
 terms.line1                                                     = By taking part in this pilot, you agree that you will:
-terms.bullet1                                                   = use relevant software to record income and expenses
-terms.bullet2                                                   = provide an email address so your client can be contacted by HMRC
-terms.bullet3                                                   = submit a quarterly report from the start of your accounting period
-terms.bullet4                                                   = send your final report by the 31 January at the end of their tax year
-terms.bullet5                                                   = declare any other income sources and reliefs you have
-terms.bullet6                                                   = tell HMRC if you stop trading or start a new business
-terms.bullet7                                                   = submit reports using your usual method if you leave this pilot
+terms.bullet1                                                   = use compatible software to record income and expenses
+terms.bullet2                                                   = provide an email address so you can be contacted by HMRC
+terms.bullet3                                                   = submit a quarterly update from the start of your accounting period
+terms.bullet4                                                   = send your final declaration by 31 January at the end of the tax year
+terms.bullet5                                                   = tell HMRC if you stop trading or start a new business
+terms.bullet6                                                   = use your usual Self Assessment method if you leave this pilot
 terms.line2                                                     = You can stop taking part in this pilot at any time.
 
 ## Get Software

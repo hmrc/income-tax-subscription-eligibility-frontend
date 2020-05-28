@@ -57,8 +57,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
         elementWithValue(messages.bullet3),
         elementWithValue(messages.bullet4),
         elementWithValue(messages.bullet5),
-        elementWithValue(messages.bullet6),
-        elementWithValue(messages.bullet7)
+        elementWithValue(messages.bullet6)
       )
     }
 
