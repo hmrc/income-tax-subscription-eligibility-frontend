@@ -82,7 +82,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
 
       result must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.OtherIncomeErrorController.show().url)
+        redirectUri(routes.CannotSignUpController.show().url)
       )
     }
 

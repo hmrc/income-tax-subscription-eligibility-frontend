@@ -53,7 +53,7 @@ class SoleTraderStartAfterController @Inject()(mcc: MessagesControllerComponents
     implicit request =>
       form(startDateLimit).bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(are_you_sole_trader_after(formWithErrors, routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate))), {
-          case Yes => Future.successful(Redirect(routes.OtherIncomeErrorController.show()))
+          case Yes => Future.successful(Redirect(routes.CannotSignUpController.show()))
           case No => Future.successful(Redirect(routes.TermsController.show()))
         }
       )
