@@ -153,4 +153,14 @@ object MessageLookup {
     val linkText = "send a Self Assessment tax return"
   }
 
+  object CheckAccountingPeriod {
+    val heading = "Are all of your business accounting periods from 6 April to 5 April?"
+    val title = s"$heading$suffix"
+    val hint = "The tax year runs from 6 April to 5 April. Your accounting period is the same, " +
+      "unless you have previously chosen different dates."
+    val yes = "Yes"
+    val no = "No"
+    val continue = "Continue"
+    val error = "Select yes if all of your business accounting periods are from 6 April to 5 April"
+  }
 }
