@@ -7,7 +7,7 @@ GET         /                                 uk.gov.hmrc.incometaxsubscriptione
 GET         /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.show
 POST        /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.submit
 
-GET         /error/other-income-error         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OtherIncomeErrorController.show
+GET         /error/cannot-sign-up             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CannotSignUpController.show
 ## Overview
 GET         /overview                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OverviewController.show
 

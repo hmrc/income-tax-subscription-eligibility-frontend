@@ -71,9 +71,23 @@ object MessageLookup {
     val error = "Select yes if your client has any of the following sources of income"
   }
 
-  object HaveAnyOtherIncomeError {
-    val title = "You cannot use this service yet"
-    val line1 = "This is a trial service. You may be able to use the ‘Use software to send Income Tax updates’ service in the future."
+  object CannotSignUp {
+    val title = "You cannot take part in this pilot"
+    val heading = "You cannot take part in this pilot"
+    val incomePara = "You will not be able to take part in this pilot if you receive income from:"
+    val incomeBullet1 = "being an employee"
+    val incomeBullet2 = "UK pensions or annuities"
+    val incomeBullet3 = "investments from outside the UK"
+    val incomeBullet4 = "capital gains"
+    val incomeBullet5 = "taxable state benefits"
+    val otherPara = "You also cannot take part if your:"
+    val otherBullet1 = "tax year does not align with the standard tax year"
+    val otherBullet2 = "sole trader business began within the last two years"
+    val otherBullet3 = "property business began within the last year"
+    val otherBullet4 = "accounting period does not align with the standard tax year"
+    val sendSelfAssessment = "You will need to send a Self Assessment tax return instead and you may be able to sign up in future."
+    val sendSelfAssessmentLink = "Self Assessment tax return"
+    val sendSelfAssessmentHref = "https://www.gov.uk/self-assessment-tax-returns/sending-return"
   }
 
   object Terms {

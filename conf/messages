@@ -76,6 +76,23 @@ are_you_sole_trader_after.title                                    = Are you a s
 are_you_sole_trader_after.heading                                  = Are you a sole trader that began trading on or after {0}?
 are_you_sole_trader_after.error.summary                            = Select yes if you are a sole trader that began trading on or after {0}
 
+## Cannot Sign Up Page
+cannot_sign_up.title                                            = You cannot take part in this pilot
+cannot_sign_up.heading                                          = You cannot take part in this pilot
+cannot_sign_up.income.para                                      = You will not be able to take part in this pilot if you receive income from:
+cannot_sign_up.income.bullet1                                   = being an employee
+cannot_sign_up.income.bullet2                                   = UK pensions or annuities
+cannot_sign_up.income.bullet3                                   = investments from outside the UK
+cannot_sign_up.income.bullet4                                   = capital gains
+cannot_sign_up.income.bullet5                                   = taxable state benefits
+cannot_sign_up.other.para                                       = You also cannot take part if your:
+cannot_sign_up.other.bullet1                                    = tax year does not align with the standard tax year
+cannot_sign_up.other.bullet2                                    = sole trader business began within the last two years
+cannot_sign_up.other.bullet3                                    = property business began within the last year
+cannot_sign_up.other.bullet4                                    = accounting period does not align with the standard tax year
+cannot_sign_up.send_self_assessment                             = You will need to send a {0} instead and you may be able to sign up in future.
+cannot_sign_up.send_self_assessment.link                        = Self Assessment tax return
+
 ## Agent do you have any other income page
 agent.have_any_other_income.title                               = Does your client have any of the following sources of income?
 agent.have_any_other_income.heading                             = Does your client have any of the following sources of income?
@@ -91,10 +108,6 @@ agent.have_any_other_income.includePoint6                       = taxable state 
 agent.have_any_other_income.notIncludePoint1                    = bank and building society interest
 agent.have_any_other_income.notIncludePoint2                    = dividends
 agent.have_any_other_income.error.summary                       = Select yes if your client has any of the following sources of income
-
-## Do you have any other income page errors
-have_any_other_income_error.title                               = You cannot use this service yet
-have_any_other_income_error.line1                               = This is a trial service. You may be able to use the ‘Use software to send Income Tax updates’ service in the future.
 
 ## Terms and Conditions Page ##
 agent.terms.title                                               = Terms of participation

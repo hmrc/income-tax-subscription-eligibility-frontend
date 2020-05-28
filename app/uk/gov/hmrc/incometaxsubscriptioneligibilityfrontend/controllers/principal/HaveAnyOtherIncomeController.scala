@@ -42,7 +42,7 @@ class HaveAnyOtherIncomeController @Inject()(mcc: MessagesControllerComponents)
     implicit request =>
       haveAnyOtherIncomeForm.bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(have_any_other_income(formWithErrors, routes.HaveAnyOtherIncomeController.submit()))), {
-          case Yes => Future.successful(Redirect(routes.OtherIncomeErrorController.show()))
+          case Yes => Future.successful(Redirect(routes.CannotSignUpController.show()))
           case No => Future.successful(Redirect(appConfig.incometaxSubscriptionFrontendFirstPageFullUrl))
         }
       )

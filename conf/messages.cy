@@ -73,6 +73,23 @@ are_you_sole_trader_after.title                                 = A ydych yn uni
 are_you_sole_trader_after.heading                               = A ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}?
 are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}
 
+## Cannot Sign Up Page
+cannot_sign_up.title                                            = Ni allwch gymryd rhan yn y cynllun peilot hwn
+cannot_sign_up.heading                                          = Ni allwch gymryd rhan yn y cynllun peilot hwn
+cannot_sign_up.income.para                                      = Ni fyddwch yn gallu cymryd rhan yn y cynllun peilot hwn os ydych yn cael incwm o’r canlynol:
+cannot_sign_up.income.bullet1                                   = bod yn gyflogai
+cannot_sign_up.income.bullet2                                   = pensiynau neu flwydd-daliadau’r DU
+cannot_sign_up.income.bullet3                                   = buddsoddiadau y tu allan i’r DU
+cannot_sign_up.income.bullet4                                   = enillion cyfalaf
+cannot_sign_up.income.bullet5                                   = budd-daliadau trethadwy’r Wladwriaeth
+cannot_sign_up.other.para                                       = Hefyd, ni allwch gymryd rhan os yw’r canlynol yn wir:
+cannot_sign_up.other.bullet1                                    = nid yw’ch blwyddyn dreth yn cyd-fynd â’r flwyddyn dreth safonol
+cannot_sign_up.other.bullet2                                    = dechreuoch eich busnes fel unig fasnachwr o fewn y ddwy flynedd ddiwethaf
+cannot_sign_up.other.bullet3                                    = dechreuoch eich busnes eiddo o fewn y flwyddyn ddiwethaf
+cannot_sign_up.other.bullet4                                    = nid yw’ch cyfnod cyfrifyddu yn cyd-fynd â’r flwyddyn dreth safonol
+cannot_sign_up.send_self_assessment                             = Rhaid i chi anfon {0} yn lle hynny.
+cannot_sign_up.send_self_assessment.link                        = Ffurflen Dreth Hunanasesiad
+
 ## Agent do you have any other income page
 agent.have_any_other_income.title                               = A oes gan eich cleient unrhyw un o’r ffynonellau canlynol o incwm?
 agent.have_any_other_income.heading                             = A oes gan eich cleient unrhyw un o’r ffynonellau canlynol o incwm?
@@ -88,11 +105,6 @@ agent.have_any_other_income.includePoint6                       = budd-daliadau 
 agent.have_any_other_income.notIncludePoint1                    = llog banc neu gymdeithas adeiladu
 agent.have_any_other_income.notIncludePoint2                    = difidendau
 agent.have_any_other_income.error.summary                       = Dewiswch ’iawn’ os oes gan eich cleient incwm o unrhyw un o’r ffynonellau canlynol
-
-
-## Do you have any other income page errors
-have_any_other_income_error.title                               = Ni allwch ddefnyddio’r gwasanaeth hwn
-have_any_other_income_error.line1                               = Mae hwn yn wasanaeth sy’n cael ei brofi. Efallai y gallwch ddefnyddio’r gwasanaeth ‘Defnyddio meddalwedd i anfon diweddariadau Treth Incwm’ yn y dyfodol.
 
 ## Agent Terms and Conditions Page ##
 agent.terms.title                                               = Telerau cymryd rhan
