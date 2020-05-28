@@ -1,41 +1,44 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
-import org.jsoup.nodes.Document
+import scala.collection.JavaConversions._
+import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 
 trait ViewSpec {
 
-  implicit class DocumentTest(doc: Document) {
+  implicit class ElementTest(element: Element) {
 
-    val getParagraphs: Elements = doc.getElementsByTag("p")
+    val content: Element = element.getElementsByTag("article").head
 
-    val getBulletPoints: Elements = doc.getElementsByTag("li")
+    val getParagraphs: Elements = element.getElementsByTag("p")
 
-    val getH1Element: Elements = doc.getElementsByTag("h1")
+    val getBulletPoints: Elements = element.getElementsByTag("li")
 
-    val getH2Elements: Elements = doc.getElementsByTag("h2")
+    val getH1Element: Elements = element.getElementsByTag("h1")
 
-    val getFormElements: Elements = doc.getElementsByClass("form-field-group")
+    val getH2Elements: Elements = element.getElementsByTag("h2")
 
-    val getErrorSummaryMessage: Elements = doc.select("#error-summary-display ul")
+    val getFormElements: Elements = element.getElementsByClass("form-field-group")
 
-    val getSubmitButton: Elements = doc.select("button[type=submit]")
+    val getErrorSummaryMessage: Elements = element.select("#error-summary-display ul")
 
-    val getHintText: String = doc.select(s"""span[class=form-hint]""").text()
+    val getSubmitButton: Elements = element.select("button[type=submit]")
 
-    val getForm: Elements = doc.select("form")
+    val getHintText: String = element.select(s"""span[class=form-hint]""").text()
 
-    def getSpan(id: String): Elements = doc.select(s"""span[id=$id]""")
+    val getForm: Elements = element.select("form")
 
-    def getLink(id: String): Elements = doc.select(s"""a[id=$id]""")
+    def getSpan(id: String): Elements = element.select(s"""span[id=$id]""")
 
-    def getTextFieldInput(id: String): Elements = doc.select(s"""input[id=$id]""")
+    def getLink(id: String): Elements = element.select(s"""a[id=$id]""")
 
-    def getFieldErrorMessage(id: String): Elements = doc.select(s"""a[id=$id-error-summary]""")
+    def getTextFieldInput(id: String): Elements = element.select(s"""input[id=$id]""")
 
-    def getBulletPointList: Elements = doc.select("ul[class=list list-bullet]")
+    def getFieldErrorMessage(id: String): Elements = element.select(s"""a[id=$id-error-summary]""")
+
+    def getBulletPointList: Elements = element.select("ul[class=list list-bullet]")
 
   }
 

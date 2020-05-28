@@ -21,11 +21,18 @@ object MessageLookup {
   val agentSuffix = " - Use software to report your client’s Income Tax - GOV.UK"
 
   object Overview {
-    val heading: String = "The way you record Self Assessment is changing"
+    val heading: String = "The way you complete Self Assessment is changing"
     val title = s"$heading$suffix"
     val line1 = "Making Tax Digital for Income Tax is a new way for self-employed businesses (sole traders) and landlords to send income tax updates to HMRC."
-    val line2 = "You can use software to keep your business records digitally and send income tax updates to HMRC, instead of filing a Self Assessment tax return."
-    val linkText = "Find out more about Making Tax Digital for income tax (opens in a new tab)"
+    val line2 = "You will need to use software to keep your business records and send updates, instead of filing a Self Assessment tax return."
+    val linkText = "Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab or window)."
+    val linkHref = "https://www.gov.uk/guidance/sign-up-your-business-for-making-tax-digital-for-income-tax"
+    val heading2 = "Before you start"
+    val line3 = "To register for Making Tax Digital for Income Tax, you will need:"
+    val bullet1 = "compatible software"
+    val bullet2 = "your business start dates and registered addresses"
+    val bullet3 = "a Government Gateway user ID and password"
+    val bullet4 = "business accounting year information"
   }
 
   object Base {
@@ -131,4 +138,5 @@ object MessageLookup {
     val para2 = "If your client has other sources of income, they need to send a Self Assessment tax return instead."
     val linkText = "send a Self Assessment tax return"
   }
+
 }
