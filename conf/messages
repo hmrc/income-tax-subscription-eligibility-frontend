@@ -14,11 +14,19 @@ principal_service_name.title                                    = Use software t
 agent_service_name.title                                        = Use software to report your client’s Income Tax
 
 ## Overview Page Content
-overview.title                                                  = The way you record Self Assessment is changing
-overview.heading                                                = The way you record Self Assessment is changing
+overview.title                                                  = The way you complete Self Assessment is changing
+overview.heading                                                = The way you complete Self Assessment is changing
 overview.line_1                                                 = Making Tax Digital for Income Tax is a new way for self-employed businesses (sole traders) and landlords to send income tax updates to HMRC.
-overview.line_2                                                 = You can use software to keep your business records digitally and send income tax updates to HMRC, instead of filing a Self Assessment tax return.
-overview.link_text                                              = Find out more about Making Tax Digital for income tax (opens in a new tab)
+overview.line_2                                                 = You will need to use software to keep your business records and send updates, instead of filing a Self Assessment tax return.
+overview.link_text                                              = Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab or window).
+overview.heading_2                                              = Before you start
+overview.line_3                                                 = To register for Making Tax Digital for Income Tax, you will need:
+overview.bullet_line_1                                          = compatible software
+overview.bullet_line_2                                          = your business start dates and registered addresses
+overview.bullet_line_3                                          = a Government Gateway user ID and password
+overview.bullet_line_4                                          = business accounting year information
+
+
 
 ## Terms and Conditions Page ##
 terms.title                                                     = Terms of participation

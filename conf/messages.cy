@@ -13,11 +13,17 @@ principal.service_name.title                                    = Defnyddio medd
 agent_service_name.title                                        = Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient
 
 ## Overview Page Content
-overview.title                                                  = Mae’r ffordd rydych yn cofnodi Hunanasesiad yn newid
-overview.heading                                                = Mae’r ffordd rydych yn cofnodi Hunanasesiad yn newid
+overview.title                                                  = Mae’r ffordd rydych yn llenwi Hunanasesiad yn newid
+overview.heading                                                = Mae’r ffordd rydych yn llenwi Hunanasesiad yn newid
 overview.line_1                                                 = Mae’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm yn ffordd newydd i fusnesau hunangyflogedig (unig fasnachwyr) a landlordiaid anfon diweddariadau treth incwm i CThEM.
-overview.line_2                                                 = Yn hytrach na chyflwyno Ffurflen Dreth Hunanasesiad, gallwch ddefnyddio meddalwedd i gadw’ch cofnodion busnes yn ddigidol ac anfon diweddariadau ynghylch Treth Incwm i CThEM.
-overview.link_text                                              = Dysgu mwy ynghylch y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor mewn tab newydd)
+overview.line_2                                                 = Yn hytrach na chyflwyno Ffurflen Dreth Hunanasesiad, bydd angen i chi ddefnyddio meddalwedd i gadw’ch cofnodion busnes ac anfon diweddariadau.
+overview.link_text                                              = Dod o hyd i feddalwedd sy’n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor tab neu ffenestr newydd).
+overview.heading_2                                              = Cyn i chi ddechrau
+overview.line_3                                                 = I gofrestru ar gyfer Troi Treth yn Ddigidol ar gyfer Treth Incwm, bydd angen y canlynol arnoch:
+overview.bullet_line_1                                          = meddalwedd sy’n cydweddu
+overview.bullet_line_2                                          = dyddiadau dechrau’ch busnes a chyfeiriad cofrestredig eich busnes
+overview.bullet_line_3                                          = Dynodydd Defnyddiwr (ID) a chyfrinair ar gyfer Porth y Llywodraeth
+overview.bullet_line_4                                          = gwybodaeth am flwyddyn gyfrifyddu’r busnes
 
 ## Terms and Conditions Page ##
 terms.title                                                     = Telerau cymryd rhan
