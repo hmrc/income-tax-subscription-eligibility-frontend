@@ -43,6 +43,13 @@ get_software.heading                                            = Bydd angen i c
 get_software.line_1                                             = Rhaid i’r feddalwedd a ddefnyddiwch allu anfon adroddiadau incwm a threuliau i CThEM.
 get_software.find_software                                      = Dod o hyd i feddalwedd sy’n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor mewn tab newydd)
 
+## Property Trading Before Date page ##
+property_trading_after.title                                    = A ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ôl {0}?
+property_trading_after.heading                                  = A ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ôl {0}?
+property_trading_after.line                                     = Mae hyn yn cynnwys bod yn landlord ac yn rhoi llety gwyliau ar osod.
+property_trading_after.error.summary                            = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}
+
+
 ## "Have you got software" page messages ##
 have_you_got_software.title                                     = A ydych yn defnyddio meddalwedd gyfrifyddu ar hyn o bryd?
 have_you_got_software.hint                                      = Nid yw hyn yn cynnwys unrhyw feddalwedd daenlen.

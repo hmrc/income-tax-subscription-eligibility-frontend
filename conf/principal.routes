@@ -11,6 +11,10 @@ GET         /error/cannot-sign-up             uk.gov.hmrc.incometaxsubscriptione
 ## Overview
 GET         /overview                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OverviewController.show
 
+## Property date check
+GET         /property-start-after              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.show
+POST        /property-start-after              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.submit
+
 ## Have you got software
 GET         /have-you-got-software            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveYouGotSoftwareController.show
 POST        /have-you-got-software            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveYouGotSoftwareController.submit

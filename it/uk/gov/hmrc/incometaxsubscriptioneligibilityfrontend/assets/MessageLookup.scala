@@ -53,6 +53,12 @@ object MessageLookup {
     val error = "Select yes if you have any sources of income other than self employment or property income"
   }
 
+  object PropertyStartAfter {
+    def title(date: String) = s"Do you own a property business that began trading on or after $date?"
+    val hint = "This includes being a landlord and letting holiday properties."
+    def error(date: String) = s"Select yes if you own a property business that began trading on or after $date"
+  }
+
   object SoleTraderStartAfter {
     def title(date: String) = s"Are you a sole trader that began trading on or after $date?"
     def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date"

@@ -26,7 +26,7 @@ trait ViewSpec {
 
     val getSubmitButton: Elements = element.select("button[type=submit]")
 
-    val getHintText: String = element.select(s"""span[class=form-hint]""").text()
+    val getHintText: String = element.select(s"""[class=form-hint]""").text()
 
     val getForm: Elements = element.select("form")
 
