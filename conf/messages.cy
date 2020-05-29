@@ -62,10 +62,10 @@ check_compatible_software.line                                  = Rhaid i chi wi
 check_compatible_software.link                                  = Gwirio a yw’ch meddalwedd yn cydweddu (yn agor mewn tab newydd)
 
 ## Do you have any other income page
-have_any_other_income.title                                     = A oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo?
+have_any_other_income.title                                     = Ar wahân i hunangyflogaeth neu eiddo, a oes gennych unrhyw ffynonellau eraill o incwm?
 have_any_other_income.include                                   = Gallai hyn gynnwys:
 have_any_other_income.notInclude                                = Nid yw hyn yn cynnwys:
-have_any_other_income.includePoint1                             = fel cyflogai i fusnes arall
+have_any_other_income.includePoint1                             = incwm fel cyflogai
 have_any_other_income.includePoint2                             = pensiynau neu flwydd-daliadau’r DU
 have_any_other_income.includePoint3                             = buddsoddiadau y tu allan i’r DU
 have_any_other_income.includePoint4                             = enillion cyfalaf

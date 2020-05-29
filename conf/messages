@@ -58,10 +58,10 @@ check_compatible_software.line                                  = You must check
 check_compatible_software.link                                  = Check if your software is compatible (opens in a new tab)
 
 ## Do you have any other income page
-have_any_other_income.title                                     = Do you have any sources of income other than self employment or property income?
+have_any_other_income.title                                     = Apart from self-employment or property, do you have any other sources of income?
 have_any_other_income.include                                   = This could include:
 have_any_other_income.notInclude                                = This does not include:
-have_any_other_income.includePoint1                             = as an employee for another business
+have_any_other_income.includePoint1                             = as an employee
 have_any_other_income.includePoint2                             = UK pensions or annuities
 have_any_other_income.includePoint3                             = investments from outside the UK
 have_any_other_income.includePoint4                             = capital gains
