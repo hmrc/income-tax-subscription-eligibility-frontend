@@ -95,7 +95,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
 
       result must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.TermsController.show().url)
+        redirectUri(routes.CheckAccountingPeriodController.show().url)
       )
 
     }

@@ -91,7 +91,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
 
       result must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.TermsController.show().url)
+        redirectUri(routes.PropertyTradingStartAfterController.show().url)
       )
 
     }

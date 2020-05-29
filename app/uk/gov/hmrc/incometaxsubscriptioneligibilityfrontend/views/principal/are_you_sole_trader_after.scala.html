@@ -33,21 +33,21 @@
         @if(areYouSoleTraderAfterForm.hasErrors) {
             <div class="form-group form-field-group--error">
                 <span class="error-notification bold" >@messages("are_you_sole_trader_after.error.summary", startDateLimit)</span>
-        } else {
+                } else {
             <div class="form-group">
-        }
-            <fieldset class="inline">
-                <legend class="visuallyhidden">@messages("are_you_sole_trader_after.heading", startDateLimit)</legend>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no" name="yes-no" value="yes">
-                    <label for="choice-Yes">@messages("base.yes")</label>
-                </div>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no-2" name="yes-no" value="no">
-                    <label for="choice-No">@messages("base.no")</label>
-                </div>
-            </fieldset>
-        </div>
+            }
+        <fieldset class="inline">
+            <legend class="visuallyhidden">@messages("are_you_sole_trader_after.heading", startDateLimit)</legend>
+            <div class="multiple-choice">
+                <input type="radio" id="yes-no" name="yes-no" value="yes">
+                <label for="yes-no">@messages("base.yes")</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" id="yes-no-2" name="yes-no" value="no">
+                <label for="yes-no-2">@messages("base.no")</label>
+            </div>
+        </fieldset>
+    </div>
 
         <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
     }

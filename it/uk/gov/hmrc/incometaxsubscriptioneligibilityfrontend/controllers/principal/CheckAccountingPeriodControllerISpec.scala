@@ -93,7 +93,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       result must have(
         httpStatus(SEE_OTHER),
         //This needs to be changed to CannotSignup page
-        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/terms-of-participation")
+        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/error/cannot-sign-up")
       )
 
     }

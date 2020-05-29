@@ -31,7 +31,14 @@ class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appC
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(terms(postAction = routes.HaveAnyOtherIncomeController.show()))
+        Ok(terms(postAction = routes.TermsController.submit()))
       )
   }
+
+  val submit: Action[AnyContent] = Action {
+    implicit request =>
+      Redirect(appConfig.incometaxSubscriptionFrontendFirstPageFullUrl)
+  }
+
+
 }
