@@ -43,7 +43,7 @@ class CheckAccountingPeriodController @Inject()(mcc: MessagesControllerComponent
       accountingPeriodCheckForm.bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(accounting_period_check(formWithErrors, routes.CheckAccountingPeriodController.submit()))), {
           case Yes => Future.successful(Redirect(routes.TermsController.show()))
-          case No => Future.successful(Redirect(routes.TermsController.show)) // Need to change to CannotSignUpController
+          case No => Future.successful(Redirect(routes.CannotSignUpController.show()))
         }
       )
   }

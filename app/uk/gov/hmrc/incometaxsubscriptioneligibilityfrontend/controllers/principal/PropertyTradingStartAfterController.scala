@@ -51,7 +51,7 @@ class PropertyTradingStartAfterController @Inject()(mcc: MessagesControllerCompo
         formWithErrors => Future.successful(BadRequest(property_trading_after(
           formWithErrors, routes.PropertyTradingStartAfterController.submit(), startDateLimit.toLongDate))), {
           case Yes => Future.successful(Redirect(routes.CannotSignUpController.show()))
-          case No => Future.successful(Redirect(routes.TermsController.show()))
+          case No => Future.successful(Redirect(routes.CheckAccountingPeriodController.show()))
         }
       )
   }

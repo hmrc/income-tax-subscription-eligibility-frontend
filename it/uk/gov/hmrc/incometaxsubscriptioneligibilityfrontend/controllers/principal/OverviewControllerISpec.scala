@@ -12,14 +12,11 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
 
 
-
   "GET /overview" should {
 
     lazy val result = get("/overview")
     lazy val doc: Document = Jsoup.parse(result.body)
     lazy val content: Element = doc.content
-
-
 
 
     "return OK" in {
@@ -71,7 +68,7 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
     "have the correct form" in {
       doc.getForm must have(
         method("GET"),
-        action(routes.HaveYouGotSoftwareController.show().url)
+        action(routes.HaveAnyOtherIncomeController.show().url)
       )
     }
 

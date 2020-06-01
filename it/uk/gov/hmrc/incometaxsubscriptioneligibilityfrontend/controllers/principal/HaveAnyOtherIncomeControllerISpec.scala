@@ -87,7 +87,9 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       val result = post("/other-income")("yes-no" -> "yes")
 
       result must have(
-        httpStatus(SEE_OTHER)
+        httpStatus(SEE_OTHER),
+        redirectUri(routes.CannotSignUpController.show().url)
+
       )
     }
 
@@ -95,7 +97,9 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       val result = post("/other-income")("yes-no" -> "no")
 
       result must have(
-        httpStatus(SEE_OTHER)
+        httpStatus(SEE_OTHER),
+        redirectUri(routes.SoleTraderStartAfterController.show().url)
+
       )
 
     }

@@ -24,6 +24,7 @@ GET         /get-software                     uk.gov.hmrc.incometaxsubscriptione
 
 ## Terms of Participation
 GET         /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.show
+POST        /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.submit
 
 ## Are you sole trader after
 GET         /sole-trader-start-after            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.show
