@@ -46,10 +46,10 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       val radios = form.select("input[type=radio]")
 
       radios.size() mustBe 2
-      radios.get(0).attr("id") mustBe "choice-Yes"
+      radios.get(0).attr("id") mustBe "yes-no"
       labels.get(0).text() mustBe commonMessages.yes
 
-      radios.get(1).attr("id") mustBe "choice-No"
+      radios.get(1).attr("id") mustBe "yes-no-2"
       labels.get(1).text() mustBe commonMessages.no
 
       val submitButton = form.select("button[type=submit]")
