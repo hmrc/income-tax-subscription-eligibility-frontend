@@ -109,30 +109,6 @@ object MessageLookup {
     val line2 = "You can stop taking part in this pilot at any time."
   }
 
-  object GetSoftware {
-    val header = "You will need to get compatible software after signing up"
-    val title = s"$header$suffix"
-    val line1 = "The software you use must be able to send income and expense reports to HMRC."
-    val findSoftware = "Find software that’s compatible with Making Tax Digital for Income Tax (opens in a new tab)"
-    val findSoftwareLink = "https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
-  }
-
-  object HaveYouGotSoftware {
-    val heading = "Do you currently use accounting software?"
-    val title = s"$heading$suffix"
-    val hint = "This does not include any spreadsheet software."
-    val yes = "Yes"
-    val no = "No"
-    val continue = "Continue"
-  }
-
-  object CheckCompatibleSoftware {
-    val heading = "Check that the software you use is compatible with Making Tax Digital for Income Tax"
-    val title = s"$heading$suffix"
-    val line = "You must check that your software can connect and send income and expense reports to HMRC."
-    val link = "Check if your software is compatible (opens in a new tab)"
-    val linkHref = "https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
-  }
 
   object AgentTerms {
     val heading: String = "Terms of participation"

@@ -50,10 +50,6 @@ class AppConfig @Inject()(config: ServicesConfig) {
 
   lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"
 
-  lazy val softwareOptionsUrl: String = s"$govUkUrl/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
-
-  val checkCompatibleSoftware: String = s"$govUkUrl/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax"
-
   def languageMap: Map[String, Lang] = Map(
     "english" -> Lang("en"),
     "cymraeg" -> Lang("cy"))
