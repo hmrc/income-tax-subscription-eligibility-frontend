@@ -26,8 +26,6 @@ overview.bullet_line_2                                          = your business 
 overview.bullet_line_3                                          = a Government Gateway user ID and password
 overview.bullet_line_4                                          = business accounting year information
 
-
-
 ## Terms and Conditions Page ##
 terms.title                                                     = Terms of participation
 terms.heading                                                   = Terms of participation
@@ -39,23 +37,6 @@ terms.bullet4                                                   = send your fina
 terms.bullet5                                                   = tell HMRC if you stop trading or start a new business
 terms.bullet6                                                   = use your usual Self Assessment method if you leave this pilot
 terms.line2                                                     = You can stop taking part in this pilot at any time.
-
-## Get Software
-get_software.title                                              = You will need to get compatible software after signing up
-get_software.heading                                            = You will need to get compatible software after signing up
-get_software.line_1                                             = The software you use must be able to send income and expense reports to HMRC.
-get_software.find_software                                      = Find software that’s compatible with Making Tax Digital for Income Tax (opens in a new tab)
-
-## "Have you got software" page messages ##
-have_you_got_software.title                                     = Do you currently use accounting software?
-have_you_got_software.hint                                      = This does not include any spreadsheet software.
-have_you_got_software.error                                     = Select yes if you currently use accounting software
-
-## Check for Compatible Software
-check_compatible_software.title                                 = Check that the software you use is compatible with Making Tax Digital for Income Tax
-check_compatible_software.heading                               = Check that the software you use is compatible with Making Tax Digital for Income Tax
-check_compatible_software.line                                  = You must check that your software can connect and send income and expense reports to HMRC.
-check_compatible_software.link                                  = Check if your software is compatible (opens in a new tab)
 
 ## Do you have any other income page
 have_any_other_income.title                                     = Apart from self-employment or property, do you have any other sources of income?
