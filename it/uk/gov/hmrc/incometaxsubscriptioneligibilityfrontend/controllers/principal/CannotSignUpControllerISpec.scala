@@ -39,7 +39,7 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "have a view with the correct heading" in {
-      content.getH1Element.text mustBe messages.title
+      content.getH1Element.text mustBe messages.heading
     }
 
     "have a view with the correct first paragraph" in {
@@ -65,7 +65,7 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
       content.select("ul:nth-of-type(2)").select("li:nth-of-type(4)").text mustBe messages.otherBullet4
     }
 
-    "have a view with the correct Send Assessment Paragraph with link" in {
+    "have a view with the correct Send Self Assessment Paragraph with link" in {
       content.select("p:nth-of-type(3)").text mustBe messages.sendSelfAssessment
       content.select("a").text mustBe messages.sendSelfAssessmentLink
       content.select("a").attr("href") mustBe messages.sendSelfAssessmentHref

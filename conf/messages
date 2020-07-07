@@ -38,6 +38,13 @@ terms.bullet5                                                   = tell HMRC if y
 terms.bullet6                                                   = use your usual Self Assessment method if you leave this pilot
 terms.line2                                                     = You can stop taking part in this pilot at any time.
 
+##Covid you cannot signup page
+covid_cannot_signup.title                                       = You cannot take part in this pilot
+covid_cannot_signup.heading                                     = You cannot take part in this pilot
+covid_cannot_signup.para.1                                      = You will not be able to take part in this pilot if you have ever claimed a coronavirus (COVID-19) grant, or intend to do so in future.
+covid_cannot_signup.send_self_assessment                        = You will need to send a {0} instead and you may be able to sign up in future.
+covid_cannot_signup.send_self_assessment.link                   = Self Assessment tax return
+
 ## Do you have any other income page
 have_any_other_income.title                                     = Apart from self-employment or property, do you have any other sources of income?
 have_any_other_income.include                                   = This could include:

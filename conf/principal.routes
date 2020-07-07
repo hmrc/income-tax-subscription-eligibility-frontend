@@ -1,3 +1,4 @@
+
 ## microservice specific routes
 
 ## Index route
@@ -29,3 +30,8 @@ GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptione
 ## Check accounting period
 GET         /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.show
 POST        /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.submit
+
+## Have you claimed Covid Grant
+
+
+GET         /error/covid-cannot-signup        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CovidCannotSignupController.show
