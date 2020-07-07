@@ -35,6 +35,15 @@ object MessageLookup {
     val bullet4 = "business accounting year information"
   }
 
+  object CovidCannotSignup{
+    val title = "You cannot take part in this pilot"
+    val heading = "You cannot take part in this pilot"
+    val para1= "You will not be able to take part in this pilot if you have ever claimed a coronavirus (COVID-19) grant, or intend to do so in future."
+    val SelfAssessment = "You will need to send a Self Assessment tax return instead and you may be able to sign up in future."
+    val SelfAssessmentLink = "Self Assessment tax return"
+    val SelfAssessmentHref = "https://www.gov.uk/self-assessment-tax-returns/sending-return"
+  }
+
   object Base {
     val continue = "Continue"
     val yes = "Yes"

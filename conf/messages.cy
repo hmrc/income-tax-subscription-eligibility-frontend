@@ -37,6 +37,13 @@ terms.bullet5                                                   = rhoi gwybod i 
 terms.bullet6                                                   = defnyddio’ch dull arferol ar gyfer Hunanasesiad os ydych yn gadael y cynllun peilot hwn
 terms.line2                                                     = Gallwch roi’r gorau i gymryd rhan yn y cynllun hwn ar unrhyw adeg.
 
+##Covid you cannot signup page
+covid_cannot_signup.title                                       = Ni allwch gymryd rhan yn y cynllun peilot hwn
+covid_cannot_signup.header                                      = Ni allwch gymryd rhan yn y cynllun peilot hwn
+covid_cannot_signup.para.1                                      = Ni fyddwch yn gallu cymryd rhan yn y cynllun peilot hwn os ydych erioed wedi hawlio grant coronafeirws (COVID-19) neu’n bwriadu gwneud hynny yn y dyfodol.
+covid_cannot_signup.send_self_assessment                        = Rhaid i chi anfon {0} yn lle hynny.
+covid_cannot_signup.send_self_assessment.link                   = Ffurflen Dreth Hunanasesiad
+
 ## Get Software
 get_software.title                                              = Bydd angen i chi gael meddalwedd sy’n cydweddu ar ôl cofrestru
 get_software.heading                                            = Bydd angen i chi gael meddalwedd sy’n cydweddu ar ôl cofrestru
@@ -48,7 +55,6 @@ property_trading_after.title                                    = A ydych yn ber
 property_trading_after.heading                                  = A ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ôl {0}?
 property_trading_after.line                                     = Mae hyn yn cynnwys bod yn landlord ac yn rhoi llety gwyliau ar osod.
 property_trading_after.error.summary                            = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}
-
 
 ## "Have you got software" page messages ##
 have_you_got_software.title                                     = A ydych yn defnyddio meddalwedd gyfrifyddu ar hyn o bryd?
