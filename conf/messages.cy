@@ -8,6 +8,7 @@ base.govuk                                                      = GOV.UK
 base.error_heading                                              = Mae problem wedi codi
 base.accept_and_continue                                        = Derbyn ac yn eich blaen
 
+
 ## Service name
 principal.service_name.title                                    = Defnyddio meddalwedd i anfon diweddariadau Treth Incwm
 agent_service_name.title                                        = Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient
@@ -146,3 +147,11 @@ agent.income-sources-error.bullet3                                    = cleienti
 agent.income-sources-error.para2.part1                                = Os oes gan eich cleient ffynonellau eraill o incwm, mae’n rhaid iddo anfon
 agent.income-sources-error.para2.link                                 = Ffurflen Dreth Hunanasesiad
 agent.income-sources-error.para2.part2                                = yn lle hynny.
+
+## Covid Cannot Sign Up page ##
+agent.covid_cannot_sign_up.title                                      = Ni all eich cleient gymryd rhan yn y cynllun peilot hwn
+agent.covid_cannot_sign_up.heading                                    = Ni all eich cleient gymryd rhan yn y cynllun peilot hwn
+agent.covid_cannot_sign_up.line1                                      = Ni fyddwch yn gallu cymryd rhan yn y cynllun peilot hwn ar ran eich cleient os yw erioed wedi hawlio grant coronafeirws (COVID-19) neu’n bwriadu gwneud hynny yn y dyfodol.
+agent.covid_cannot_sign_up.line2                                      = Bydd angen i chi anfon {0} yn lle hynny, ac efallai y bydd modd i chi gofrestru’ch cleient yn y dyfodol.
+agent.covid_cannot_sign_up.link                                       = Ffurflen Dreth Hunanasesiad
+agent.covid_cannot_sign_up.button                                     = Cofrestru cleient arall

@@ -130,3 +130,11 @@ agent.income-sources-error.bullet3                                    = have a s
 agent.income-sources-error.para2.part1                                = If your client has other sources of income, they need to
 agent.income-sources-error.para2.link                                 = send a Self Assessment tax return
 agent.income-sources-error.para2.part2                                = instead.
+
+## Covid Cannot Sign Up page ##
+agent.covid_cannot_sign_up.title                                      = Your client cannot take part in this pilot
+agent.covid_cannot_sign_up.heading                                    = Your client cannot take part in this pilot
+agent.covid_cannot_sign_up.line1                                      = You will not be able to take part in this pilot on your client’s behalf if they have ever claimed a coronavirus (COVID-19) grant, or intended to do so in future.
+agent.covid_cannot_sign_up.line2                                      = You will need to send a {0} instead and you may be able to sign your client up in future.
+agent.covid_cannot_sign_up.link                                       = Self Assessment tax return
+agent.covid_cannot_sign_up.button                                     = Sign up another client
