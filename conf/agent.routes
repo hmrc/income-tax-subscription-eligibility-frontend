@@ -14,5 +14,9 @@ POST        /other-income                     uk.gov.hmrc.incometaxsubscriptione
 ## Other Sources of Income Error
 GET         /other-sources-of-income-error    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.OtherIncomeSourcesErrorController.show
 
+## Covid Cannot Sign Up Page
+GET         /error/covid-cannot-sign-up       uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.CovidCannotSignUpController.show
+
+
 ## Welsh language support
 GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
