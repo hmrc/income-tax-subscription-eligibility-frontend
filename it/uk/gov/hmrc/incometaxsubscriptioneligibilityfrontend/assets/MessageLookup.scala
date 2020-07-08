@@ -157,6 +157,18 @@ object MessageLookup {
     val error = "Select yes if all of your business accounting periods are from 6 April to 5 April"
   }
 
+  object Covid19ClaimCheck {
+    val title = "Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?"
+    val join_pilot = "You are not able to currently join the pilot if you:"
+    val join_pilot_point1 = "have claimed through the Self-Employment Support Scheme (opens in new tab) for sole traders"
+    val join_pilot_point2 = "are an employer and have furloughed one or more of your employees using the Coronavirus Job Retention Scheme (opens in new tab)"
+    val join_pilot_points: Seq[String] = Seq (join_pilot_point1, join_pilot_point2)
+    val claim_sick_pay = "If you have claimed a rebate through the Coronavirus Statutory Sick Pay Rebate " +
+      "Scheme (opens in new tab) and have not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job " +
+      "Retention Scheme, you can still sign up for the pilot."
+    val error = "Select yes if you have or intend to claim a coronavirus (COVID‑19) grant"
+  }
+
   object AgentsCovidCannotSignUp {
     val heading = "Your client cannot take part in this pilot"
     val title = s"$heading$agentSuffix"

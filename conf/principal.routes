@@ -13,16 +13,16 @@ GET         /error/cannot-sign-up             uk.gov.hmrc.incometaxsubscriptione
 GET         /overview                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OverviewController.show
 
 ## Property date check
-GET         /property-start-after              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.show
-POST        /property-start-after              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.submit
+GET         /property-start-after             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.show
+POST        /property-start-after             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.submit
 
 ## Terms of Participation
 GET         /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.show
 POST        /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.submit
 
 ## Are you sole trader after
-GET         /sole-trader-start-after            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.show
-POST        /sole-trader-start-after            uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.submit
+GET         /sole-trader-start-after          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.show
+POST        /sole-trader-start-after          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.submit
 
 ## Welsh language support
 GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
@@ -31,7 +31,11 @@ GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptione
 GET         /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.show
 POST        /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.submit
 
-## Have you claimed Covid Grant
 
+## Covid-19 claim check
+GET         /covid-19                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.Covid19ClaimCheckController.show
+POST        /covid-19                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.Covid19ClaimCheckController.submit
 
-GET         /error/covid-cannot-signup        uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CovidCannotSignupController.show
+## Covid-19 claim check Kick out
+GET         /error/covid-cannot-sign-up       uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CovidCannotSignupController.show
+
