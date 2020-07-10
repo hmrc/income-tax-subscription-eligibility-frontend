@@ -121,20 +121,32 @@ agent.terms.bullet6                                             = submit reports
 agent.terms.line2                                               = These terms are not contractual and your client can stop taking part in this pilot at any time.
 
 ## Other sources of income error page ##
-agent.income-sources-error.title                                      = Your client can’t use this service
-agent.income-sources-error.heading                                    = You cannot use this service
-agent.income-sources-error.para1                                      = You can only report Income Tax through software for clients that either:
-agent.income-sources-error.bullet1                                    = have a sole trader business
-agent.income-sources-error.bullet2                                    = rent out a UK property
-agent.income-sources-error.bullet3                                    = have a sole trader business and rent out a UK property
-agent.income-sources-error.para2.part1                                = If your client has other sources of income, they need to
-agent.income-sources-error.para2.link                                 = send a Self Assessment tax return
-agent.income-sources-error.para2.part2                                = instead.
+agent.income-sources-error.title                                = Your client can’t use this service
+agent.income-sources-error.heading                              = You cannot use this service
+agent.income-sources-error.para1                                = You can only report Income Tax through software for clients that either:
+agent.income-sources-error.bullet1                              = have a sole trader business
+agent.income-sources-error.bullet2                              = rent out a UK property
+agent.income-sources-error.bullet3                              = have a sole trader business and rent out a UK property
+agent.income-sources-error.para2.part1                          = If your client has other sources of income, they need to
+agent.income-sources-error.para2.link                           = send a Self Assessment tax return
+agent.income-sources-error.para2.part2                          = instead.
+
+## Covid-19 page ##
+covid_19_claim_check.title                                      = Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
+covid_19_claim_check.join_pilot                                 = You are not able to currently join the pilot if you:
+covid_19_claim_check.join_pilot_point1                          = have claimed through the {0} for sole traders
+covid_19_claim_check.join_pilot_point1.link_text                = Self-Employment Support Scheme (opens in new tab)
+covid_19_claim_check.join_pilot_point2                          = are an employer and have furloughed one or more of your employees using the
+covid_19_claim_check.join_pilot_point2.link_text                = Coronavirus Job Retention Scheme (opens in new tab)
+covid_19_claim_check.claim_sick_pay                             = If you have claimed a rebate through the {0} and have not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme, you can still sign up for the pilot.
+covid_19_claim_check.claim_sick_pay.link_text                   = Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)
+covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
 
 ## Covid Cannot Sign Up page ##
-agent.covid_cannot_sign_up.title                                      = Your client cannot take part in this pilot
-agent.covid_cannot_sign_up.heading                                    = Your client cannot take part in this pilot
-agent.covid_cannot_sign_up.line1                                      = You will not be able to take part in this pilot on your client’s behalf if they have ever claimed a coronavirus (COVID-19) grant, or intended to do so in future.
-agent.covid_cannot_sign_up.line2                                      = You will need to send a {0} instead and you may be able to sign your client up in future.
-agent.covid_cannot_sign_up.link                                       = Self Assessment tax return
-agent.covid_cannot_sign_up.button                                     = Sign up another client
+agent.covid_cannot_sign_up.title                                = Your client cannot take part in this pilot
+agent.covid_cannot_sign_up.heading                              = Your client cannot take part in this pilot
+agent.covid_cannot_sign_up.line1                                = You will not be able to take part in this pilot on your client’s behalf if they have ever claimed a coronavirus (COVID-19) grant, or intended to do so in future.
+agent.covid_cannot_sign_up.line2                                = You will need to send a {0} instead and you may be able to sign your client up in future.
+agent.covid_cannot_sign_up.link                                 = Self Assessment tax return
+agent.covid_cannot_sign_up.button                               = Sign up another client
+

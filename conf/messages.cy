@@ -138,20 +138,32 @@ agent.terms.bullet6                                             = cyflwyno adrod
 agent.terms.line2                                               = Nid yw’r telerau hyn yn gontractiol, a gall eich cleient roi’r gorau i gymryd rhan yn y peilot hwn ar unrhyw adeg.
 
 ## Other sources of income error page ##
-agent.income-sources-error.title                                      = Ni allwch ddefnyddio’r gwasanaeth hwn
-agent.income-sources-error.heading                                    = Ni allwch ddefnyddio’r gwasanaeth hwn
-agent.income-sources-error.para1                                      = Gallwch dim ond rhoi gwybod am Dreth Incwm drwy feddalwedd ar gyfer y canlynol:
-agent.income-sources-error.bullet1                                    = cleientiaid sydd â busnes unig fasnachwr
-agent.income-sources-error.bullet2                                    = cleientiaid sy’n rhoi eiddo yn y DU ar osod
-agent.income-sources-error.bullet3                                    = cleientiaid sydd â busnes unig fasnachwr ac yn gosod eiddo yn y DU
-agent.income-sources-error.para2.part1                                = Os oes gan eich cleient ffynonellau eraill o incwm, mae’n rhaid iddo anfon
-agent.income-sources-error.para2.link                                 = Ffurflen Dreth Hunanasesiad
-agent.income-sources-error.para2.part2                                = yn lle hynny.
+agent.income-sources-error.title                                = Ni allwch ddefnyddio’r gwasanaeth hwn
+agent.income-sources-error.heading                              = Ni allwch ddefnyddio’r gwasanaeth hwn
+agent.income-sources-error.para1                                = Gallwch dim ond rhoi gwybod am Dreth Incwm drwy feddalwedd ar gyfer y canlynol:
+agent.income-sources-error.bullet1                              = cleientiaid sydd â busnes unig fasnachwr
+agent.income-sources-error.bullet2                              = cleientiaid sy’n rhoi eiddo yn y DU ar osod
+agent.income-sources-error.bullet3                              = cleientiaid sydd â busnes unig fasnachwr ac yn gosod eiddo yn y DU
+agent.income-sources-error.para2.part1                          = Os oes gan eich cleient ffynonellau eraill o incwm, mae’n rhaid iddo anfon
+agent.income-sources-error.para2.link                           = Ffurflen Dreth Hunanasesiad
+agent.income-sources-error.para2.part2                          = yn lle hynny.
+
+## Covid-19 page ##
+covid_19_claim_check.title                                      = A ydych erioed wedi hawlio grant coronafeirws (COVID‑19) neu a ydych yn bwriadu gwneud hynny yn y dyfodol?
+covid_19_claim_check.join_pilot                                 = Ni allwch ymuno â’r cynllun peilot ar hyn o bryd os:
+covid_19_claim_check.join_pilot_point1                          = ydych wedi hawlio trwy’r {0} ar gyfer unig fasnachwyr
+covid_19_claim_check.join_pilot_point1.link_text                = Cynllun Cymhorthdal Hunangyflogaeth (yn agor mewn tab newydd)
+covid_19_claim_check.join_pilot_point2                          = ydych yn gyflogwr a’ch bod wedi rhoi un neu fwy o’ch cyflogeion ar ffyrlo gan ddefnyddio’r
+covid_19_claim_check.join_pilot_point2.link_text                = Cynllun Cadw Swyddi yn sgil Coronafeirws (yn agor mewn tab newydd)
+covid_19_claim_check.claim_sick_pay                             = Os ydych wedi hawlio ad-daliad trwy’r {0}, ac nad ydych wedi cyflwyno hawliad – nac yn mynd i gyflwyno hawliad – ar gyfer y Cynllun Cymhorthdal Hunangyflogaeth na’r Cynllun Cadw Swyddi yn sgil Coronafeirws, gallwch gofrestru ar gyfer y cynllun peilot o hyd.
+covid_19_claim_check.claim_sick_pay.link_text                   = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws (yn agor mewn tab newydd)
+covid_19_claim_check.error.summary                              = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
 
 ## Covid Cannot Sign Up page ##
-agent.covid_cannot_sign_up.title                                      = Ni all eich cleient gymryd rhan yn y cynllun peilot hwn
-agent.covid_cannot_sign_up.heading                                    = Ni all eich cleient gymryd rhan yn y cynllun peilot hwn
-agent.covid_cannot_sign_up.line1                                      = Ni fyddwch yn gallu cymryd rhan yn y cynllun peilot hwn ar ran eich cleient os yw erioed wedi hawlio grant coronafeirws (COVID-19) neu’n bwriadu gwneud hynny yn y dyfodol.
-agent.covid_cannot_sign_up.line2                                      = Bydd angen i chi anfon {0} yn lle hynny, ac efallai y bydd modd i chi gofrestru’ch cleient yn y dyfodol.
-agent.covid_cannot_sign_up.link                                       = Ffurflen Dreth Hunanasesiad
-agent.covid_cannot_sign_up.button                                     = Cofrestru cleient arall
+agent.covid_cannot_sign_up.title                                = Ni all eich cleient gymryd rhan yn y cynllun peilot hwn
+agent.covid_cannot_sign_up.heading                              = Ni all eich cleient gymryd rhan yn y cynllun peilot hwn
+agent.covid_cannot_sign_up.line1                                = Ni fyddwch yn gallu cymryd rhan yn y cynllun peilot hwn ar ran eich cleient os yw erioed wedi hawlio grant coronafeirws (COVID-19) neu’n bwriadu gwneud hynny yn y dyfodol.
+agent.covid_cannot_sign_up.line2                                = Bydd angen i chi anfon {0} yn lle hynny, ac efallai y bydd modd i chi gofrestru’ch cleient yn y dyfodol.
+agent.covid_cannot_sign_up.link                                 = Ffurflen Dreth Hunanasesiad
+agent.covid_cannot_sign_up.button                               = Cofrestru cleient arall
+

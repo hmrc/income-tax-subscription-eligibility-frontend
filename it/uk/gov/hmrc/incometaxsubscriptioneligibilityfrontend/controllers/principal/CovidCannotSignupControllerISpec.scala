@@ -9,9 +9,9 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class CovidCannotSignupControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  "Get /error/covid-cannot-signup" should{
+  "Get /error/covid-cannot-sign-up" should{
 
-    lazy val result = get("/error/covid-cannot-signup")
+    lazy val result = get("/error/covid-cannot-sign-up")
     lazy val doc: Document = Jsoup.parse(result.body)
     lazy val content: Element = doc.content
 

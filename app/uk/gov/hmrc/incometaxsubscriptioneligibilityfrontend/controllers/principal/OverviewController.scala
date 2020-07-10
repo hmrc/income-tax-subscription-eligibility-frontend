@@ -32,9 +32,8 @@ class OverviewController @Inject()(mcc: MessagesControllerComponents)(implicit a
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show()))
+        Ok(overview(postAction = routes.Covid19ClaimCheckController.show()))
       )
-    //TODO: postAction should be have you got software controller
   }
 
 }

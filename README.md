@@ -13,7 +13,7 @@ You will need [sbt](http://www.scala-sbt.org/)
 
 2) **Start the Income Tax Subscription services:**
 
-   `sm --start ITSA_SUBSC_ALL -f`
+   `sm --start ITSA_SUBSC_ALL --appendArgs '{"CITIZEN_DETAILS":["-Dmongodb.cid-nino-no-suffix-cache.enabled=false"]}' -f`
 
 
 3) **Clone the frontend service:**
@@ -29,14 +29,14 @@ You will need [sbt](http://www.scala-sbt.org/)
 
 4) **Start the frontend service:**
 
-   `sm --stop INCOME_TAX_SUBSCRIPTION_FRONTEND`
+   `sm --stop INCOME_TAX_SUBSCRIPTION_ELIGIBILITY_FRONTEND`
 
-   `sbt "run 9561"`
+   `sbt "run 9589"`
 
 
 5) **Go to the homepage:**
 
-   http://localhost:9561/report-quarterly/income-and-expenses/sign-up/eligibility
+   http://localhost:9589/report-quarterly/income-and-expenses/sign-up/eligibility
 
 ### License
 

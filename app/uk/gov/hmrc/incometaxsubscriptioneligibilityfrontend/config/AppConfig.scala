@@ -17,7 +17,6 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config
 
 import javax.inject.{Inject, Singleton}
-import play.api.Configuration
 import play.api.i18n.Lang
 import play.api.mvc.Call
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.routes
@@ -49,6 +48,10 @@ class AppConfig @Inject()(config: ServicesConfig) {
   lazy val govUkUrl: String = loadConfig("gov-uk.url")
 
   lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"
+
+  lazy val covid19SupportSchemeUrl = s"$govUkUrl/guidance/claim-a-grant-through-the-coronavirus-covid-19-self-employment-income-support-scheme"
+  lazy val covid19JobRetentionSchemeUrl = s"$govUkUrl/guidance/claim-for-wage-costs-through-the-coronavirus-job-retention-scheme"
+  lazy val covid19ClaimSickPayUrl = s"$govUkUrl/guidance/claim-back-statutory-sick-pay-paid-to-employees-due-to-coronavirus-covid-19"
 
   lazy val returnsUrl: String = s"https://www.gov.uk/self-assessment-tax-returns/sending-return"
 
