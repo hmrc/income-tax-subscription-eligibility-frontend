@@ -150,3 +150,14 @@ agent.covid_cannot_sign_up.line2                                = You will need 
 agent.covid_cannot_sign_up.link                                 = Self Assessment tax return
 agent.covid_cannot_sign_up.button                               = Sign up another client
 
+## Agent Covid-19 page ##
+agent.covid_19_claim_check.title                                = Has your client ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
+agent.covid_19_claim_check.join_pilot                           = You are unable to sign up your client to this pilot if they:
+agent.covid_19_claim_check.join_pilot_point1.part1              = have claimed through the
+agent.covid_19_claim_check.join_pilot_point1.part2              = for sole traders
+agent.covid_19_claim_check.join_pilot_point1.link_text          = Self-Employment Support Scheme (opens in new tab)
+agent.covid_19_claim_check.join_pilot_point2                    = are an employer and have furloughed one or more of their employees using the
+agent.covid_19_claim_check.join_pilot_point2.link_text          = Coronavirus Job Retention Scheme (opens in new tab)
+agent.covid_19_claim_check.claim_sick_pay                       = If your client has claimed a rebate through the {0} and has not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme, you can still sign them up for the pilot.
+agent.covid_19_claim_check.claim_sick_pay.link_text             = Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)
+agent.covid_19_claim_check.error.summary                        = Select yes if your client has ever claimed or intends to claim a coronavirus (COVID‑19) grant

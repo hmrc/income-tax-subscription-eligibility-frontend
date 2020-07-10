@@ -33,8 +33,7 @@ class CovidCannotSignUpController @Inject()(implicit mcc: MessagesControllerComp
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-          Ok(covid_cannot_sign_up(postAction = routes.CovidCannotSignUpController.show()))
+          Ok(covid_cannot_sign_up(postAction = routes.Covid19ClaimCheckController.show()))
       )
   }
-
 }

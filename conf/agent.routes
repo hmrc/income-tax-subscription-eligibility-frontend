@@ -14,6 +14,10 @@ POST        /other-income                     uk.gov.hmrc.incometaxsubscriptione
 ## Other Sources of Income Error
 GET         /other-sources-of-income-error    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.OtherIncomeSourcesErrorController.show
 
+## Covid-19 claim check
+GET         /covid-19                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.Covid19ClaimCheckController.show
+POST        /covid-19                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.Covid19ClaimCheckController.submit
+
 ## Covid Cannot Sign Up Page
 GET         /error/covid-cannot-sign-up       uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.CovidCannotSignUpController.show
 

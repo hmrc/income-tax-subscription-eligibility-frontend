@@ -42,6 +42,12 @@ class CovidCannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
       doc.getSubmitButton.text mustBe messages.signUpAnotherClient
     }
 
+    "have the correct form" in {
+      doc.getForm must have(
+        method("GET"),
+        action(routes.Covid19ClaimCheckController.submit().url)
+      )
+    }
 
   }
 

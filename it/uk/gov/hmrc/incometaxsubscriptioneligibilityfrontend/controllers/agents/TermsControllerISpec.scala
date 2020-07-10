@@ -68,7 +68,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     "have the correct form" in {
       doc.getForm must have(
         method("GET"),
-        action(routes.HaveAnyOtherIncomeController.show().url)
+        action(routes.Covid19ClaimCheckController.show().url)
       )
     }
   }
