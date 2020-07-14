@@ -167,3 +167,14 @@ agent.covid_cannot_sign_up.line2                                = Bydd angen i c
 agent.covid_cannot_sign_up.link                                 = Ffurflen Dreth Hunanasesiad
 agent.covid_cannot_sign_up.button                               = Cofrestru cleient arall
 
+## Agent Covid-19 page ##
+agent.covid_19_claim_check.title                                = A yw’ch cleient erioed wedi hawlio grant coronafeirws (COVID‑19) neu a yw’n bwriadu gwneud hynny yn y dyfodol?
+agent.covid_19_claim_check.join_pilot                           = Ni allwch gofrestru’ch cleient ar gyfer y cynllun peilot hwn os:
+agent.covid_19_claim_check.join_pilot_point1.part1              = wedi hawlio trwy'r
+agent.covid_19_claim_check.join_pilot_point1.part2              = ar gyfer unig fasnachwyr
+agent.covid_19_claim_check.join_pilot_point1.link_text          = Cynllun Cymorth Hunangyflogaeth (yn agor mewn tab newydd)
+agent.covid_19_claim_check.join_pilot_point2                    = yw’n gyflogwr a’i fod wedi rhoi un neu fwy o’i gyflogeion ar ffyrlo gan ddefnyddio’r
+agent.covid_19_claim_check.join_pilot_point2.link_text          = Cynllun Cadw Swyddi yn sgil Coronafeirws (yn agor mewn tab newydd)
+agent.covid_19_claim_check.claim_sick_pay                       = Os yw’ch cleient wedi hawlio ad-daliad trwy’r {0}, ac nad yw wedi cyflwyno hawliad – nac yn mynd i gyflwyno hawliad – ar gyfer y Cynllun Cymhorthdal Hunangyflogaeth na’r Cynllun Cadw Swyddi yn sgil Coronafeirws, gallwch ei gofrestru ar gyfer y cynllun peilot hwn o hyd.
+agent.covid_19_claim_check.claim_sick_pay.link_text             = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws (yn agor mewn tab newydd)
+agent.covid_19_claim_check.error.summary                        = Dewiswch ‘Iawn’ os yw’ch cleient erioed wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny

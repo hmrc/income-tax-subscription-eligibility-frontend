@@ -169,6 +169,18 @@ object MessageLookup {
     val error = "Select yes if you have or intend to claim a coronavirus (COVID‑19) grant"
   }
 
+  object AgentsCovid19ClaimCheck {
+    val title = "Has your client ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?"
+    val join_pilot = "You are unable to sign up your client to this pilot if they:"
+    val join_pilot_point1 = "have claimed through the Self-Employment Support Scheme (opens in new tab) for sole traders"
+    val join_pilot_point2 = "are an employer and have furloughed one or more of their employees using the Coronavirus Job Retention Scheme (opens in new tab)"
+    val join_pilot_points: Seq[String] = Seq (join_pilot_point1, join_pilot_point2)
+    val claim_sick_pay = "If your client has claimed a rebate through the Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)" +
+      " and has not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme," +
+      " you can still sign them up for the pilot."
+    val error = "Select yes if your client has ever claimed or intends to claim a coronavirus (COVID‑19) grant"
+  }
+
   object AgentsCovidCannotSignUp {
     val heading = "Your client cannot take part in this pilot"
     val title = s"$heading$agentSuffix"
