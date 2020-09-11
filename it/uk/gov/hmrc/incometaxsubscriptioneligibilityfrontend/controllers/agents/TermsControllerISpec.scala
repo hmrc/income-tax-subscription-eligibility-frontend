@@ -28,6 +28,8 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
   lazy val result: WSResponse = get("/client/terms-of-participation")
   lazy val doc: Document = Jsoup.parse(result.body)
 
+  lazy val submitResult: WSResponse = post("/client/terms-of-participation")()
+
   "GET /client/terms-of-participation" should {
     "return OK" in {
       result must have(
@@ -67,8 +69,17 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "have the correct form" in {
       doc.getForm must have(
-        method("GET"),
-        action(routes.Covid19ClaimCheckController.show().url)
+        method("POST"),
+        action(routes.TermsController.submit().url)
+      )
+    }
+  }
+
+  "POST /client/terms-of-participation" should {
+    "redirect to the start of the agent sign up" in {
+      submitResult must have(
+        httpStatus(SEE_OTHER),
+        redirectUri(appConfig.incometaxSubscriptionFrontendAgentFirstPageFullUrl)
       )
     }
   }
