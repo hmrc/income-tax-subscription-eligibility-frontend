@@ -126,16 +126,15 @@ agent.have_any_other_income.notIncludePoint2                    = difidendau
 agent.have_any_other_income.error.summary                       = Dewiswch ’iawn’ os oes gan eich cleient incwm o unrhyw un o’r ffynonellau canlynol
 
 ## Agent Terms and Conditions Page ##
-agent.terms.title                                               = Telerau cymryd rhan
 agent.terms.heading                                             = Telerau cymryd rhan
 agent.terms.line1                                               = Drwy gymryd rhan yn y peilot hwn, rydych yn cytuno y byddwch chi neu’ch cleient yn gwneud y canlynol:
 agent.terms.bullet1                                             = defnyddio meddalwedd berthnasol i gofnodi’ch incwm a’ch treuliau
 agent.terms.bullet2                                             = darparu cyfeiriad e-bost fel y gall CThEM gysylltu â’ch cleient
 agent.terms.bullet3                                             = cyflwyno adroddiad chwarterol o ddechrau cyfnod cyfrifyddu eich cleient
-agent.terms.bullet4                                             = anfon adroddiad terfynol eich cleient erbyn 31 Ionawr ar ddiwedd ei flwyddyn dreth
+agent.terms.bullet4                                             = anfon datganiad terfynol eich cleient erbyn 31 Ionawr ar ddiwedd y flwyddyn dreth
 agent.terms.bullet5                                             = rhoi gwybod i CThEM os yw’ch cleient yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
-agent.terms.bullet6                                             = cyflwyno adroddiadau gan ddefnyddio’ch dull arferol os bydd eich cleient yn gadael y cynllun peilot hwn
-agent.terms.line2                                               = Nid yw’r telerau hyn yn gontractiol, a gall eich cleient roi’r gorau i gymryd rhan yn y peilot hwn ar unrhyw adeg.
+agent.terms.bullet6                                             = defnyddio’ch dull arferol ar gyfer Hunanasesiad os yw’ch cleient yn gadael y cynllun peilot hwn
+agent.terms.line2                                               = Gallwch chi neu’ch cleient roi’r gorau i gymryd rhan yn y cynllun peilot hwn ar unrhyw adeg.
 
 ## Other sources of income error page ##
 agent.income-sources-error.title                                = Ni allwch ddefnyddio’r gwasanaeth hwn
@@ -170,7 +169,7 @@ agent.covid_cannot_sign_up.button                               = Cofrestru clei
 ## Agent Covid-19 page ##
 agent.covid_19_claim_check.title                                = A yw’ch cleient erioed wedi hawlio grant coronafeirws (COVID‑19) neu a yw’n bwriadu gwneud hynny yn y dyfodol?
 agent.covid_19_claim_check.join_pilot                           = Ni allwch gofrestru’ch cleient ar gyfer y cynllun peilot hwn os:
-agent.covid_19_claim_check.join_pilot_point1.part1              = wedi hawlio trwy'r
+agent.covid_19_claim_check.join_pilot_point1.part1              = wedi hawlio trwy’r
 agent.covid_19_claim_check.join_pilot_point1.part2              = ar gyfer unig fasnachwyr
 agent.covid_19_claim_check.join_pilot_point1.link_text          = Cynllun Cymorth Hunangyflogaeth (yn agor mewn tab newydd)
 agent.covid_19_claim_check.join_pilot_point2                    = yw’n gyflogwr a’i fod wedi rhoi un neu fwy o’i gyflogeion ar ffyrlo gan ddefnyddio’r
