@@ -6,6 +6,7 @@ GET         /                                 uk.gov.hmrc.incometaxsubscriptione
 
 ## Terms of Participation
 GET         /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
+POST        /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
 
 ## Have you got other income
 GET         /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.HaveAnyOtherIncomeController.show

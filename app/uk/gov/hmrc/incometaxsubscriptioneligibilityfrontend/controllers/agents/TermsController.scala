@@ -23,15 +23,15 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.agents.terms
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 
-import scala.concurrent.Future
-
 @Singleton
 class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
-  val show: Action[AnyContent] = Action.async {
-    implicit request =>
-      Future.successful(
-        Ok(terms(postAction = routes.Covid19ClaimCheckController.show()))
-      )
+  val show: Action[AnyContent] = Action { implicit request =>
+      Ok(terms(postAction = routes.TermsController.submit()))
   }
+
+  val submit: Action[AnyContent] = Action { implicit request =>
+    Redirect(appConfig.incometaxSubscriptionFrontendAgentFirstPageFullUrl)
+  }
+
 }
