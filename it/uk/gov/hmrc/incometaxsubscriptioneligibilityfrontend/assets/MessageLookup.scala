@@ -76,19 +76,6 @@ object MessageLookup {
     def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date"
   }
 
-  object AgentHaveAnyOtherIncome {
-    val heading: String = "Does your client have any of the following sources of income?"
-    val title = s"$heading$agentSuffix"
-    val text1 = "Some sources of income will exclude businesses from participating in the pilot."
-    val include = "This could include income from:"
-    val notInclude = "This does not include income from:"
-    val includePoints: Seq[String] =
-      Seq("being an employee", "more than one self-employed business", "UK pensions or annuities (receiving or paying into)", "investments from outside the UK",
-        "capital gains", "taxable state benefits")
-    val notIncludePoints: Seq[String] = Seq("bank and building society interest", "dividends")
-    val error = "Select yes if your client has any of the following sources of income"
-  }
-
   object CannotSignUp {
     val title = "You cannot take part in this pilot"
     val heading = "You cannot take part in this pilot"
@@ -168,27 +155,4 @@ object MessageLookup {
       "Retention Scheme, you can still sign up for the pilot."
     val error = "Select yes if you have or intend to claim a coronavirus (COVID‑19) grant"
   }
-
-  object AgentsCovid19ClaimCheck {
-    val title = "Has your client ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?"
-    val join_pilot = "You are unable to sign up your client to this pilot if they:"
-    val join_pilot_point1 = "have claimed through the Self-Employment Support Scheme (opens in new tab) for sole traders"
-    val join_pilot_point2 = "are an employer and have furloughed one or more of their employees using the Coronavirus Job Retention Scheme (opens in new tab)"
-    val join_pilot_points: Seq[String] = Seq (join_pilot_point1, join_pilot_point2)
-    val claim_sick_pay = "If your client has claimed a rebate through the Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)" +
-      " and has not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme," +
-      " you can still sign them up for the pilot."
-    val error = "Select yes if your client has ever claimed or intends to claim a coronavirus (COVID‑19) grant"
-  }
-
-  object AgentsCovidCannotSignUp {
-    val heading = "Your client cannot take part in this pilot"
-    val title = s"$heading$agentSuffix"
-    val line1 = "You will not be able to take part in this pilot on your client’s behalf if they have ever claimed a coronavirus (COVID-19) grant, or intended to do so in future."
-    val line2 = "You will need to send a Self Assessment tax return instead and you may be able to sign your client up in future."
-    val link = "Self Assessment tax return"
-    val linkHref = "https://www.gov.uk/self-assessment-tax-returns/sending-return"
-    val signUpAnotherClient = "Sign up another client"
-  }
-
 }
