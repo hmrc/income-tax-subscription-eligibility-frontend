@@ -92,22 +92,6 @@ cannot_sign_up.other.bullet4                                    = accounting per
 cannot_sign_up.send_self_assessment                             = You will need to send a {0} instead and you may be able to sign up in future.
 cannot_sign_up.send_self_assessment.link                        = Self Assessment tax return
 
-## Agent do you have any other income page
-agent.have_any_other_income.title                               = Does your client have any of the following sources of income?
-agent.have_any_other_income.heading                             = Does your client have any of the following sources of income?
-agent.have_any_other_income.text1                               = Some sources of income will exclude businesses from participating in the pilot.
-agent.have_any_other_income.include                             = This could include income from:
-agent.have_any_other_income.notInclude                          = This does not include income from:
-agent.have_any_other_income.includePoint1                       = being an employee
-agent.have_any_other_income.includePoint2                       = more than one self-employed business
-agent.have_any_other_income.includePoint3                       = UK pensions or annuities (receiving or paying into)
-agent.have_any_other_income.includePoint4                       = investments from outside the UK
-agent.have_any_other_income.includePoint5                       = capital gains
-agent.have_any_other_income.includePoint6                       = taxable state benefits
-agent.have_any_other_income.notIncludePoint1                    = bank and building society interest
-agent.have_any_other_income.notIncludePoint2                    = dividends
-agent.have_any_other_income.error.summary                       = Select yes if your client has any of the following sources of income
-
 ## Terms and Conditions Page ##
 agent.terms.heading                                             = Terms of participation
 agent.terms.line1                                               = By taking part in this pilot, you agree that either you or your client will:
@@ -119,17 +103,6 @@ agent.terms.bullet5                                             = tell HMRC if y
 agent.terms.bullet6                                             = use your usual Self Assessment method if your client leaves this pilot
 agent.terms.line2                                               = You or your client can stop taking part in this pilot at any time.
 
-## Other sources of income error page ##
-agent.income-sources-error.title                                = Your client can’t use this service
-agent.income-sources-error.heading                              = You cannot use this service
-agent.income-sources-error.para1                                = You can only report Income Tax through software for clients that either:
-agent.income-sources-error.bullet1                              = have a sole trader business
-agent.income-sources-error.bullet2                              = rent out a UK property
-agent.income-sources-error.bullet3                              = have a sole trader business and rent out a UK property
-agent.income-sources-error.para2.part1                          = If your client has other sources of income, they need to
-agent.income-sources-error.para2.link                           = send a Self Assessment tax return
-agent.income-sources-error.para2.part2                          = instead.
-
 ## Covid-19 page ##
 covid_19_claim_check.title                                      = Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
 covid_19_claim_check.join_pilot                                 = You are not able to currently join the pilot if you:
@@ -140,23 +113,3 @@ covid_19_claim_check.join_pilot_point2.link_text                = Coronavirus Jo
 covid_19_claim_check.claim_sick_pay                             = If you have claimed a rebate through the {0} and have not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme, you can still sign up for the pilot.
 covid_19_claim_check.claim_sick_pay.link_text                   = Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)
 covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
-
-## Covid Cannot Sign Up page ##
-agent.covid_cannot_sign_up.title                                = Your client cannot take part in this pilot
-agent.covid_cannot_sign_up.heading                              = Your client cannot take part in this pilot
-agent.covid_cannot_sign_up.line1                                = You will not be able to take part in this pilot on your client’s behalf if they have ever claimed a coronavirus (COVID-19) grant, or intended to do so in future.
-agent.covid_cannot_sign_up.line2                                = You will need to send a {0} instead and you may be able to sign your client up in future.
-agent.covid_cannot_sign_up.link                                 = Self Assessment tax return
-agent.covid_cannot_sign_up.button                               = Sign up another client
-
-## Agent Covid-19 page ##
-agent.covid_19_claim_check.title                                = Has your client ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
-agent.covid_19_claim_check.join_pilot                           = You are unable to sign up your client to this pilot if they:
-agent.covid_19_claim_check.join_pilot_point1.part1              = have claimed through the
-agent.covid_19_claim_check.join_pilot_point1.part2              = for sole traders
-agent.covid_19_claim_check.join_pilot_point1.link_text          = Self-Employment Support Scheme (opens in new tab)
-agent.covid_19_claim_check.join_pilot_point2                    = are an employer and have furloughed one or more of their employees using the
-agent.covid_19_claim_check.join_pilot_point2.link_text          = Coronavirus Job Retention Scheme (opens in new tab)
-agent.covid_19_claim_check.claim_sick_pay                       = If your client has claimed a rebate through the {0} and has not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme, you can still sign them up for the pilot.
-agent.covid_19_claim_check.claim_sick_pay.link_text             = Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)
-agent.covid_19_claim_check.error.summary                        = Select yes if your client has ever claimed or intends to claim a coronavirus (COVID‑19) grant
