@@ -50,7 +50,7 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with the third paragraph" in {
-      content.select("p:nth-of-type(4)").text mustBe messages.line3
+      content.select("p:nth-of-type(3)").text mustBe messages.line3
     }
 
     "return a view with four bullet points" in {
