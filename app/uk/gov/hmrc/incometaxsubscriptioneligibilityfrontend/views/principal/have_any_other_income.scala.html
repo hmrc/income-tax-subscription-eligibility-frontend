@@ -23,7 +23,7 @@
 
 @(haveAnyOtherIncomeForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@principal_main_template(title = messages("have_any_other_income.title")) {
+@principal_main_template(title = messages("have_any_other_income.title"), form = Some(haveAnyOtherIncomeForm)) {
 @summaryErrorHelper(haveAnyOtherIncomeForm)
 <h1>@messages("have_any_other_income.title")</h1>
 

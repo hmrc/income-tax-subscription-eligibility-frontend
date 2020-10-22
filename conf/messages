@@ -113,3 +113,9 @@ covid_19_claim_check.join_pilot_point2.link_text                = Coronavirus Jo
 covid_19_claim_check.claim_sick_pay                             = If you have claimed a rebate through the {0} and have not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme, you can still sign up for the pilot.
 covid_19_claim_check.claim_sick_pay.link_text                   = Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)
 covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
+
+## Title pattern
+principleTitlePattern.serviceName.govUk                         = {0} - Use software to send Income Tax updates - GOV.UK
+agentTitlePattern.serviceName.govUk                             = {0} - Use software to report your client’s Income Tax - GOV.UK
+principleBase.title.error                                       = Error: {0} - Use software to send Income Tax updates - GOV.UK
+agentBase.title.error                                           = Error: {0} - Use software to report your client’s Income Tax - GOV.UK
