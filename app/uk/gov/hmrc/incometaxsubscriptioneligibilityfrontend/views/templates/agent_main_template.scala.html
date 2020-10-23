@@ -15,7 +15,6 @@
  *@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.helpers.PageTitleHelper._
 
 @(title: String,
   sidebarLinks: Option[Html] = None,
@@ -28,7 +27,6 @@
 
 @import uk.gov.hmrc.play.views.html.layouts
 
-
 @serviceInfoContent = {}
 
 @sidebar = {
@@ -37,9 +35,15 @@
     }
 }
 
+@prefixedTitle = @{
+    form match {
+        case Some(validationForm) if validationForm.hasErrors => Messages("agentBase.title.error", title)
+        case _ => Messages("agentTitlePattern.serviceName.govUk", title)
+    }
+}
 
 @govuk_wrapper(appConfig = appConfig,
-               title = formatTitle(form, Messages("agent_service_name.title"), title),
+               title = prefixedTitle,
                navigationTitle = Some(Messages("agent_service_name.title")),
                mainClass = mainClass,
                bodyClasses = bodyClasses,

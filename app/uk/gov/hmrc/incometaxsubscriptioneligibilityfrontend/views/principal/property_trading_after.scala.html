@@ -23,7 +23,7 @@
 
 @(propertyTradingBeforeDateForm: Form[YesNo], postAction: Call, startDateLimit: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@principal_main_template(title = messages("property_trading_after.title", startDateLimit)) {
+@principal_main_template(title = messages("property_trading_after.title", startDateLimit), form = Some(propertyTradingBeforeDateForm)) {
 
     @summaryErrorHelper(propertyTradingBeforeDateForm)
 

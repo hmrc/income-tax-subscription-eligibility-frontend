@@ -23,7 +23,7 @@
 
 @(accountingPeriodCheckForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@principal_main_template(title = messages("accounting_period_check.title")) {
+@principal_main_template(title = messages("accounting_period_check.title"), form = Some(accountingPeriodCheckForm)) {
 @summaryErrorHelper(accountingPeriodCheckForm)
 <h1>@messages("accounting_period_check.title")</h1>
 <p class="hint">

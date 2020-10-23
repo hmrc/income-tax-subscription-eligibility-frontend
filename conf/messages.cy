@@ -130,3 +130,9 @@ covid_19_claim_check.join_pilot_point2.link_text                = Cynllun Cadw S
 covid_19_claim_check.claim_sick_pay                             = Os ydych wedi hawlio ad-daliad trwy’r {0}, ac nad ydych wedi cyflwyno hawliad – nac yn mynd i gyflwyno hawliad – ar gyfer y Cynllun Cymhorthdal Hunangyflogaeth na’r Cynllun Cadw Swyddi yn sgil Coronafeirws, gallwch gofrestru ar gyfer y cynllun peilot o hyd.
 covid_19_claim_check.claim_sick_pay.link_text                   = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws (yn agor mewn tab newydd)
 covid_19_claim_check.error.summary                              = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
+
+## Title pattern
+principleTitlePattern.serviceName.govUk                         = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
+agentTitlePattern.serviceName.govUk                             = {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
+principleBase.title.error                                       = Gwall: {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
+agentBase.title.error                                           = Gwall: {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
