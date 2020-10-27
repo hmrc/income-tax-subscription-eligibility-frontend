@@ -26,7 +26,7 @@
 @principal_main_template(title = messages("accounting_period_check.title"), form = Some(accountingPeriodCheckForm)) {
 @summaryErrorHelper(accountingPeriodCheckForm)
 <h1>@messages("accounting_period_check.title")</h1>
-<p class="hint">
+<p class="hint" id="accounting-period-hint">
     <span id="account-period-title-hint" class="form-hint">
         @messages("accounting_period_check.title.hint")
     </span>
@@ -38,7 +38,7 @@
     } else {
         <div class="form-group">
     }
-            <fieldset class="inline">
+            <fieldset class="inline" aria-describedby="accounting-period-hint">
                 <legend class="visuallyhidden">@messages("accounting_period_check.title")</legend>
                 <div class="multiple-choice">
                     <input type="radio" id="yes-no" name="yes-no" value="yes">
