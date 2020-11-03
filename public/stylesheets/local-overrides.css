@@ -97,10 +97,11 @@ interrupt-card .actions {
 
 @media (min-width: 641px) {
     .error-notification {
-        font-size: 19px
+        font-size: 19px !important
     }
 }
 
 .error-notification {
-    color: #d4351c
+    color: #d4351c;
+    font-weight: 700 !important
 }
