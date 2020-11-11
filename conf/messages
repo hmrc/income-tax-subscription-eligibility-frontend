@@ -105,15 +105,14 @@ agent.terms.line2                                               = You or your cl
 
 ## Covid-19 page ##
 covid_19_claim_check.title                                      = Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
-covid_19_claim_check.join_pilot                                 = You are not able to currently join the pilot if you:
-covid_19_claim_check.join_pilot_point1                          = have claimed through the {0} for sole traders
-covid_19_claim_check.join_pilot_point1.link_text                = Self-Employment Support Scheme (opens in new tab)
-covid_19_claim_check.join_pilot_point2                          = are an employer and have furloughed one or more of your employees using the
-covid_19_claim_check.join_pilot_point2.link_text                = Coronavirus Job Retention Scheme (opens in new tab)
-covid_19_claim_check.claim_sick_pay                             = If you have claimed a rebate through the {0} and have not or will not make a claim for the Self Employment Support Scheme or Coronavirus Job Retention Scheme, you can still sign up for the pilot.
-covid_19_claim_check.claim_sick_pay.link_text                   = Coronavirus Statutory Sick Pay Rebate Scheme (opens in new tab)
+covid_19_claim_check.join_pilot                                 = You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):
+covid_19_claim_check.join_pilot_point1.link_text                = Self-Employment Support Scheme
+covid_19_claim_check.join_pilot_point1.text                     = for sole traders
+covid_19_claim_check.join_pilot_point2.link_text                = Coronavirus Job Retention Scheme
+covid_19_claim_check.can_join_pilot                             = You can still sign up if you’ve only claimed a rebate through the:
+covid_19_claim_check.claim_sick_pay.link_text                   = Coronavirus Statutory Sick Pay Rebate Scheme
+covid_19_claim_check.test_and_trace_pay.link_text               = Test and Trace Support Payment Scheme
 covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
-
 ## Title pattern
 principleTitlePattern.serviceName.govUk                         = {0} - Use software to send Income Tax updates - GOV.UK
 agentTitlePattern.serviceName.govUk                             = {0} - Use software to report your client’s Income Tax - GOV.UK
