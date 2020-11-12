@@ -51,6 +51,10 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       doc.getBulletPoints.text().contains((messages.join_pilot_points).mkString(" ")) mustBe true
     }
 
+    "have a view with the correct bullet point for covid grant" in {
+      doc.getBulletPoints.text().contains((messages.can_signup_points).mkString(" ")) mustBe true
+    }
+
     "have a view with the correct values displayed in the form" in {
       val form = doc.select("form")
       val labels = doc.select("form").select("label")

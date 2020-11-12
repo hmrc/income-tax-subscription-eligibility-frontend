@@ -52,6 +52,8 @@ class AppConfig @Inject()(config: ServicesConfig) {
   lazy val covid19SupportSchemeUrl = s"$govUkUrl/guidance/claim-a-grant-through-the-coronavirus-covid-19-self-employment-income-support-scheme"
   lazy val covid19JobRetentionSchemeUrl = s"$govUkUrl/guidance/claim-for-wage-costs-through-the-coronavirus-job-retention-scheme"
   lazy val covid19ClaimSickPayUrl = s"$govUkUrl/guidance/claim-back-statutory-sick-pay-paid-to-employees-due-to-coronavirus-covid-19"
+  lazy val covid19TestAndTraceUrl = s"$govUkUrl/government/publications/test-and-trace-support-payment-scheme-claiming-financial-support/claiming-financial-support-under-the-test-and-trace-support-payment-scheme"
+
 
   lazy val returnsUrl: String = s"https://www.gov.uk/self-assessment-tax-returns/sending-return"
 
