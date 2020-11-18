@@ -126,11 +126,14 @@ covid_19_claim_check.join_pilot                                 = Ar hyn o bryd 
 covid_19_claim_check.join_pilot_point1.link_text                = Cynllun Cymhorthdal Incwm Hunangyflogaeth ar gyfer
 covid_19_claim_check.join_pilot_point1.text                     = unig fasnachwyr
 covid_19_claim_check.join_pilot_point2.link_text                = Cynllun Cadw Swyddi yn sgil Coronafeirws
+covid_19_claim_check.join_pilot_point3.link_text                = Cynllun Bwyta Allan i Helpu Allan
+covid_19_claim_check.join_pilot_point3.text                     = ar gyfer busnesau yn y sector lletygarwch
 covid_19_claim_check.can_join_pilot                             = Gallwch gofrestru o hyd os ydych dim ond wedi hawlio drwy’r:
 covid_19_claim_check.claim_sick_pay.link_text                   = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws
 covid_19_claim_check.test_and_trace_pay.link_text               = Cynllun Taliadau Cymorth Profi ac Olrhain
 covid_19_claim_check.claim_sick_pay                             = Os ydych wedi hawlio ad-daliad trwy’r {0}, ac nad ydych wedi cyflwyno hawliad – nac yn mynd i gyflwyno hawliad – ar gyfer y Cynllun Cymhorthdal Hunangyflogaeth na’r Cynllun Cadw Swyddi yn sgil Coronafeirws, gallwch gofrestru ar gyfer y cynllun peilot o hyd.
-covid_19_claim_check.claim_sick_pay.link_text                   = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws (yn agor mewn tab newydd)
+covid_19_claim_check.claim_sick_pay.link_text                   = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws
+covid_19_claim_check.local_authority_grants.link_text           = Grantiau Awdurdodau Lleol
 covid_19_claim_check.error.summary                              = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
 
 ## Title pattern

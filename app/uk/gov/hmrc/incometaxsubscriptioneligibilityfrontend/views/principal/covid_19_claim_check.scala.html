@@ -32,13 +32,15 @@
 <ul class="list list-bullet">
     <li><a id="supportScheme" href=@appConfig.covid19SupportSchemeUrl target="_blank">@messages("covid_19_claim_check.join_pilot_point1.link_text")</a> @messages("covid_19_claim_check.join_pilot_point1.text")</li>
     <li><a id="retentionScheme" href=@appConfig.covid19JobRetentionSchemeUrl target="_blank">@messages("covid_19_claim_check.join_pilot_point2.link_text")</a></li>
+    <li><a id="eatOutScheme" href=@appConfig.covid19EatOutSchemeUrl target="_blank">@messages("covid_19_claim_check.join_pilot_point3.link_text")</a> @messages("covid_19_claim_check.join_pilot_point3.text")</li>
 </ul>
 
 <p>@messages("covid_19_claim_check.can_join_pilot")</p>
 
 <ul class="list list-bullet">
-<li><a id="sickPayRebateScheme" href=@appConfig.covid19ClaimSickPayUrl target="_blank">@messages("covid_19_claim_check.claim_sick_pay.link_text")</a></li>
-<li><a id="TestAndTraceSupportPaymentScheme" href=@appConfig.covid19TestAndTraceUrl target="_blank">@messages("covid_19_claim_check.test_and_trace_pay.link_text")</a></li>
+    <li><a id="sickPayRebateScheme" href=@appConfig.covid19ClaimSickPayUrl target="_blank">@messages("covid_19_claim_check.claim_sick_pay.link_text")</a></li>
+    <li><a id="testAndTraceSupportPaymentScheme" href=@appConfig.covid19TestAndTraceUrl target="_blank">@messages("covid_19_claim_check.test_and_trace_pay.link_text")</a></li>
+    <li><a id="localAuthorityGrants" href=@appConfig.covid19LocalAuthorityGrantsUrl target="_blank">@messages("covid_19_claim_check.local_authority_grants.link_text")</a></li>
 </ul>
 
 @form(action = postAction) {

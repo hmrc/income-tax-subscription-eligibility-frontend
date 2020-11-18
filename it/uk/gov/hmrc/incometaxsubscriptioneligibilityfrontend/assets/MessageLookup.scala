@@ -149,12 +149,14 @@ object MessageLookup {
     val join_pilot = "You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):"
     val linkText1 = "Self-Employment Support Scheme for sole traders"
     val linkText2 = "Coronavirus Job Retention Scheme"
+    val linkText3 = "Eat out to Help Out Scheme for businesses in the hospitality sector"
+    val join_pilot_points: Seq[String] = Seq (linkText1, linkText2, linkText3)
 
-    val join_pilot_points: Seq[String] = Seq (linkText1, linkText2)
     val claim_sick_pay = "You can still sign up if you’ve only claimed a rebate through the:"
     val coronavirus_ssp_pay_linkText = "Coronavirus Statutory Sick Pay Rebate Scheme"
     val testAndTrace_support_linkText = "Test and Trace Support Payment Scheme"
-    val can_signup_points: Seq[String] = Seq (coronavirus_ssp_pay_linkText, testAndTrace_support_linkText)
+    val local_authority_grants_linkText = "Local Authority grants"
+    val can_signup_points: Seq[String] = Seq (coronavirus_ssp_pay_linkText, testAndTrace_support_linkText, local_authority_grants_linkText)
     val error = "Select yes if you have or intend to claim a coronavirus (COVID‑19) grant"
   }
 }
