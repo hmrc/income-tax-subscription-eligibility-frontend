@@ -53,7 +53,7 @@ class AppConfig @Inject()(config: ServicesConfig) {
   lazy val covid19JobRetentionSchemeUrl = s"$govUkUrl/guidance/claim-for-wage-costs-through-the-coronavirus-job-retention-scheme"
   lazy val covid19ClaimSickPayUrl = s"$govUkUrl/guidance/claim-back-statutory-sick-pay-paid-to-employees-due-to-coronavirus-covid-19"
   lazy val covid19TestAndTraceUrl = s"$govUkUrl/government/publications/test-and-trace-support-payment-scheme-claiming-financial-support/claiming-financial-support-under-the-test-and-trace-support-payment-scheme"
-  lazy val covid19EatOutSchemeUrl = s"$govUkUrl/guidance/get-a-discount-with-the-eat-out-to-help-out-scheme"
+  lazy val covid19EatOutSchemeUrl = s"$govUkUrl/guidance/claim-money-back-through-the-eat-out-to-help-out-scheme"
   lazy val covid19LocalAuthorityGrantsUrl = s"$govUkUrl/government/publications/coronavirus-grant-funding-local-authority-payments-to-small-and-medium-businesses"
 
   lazy val returnsUrl: String = s"https://www.gov.uk/self-assessment-tax-returns/sending-return"
