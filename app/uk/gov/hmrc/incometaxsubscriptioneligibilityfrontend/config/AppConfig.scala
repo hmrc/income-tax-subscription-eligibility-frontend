@@ -25,6 +25,8 @@ import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 @Singleton
 class AppConfig @Inject()(config: ServicesConfig) {
 
+  val appName: String = config.getString("appName")
+
   private def loadConfig(key: String) = config.getString(key)
 
   private val incometaxSubscriptionFrontendHost = loadConfig("income-tax-subscription-frontend.host")

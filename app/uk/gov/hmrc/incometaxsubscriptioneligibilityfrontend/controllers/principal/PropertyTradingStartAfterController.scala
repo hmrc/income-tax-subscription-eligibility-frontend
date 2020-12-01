@@ -28,12 +28,14 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.property_trading_after
 import uk.gov.hmrc.play.language.LanguageUtils
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.implicits.ImplicitDateFormatter
-
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 
 import scala.concurrent.Future
 
 @Singleton
-class PropertyTradingStartAfterController @Inject()(mcc: MessagesControllerComponents,
+class PropertyTradingStartAfterController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents,
                                                     val languageUtils: LanguageUtils)
                                                    (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with ImplicitDateFormatter {
 
@@ -50,8 +52,14 @@ class PropertyTradingStartAfterController @Inject()(mcc: MessagesControllerCompo
       propertyTradingStartDateForm(startDateLimit.toLongDate).bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(property_trading_after(
           formWithErrors, routes.PropertyTradingStartAfterController.submit(), startDateLimit.toLongDate))), {
-          case Yes => Future.successful(Redirect(routes.CannotSignUpController.show()))
-          case No => Future.successful(Redirect(routes.CheckAccountingPeriodController.show()))
+          case Yes =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
+            "propertyBusinessStartDate"))
+            Future.successful(Redirect(routes.CannotSignUpController.show()))
+          case No =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "no",
+              "propertyBusinessStartDate"))
+            Future.successful(Redirect(routes.CheckAccountingPeriodController.show()))
         }
       )
   }

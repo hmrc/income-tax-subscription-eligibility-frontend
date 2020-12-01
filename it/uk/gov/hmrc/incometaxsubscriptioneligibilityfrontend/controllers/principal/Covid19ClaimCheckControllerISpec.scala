@@ -18,8 +18,12 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import play.api.libs.json.{JsValue, Json}
+import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, Covid19ClaimCheck => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -85,34 +89,38 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
     }
   }
 
+  class PostSetup(answer: Option[YesNo]) {
+    val response: WSResponse = submitCovid19ClaimCheck(answer)
+  }
+
   "POST /eligibility/covid-19" should {
 
-    "return SEE_OTHER when selecting yes" in {
-      val result = post("/covid-19")("yes-no" -> "yes")
-
-      result must have(
+    "return SEE_OTHER when selecting yes and send an Audit" in new PostSetup(Some(Yes)) {
+      val expectedAuditContainsYes: JsValue = Json.parse(
+      """{ "userType" : "individual", "eligible" : "false" , "answer" : "yes", "question": "claimedCovidGrant" }""")
+      verifyAudit()
+      verifyAuditContains(expectedAuditContainsYes)
+      response must have(
         httpStatus(SEE_OTHER),
         redirectUri(routes.CovidCannotSignupController.show().url)
-
       )
     }
 
-    "return SEE_OTHER when selecting No" in {
-      val result = post("/covid-19")("yes-no" -> "no")
-
-      result must have(
+    "return SEE_OTHER when selecting No and send an Audit" in new PostSetup(Some(No)) {
+      val expectedAuditContainsNo: JsValue = Json.parse(
+      """{ "userType" : "individual", "eligible" : "true" , "answer" : "no", "question": "claimedCovidGrant" }""")
+      verifyAudit()
+      verifyAuditContains(expectedAuditContainsNo)
+      response must have(
         httpStatus(SEE_OTHER),
         redirectUri(routes.HaveAnyOtherIncomeController.show().url)
-
       )
-
     }
 
-    "return BADREQUEST when no Answer is given" in {
-      val result = post("/covid-19")("yes-no" -> " ")
-      val doc: Document = Jsoup.parse(result.body)
+    "return BADREQUEST when no Answer is given" in new PostSetup(None) {
+      val doc: Document = Jsoup.parse(response.body)
 
-      result must have(
+      response must have(
         httpStatus(BAD_REQUEST)
       )
 
@@ -120,9 +128,8 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       errorMessage.text() mustBe messages.error
     }
 
-    "have the correct form" in {
-      val result = post("/covid-19")("yes-no" -> " ")
-      lazy val doc: Document = Jsoup.parse(result.body)
+    "have the correct form" in new PostSetup(None) {
+      lazy val doc: Document = Jsoup.parse(response.body)
       doc.getForm must have(
         method("POST"),
         action(routes.Covid19ClaimCheckController.submit().url)

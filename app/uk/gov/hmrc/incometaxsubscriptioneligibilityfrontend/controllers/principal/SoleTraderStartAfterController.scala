@@ -26,7 +26,10 @@ import play.api.mvc.{Action, AnyContent, MessagesControllerComponents, Request}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AreYouSoleTraderAfterForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.implicits.ImplicitDateFormatter
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.are_you_sole_trader_after
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 import uk.gov.hmrc.play.language.LanguageUtils
@@ -34,7 +37,7 @@ import uk.gov.hmrc.play.language.LanguageUtils
 import scala.concurrent.Future
 
 @Singleton
-class SoleTraderStartAfterController @Inject()(mcc: MessagesControllerComponents,
+class SoleTraderStartAfterController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents,
                                                val languageUtils: LanguageUtils)
                                               (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with ImplicitDateFormatter {
 
@@ -53,8 +56,14 @@ class SoleTraderStartAfterController @Inject()(mcc: MessagesControllerComponents
     implicit request =>
       form(startDateLimit).bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(are_you_sole_trader_after(formWithErrors, routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate))), {
-          case Yes => Future.successful(Redirect(routes.CannotSignUpController.show()))
-          case No => Future.successful(Redirect(routes.PropertyTradingStartAfterController.show()))
+          case Yes =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
+              "soleTraderBusinessStartDate"))
+            Future.successful(Redirect(routes.CannotSignUpController.show()))
+          case No =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "no",
+              "soleTraderBusinessStartDate"))
+            Future.successful(Redirect(routes.PropertyTradingStartAfterController.show()))
         }
       )
   }

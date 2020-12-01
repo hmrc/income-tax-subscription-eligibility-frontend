@@ -21,8 +21,12 @@ import java.time.format.DateTimeFormatter
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import play.api.libs.json.{JsValue, Json}
+import play.api.libs.ws.WSResponse
 import play.api.test.Helpers.{BAD_REQUEST, OK, SEE_OTHER}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, PropertyStartAfter => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -79,32 +83,39 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
     }
   }
 
+  class PostSetup(answer: Option[YesNo]) {
+    val response: WSResponse = submitPropertyTradingStartAfter(answer)
+  }
+
   "POST /eligibility/other-income" should {
 
-    "return SEE_OTHER when selecting yes" in {
-      val result = post("/property-start-after")("yes-no" -> "yes")
-
-      result must have(
+    "return SEE_OTHER when selecting yes and sent an Audit" in new PostSetup(Some(Yes)) {
+      val expectedAuditContainsYes: JsValue = Json.parse(
+        """{ "userType" : "individual", "eligible" : "false" , "answer" : "yes", "question": "propertyBusinessStartDate" }""")
+      verifyAudit()
+      verifyAuditContains(expectedAuditContainsYes)
+      response must have(
         httpStatus(SEE_OTHER),
         redirectUri(routes.CannotSignUpController.show().url)
       )
     }
 
-    "return SEE_OTHER when selecting No" in {
-      val result = post("/property-start-after")("yes-no" -> "no")
-
-      result must have(
+    "return SEE_OTHER when selecting No and send an Audit" in new PostSetup(Some(No)) {
+      val expectedAuditContainsNo: JsValue = Json.parse(
+        """{ "userType" : "individual", "eligible" : "true" , "answer" : "no", "question": "propertyBusinessStartDate" }""")
+      verifyAudit()
+      verifyAuditContains(expectedAuditContainsNo)
+      response must have(
         httpStatus(SEE_OTHER),
         redirectUri(routes.CheckAccountingPeriodController.show().url)
       )
 
     }
 
-    "return BADREQUEST when no Answer is given" in {
-      val result = post("/property-start-after")("yes-no" -> " ")
-      val doc: Document = Jsoup.parse(result.body)
+    "return BADREQUEST when no Answer is given" in new PostSetup(None) {
+      val doc: Document = Jsoup.parse(response.body)
 
-      result must have(
+      response must have(
         httpStatus(BAD_REQUEST)
       )
 

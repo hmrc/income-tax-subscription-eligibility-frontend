@@ -18,8 +18,13 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import play.api.libs.json.JsPath.write
+import play.api.libs.json.{JsValue, Json}
+import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, CheckAccountingPeriod => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -76,21 +81,29 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     }
   }
 
+  class PostSetup(answer: Option[YesNo]) {
+    val response: WSResponse = submitAccountingPeriodCheck(answer)
+  }
+
   "POST /eligibility/accounting-period-check" should {
 
-    "return SEE_OTHER when selecting yes" in {
-      val result = post("/accounting-period-check")("yes-no" -> "yes")
-
-      result must have(
+    "return SEE_OTHER when selecting Yes and send an Audit" in new PostSetup(Some(Yes)) {
+      val expectedAuditContainsYes: JsValue = Json.parse(
+      """{ "userType" : "individual", "eligible" : "true" , "answer" : "yes", "question": "standardAccountingPeriod" }""")
+      verifyAudit()
+      verifyAuditContains(expectedAuditContainsYes)
+      response must have(
         httpStatus(SEE_OTHER),
-        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/terms-of-participation")
+        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/terms-of-participation"),
       )
     }
 
-    "return SEE_OTHER when selecting No" in {
-      val result = post("/accounting-period-check")("yes-no" -> "no")
-
-      result must have(
+    "return SEE_OTHER when selecting No and send an Audit" in new PostSetup(Some(No)) {
+      val expectedAuditContainsNo: JsValue = Json.parse(
+      """{ "userType" : "individual", "eligible" : "false" , "answer" : "no", "question": "standardAccountingPeriod" }""")
+      verifyAudit()
+      verifyAuditContains(expectedAuditContainsNo)
+      response must have(
         httpStatus(SEE_OTHER),
         //This needs to be changed to CannotSignup page
         redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/error/cannot-sign-up")
@@ -98,11 +111,10 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
 
     }
 
-    "return BADREQUEST when no Answer is given" in {
-      val result = post("/accounting-period-check")("yes-no" -> " ")
-      val doc: Document = Jsoup.parse(result.body)
+    "return BADREQUEST when no Answer is given" in new PostSetup(None) {
+      val doc: Document = Jsoup.parse(response.body)
 
-      result must have(
+      response must have(
         httpStatus(BAD_REQUEST)
       )
 
@@ -110,9 +122,8 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       errorMessage.text() mustBe messages.error
     }
 
-    "have the correct form" in {
-      val result = post("/accounting-period-check")("yes-no" -> " ")
-      lazy val doc: Document = Jsoup.parse(result.body)
+    "have the correct form" in new PostSetup(None) {
+      lazy val doc: Document = Jsoup.parse(response.body)
       doc.getForm must have(
         method("POST"),
         action(routes.CheckAccountingPeriodController.submit().url)

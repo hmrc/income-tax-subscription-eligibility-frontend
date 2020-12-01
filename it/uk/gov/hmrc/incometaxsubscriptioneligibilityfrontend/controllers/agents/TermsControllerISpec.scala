@@ -28,7 +28,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
   lazy val result: WSResponse = get("/client/terms-of-participation")
   lazy val doc: Document = Jsoup.parse(result.body)
 
-  lazy val submitResult: WSResponse = post("/client/terms-of-participation")()
+  lazy val submitResult: WSResponse = post("/client/terms-of-participation")(Map.empty)
 
   "GET /client/terms-of-participation" should {
     "return OK" in {
