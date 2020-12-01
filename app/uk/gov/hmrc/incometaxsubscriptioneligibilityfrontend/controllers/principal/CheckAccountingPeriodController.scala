@@ -21,14 +21,17 @@ import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodCheckForm._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.accounting_period_check
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 
 import scala.concurrent.Future
 
 @Singleton
-class CheckAccountingPeriodController @Inject()(mcc: MessagesControllerComponents)
+class CheckAccountingPeriodController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents)
                                                (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   def show: Action[AnyContent] = Action.async {
@@ -42,8 +45,14 @@ class CheckAccountingPeriodController @Inject()(mcc: MessagesControllerComponent
     implicit request =>
       accountingPeriodCheckForm.bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(accounting_period_check(formWithErrors, routes.CheckAccountingPeriodController.submit()))), {
-          case Yes => Future.successful(Redirect(routes.TermsController.show()))
-          case No => Future.successful(Redirect(routes.CannotSignUpController.show()))
+          case Yes =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "yes",
+              "standardAccountingPeriod"))
+            Future.successful(Redirect(routes.TermsController.show()))
+          case No =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "no",
+              "standardAccountingPeriod"))
+            Future.successful(Redirect(routes.CannotSignUpController.show()))
         }
       )
   }

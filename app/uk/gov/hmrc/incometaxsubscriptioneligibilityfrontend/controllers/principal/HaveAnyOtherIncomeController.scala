@@ -21,14 +21,17 @@ import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.have_any_other_income
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 
 import scala.concurrent.Future
 
 @Singleton
-class HaveAnyOtherIncomeController @Inject()(mcc: MessagesControllerComponents)
+class HaveAnyOtherIncomeController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents)
                                             (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   def show: Action[AnyContent] = Action.async {
@@ -42,8 +45,14 @@ class HaveAnyOtherIncomeController @Inject()(mcc: MessagesControllerComponents)
     implicit request =>
       haveAnyOtherIncomeForm.bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(have_any_other_income(formWithErrors, routes.HaveAnyOtherIncomeController.submit()))), {
-          case Yes => Future.successful(Redirect(routes.CannotSignUpController.show()))
-          case No => Future.successful(Redirect(routes.SoleTraderStartAfterController.show()))
+          case Yes =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
+              "otherIncomeSource"))
+            Future.successful(Redirect(routes.CannotSignUpController.show()))
+          case No =>
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "no",
+              "otherIncomeSource"))
+            Future.successful(Redirect(routes.SoleTraderStartAfterController.show()))
         }
       )
   }
