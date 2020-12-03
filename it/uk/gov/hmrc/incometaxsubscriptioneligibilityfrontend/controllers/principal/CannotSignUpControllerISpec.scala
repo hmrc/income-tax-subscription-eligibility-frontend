@@ -62,7 +62,6 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
       content.select("ul:nth-of-type(2)").select("li:nth-of-type(1)").text mustBe messages.otherBullet1
       content.select("ul:nth-of-type(2)").select("li:nth-of-type(2)").text mustBe messages.otherBullet2
       content.select("ul:nth-of-type(2)").select("li:nth-of-type(3)").text mustBe messages.otherBullet3
-      content.select("ul:nth-of-type(2)").select("li:nth-of-type(4)").text mustBe messages.otherBullet4
     }
 
     "have a view with the correct Send Self Assessment Paragraph with link" in {

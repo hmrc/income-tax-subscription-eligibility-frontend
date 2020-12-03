@@ -25,12 +25,9 @@
 
 @principal_main_template(title = messages("accounting_period_check.title"), form = Some(accountingPeriodCheckForm)) {
 @summaryErrorHelper(accountingPeriodCheckForm)
+
 <h1>@messages("accounting_period_check.title")</h1>
-<p class="hint" id="accounting-period-hint">
-    <span id="account-period-title-hint" class="form-hint">
-        @messages("accounting_period_check.title.hint")
-    </span>
-</p>
+
 @form(action = postAction) {
     @if(accountingPeriodCheckForm.hasErrors){
         <div class="form-group form-field--error">
@@ -38,6 +35,7 @@
     } else {
         <div class="form-group">
     }
+            <p id="accounting-period-hint">@messages("accounting_period_check.title.hint")</p>
             <fieldset class="inline" aria-describedby="accounting-period-hint">
                 <legend class="visuallyhidden">@messages("accounting_period_check.title")</legend>
                 <div class="multiple-choice">

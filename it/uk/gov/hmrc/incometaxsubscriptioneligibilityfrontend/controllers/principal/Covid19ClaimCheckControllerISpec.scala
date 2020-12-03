@@ -17,9 +17,9 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
+import org.jsoup.nodes.{Document, Element}
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, Covid19ClaimCheck => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
@@ -31,6 +31,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
   "GET /eligibility/covid-19" should {
     lazy val result = get("/covid-19")
     lazy val doc: Document = Jsoup.parse(result.body)
+    lazy val content: Element = doc.content
 
     "return OK" in {
       result must have(
@@ -51,12 +52,17 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       doc.getParagraphs.text().contains(messages.claim_sick_pay) mustBe true
     }
 
-    "have a view with the correct bullet point list" in {
-      doc.getBulletPoints.text().contains((messages.join_pilot_points).mkString(" ")) mustBe true
+    "return a view with the 4 correct bullet point for cannot join pilot" in {
+      content.select("ul:nth-of-type(1)").select("li:nth-of-type(1)").text mustBe messages.linkTextCannotJoin1
+      content.select("ul:nth-of-type(1)").select("li:nth-of-type(2)").text mustBe messages.linkTextCannotJoin2
+      content.select("ul:nth-of-type(1)").select("li:nth-of-type(3)").text mustBe messages.linkTextCannotJoin3
+      content.select("ul:nth-of-type(1)").select("li:nth-of-type(4)").text mustBe messages.linkTextCannotJoin4
     }
 
-    "have a view with the correct bullet point for covid grant" in {
-      doc.getBulletPoints.text().contains((messages.can_signup_points).mkString(" ")) mustBe true
+    "return a view with the 3 correct bullet point for can join pilot" in {
+      content.select("ul:nth-of-type(2)").select("li:nth-of-type(1)").text mustBe messages.linkTextCanJoin1
+      content.select("ul:nth-of-type(2)").select("li:nth-of-type(2)").text mustBe messages.linkTextCanJoin2
+      content.select("ul:nth-of-type(2)").select("li:nth-of-type(3)").text mustBe messages.linkTextCanJoin3
     }
 
     "have a view with the correct values displayed in the form" in {
@@ -97,7 +103,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "return SEE_OTHER when selecting yes and send an Audit" in new PostSetup(Some(Yes)) {
       val expectedAuditContainsYes: JsValue = Json.parse(
-      """{ "userType" : "individual", "eligible" : "false" , "answer" : "yes", "question": "claimedCovidGrant" }""")
+        """{ "userType" : "individual", "eligible" : "false" , "answer" : "yes", "question": "claimedCovidGrant" }""")
       verifyAudit()
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
@@ -108,7 +114,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "return SEE_OTHER when selecting No and send an Audit" in new PostSetup(Some(No)) {
       val expectedAuditContainsNo: JsValue = Json.parse(
-      """{ "userType" : "individual", "eligible" : "true" , "answer" : "no", "question": "claimedCovidGrant" }""")
+        """{ "userType" : "individual", "eligible" : "true" , "answer" : "no", "question": "claimedCovidGrant" }""")
       verifyAudit()
       verifyAuditContains(expectedAuditContainsNo)
       response must have(

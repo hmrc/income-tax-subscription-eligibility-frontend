@@ -20,7 +20,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
+import org.jsoup.nodes.{Document, Element}
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers.{BAD_REQUEST, OK, SEE_OTHER}
@@ -37,7 +37,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
 
     lazy val result = get("/property-start-after")
     lazy val doc: Document = Jsoup.parse(result.body)
-
+    lazy val content: Element = doc.content
     "return OK" in {
       result must have(
         httpStatus(OK)
@@ -52,8 +52,8 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
       doc.getH1Element.text mustBe messages.title(date)
     }
 
-    "have a view with the correct hint" in {
-      doc.getHintText mustBe messages.hint
+    "have a view with the correct hint paragraph" in {
+      content.select("p:nth-of-type(1)").text mustBe messages.hintMessage
     }
 
     "have a view with the correct values displayed in the form" in {
