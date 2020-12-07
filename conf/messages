@@ -6,7 +6,7 @@ base.yes                                                        = Yes
 base.no                                                         = No
 base.title_error_prefix                                         = Error:
 base.govuk                                                      = GOV.UK
-base.error_heading                                              = There’s a problem
+base.error_heading                                              = There is a problem
 base.accept_and_continue                                        = Accept and continue
 
 ## Service Name
@@ -16,15 +16,19 @@ agent_service_name.title                                        = Use software t
 ## Overview Page Content
 overview.title                                                  = The way you complete Self Assessment is changing
 overview.heading                                                = The way you complete Self Assessment is changing
-overview.line_1                                                 = Making Tax Digital for Income Tax is a new way for self-employed businesses (sole traders) and landlords to send income tax updates to HMRC.
-overview.line_2                                                 = You will need to use software to keep your business records and send updates, instead of filing a Self Assessment tax return.
-overview.link_text                                              = Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab or window).
+overview.line_1                                                 = This is a pilot to sign up for a new way for sole trader businesses (self-employed) and landlords to send income tax updates and returns to HMRC.
+overview.line_2                                                 = You will need to use compatible software to:
+overview.bullet_compatible_software_line_1                      = keep your business records up to date
+overview.bullet_compatible_software_line_2                      = send updates about your business records to HMRC every quarter
+overview.bullet_compatible_software_line_3                      = file your Self Assessment tax return
+overview.line_3                                                 = This will replace filing a Self Assessment tax return and you can choose your software once you have signed up.
+overview.link_text                                              = Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab).
 overview.heading_2                                              = Before you start
-overview.line_3                                                 = To register for Making Tax Digital for Income Tax, you will need:
-overview.bullet_line_1                                          = compatible software
-overview.bullet_line_2                                          = your business start dates and registered addresses
-overview.bullet_line_3                                          = a Government Gateway user ID and password
-overview.bullet_line_4                                          = business accounting year information
+overview.line_4                                                 = To sign up to this pilot, you will need your:
+overview.bullet_before_start_line_1                             = Government Gateway user ID and password
+overview.bullet_before_start_line_2                             = National Insurance number
+overview.bullet_before_start_line_3                             = business start dates and registered addresses
+overview.bullet_before_start_line_4                             = business accounting year information
 
 ## Terms and Conditions Page ##
 terms.title                                                     = Terms of participation
@@ -32,11 +36,11 @@ terms.heading                                                   = Terms of parti
 terms.line1                                                     = By taking part in this pilot, you agree that you will:
 terms.bullet1                                                   = use compatible software to record income and expenses
 terms.bullet2                                                   = provide an email address so you can be contacted by HMRC
-terms.bullet3                                                   = submit a quarterly update from the start of your accounting period
-terms.bullet4                                                   = send your final declaration by 31 January at the end of the tax year
+terms.bullet3                                                   = send quarterly updates from the start of your accounting period
+terms.bullet4                                                   = submit your final declaration by 31 January at the end of the tax year
 terms.bullet5                                                   = tell HMRC if you stop trading or start a new business
 terms.bullet6                                                   = use your usual Self Assessment method if you leave this pilot
-terms.line2                                                     = You can stop taking part in this pilot at any time.
+terms.line2                                                     = You can leave this pilot at any time.
 
 ##Covid you cannot signup page
 covid_cannot_signup.title                                       = You cannot take part in this pilot
@@ -49,7 +53,7 @@ covid_cannot_signup.send_self_assessment.link                   = Self Assessmen
 have_any_other_income.title                                     = Apart from self-employment or property, do you have any other sources of income?
 have_any_other_income.include                                   = This could include:
 have_any_other_income.notInclude                                = This does not include:
-have_any_other_income.includePoint1                             = as an employee
+have_any_other_income.includePoint1                             = PAYE income as an employee
 have_any_other_income.includePoint2                             = UK pensions or annuities
 have_any_other_income.includePoint3                             = investments from outside the UK
 have_any_other_income.includePoint4                             = capital gains
@@ -59,36 +63,37 @@ have_any_other_income.notIncludePoint2                          = dividends
 have_any_other_income.error.summary                             = Select yes if you have any sources of income other than self employment or property income
 
 ## Accounting period check
-accounting_period_check.title                                   = Are all of your business accounting periods from 6 April to 5 April?
-accounting_period_check.title.hint                              = The tax year runs from 6 April to 5 April. Your accounting period is the same, unless you have previously chosen different dates.
+accounting_period_check.title                                   = Are all of your business accounting periods the same as the standard tax year?
+accounting_period_check.title.hint                              = The tax year runs from 6 April to 5 April and your accounting periods will be the same, unless you previously chose different dates. This is for all your sole trader and property businesses.
 accounting_period_check.error                                   = Select yes if all of your business accounting periods are from 6 April to 5 April
 accounting_period_check.error.summary                           = Select yes if all of your business accounting periods are from 6 April to 5 April
 
 ## Are you a sole trader after page ##
-are_you_sole_trader_after.title                                 = Are you a sole trader that began trading on or after {0}?
-are_you_sole_trader_after.heading                               = Are you a sole trader that began trading on or after {0}?
+are_you_sole_trader_after.title                                 = Did your sole trader business begin on or after  {0}?
+are_you_sole_trader_after.heading                               = Did your sole trader business begin on or after  {0}?
+are_you_sole_trader_after.para                                  = If you’re a sole trader, you run your own business as an individual and are
+are_you_sole_trader_after.para_link                             = self-employed (opens in new tab).
 are_you_sole_trader_after.error.summary                         = Select yes if you are a sole trader that began trading on or after {0}
 
 ## Property Trading After Date page ##
-property_trading_after.title                                    = Do you own a property business that began trading on or after {0}?
-property_trading_after.heading                                  = Do you own a property business that began trading on or after {0}?
-property_trading_after.line                                     = This includes being a landlord and letting holiday properties.
+property_trading_after.title                                    = Did you start a property business on or after  {0}?
+property_trading_after.heading                                  = Did you start a property business on or after  {0}?
+property_trading_after.line                                     = This includes being a landlord and letting holiday properties in the UK and overseas.
 property_trading_after.error.summary                            = Select yes if you own a property business that began trading on or after {0}
 
 ## Cannot Sign Up Page
-cannot_sign_up.title                                            = You cannot take part in this pilot
-cannot_sign_up.heading                                          = You cannot take part in this pilot
-cannot_sign_up.income.para                                      = You will not be able to take part in this pilot if you receive income from:
-cannot_sign_up.income.bullet1                                   = being an employee
+cannot_sign_up.title                                            = You cannot take part in this pilot yet
+cannot_sign_up.heading                                          = You cannot take part in this pilot yet
+cannot_sign_up.income.para                                      = This pilot is not available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this pilot if you receive income from:
+cannot_sign_up.income.bullet1                                   = PAYE income as an employee
 cannot_sign_up.income.bullet2                                   = UK pensions or annuities
 cannot_sign_up.income.bullet3                                   = investments from outside the UK
 cannot_sign_up.income.bullet4                                   = capital gains
 cannot_sign_up.income.bullet5                                   = taxable state benefits
 cannot_sign_up.other.para                                       = You also cannot take part if your:
-cannot_sign_up.other.bullet1                                    = tax year does not align with the standard tax year
-cannot_sign_up.other.bullet2                                    = sole trader business began within the last two years
-cannot_sign_up.other.bullet3                                    = property business began within the last year
-cannot_sign_up.other.bullet4                                    = accounting period does not align with the standard tax year
+cannot_sign_up.other.bullet1                                    = sole trader business began within the last two years
+cannot_sign_up.other.bullet2                                    = property business began within the last year
+cannot_sign_up.other.bullet3                                    = accounting period does not align with the standard tax year
 cannot_sign_up.send_self_assessment                             = You will need to send a {0} instead and you may be able to sign up in future.
 cannot_sign_up.send_self_assessment.link                        = Self Assessment tax return
 
@@ -105,17 +110,17 @@ agent.terms.line2                                               = You or your cl
 
 ## Covid-19 page ##
 covid_19_claim_check.title                                      = Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
-covid_19_claim_check.join_pilot                                 = You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):
-covid_19_claim_check.join_pilot_point1.link_text                = Self-Employment Support Scheme
-covid_19_claim_check.join_pilot_point1.text                     = for sole traders
-covid_19_claim_check.join_pilot_point2.link_text                = Coronavirus Job Retention Scheme
-covid_19_claim_check.join_pilot_point3.link_text                = Eat out to Help Out Scheme
-covid_19_claim_check.join_pilot_point3.text                     = for businesses in the hospitality sector
-covid_19_claim_check.can_join_pilot                             = You can still sign up if you’ve only claimed a rebate through the:
-covid_19_claim_check.claim_sick_pay.link_text                   = Coronavirus Statutory Sick Pay Rebate Scheme
-covid_19_claim_check.test_and_trace_pay.link_text               = Test and Trace Support Payment Scheme
-covid_19_claim_check.local_authority_grants.link_text           = Local Authority grants
-covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
+covid_19_claim_check.cannot_join.description              = You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):
+covid_19_claim_check.cannot_join.point1.link_text         = Self-Employment Support Scheme
+covid_19_claim_check.cannot_join.point1.text              = for sole traders
+covid_19_claim_check.cannot_join.point2.link_text         = Coronavirus Job Retention Scheme
+covid_19_claim_check.cannot_join.point3.link_text         = Job Support Scheme
+covid_19_claim_check.cannot_join.point4.link_text         = Job Retention Bonus
+covid_19_claim_check.can_join.description                 = You can still sign up if you’ve only claimed a rebate through the:
+covid_19_claim_check.can_join.point1.link_text            = Coronavirus Statutory Sick Pay Rebate Scheme
+covid_19_claim_check.can_join.point2.link_text            = Test and Trace Support Payment Scheme
+covid_19_claim_check.can_join.point3.link_text            = Eat out to Help Out Scheme
+covid_19_claim_check.error.summary                        = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
 
 ## Title pattern
 principleTitlePattern.serviceName.govUk                         = {0} - Use software to send Income Tax updates - GOV.UK

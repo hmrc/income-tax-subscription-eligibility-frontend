@@ -17,10 +17,10 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import play.api.libs.json.JsPath.write
+
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
+import org.jsoup.nodes.{Document, Element}
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, CheckAccountingPeriod => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
@@ -32,6 +32,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
   "GET /eligibility/accounting-period-check" should {
     lazy val result = get("/accounting-period-check")
     lazy val doc: Document = Jsoup.parse(result.body)
+    lazy val content: Element = doc.content
 
     "return OK" in {
       result must have(
@@ -47,8 +48,8 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       doc.getH1Element.text mustBe messages.heading
     }
 
-    "have a view with one hint" in {
-      doc.getHintText.contains(messages.hint) mustBe true
+    "have a view with one hint message" in {
+      content.select("p:nth-of-type(1)").text mustBe messages.hint
     }
 
     "have a view with the correct values displayed in the form" in {
@@ -89,7 +90,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
 
     "return SEE_OTHER when selecting Yes and send an Audit" in new PostSetup(Some(Yes)) {
       val expectedAuditContainsYes: JsValue = Json.parse(
-      """{ "userType" : "individual", "eligible" : "true" , "answer" : "yes", "question": "standardAccountingPeriod" }""")
+        """{ "userType" : "individual", "eligible" : "true" , "answer" : "yes", "question": "standardAccountingPeriod" }""")
       verifyAudit()
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
@@ -100,7 +101,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
 
     "return SEE_OTHER when selecting No and send an Audit" in new PostSetup(Some(No)) {
       val expectedAuditContainsNo: JsValue = Json.parse(
-      """{ "userType" : "individual", "eligible" : "false" , "answer" : "no", "question": "standardAccountingPeriod" }""")
+        """{ "userType" : "individual", "eligible" : "false" , "answer" : "no", "question": "standardAccountingPeriod" }""")
       verifyAudit()
       verifyAuditContains(expectedAuditContainsNo)
       response must have(
