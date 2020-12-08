@@ -21,41 +21,37 @@
 
 
 @principal_main_template(
-    title = messages("overview.title"),
-    mainClass = Some("full-width")
+    title = messages("overview.title")
 ) {
 
-    <div class="grid-row interrupt-card">
+<h1>@messages("overview.heading")</h1>
 
-        <h1>@messages("overview.heading")</h1>
+<p>@messages("overview.line_1")</p>
+<p>@messages("overview.line_2")</p>
 
+<ul class = "list list-bullet">
+    <li>@messages("overview.bullet_compatible_software_line_1")</li>
+    <li>@messages("overview.bullet_compatible_software_line_2")</li>
+    <li>@messages("overview.bullet_compatible_software_line_3")</li>
+</ul>
 
-        <p>@messages("overview.line_1")</p>
-        <p>@messages("overview.line_2")</p>
-        <ul class = "list list-bullet">
-            <li>@messages("overview.bullet_compatible_software_line_1")</li>
-            <li>@messages("overview.bullet_compatible_software_line_2")</li>
-            <li>@messages("overview.bullet_compatible_software_line_3")</li>
-        </ul>
+<p>@messages("overview.line_3") <a id="guidance" href="@appConfig.guidanceUrl" target="_blank">@messages("overview.link_text")</a> </p>
 
-        <p>@messages("overview.line_3") <a id="guidance" href="@appConfig.guidanceUrl" target="_blank">@messages("overview.link_text")</a> </p>
+<h2>@messages("overview.heading_2")</h2>
 
-        <h2>@messages("overview.heading_2")</h2>
-        <p>@messages("overview.line_4")</p>
-        <ul class = "list list-bullet">
-            <li>@messages("overview.bullet_before_start_line_1")</li>
-            <li>@messages("overview.bullet_before_start_line_2")</li>
-            <li>@messages("overview.bullet_before_start_line_3")</li>
-            <li>@messages("overview.bullet_before_start_line_4")</li>
-        </ul>
+<p>@messages("overview.line_4")</p>
 
-        <div class="actions">
-        @form(action = postAction) {
-            <button class="button" type="submit" id="continue-button">@messages("base.continue")</button>
-        }
-        </div>
+<ul class = "list list-bullet">
+    <li>@messages("overview.bullet_before_start_line_1")</li>
+    <li>@messages("overview.bullet_before_start_line_2")</li>
+    <li>@messages("overview.bullet_before_start_line_3")</li>
+    <li>@messages("overview.bullet_before_start_line_4")</li>
+</ul>
 
-
-    </div>
+<div class="actions">
+    @form(action = postAction) {
+        <button class="button" type="submit" id="continue-button">@messages("base.continue")</button>
+    }
+</div>
 
 }
