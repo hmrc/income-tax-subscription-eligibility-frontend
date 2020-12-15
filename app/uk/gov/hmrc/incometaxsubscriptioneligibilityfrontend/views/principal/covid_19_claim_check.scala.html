@@ -24,46 +24,55 @@
 @(covid19ClaimCheckForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @principal_main_template(title = messages("covid_19_claim_check.title"), form = Some(covid19ClaimCheckForm)) {
-@summaryErrorHelper(covid19ClaimCheckForm)
-<h1>@messages("covid_19_claim_check.title")</h1>
 
-<p>@messages("covid_19_claim_check.cannot_join.description")</p>
+    @summaryErrorHelper(covid19ClaimCheckForm)
 
-<ul class="list list-bullet">
-    <li><a id="selfEmploymentSupportScheme" href=@appConfig.covid19SelfEmploymentSupportSchemeUrl target="_blank">@messages("covid_19_claim_check.cannot_join.point1.link_text")</a> @messages("covid_19_claim_check.cannot_join.point1.text")</li>
-    <li><a id="jobCoronaRetentionScheme" href=@appConfig.covid19CoronaJobRetentionSchemeUrl target="_blank">@messages("covid_19_claim_check.cannot_join.point2.link_text")</a></li>
-    <li><a id="jobSupportScheme" href=@appConfig.covid19JobSupportSchemeUrl target="_blank">@messages("covid_19_claim_check.cannot_join.point3.link_text")</a></li>
-    <li><a id="jobRetentionScheme" href=@appConfig.covid19JobRetentionSchemeUrl target="_blank">@messages("covid_19_claim_check.cannot_join.point4.link_text")</a></li>
-</ul>
+    <h1>@messages("covid_19_claim_check.title")</h1>
 
-<p>@messages("covid_19_claim_check.can_join.description")</p>
+    <p>@messages("covid_19_claim_check.cannot_join.description")</p>
 
-<ul class="list list-bullet">
-    <li><a id="sickPayRebateScheme" href=@appConfig.covid19ClaimSickPayUrl target="_blank">@messages("covid_19_claim_check.can_join.point1.link_text")</a></li>
-    <li><a id="testAndTraceSupportPaymentScheme" href=@appConfig.covid19TestAndTraceUrl target="_blank">@messages("covid_19_claim_check.can_join.point2.link_text")</a></li>
-    <li><a id="eatOutHelpOutScheme" href=@appConfig.covid19EatOutSchemeUrl target="_blank">@messages("covid_19_claim_check.can_join.point3.link_text")</a></li>
-</ul>
+    <ul class="list list-bullet">
+        <li>
+            <a id="selfEmploymentSupportScheme" href="@appConfig.covid19SelfEmploymentSupportSchemeUrl" target="_blank">@messages("covid_19_claim_check.cannot_join.point1.link_text")</a>
+            @messages("covid_19_claim_check.cannot_join.point1.text")</li>
+        <li>
+            <a id="jobCoronaRetentionScheme" href="@appConfig.covid19CoronaJobRetentionSchemeUrl" target="_blank">@messages("covid_19_claim_check.cannot_join.point2.link_text")</a>
+        </li>
+        <li>
+            <a id="eatOutHelpOutScheme" href="@appConfig.covid19EatOutSchemeUrl" target="_blank">@messages("covid_19_claim_check.cannot_join.point3.link_text")</a>
+            @messages("covid_19_claim_check.cannot_join.point3.text")
+        </li>
+    </ul>
 
-@form(action = postAction) {
-    @if(covid19ClaimCheckForm.hasErrors){
-        <div class="form-group form-field--error">
-            <span class="error-notification bold" >@messages("covid_19_claim_check.error.summary")</span>
-    } else {
-        <div class="form-group">
+    <p>@messages("covid_19_claim_check.can_join.description")</p>
+
+    <ul class="list list-bullet">
+        <li><a id="sickPayRebateScheme" href="@appConfig.covid19ClaimSickPayUrl" target="_blank">@messages("covid_19_claim_check.can_join.point1.link_text")</a></li>
+        <li><a id="testAndTraceSupportPaymentScheme" href="@appConfig.covid19TestAndTraceUrl" target="_blank">@messages("covid_19_claim_check.can_join.point2.link_text")</a></li>
+        <li><a id="localAuthorityGrant" href="@appConfig.covid19LocalAuthorityGrantUrl" target="_blank">@messages("covid_19_claim_check.can_join.point3.link_text")</a></li>
+    </ul>
+
+    @form(action = postAction) {
+        @if(covid19ClaimCheckForm.hasErrors){
+            <div class="form-group form-field--error">
+                <span class="error-notification bold" >@messages("covid_19_claim_check.error.summary")</span>
+        } else {
+            <div class="form-group">
+        }
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">@messages("covid_19_claim_check.title")</legend>
+                    <div class="multiple-choice">
+                        <input type="radio" id="yes-no" name="yes-no" value="yes">
+                        <label for="yes-no">@messages("base.yes")</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input type="radio" id="yes-no-2" name="yes-no" value="no">
+                        <label for="yes-no-2">@messages("base.no")</label>
+                    </div>
+                </fieldset>
+            </div>
+
+        <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
     }
-            <fieldset class="inline">
-                <legend class="visuallyhidden">@messages("covid_19_claim_check.title")</legend>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no" name="yes-no" value="yes">
-                    <label for="yes-no">@messages("base.yes")</label>
-                </div>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no-2" name="yes-no" value="no">
-                    <label for="yes-no-2">@messages("base.no")</label>
-                </div>
-            </fieldset>
-        </div>
 
-    <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
 }
-            }

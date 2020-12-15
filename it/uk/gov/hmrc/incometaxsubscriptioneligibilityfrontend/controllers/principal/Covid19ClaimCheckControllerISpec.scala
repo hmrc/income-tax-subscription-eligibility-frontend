@@ -20,6 +20,7 @@ import org.jsoup.Jsoup
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import org.jsoup.nodes.{Document, Element}
+import org.jsoup.select.Elements
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, Covid19ClaimCheck => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
@@ -40,7 +41,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "have a view with the correct title" in {
-      doc.title mustBe s"${messages.title}${suffix}"
+      doc.title mustBe s"${messages.title}$suffix"
     }
 
     "have a view with the correct heading" in {
@@ -53,23 +54,40 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with the 4 correct bullet point for cannot join pilot" in {
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(1)").text mustBe messages.linkTextCannotJoin1
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(2)").text mustBe messages.linkTextCannotJoin2
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(3)").text mustBe messages.linkTextCannotJoin3
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(4)").text mustBe messages.linkTextCannotJoin4
+      val listItemOne: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(1)")
+      val listItemTwo: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(2)")
+      val listItemThree: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(3)")
+
+      listItemOne.text mustBe messages.linkTextCannotJoin1
+      listItemOne.selectFirst("a").attr("href") mustBe appConfig.covid19SelfEmploymentSupportSchemeUrl
+
+      listItemTwo.text mustBe messages.linkTextCannotJoin2
+      listItemTwo.selectFirst("a").attr("href") mustBe appConfig.covid19CoronaJobRetentionSchemeUrl
+
+      listItemThree.text mustBe messages.linkTextCannotJoin3
+      listItemThree.selectFirst("a").attr("href") mustBe appConfig.covid19EatOutSchemeUrl
     }
 
     "return a view with the 3 correct bullet point for can join pilot" in {
-      content.select("ul:nth-of-type(2)").select("li:nth-of-type(1)").text mustBe messages.linkTextCanJoin1
-      content.select("ul:nth-of-type(2)").select("li:nth-of-type(2)").text mustBe messages.linkTextCanJoin2
-      content.select("ul:nth-of-type(2)").select("li:nth-of-type(3)").text mustBe messages.linkTextCanJoin3
+      val listItemOne: Element = content.selectFirst("ul:nth-of-type(2)").selectFirst("li:nth-of-type(1)")
+      val listItemTwo: Element = content.selectFirst("ul:nth-of-type(2)").selectFirst("li:nth-of-type(2)")
+      val listItemThree: Element = content.selectFirst("ul:nth-of-type(2)").selectFirst("li:nth-of-type(3)")
+
+      listItemOne.text mustBe messages.linkTextCanJoin1
+      listItemOne.selectFirst("a").attr("href") mustBe appConfig.covid19ClaimSickPayUrl
+
+      listItemTwo.text mustBe messages.linkTextCanJoin2
+      listItemTwo.selectFirst("a").attr("href") mustBe appConfig.covid19TestAndTraceUrl
+
+      listItemThree.text mustBe messages.linkTextCanJoin3
+      listItemThree.selectFirst("a").attr("href") mustBe appConfig.covid19LocalAuthorityGrantUrl
     }
 
     "have a view with the correct values displayed in the form" in {
       val form = doc.select("form")
       val labels = doc.select("form").select("label")
 
-      form.isEmpty() mustBe false
+      form.isEmpty mustBe false
 
       val radios = form.select("input[type=radio]")
 
@@ -130,7 +148,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
         httpStatus(BAD_REQUEST)
       )
 
-      val errorMessage = doc.select("span[class=error-notification bold]")
+      val errorMessage: Elements = doc.select("span[class=error-notification bold]")
       errorMessage.text() mustBe messages.error
     }
 

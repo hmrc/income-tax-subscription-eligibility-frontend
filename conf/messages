@@ -110,17 +110,17 @@ agent.terms.line2                                               = You or your cl
 
 ## Covid-19 page ##
 covid_19_claim_check.title                                      = Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
-covid_19_claim_check.cannot_join.description              = You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):
-covid_19_claim_check.cannot_join.point1.link_text         = Self-Employment Support Scheme
-covid_19_claim_check.cannot_join.point1.text              = for sole traders
-covid_19_claim_check.cannot_join.point2.link_text         = Coronavirus Job Retention Scheme
-covid_19_claim_check.cannot_join.point3.link_text         = Job Support Scheme
-covid_19_claim_check.cannot_join.point4.link_text         = Job Retention Bonus
-covid_19_claim_check.can_join.description                 = You can still sign up if you’ve only claimed a rebate through the:
-covid_19_claim_check.can_join.point1.link_text            = Coronavirus Statutory Sick Pay Rebate Scheme
-covid_19_claim_check.can_join.point2.link_text            = Test and Trace Support Payment Scheme
-covid_19_claim_check.can_join.point3.link_text            = Eat out to Help Out Scheme
-covid_19_claim_check.error.summary                        = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
+covid_19_claim_check.cannot_join.description                    = You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):
+covid_19_claim_check.cannot_join.point1.link_text               = Self-Employment Support Scheme
+covid_19_claim_check.cannot_join.point1.text                    = for sole traders
+covid_19_claim_check.cannot_join.point2.link_text               = Coronavirus Job Retention Scheme
+covid_19_claim_check.cannot_join.point3.link_text               = Eat out to Help Out Scheme
+covid_19_claim_check.cannot_join.point3.text                    = for businesses in the hospitality sector
+covid_19_claim_check.can_join.description                       = You can still sign up if you’ve only claimed a rebate through the:
+covid_19_claim_check.can_join.point1.link_text                  = Coronavirus Statutory Sick Pay Rebate Scheme
+covid_19_claim_check.can_join.point2.link_text                  = Test and Trace Support Payment Scheme
+covid_19_claim_check.can_join.point3.link_text                  = Local Authority grants
+covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
 
 ## Title pattern
 principleTitlePattern.serviceName.govUk                         = {0} - Use software to send Income Tax updates - GOV.UK

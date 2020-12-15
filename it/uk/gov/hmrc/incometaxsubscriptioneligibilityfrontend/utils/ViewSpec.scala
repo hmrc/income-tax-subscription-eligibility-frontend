@@ -4,31 +4,39 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 import scala.collection.JavaConversions._
 import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
+import org.scalatest.Matchers.fail
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 
 trait ViewSpec {
 
   implicit class ElementTest(element: Element) {
 
-    val content: Element = element.getElementsByTag("article").head
+    def selectFirst(selector: String): Element = {
+      element.select(selector).headOption match {
+        case Some(element) => element
+        case None => fail(s"No elements returned for selector: $selector")
+      }
+    }
 
-    val getParagraphs: Elements = element.getElementsByTag("p")
+    def content: Element = element.selectFirst("article")
 
-    val getBulletPoints: Elements = element.getElementsByTag("li")
+    def getParagraphs: Elements = element.getElementsByTag("p")
 
-    val getH1Element: Elements = element.getElementsByTag("h1")
+    def getBulletPoints: Elements = element.getElementsByTag("li")
 
-    val getH2Elements: Elements = element.getElementsByTag("h2")
+    def getH1Element: Elements = element.getElementsByTag("h1")
 
-    val getFormElements: Elements = element.getElementsByClass("form-field-group")
+    def getH2Elements: Elements = element.getElementsByTag("h2")
 
-    val getErrorSummaryMessage: Elements = element.select("#error-summary-display ul")
+    def getFormElements: Elements = element.getElementsByClass("form-field-group")
 
-    val getSubmitButton: Elements = element.select("button[type=submit]")
+    def getErrorSummaryMessage: Elements = element.select("#error-summary-display ul")
 
-    val getHintText: String = element.select(s"""[class=form-hint]""").text()
+    def getSubmitButton: Elements = element.select("button[type=submit]")
 
-    val getForm: Elements = element.select("form")
+    def getHintText: String = element.select(s"""[class=form-hint]""").text()
+
+    def getForm: Elements = element.select("form")
 
     def getSpan(id: String): Elements = element.select(s"""span[id=$id]""")
 
