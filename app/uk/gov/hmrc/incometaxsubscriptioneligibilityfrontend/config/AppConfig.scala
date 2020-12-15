@@ -54,12 +54,10 @@ class AppConfig @Inject()(config: ServicesConfig) {
 
   lazy val covid19SelfEmploymentSupportSchemeUrl = s"$govUkUrl/guidance/claim-a-grant-through-the-coronavirus-covid-19-self-employment-income-support-scheme"
   lazy val covid19CoronaJobRetentionSchemeUrl = s"$govUkUrl/guidance/claim-for-wage-costs-through-the-coronavirus-job-retention-scheme"
-  lazy val covid19JobSupportSchemeUrl = s"$govUkUrl/guidance/check-if-you-can-claim-the-job-support-scheme"
-  lazy val covid19JobRetentionSchemeUrl = s"$govUkUrl/guidance/check-if-you-can-claim-the-job-retention-bonus-from-15-february-2021"
   lazy val covid19ClaimSickPayUrl = s"$govUkUrl/guidance/claim-back-statutory-sick-pay-paid-to-employees-due-to-coronavirus-covid-19"
   lazy val covid19TestAndTraceUrl = s"$govUkUrl/government/publications/test-and-trace-support-payment-scheme-claiming-financial-support/claiming-financial-support-under-the-test-and-trace-support-payment-scheme"
   lazy val covid19EatOutSchemeUrl = s"$govUkUrl/guidance/get-a-discount-with-the-eat-out-to-help-out-scheme"
-  lazy val returnsUrl: String = s"https://www.gov.uk/self-assessment-tax-returns/sending-return"
+  lazy val covid19LocalAuthorityGrantUrl = s"$govUkUrl/government/publications/coronavirus-grant-funding-local-authority-payments-to-small-and-medium-businesses"
 
   def languageMap: Map[String, Lang] = Map(
     "english" -> Lang("en"),

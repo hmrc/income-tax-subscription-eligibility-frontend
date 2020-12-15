@@ -128,15 +128,15 @@ agent.terms.line2                                               = Gallwch chi ne
 ## Covid-19 page ##
 covid_19_claim_check.title                                      = A ydych erioed wedi hawlio grant coronafeirws (COVID‑19) neu a ydych yn bwriadu gwneud hynny yn y dyfodol?
 covid_19_claim_check.cannot_join.description                    = Ar hyn o bryd ni allwch ymuno â’r cynllun peilot os ydych wedi hawlio un neu ragor o’r grantiau hyn (mae’r cysylltiadau canlynol yn agor tab newydd):
-covid_19_claim_check.cannot_join.point1.link_text               = Cynllun Cymhorthdal Incwm Hunangyflogaeth ar gyfer
-covid_19_claim_check.cannot_join.point1.text                    = unig fasnachwyr
+covid_19_claim_check.cannot_join.point1.link_text               = Cynllun Cymhorthdal Incwm Hunangyflogaeth
+covid_19_claim_check.cannot_join.point1.text                    = ar gyfer unig fasnachwyr
 covid_19_claim_check.cannot_join.point2.link_text               = Cynllun Cadw Swyddi yn sgil Coronafeirws
-covid_19_claim_check.cannot_join.point3.link_text               = Cynllun Cynnal Swyddi
-covid_19_claim_check.cannot_join.point4.link_text               = Bonws Cadw Swyddi
+covid_19_claim_check.cannot_join.point3.link_text               = Cynllun Bwyta Allan i Helpu Allan
+covid_19_claim_check.cannot_join.point3.text                    = ar gyfer busnesau yn y sector lletygarwch
 covid_19_claim_check.can_join.description                       = Gallwch gofrestru o hyd os ydych dim ond wedi hawlio drwy’r:
 covid_19_claim_check.can_join.point1.link_text                  = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws
 covid_19_claim_check.can_join.point2.link_text                  = Cynllun Taliadau Cymorth Profi ac Olrhain
-covid_19_claim_check.can_join.point3.link_text                  = Cynllun Bwyta Allan i Helpu Allan
+covid_19_claim_check.can_join.point3.link_text                  = Grantiau Awdurdodau Lleol
 covid_19_claim_check.error.summary                              = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
 
 ## Title pattern
