@@ -1,26 +1,27 @@
+
 import play.core.PlayVersion.current
 import sbt._
 
-
 object AppDependencies {
 
-  private val playLanguageVersion = "4.3.0-play-26"
+  private val playLanguageVersion = "4.5.0-play-26"
+  private val bootstrapVersion = "2.3.0"
 
   val compile = Seq(
-    "uk.gov.hmrc" %% "govuk-template" % "5.38.0-play-26",
-    "uk.gov.hmrc" %% "play-ui" % "8.18.0-play-26",
-    "uk.gov.hmrc" %% "bootstrap-play-26" % "0.45.0",
+    "uk.gov.hmrc" %% "govuk-template" % "5.60.0-play-26",
+    "uk.gov.hmrc" %% "play-ui" % "8.19.0-play-26",
+    "uk.gov.hmrc" %% "bootstrap-play-26" % bootstrapVersion,
     "uk.gov.hmrc" %% "play-language" % playLanguageVersion
   )
 
   val test = Seq(
-    "uk.gov.hmrc" %% "bootstrap-play-26" % "0.45.0" % Test classifier "tests",
+    "uk.gov.hmrc" %% "bootstrap-play-26" % bootstrapVersion % Test classifier "tests",
     "org.scalatest" %% "scalatest" % "3.0.9" % "test",
-    "org.jsoup" % "jsoup" % "1.10.3" % "test, it",
+    "org.jsoup" % "jsoup" % "1.13.1" % "test, it",
     "com.typesafe.play" %% "play-test" % current % "test",
     "org.pegdown" % "pegdown" % "1.6.0" % "test, it",
-    "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % "test, it",
-    "com.github.tomakehurst" % "wiremock-jre8" % "2.26.3" % "test, it"
+    "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.3" % "test, it",
+    "com.github.tomakehurst" % "wiremock-jre8" % "2.27.2" % "test, it"
   )
 
 }
