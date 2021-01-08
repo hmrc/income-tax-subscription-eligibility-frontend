@@ -116,14 +116,13 @@ cannot_sign_up.send_self_assessment.link                        = Ffurflen Dreth
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Telerau cymryd rhan
-agent.terms.line1                                               = Drwy gymryd rhan yn y peilot hwn, rydych yn cytuno y byddwch chi neu’ch cleient yn gwneud y canlynol:
+agent.terms.line1                                               = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch chi neu’ch cleient yn gwneud y canlynol:
 agent.terms.bullet1                                             = defnyddio meddalwedd berthnasol i gofnodi’ch incwm a’ch treuliau
-agent.terms.bullet2                                             = darparu cyfeiriad e-bost fel y gall CThEM gysylltu â’ch cleient
-agent.terms.bullet3                                             = cyflwyno adroddiad chwarterol o ddechrau cyfnod cyfrifyddu eich cleient
-agent.terms.bullet4                                             = anfon datganiad terfynol eich cleient erbyn 31 Ionawr ar ddiwedd y flwyddyn dreth
-agent.terms.bullet5                                             = rhoi gwybod i CThEM os yw’ch cleient yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
-agent.terms.bullet6                                             = defnyddio’ch dull arferol ar gyfer Hunanasesiad os yw’ch cleient yn gadael y cynllun peilot hwn
-agent.terms.line2                                               = Gallwch chi neu’ch cleient roi’r gorau i gymryd rhan yn y cynllun peilot hwn ar unrhyw adeg.
+agent.terms.bullet2                                             = anfon diweddariad chwarterol o ddechrau cyfnod cyfrifyddu’ch cleient
+agent.terms.bullet3                                             = cyflwyno datganiad terfynol eich cleient erbyn 31 Ionawr ar ddiwedd ei flwyddyn dreth
+agent.terms.bullet4                                             = rhoi gwybod i CThEM os yw’ch cleient yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
+agent.terms.bullet5                                             = defnyddio’ch dull arferol ar gyfer Hunanasesiad os yw’ch cleient yn gadael y cynllun peilot hwn
+agent.terms.line2                                               = Gallwch chi neu’ch cleient adael y cynllun peilot hwn ar unrhyw adeg.
 
 ## Covid-19 page ##
 covid_19_claim_check.title                                      = A ydych erioed wedi hawlio grant coronafeirws (COVID‑19) neu a ydych yn bwriadu gwneud hynny yn y dyfodol?

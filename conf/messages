@@ -101,12 +101,11 @@ cannot_sign_up.send_self_assessment.link                        = Self Assessmen
 agent.terms.heading                                             = Terms of participation
 agent.terms.line1                                               = By taking part in this pilot, you agree that either you or your client will:
 agent.terms.bullet1                                             = use relevant software to record income and expenses
-agent.terms.bullet2                                             = provide an email address so your client can be contacted by HMRC
-agent.terms.bullet3                                             = submit a quarterly report from the start of your client’s accounting period
-agent.terms.bullet4                                             = send your client’s final declaration by the 31 January at the end of their tax year
-agent.terms.bullet5                                             = tell HMRC if your client stops trading or starts a new business
-agent.terms.bullet6                                             = use your usual Self Assessment method if your client leaves this pilot
-agent.terms.line2                                               = You or your client can stop taking part in this pilot at any time.
+agent.terms.bullet2                                             = send a quarterly update from the start of your client’s accounting period
+agent.terms.bullet3                                             = submit your client’s final declaration by the 31 January at the end of their tax year
+agent.terms.bullet4                                             = tell HMRC if your client stops trading or starts a new business
+agent.terms.bullet5                                             = use your usual Self Assessment method if your client leaves this pilot
+agent.terms.line2                                               = You or your client can leave this pilot at any time.
 
 ## Covid-19 page ##
 covid_19_claim_check.title                                      = Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
