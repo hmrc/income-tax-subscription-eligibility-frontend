@@ -119,12 +119,11 @@ object MessageLookup {
     val title = s"$heading$agentSuffix"
     val line1 = "By taking part in this pilot, you agree that either you or your client will:"
     val bullet1 = "use relevant software to record income and expenses"
-    val bullet2 = "provide an email address so your client can be contacted by HMRC"
-    val bullet3 = "submit a quarterly report from the start of your client’s accounting period"
-    val bullet4 = "send your client’s final declaration by the 31 January at the end of their tax year"
-    val bullet5 = "tell HMRC if your client stops trading or starts a new business"
-    val bullet6 = "use your usual Self Assessment method if your client leaves this pilot"
-    val line2 = "You or your client can stop taking part in this pilot at any time."
+    val bullet2 = "send a quarterly update from the start of your client’s accounting period"
+    val bullet3 = "submit your client’s final declaration by the 31 January at the end of their tax year"
+    val bullet4 = "tell HMRC if your client stops trading or starts a new business"
+    val bullet5 = "use your usual Self Assessment method if your client leaves this pilot"
+    val line2 = "You or your client can leave this pilot at any time."
   }
 
   object OtherSourcesOfIncomeError {
