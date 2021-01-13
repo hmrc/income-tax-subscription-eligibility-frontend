@@ -15,6 +15,8 @@
  *@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+@import uk.gov.hmrc.play.views.html.layouts
+@import play.twirl.api.HtmlFormat
 
 
 @(title: String,
@@ -36,6 +38,16 @@
     }
 }
 
+    @*
+    * put all all default assets for this service here
+    *@
+@defaultScriptElem = {
+
+    <script type="text/javascript" src=@routes.Assets.versioned("javascripts/skipToMainContent.js")></script>
+        @* append custom scripts *@
+@scriptElem.fold(HtmlFormat.empty)(x => x)
+}
+
 @prefixedTitle = @{
     form match {
         case Some(validationForm) if validationForm.hasErrors => Messages("principleBase.title.error", title)
@@ -52,5 +64,5 @@
                contentHeader = contentHeader,
                mainContent = layouts.article(mainContent),
                serviceInfoContent = serviceInfoContent,
-               scriptElem = scriptElem
+               scriptElem = Some(defaultScriptElem)
 )
