@@ -73,12 +73,14 @@
 }
 
 @mainContentHeader = {
-    @views.html.language_selection(
+    <div class="float--right">@views.html.language_selection(
         appConfig.languageMap,
-        appConfig.routeToSwitchLanguage
-    )
+        appConfig.routeToSwitchLanguage,
+        customClass = None
+        )</div>
+
     @if(contentHeader.isDefined) {
-        @uiLayouts.main_content_header(contentHeader = contentHeader.get)
+<header class="page-header inline-block">@uiLayouts.main_content_header(contentHeader = contentHeader.get)</header>
     }
 
         <div><a id="back" class="link-back" href="javascript:history.back()">@messages("base.back")</a></div>
