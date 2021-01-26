@@ -10,7 +10,7 @@ base.accept_and_continue                                        = Derbyn ac yn e
 
 
 ## Service name
-principal.service_name.title                                    = Defnyddio meddalwedd i anfon diweddariadau Treth Incwm
+principal_service_name.title                                    = Defnyddio meddalwedd i anfon diweddariadau Treth Incwm
 agent_service_name.title                                        = Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient
 
 ## Overview Page Content
@@ -139,7 +139,7 @@ covid_19_claim_check.can_join.point3.link_text                  = Grantiau Awdur
 covid_19_claim_check.error.summary                              = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
 
 ## Title pattern
-principleTitlePattern.serviceName.govUk                         = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
-agentTitlePattern.serviceName.govUk                             = {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
-principleBase.title.error                                       = Gwall: {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
-agentBase.title.error                                           = Gwall: {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
+principle_title_pattern.serviceName.govUk                       = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
+agent_title_pattern.serviceName.govUk                           = {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
+principle_base.title.error                                      = Gwall: {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
+agent_base.title.error                                          = Gwall: {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
