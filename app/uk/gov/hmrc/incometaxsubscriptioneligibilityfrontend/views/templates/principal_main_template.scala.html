@@ -18,7 +18,6 @@
 @import uk.gov.hmrc.play.views.html.layouts
 @import play.twirl.api.HtmlFormat
 
-
 @(title: String,
   sidebarLinks: Option[Html] = None,
   contentHeader: Option[Html] = None,
@@ -27,8 +26,6 @@
   scriptElem: Option[Html] = None,
   form: Option[Form[_]] = None
 )(mainContent: Html)(implicit request : Request[_], messages: Messages, appConfig: AppConfig)
-
-@import uk.gov.hmrc.play.views.html.layouts
 
 @serviceInfoContent = {}
 
@@ -50,8 +47,8 @@
 
 @prefixedTitle = @{
     form match {
-        case Some(validationForm) if validationForm.hasErrors => Messages("principleBase.title.error", title)
-        case _ => Messages("principleTitlePattern.serviceName.govUk", title)
+        case Some(validationForm) if validationForm.hasErrors => Messages("principle_base.title.error", title)
+        case _ => Messages("principle_title_pattern.serviceName.govUk", title)
     }
 }
 

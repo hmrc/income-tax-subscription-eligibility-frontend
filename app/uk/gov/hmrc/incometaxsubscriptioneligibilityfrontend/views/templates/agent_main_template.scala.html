@@ -27,8 +27,6 @@
   form: Option[Form[_]] = None
 )(mainContent: Html)(implicit request : Request[_], messages: Messages, appConfig: AppConfig)
 
-@import uk.gov.hmrc.play.views.html.layouts
-
 @serviceInfoContent = {}
 
 @sidebar = {
@@ -49,8 +47,8 @@
 
 @prefixedTitle = @{
     form match {
-        case Some(validationForm) if validationForm.hasErrors => Messages("agentBase.title.error", title)
-        case _ => Messages("agentTitlePattern.serviceName.govUk", title)
+        case Some(validationForm) if validationForm.hasErrors => Messages("agent_base.title.error", title)
+        case _ => Messages("agent_title_pattern.serviceName.govUk", title)
     }
 }
 

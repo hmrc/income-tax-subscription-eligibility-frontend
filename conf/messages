@@ -122,7 +122,7 @@ covid_19_claim_check.can_join.point3.link_text                  = Local Authorit
 covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
 
 ## Title pattern
-principleTitlePattern.serviceName.govUk                         = {0} - Use software to send Income Tax updates - GOV.UK
-agentTitlePattern.serviceName.govUk                             = {0} - Use software to report your client’s Income Tax - GOV.UK
-principleBase.title.error                                       = Error: {0} - Use software to send Income Tax updates - GOV.UK
-agentBase.title.error                                           = Error: {0} - Use software to report your client’s Income Tax - GOV.UK
+principle_title_pattern.serviceName.govUk                       = {0} - Use software to send Income Tax updates - GOV.UK
+agent_title_pattern.serviceName.govUk                           = {0} - Use software to report your client’s Income Tax - GOV.UK
+principle_base.title.error                                      = Error: {0} - Use software to send Income Tax updates - GOV.UK
+agent_base.title.error                                          = Error: {0} - Use software to report your client’s Income Tax - GOV.UK
