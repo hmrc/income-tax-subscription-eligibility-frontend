@@ -4,7 +4,7 @@ import sbt._
 
 object AppDependencies {
 
-  private val playLanguageVersion = "4.5.0-play-26"
+  private val playLanguageVersion = "4.10.0-play-26"
   private val bootstrapVersion = "2.3.0"
 
   val compile = Seq(
