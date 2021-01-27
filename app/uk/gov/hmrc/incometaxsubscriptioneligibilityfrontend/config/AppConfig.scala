@@ -19,7 +19,8 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config
 import javax.inject.{Inject, Singleton}
 import play.api.i18n.Lang
 import play.api.mvc.Call
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.routes
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.{routes => agentRoutes}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.{routes => principalRoutes}
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 
 @Singleton
@@ -61,8 +62,11 @@ class AppConfig @Inject()(config: ServicesConfig) {
 
   def languageMap: Map[String, Lang] = Map(
     "english" -> Lang("en"),
-    "cymraeg" -> Lang("cy"))
+    "cymraeg" -> Lang("cy")
+  )
 
-  def routeToSwitchLanguage: String => Call = (lang: String) => routes.LanguageSwitchController.switchToLanguage(lang)
+  def routeToSwitchLanguage: String => Call = (lang: String) => principalRoutes.LanguageSwitchController.switchToLanguage(lang)
+
+  def routeToSwitchAgentLanguage: String => Call = (lang: String) => agentRoutes.LanguageSwitchController.switchToLanguage(lang)
 
 }

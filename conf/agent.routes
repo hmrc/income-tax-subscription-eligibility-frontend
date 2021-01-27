@@ -9,4 +9,4 @@ GET         /terms-of-participation           uk.gov.hmrc.incometaxsubscriptione
 POST        /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
 
 ## Welsh language support
-GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.LanguageSwitchController.switchToLanguage(lang: String)
+GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.LanguageSwitchController.switchToLanguage(lang: String)

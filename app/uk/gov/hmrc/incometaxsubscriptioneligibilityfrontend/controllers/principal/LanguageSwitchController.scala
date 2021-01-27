@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import com.google.inject.Inject
-import play.api.Configuration
 import play.api.i18n.Lang
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 import uk.gov.hmrc.play.language.{LanguageController, LanguageUtils}
 
 class LanguageSwitchController @Inject()(appConfig: AppConfig,
-                                         configuration: Configuration,
                                          languageUtils: LanguageUtils,
                                          controllerComponents: ControllerComponents)
-  extends LanguageController(configuration, languageUtils, controllerComponents) {
+  extends LanguageController(languageUtils, controllerComponents) {
 
   override def languageMap: Map[String, Lang] = appConfig.languageMap
 

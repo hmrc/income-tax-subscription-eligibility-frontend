@@ -3,10 +3,8 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.{Document, Element}
-import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => base, Overview => messages}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.routes
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => base, Overview => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -48,13 +46,13 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with the third paragraph with a link" in {
-     content.select("p:nth-of-type(3)").text mustBe messages.line3
+      content.select("p:nth-of-type(3)").text mustBe messages.line3
       val link = doc.getLink("guidance")
       link.text mustBe messages.linkText
       link.attr("href") mustBe appConfig.guidanceUrl
     }
 
-     "return a view with the correct second heading" in {
+    "return a view with the correct second heading" in {
       content.getH2Elements.text mustBe messages.heading2
     }
 
