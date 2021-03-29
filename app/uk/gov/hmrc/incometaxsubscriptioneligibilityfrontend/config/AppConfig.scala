@@ -32,13 +32,17 @@ class AppConfig @Inject()(config: ServicesConfig) {
 
   private val incometaxSubscriptionFrontendHost = loadConfig("income-tax-subscription-frontend.host")
   private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up/user-details"
-  private val incometaxSubscriptionFrontendAgentFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/covid-19"
+  private val incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/covid-19"
+  private val incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/income-sources"
+
 
   private val contactBaseUrl = loadConfig("contact-frontend.host")
 
   private val assetsUrl = loadConfig("assets.url")
   val incometaxSubscriptionFrontendFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendFirstPageUrl}"
-  val incometaxSubscriptionFrontendAgentFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentFirstPageUrl}"
+  val incometaxSubscriptionFrontendAgentCovidEligibilityPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl}"
+  val incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl}"
+
   private val serviceIdentifier = "MTDIT"
 
   val assetsPrefix: String = assetsUrl + loadConfig("assets.version")
