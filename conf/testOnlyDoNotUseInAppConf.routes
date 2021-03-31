@@ -10,4 +10,11 @@
 # Failing to follow this rule may result in test routes deployed in production.
 
 # Add all the application routes to the prod.routes file
+
+
++ nocsrf
+GET        /report-quarterly/income-and-expenses/sign-up/eligibility/test-only/feature-switch                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.controllers.FeatureSwitchController.show
++ nocsrf
+POST       /report-quarterly/income-and-expenses/sign-up/eligibility/test-only/feature-switch                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.controllers.FeatureSwitchController.submit
+
 ->         /                          prod.Routes

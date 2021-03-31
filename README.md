@@ -32,6 +32,8 @@ You will need [sbt](http://www.scala-sbt.org/)
    `sm --stop INCOME_TAX_SUBSCRIPTION_ELIGIBILITY_FRONTEND`
 
    `sbt "run 9589"`
+   
+  `sbt "run 9589 -Dapplication.router=testOnlyDoNotUseInAppConf.Routes"`
 
 
 5) **Go to the homepage:**

@@ -20,6 +20,7 @@ import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.overview
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
 
@@ -27,13 +28,22 @@ import scala.concurrent.Future
 
 
 @Singleton
-class OverviewController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class OverviewController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport
+  with FeatureSwitching {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
-      Future.successful(
-        Ok(overview(postAction = routes.Covid19ClaimCheckController.show()))
-      )
-  }
+      if (isEnabled(RemoveCovidPages)) {
+        Future.successful(
+          Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show()))
+        )
+      } else {
+        Future.successful(
+          Ok(overview(postAction = routes.Covid19ClaimCheckController.show()))
+        )
+      }
 
+
+
+  }
 }

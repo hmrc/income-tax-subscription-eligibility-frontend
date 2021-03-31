@@ -19,21 +19,27 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
+import uk.gov.hmrc.http.InternalServerException
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.Covid19ClaimCheckForm.covid19ClaimCheckForm
 import uk.gov.hmrc.play.bootstrap.controller.FrontendController
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.covid_cannot_signup
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.{covid_19_claim_check, covid_cannot_signup, overview}
 
 import scala.concurrent.Future
 
 
 @Singleton
-class CovidCannotSignupController @Inject()(implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport{
+class CovidCannotSignupController @Inject()(implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport
+with FeatureSwitching{
 
   val show: Action[AnyContent] = Action.async{
     implicit request =>
-      Future.successful(
-        Ok(covid_cannot_signup())
-      )
+      if (isEnabled(RemoveCovidPages)) {
+        Future.failed(new InternalServerException("Remove Covid Pages Feature Switch - Enabled"))
+      } else {
+        Future.successful(
+          Ok(covid_cannot_signup()))
   }
-
+  }
 }
