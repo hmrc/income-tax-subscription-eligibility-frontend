@@ -74,11 +74,13 @@
 }
 
 @mainContentHeader = {
-    <div class="float--right">@views.html.language_selection(
+    <div class="float--right">
+        <nav class="hmrc-language-select" aria-label="Language switcher">@views.html.language_selection(
         appConfig.languageMap,
         if(isAgent) appConfig.routeToSwitchAgentLanguage else appConfig.routeToSwitchLanguage,
-        customClass = None
-        )</div>
+        customClass = None)
+        </nav>
+    </div>
 
     @if(contentHeader.isDefined) {
 <header class="page-header inline-block">@uiLayouts.main_content_header(contentHeader = contentHeader.get)</header>
