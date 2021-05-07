@@ -53,19 +53,15 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       doc.getParagraphs.text().contains(messages.claim_sick_pay) mustBe true
     }
 
-    "return a view with the 4 correct bullet point for cannot join pilot" in {
+    "return a view with the 2 correct bullet point for cannot join pilot" in {
       val listItemOne: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(1)")
       val listItemTwo: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(2)")
-      val listItemThree: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(3)")
 
       listItemOne.text mustBe messages.linkTextCannotJoin1
       listItemOne.selectFirst("a").attr("href") mustBe appConfig.covid19SelfEmploymentSupportSchemeUrl
 
       listItemTwo.text mustBe messages.linkTextCannotJoin2
       listItemTwo.selectFirst("a").attr("href") mustBe appConfig.covid19CoronaJobRetentionSchemeUrl
-
-      listItemThree.text mustBe messages.linkTextCannotJoin3
-      listItemThree.selectFirst("a").attr("href") mustBe appConfig.covid19EatOutSchemeUrl
     }
 
     "return a view with the 3 correct bullet point for can join pilot" in {
