@@ -129,3 +129,4 @@ agent_base.title.error                                          = Error: {0} - U
 
 ## Language switching
 language-selector.change-to-language                            = Newid yr iaith ir Gymraeg
+language-selector.nav-label                                     = Language switcher
