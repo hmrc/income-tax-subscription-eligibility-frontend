@@ -31,6 +31,11 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
       doc.getH1Element.text mustBe messages.heading
     }
 
+    "return a view with the language selector" in {
+      doc.selectFirst("""nav[class="hmrc-language-select"]""")
+        .selectOptionally("""a[href="/report-quarterly/income-and-expenses/sign-up/eligibility/language/cymraeg"]""").isDefined mustBe true
+    }
+
     "return a view with the first paragraph" in {
       content.select("p:nth-of-type(1)").text mustBe messages.line1
     }
