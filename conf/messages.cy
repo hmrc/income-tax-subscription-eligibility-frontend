@@ -141,3 +141,7 @@ principle_title_pattern.serviceName.govUk                       = {0} - Defnyddi
 agent_title_pattern.serviceName.govUk                           = {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
 principle_base.title.error                                      = Gwall: {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
 agent_base.title.error                                          = Gwall: {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK
+
+## Language switching
+language-selector.change-to-language                            = Change the language to English
+language-selector.nav-label                                     = Cyfnewidydd iaith

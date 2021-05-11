@@ -16,6 +16,7 @@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import play.twirl.api.HtmlFormat
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.custom_language_selection
 @(appConfig: AppConfig,
   title: String,
   navigationTitle: Option[String] = None,
@@ -74,11 +75,12 @@
 }
 
 @mainContentHeader = {
-    <div class="float--right">@views.html.language_selection(
+    <div class="float--right">
+        @custom_language_selection(
         appConfig.languageMap,
         if(isAgent) appConfig.routeToSwitchAgentLanguage else appConfig.routeToSwitchLanguage,
-        customClass = None
-        )</div>
+        customClass = None)
+    </div>
 
     @if(contentHeader.isDefined) {
 <header class="page-header inline-block">@uiLayouts.main_content_header(contentHeader = contentHeader.get)</header>
