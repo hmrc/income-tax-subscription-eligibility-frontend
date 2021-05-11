@@ -39,8 +39,8 @@
     * put all all default assets for this service here
     *@
 @defaultScriptElem = {
-
     <script type="text/javascript" src=@routes.Assets.versioned("javascripts/skipToMainContent.js")></script>
+    <script type="text/javascript" src=@routes.Assets.versioned("javascripts/errorFocus.js")></script>
         @* append custom scripts *@
 @scriptElem.fold(HtmlFormat.empty)(x => x)
 }
