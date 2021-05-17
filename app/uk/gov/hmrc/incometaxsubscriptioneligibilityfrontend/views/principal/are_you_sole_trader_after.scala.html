@@ -19,40 +19,35 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers._
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.principal_main_template
 @import uk.gov.hmrc.play.views.html.helpers.form
-
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.helpers.RadioOption
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AreYouSoleTraderAfterForm.fieldName
 
 @(areYouSoleTraderAfterForm: Form[YesNo], postAction: Call, startDateLimit: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+
+@inputContent = {
+    <p>@messages("are_you_sole_trader_after.para") <a id="workingForYourself" href="@appConfig.workingForYourselfUrl" target="_blank">@messages("are_you_sole_trader_after.para_link")</a> </p>
+}
 
 @principal_main_template(title = messages("are_you_sole_trader_after.title", startDateLimit), form = Some(areYouSoleTraderAfterForm)) {
 
     @summaryErrorHelper(areYouSoleTraderAfterForm)
 
-    <h1 class="heading-large" id="heading">@messages("are_you_sole_trader_after.heading", startDateLimit)</h1>
-
     @form(action = postAction) {
-        @if(areYouSoleTraderAfterForm.hasErrors) {
-            <div class="form-group form-field--error">
-                <span class="error-notification bold">@messages("are_you_sole_trader_after.error.summary", startDateLimit)</span>
-                } else {
-            <div class="form-group">
-            }
 
-        <p>@messages("are_you_sole_trader_after.para") <a id="workingForYourself" href="@appConfig.workingForYourselfUrl" target="_blank">@messages("are_you_sole_trader_after.para_link")</a> </p>
-
-        <fieldset class="inline">
-            <legend class="visuallyhidden">@messages("are_you_sole_trader_after.heading", startDateLimit)</legend>
-            <div class="multiple-choice">
-                <input type="radio" id="yes-no" name="yes-no" value="yes">
-                <label for="yes-no">@messages("base.yes")</label>
-            </div>
-            <div class="multiple-choice">
-                <input type="radio" id="yes-no-2" name="yes-no" value="no">
-                <label for="yes-no-2">@messages("base.no")</label>
-            </div>
-        </fieldset>
-    </div>
+        @yesNoRadioHelper(
+            field = areYouSoleTraderAfterForm(fieldName),
+            legend = messages("are_you_sole_trader_after.heading", startDateLimit),
+            content = Some(inputContent),
+            options = Seq(RadioOption(optionName = YesNoMapping.option_yes, message = messages("base.yes"), classes = None, conditionalContent = None),
+            RadioOption(optionName = YesNoMapping.option_no, message = messages("base.no"), classes = None, conditionalContent = None)
+            ),
+            parentForm = areYouSoleTraderAfterForm,
+            inline = true
+        )
 
         <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
+
     }
 
 }

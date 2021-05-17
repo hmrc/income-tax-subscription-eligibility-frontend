@@ -19,37 +19,32 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers._
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.principal_main_template
 @import uk.gov.hmrc.play.views.html.helpers.form
-
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AreYouSoleTraderAfterForm.fieldName
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.helpers.RadioOption
 
 @(propertyTradingBeforeDateForm: Form[YesNo], postAction: Call, startDateLimit: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+
+@inputContent = {
+    <p id="property-trading-hint">@messages("property_trading_after.line")</p>
+}
 
 @principal_main_template(title = messages("property_trading_after.title", startDateLimit), form = Some(propertyTradingBeforeDateForm)) {
 
     @summaryErrorHelper(propertyTradingBeforeDateForm)
 
-    <h1 class="heading-large" id="heading">@messages("property_trading_after.heading", startDateLimit)</h1>
-
     @form(action = postAction) {
-        @if(propertyTradingBeforeDateForm.hasErrors) {
-            <div class="form-group form-field--error">
-                <span class="error-notification bold" >@messages("property_trading_after.error.summary", startDateLimit)</span>
-        } else {
 
-            <div class="form-group">
-        }
-            <p id="property-trading-hint">@messages("property_trading_after.line")</p>
-            <fieldset class="inline" aria-describedby="property-trading-hint">
-                <legend class="visuallyhidden">@messages("property_trading_after.heading", startDateLimit)</legend>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no" name="yes-no" value="yes">
-                    <label for="yes-no">@messages("base.yes")</label>
-                </div>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no-2" name="yes-no" value="no">
-                    <label for="yes-no-2">@messages("base.no")</label>
-                </div>
-            </fieldset>
-        </div>
+        @yesNoRadioHelper(
+            field = propertyTradingBeforeDateForm(fieldName),
+            legend = messages("property_trading_after.title", startDateLimit),
+            content = Some(inputContent),
+            options = Seq(RadioOption(optionName = YesNoMapping.option_yes, message = messages("base.yes"), classes = None, conditionalContent = None),
+            RadioOption(optionName = YesNoMapping.option_no, message = messages("base.no"), classes = None, conditionalContent = None)
+            ),
+            parentForm = propertyTradingBeforeDateForm,
+            inline = true
+        )
 
         <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
     }

@@ -176,7 +176,7 @@ trait ViewSpec {
   def errorMessage(message: String): HavePropertyMatcher[Elements, String] =
     new HavePropertyMatcher[Elements, String] {
       def apply(element: Elements) = {
-        val errorMessage = element.parents.first.select("span[class=error-notification")
+        val errorMessage = element.parents.first.select("div[class=error-notification")
 
         HavePropertyMatchResult(
           errorMessage.text() == message,

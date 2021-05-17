@@ -119,7 +119,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
         httpStatus(BAD_REQUEST)
       )
 
-      val errorMessage = doc.select("span[class=error-notification bold]")
+      val errorMessage = doc.select("div[class=error-notification]")
       errorMessage.text() mustBe messages.error(date)
 
       doc.getForm must have(
