@@ -123,7 +123,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
         httpStatus(BAD_REQUEST)
       )
 
-      val errorMessage = doc.select("span[class=error-notification bold]")
+      val errorMessage = doc.select("div[class=error-notification]")
       errorMessage.text() mustBe messages.error
     }
 

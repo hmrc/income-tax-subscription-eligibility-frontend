@@ -20,34 +20,31 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodCheckForm._
 @import uk.gov.hmrc.play.views.html.helpers.form
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers._
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.helpers.RadioOption
 
 @(accountingPeriodCheckForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@principal_main_template(title = messages("accounting_period_check.title"), form = Some(accountingPeriodCheckForm)) {
-@summaryErrorHelper(accountingPeriodCheckForm)
-
-<h1>@messages("accounting_period_check.title")</h1>
-
-@form(action = postAction) {
-    @if(accountingPeriodCheckForm.hasErrors){
-        <div class="form-group form-field--error">
-            <span class="error-notification bold">@messages("accounting_period_check.error.summary")</span>
-    } else {
-        <div class="form-group">
-    }
-            <p id="accounting-period-hint">@messages("accounting_period_check.title.hint")</p>
-            <fieldset class="inline" aria-describedby="accounting-period-hint">
-                <legend class="visuallyhidden">@messages("accounting_period_check.title")</legend>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no" name="yes-no" value="yes">
-                    <label for="yes-no">@messages("base.yes")</label>
-                </div>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no-2" name="yes-no" value="no">
-                    <label for="yes-no-2">@messages("base.no")</label>
-                </div>
-            </fieldset>
-        </div>
-        <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
+@inputContent = {
+<p id="accounting-period-hint">@messages("accounting_period_check.title.hint")</p>
 }
+
+@principal_main_template(title = messages("accounting_period_check.title"), form = Some(accountingPeriodCheckForm)) {
+
+    @summaryErrorHelper(accountingPeriodCheckForm)
+
+    @form(action = postAction) {
+
+    @yesNoRadioHelper(
+        field = accountingPeriodCheckForm(fieldName),
+        legend = messages("accounting_period_check.title"),
+        content = Some(inputContent),
+        options = Seq(RadioOption(optionName = YesNoMapping.option_yes, message = messages("base.yes"), classes = None, conditionalContent = None),
+        RadioOption(optionName = YesNoMapping.option_no, message = messages("base.no"), classes = None, conditionalContent = None)
+        ),
+        parentForm = accountingPeriodCheckForm,
+        inline = true
+    )
+        <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
+    }
 }

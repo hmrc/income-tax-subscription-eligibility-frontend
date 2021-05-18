@@ -16,55 +16,55 @@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.principal_main_template
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm._
 @import uk.gov.hmrc.play.views.html.helpers.form
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers._
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.helpers.RadioOption
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping
 
 @(haveAnyOtherIncomeForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
+@inputContent = {
+
+    <p class="bold">@messages("have_any_other_income.include")</p>
+
+    <ul class="list list-bullet">
+        <li>@messages("have_any_other_income.includePoint1")</li>
+        <li>@messages("have_any_other_income.includePoint2")</li>
+        <li>@messages("have_any_other_income.includePoint3")</li>
+        <li>@messages("have_any_other_income.includePoint4")</li>
+        <li>@messages("have_any_other_income.includePoint5")</li>
+    </ul>
+
+    <p class="bold">@messages("have_any_other_income.notInclude")</p>
+
+    <ul class="list list-bullet">
+        <li>@messages("have_any_other_income.notIncludePoint1")</li>
+        <li>@messages("have_any_other_income.notIncludePoint2")</li>
+    </ul>
+}
+
 @principal_main_template(title = messages("have_any_other_income.title"), form = Some(haveAnyOtherIncomeForm)) {
+
 @summaryErrorHelper(haveAnyOtherIncomeForm)
-<h1>@messages("have_any_other_income.title")</h1>
 
-<p class="bold">@messages("have_any_other_income.include")</p>
 
-<ul class="list list-bullet">
-    <li>@messages("have_any_other_income.includePoint1")</li>
-    <li>@messages("have_any_other_income.includePoint2")</li>
-    <li>@messages("have_any_other_income.includePoint3")</li>
-    <li>@messages("have_any_other_income.includePoint4")</li>
-    <li>@messages("have_any_other_income.includePoint5")</li>
-</ul>
 
-<p class="bold">@messages("have_any_other_income.notInclude")</p>
+    @form(action = postAction) {
+        @yesNoRadioHelper(
+            field = haveAnyOtherIncomeForm(fieldName),
+            legend = messages("have_any_other_income.title"),
+            content = Some(inputContent),
+            options = Seq(RadioOption(optionName = YesNoMapping.option_yes, message = messages("base.yes"), classes = None, conditionalContent = None),
+                          RadioOption(optionName = YesNoMapping.option_no, message = messages("base.no"), classes = None, conditionalContent = None)
+            ),
+            parentForm = haveAnyOtherIncomeForm,
+            inline = true
+        )
 
-<ul class="list list-bullet">
-    <li>@messages("have_any_other_income.notIncludePoint1")</li>
-    <li>@messages("have_any_other_income.notIncludePoint2")</li>
-</ul>
-
-@form(action = postAction) {
-    @if(haveAnyOtherIncomeForm.hasErrors){
-        <div class="form-group form-field--error">
-            <span class="error-notification bold" >@messages("have_any_other_income.error.summary")</span>
-    } else {
-        <div class="form-group">
-    }
-            <fieldset class="inline">
-                <legend class="visuallyhidden">@messages("have_any_other_income.title")</legend>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no" name="yes-no" value="yes">
-                    <label for="yes-no">@messages("base.yes")</label>
-                </div>
-                <div class="multiple-choice">
-                    <input type="radio" id="yes-no-2" name="yes-no" value="no">
-                    <label for="yes-no-2">@messages("base.no")</label>
-                </div>
-            </fieldset>
-        </div>
 
     <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
-}
+    }
 
 }
