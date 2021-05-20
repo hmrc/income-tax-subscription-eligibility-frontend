@@ -32,4 +32,5 @@ object Covid19ClaimCheckForm {
       fieldName -> of(yesNoMapping("covid_19_claim_check.error"))
     )
   )
+
 }

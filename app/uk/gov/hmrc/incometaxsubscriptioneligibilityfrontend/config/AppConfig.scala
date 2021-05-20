@@ -43,7 +43,7 @@ class AppConfig @Inject()(config: ServicesConfig) {
   val incometaxSubscriptionFrontendAgentCovidEligibilityPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl}"
   val incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl}"
 
-  private val serviceIdentifier = "MTDIT"
+  val serviceIdentifier = "MTDIT"
 
   val assetsPrefix: String = assetsUrl + loadConfig("assets.version")
   val analyticsToken: String = loadConfig(s"google-analytics.token")

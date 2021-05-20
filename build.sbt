@@ -46,6 +46,14 @@ lazy val microservice = Project(appName, file("."))
   .settings(resolvers += Resolver.jcenterRepo)
   .settings(PlayKeys.playDefaultPort := 9589)
 
+TwirlKeys.templateImports ++= Seq(
+  "uk.gov.hmrc.govukfrontend.views.html.components._",
+  "uk.gov.hmrc.govukfrontend.views.html.helpers._",
+  "uk.gov.hmrc.hmrcfrontend.views.html.components._",
+  "uk.gov.hmrc.hmrcfrontend.views.html.helpers._",
+  "uk.gov.hmrc.govukfrontend.views.html.components.implicits._"
+)
+
 Keys.fork in Test := true
 javaOptions in Test += "-Dlogger.resource=logback-test.xml"
 parallelExecution in Test := true

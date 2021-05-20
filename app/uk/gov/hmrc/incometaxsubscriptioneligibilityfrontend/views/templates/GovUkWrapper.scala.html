@@ -1,0 +1,72 @@
+@*
+ * Copyright 2021 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *@
+
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+@import uk.gov.hmrc.hmrcfrontend.views.config.StandardBetaBanner
+
+@this(
+    govukLayout: GovukLayout,
+    govukBackLink: GovukBackLink,
+    hmrcHead: HmrcHead,
+    hmrcStandardHeader: HmrcStandardHeader,
+    hmrcStandardFooter: HmrcStandardFooter,
+    hmrcScripts: HmrcScripts,
+    standardBetaBanner: StandardBetaBanner,
+    hmrcLanguageSelectHelper: HmrcLanguageSelectHelper,
+    hmrcReportTechnicalIssue: HmrcReportTechnicalIssue
+)
+
+@(title: String, serviceName: String, backLink: Boolean = true)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
+
+@scripts = {
+    <script src='@controllers.routes.Assets.versioned("lib/govuk-frontend/govuk/all.js")'></script>
+    <script src='@controllers.routes.Assets.versioned("lib/hmrc-frontend/hmrc/all.js")'></script>
+    <script>
+        window.GOVUKFrontend.initAll();
+        window.HMRCFrontend.initAll()
+    </script>
+    @hmrcScripts()
+}
+
+@beforeContentBlock = {
+
+    @govukBackLink(BackLink(href = "javascript:history.back()", content = Text(messages("base.back")), attributes = Map("id" -> "back-link")))
+    @hmrcLanguageSelectHelper()
+}
+
+@content = {
+    @contentBlock
+    @hmrcReportTechnicalIssue(
+        ReportTechnicalIssue(
+        serviceCode = appConfig.serviceIdentifier,
+        language = if(messages.lang.code == "en") En else Cy
+        )
+    )
+}
+
+@govukLayout(
+    pageTitle = Some(title),
+    headBlock = Some(hmrcHead()),
+    headerBlock = Some(hmrcStandardHeader(
+        serviceName = Some(serviceName),
+        serviceUrl = None,
+        phaseBanner = Some(standardBetaBanner(url = "")),
+        displayHmrcBanner = true
+    )),
+    beforeContentBlock = Some(beforeContentBlock),
+    scriptsBlock = Some(scripts),
+    footerBlock = Some(hmrcStandardFooter())
+)(content)

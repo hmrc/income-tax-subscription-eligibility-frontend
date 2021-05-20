@@ -1,6 +1,11 @@
 
 ## microservice specific routes
 
+->         /govuk-frontend                                                               govuk.Routes
+->         /hmrc-frontend                                                                hmrcfrontend.Routes
+
+GET        /assets/*file                                                                 controllers.Assets.versioned(path="/public", file: Asset)
+
 ## Index route
 GET         /                                 uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.IndexController.index
 

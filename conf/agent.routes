@@ -1,5 +1,8 @@
 ## microservice specific routes
 
+->         /govuk-frontend                                                               govuk.Routes
+->         /hmrc-frontend                                                                hmrcfrontend.Routes
+
 ## Index route
 
 GET         /                                 uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.IndexController.index

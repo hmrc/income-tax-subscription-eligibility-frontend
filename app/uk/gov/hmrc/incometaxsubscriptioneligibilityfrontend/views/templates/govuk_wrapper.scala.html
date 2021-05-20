@@ -17,18 +17,19 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import play.twirl.api.HtmlFormat
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.custom_language_selection
+
 @(appConfig: AppConfig,
-  title: String,
-  navigationTitle: Option[String] = None,
-  mainClass: Option[String] = None,
-  mainDataAttributes: Option[Html] = None,
-  bodyClasses: Option[String] = None,
-  sidebar: Html = HtmlFormat.empty,
-  contentHeader: Option[Html] = None,
-  mainContent: Html = HtmlFormat.empty,
-  serviceInfoContent: Html = HtmlFormat.empty,
-  scriptElem: Option[Html] = None,
-  isAgent: Boolean = false)(implicit request: Request[_], messages: Messages)
+title: String,
+navigationTitle: Option[String] = None,
+mainClass: Option[String] = None,
+mainDataAttributes: Option[Html] = None,
+bodyClasses: Option[String] = None,
+sidebar: Html = HtmlFormat.empty,
+contentHeader: Option[Html] = None,
+mainContent: Html = HtmlFormat.empty,
+serviceInfoContent: Html = HtmlFormat.empty,
+scriptElem: Option[Html] = None,
+isAgent: Boolean = false)(implicit request: Request[_], messages: Messages)
 
 @import layouts.{govuk_template => hmrcGovUkTemplate}
 @import uk.gov.hmrc.play.views.html.{layouts => uiLayouts}
@@ -36,8 +37,8 @@
 
 @head = {
     @uiLayouts.headWithTrackingConsent(
-      linkElem = None,
-      headScripts = None)
+        linkElem = None,
+        headScripts = None)
     <meta name="format-detection" content="telephone=no" />
     <link href=@controllers.routes.Assets.versioned("stylesheets/local-overrides.css") media="all" rel="stylesheet" type="text/css" />
 
@@ -47,21 +48,21 @@
 
 @insideHeader = {
     @uiLayouts.header_nav(
-      navTitle = navigationTitle,
-      navTitleLink = None,
-      showBetaLink = false,
-      navLinks = Some(headerNavLinks))
+        navTitle = navigationTitle,
+        navTitleLink = None,
+        showBetaLink = false,
+        navLinks = Some(headerNavLinks))
 }
 
 @afterHeader = {}
 
 @bodyEnd = {
     @uiLayouts.footer(
-      analyticsToken = Some(appConfig.analyticsToken),
-      analyticsHost = appConfig.analyticsHost,
-      ssoUrl = None,
-      scriptElem = scriptElem,
-      gaCalls = None)
+        analyticsToken = Some(appConfig.analyticsToken),
+        analyticsHost = appConfig.analyticsHost,
+        ssoUrl = None,
+        scriptElem = scriptElem,
+        gaCalls = None)
 }
 
 @footerTop = {}
@@ -69,9 +70,9 @@
 
 @serviceInfo = {
     @uiLayouts.serviceInfo(
-      betaBanner = HtmlFormat.empty,
-      includeGridWrapper = false,
-      serviceInfoContent = Some(serviceInfoContent))
+        betaBanner = HtmlFormat.empty,
+        includeGridWrapper = false,
+        serviceInfoContent = Some(serviceInfoContent))
 }
 
 @mainContentHeader = {
@@ -83,10 +84,10 @@
     </div>
 
     @if(contentHeader.isDefined) {
-<header class="page-header inline-block">@uiLayouts.main_content_header(contentHeader = contentHeader.get)</header>
+        <header class="page-header inline-block">@uiLayouts.main_content_header(contentHeader = contentHeader.get)</header>
     }
 
-        <div><a id="back" class="link-back" href="javascript:history.back()">@messages("base.back")</a></div>
+    <div><a id="back" class="link-back" href="javascript:history.back()">@messages("base.back")</a></div>
 
 }
 
@@ -94,13 +95,13 @@
 
 @content = {
     @uiLayouts.main_content(
-      article = mainContent,
-      mainClass = mainClass,
-      mainDataAttributes = mainDataAttributes,
-      mainContentHeader = mainContentHeader,
-      serviceInfo = serviceInfo,
-      getHelpForm = getHelpForm,
-      sidebar = sidebar)
+        article = mainContent,
+        mainClass = mainClass,
+        mainDataAttributes = mainDataAttributes,
+        mainContentHeader = mainContentHeader,
+        serviceInfo = serviceInfo,
+        getHelpForm = getHelpForm,
+        sidebar = sidebar)
 }
 
 @hmrcGovUkTemplate(Some(title), bodyClasses)(head, bodyEnd, insideHeader, afterHeader, footerTop, Some(uiLayouts.footer_links()), true)(content)
