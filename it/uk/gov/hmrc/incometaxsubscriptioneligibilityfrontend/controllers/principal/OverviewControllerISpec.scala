@@ -72,6 +72,10 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
       content.select("ul:nth-of-type(2)").select("li:nth-of-type(4)").text mustBe messages.bulletBeforeStart4
     }
 
+    "return a view with inset text" in {
+      content.getElementsByClass("govuk-inset-text").text mustBe messages.insetText
+    }
+
 
     "return a view with a continue button" in {
       doc.getSubmitButton.text mustBe base.continue

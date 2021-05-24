@@ -29,6 +29,7 @@ overview.bullet_before_start_line_1                             = eich Dynodydd 
 overview.bullet_before_start_line_2                             = rhif Yswiriant Gwladol
 overview.bullet_before_start_line_3                             = dyddiadau dechrau’ch busnes a chyfeiriadau cofrestredig eich busnes
 overview.bullet_before_start_line_4                             = gwybodaeth am flwyddyn gyfrifyddu’r busnes
+overview.inset_text                                             = Bydd angen i chi ddefnyddio’r un Dynodydd Defnyddiwr (ID) a chyfrinair ar gyfer Porth y Llywodraeth a ddefnyddiwch ar gyfer eich cyfrif Hunanasesiad presennol. Os nad oes gennych Ddynodydd Defnyddiwr (ID) eto, gallwch greu un pan fyddwch yn defnyddio’r gwasanaeth.
 
 ## Terms and Conditions Page ##
 terms.title                                                     = Telerau cymryd rhan
