@@ -33,6 +33,7 @@ object MessageLookup {
     val linkHref = "https://www.gov.uk/guidance/sign-up-your-business-for-making-tax-digital-for-income-tax"
     val heading2 = "Before you start"
     val line4 = "To sign up to this pilot, you will need your:"
+    val insetText = "You will need to use the same Government Gateway user ID and password that you use for your current Self Assessment account. If you do not have a user ID yet, you can create one when you use the service."
     val bulletBeforeStart1 = "Government Gateway user ID and password"
     val bulletBeforeStart2 = "National Insurance number"
     val bulletBeforeStart3 = "business start dates and registered addresses"
