@@ -151,15 +151,15 @@ object MessageLookup {
   object Covid19ClaimCheck {
     val title = "Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?"
     val join_pilot = "You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):"
-    val linkTextCannotJoin1 = "Self-Employment Support Scheme for sole traders"
-    val linkTextCannotJoin2 = "Coronavirus Job Retention Scheme"
+    val linkTextCannotJoin1 = "Self-Employment Support Scheme (Opens in new tab)"
+    val linkTextCannotJoin2 = "Coronavirus Job Retention Scheme (Opens in new tab)"
     val linkTextCannotJoin3 = "Eat out to Help Out Scheme for businesses in the hospitality sector"
     val cannotJoin_pilot_points: Seq[String] = Seq (linkTextCannotJoin1, linkTextCannotJoin2, linkTextCannotJoin3)
 
     val claim_sick_pay = "You can still sign up if you’ve only claimed a rebate through the:"
-    val linkTextCanJoin1 = "Coronavirus Statutory Sick Pay Rebate Scheme"
-    val linkTextCanJoin2 = "Test and Trace Support Payment Scheme"
-    val linkTextCanJoin3 = "Local Authority grants"
+    val linkTextCanJoin1 = "Coronavirus Statutory Sick Pay Rebate Scheme (Opens in new tab)"
+    val linkTextCanJoin2 = "Test and Trace Support Payment Scheme (Opens in new tab)"
+    val linkTextCanJoin3 = "Local Authority grants (Opens in new tab)"
     val can_signup_points: Seq[String] = Seq (linkTextCanJoin1, linkTextCanJoin2, linkTextCanJoin3)
     val error = "Error: Select yes if you have or intend to claim a coronavirus (COVID‑19) grant"
   }

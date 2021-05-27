@@ -119,6 +119,7 @@ covid_19_claim_check.can_join.point1.link_text                  = Coronavirus St
 covid_19_claim_check.can_join.point2.link_text                  = Test and Trace Support Payment Scheme
 covid_19_claim_check.can_join.point3.link_text                  = Local Authority grants
 covid_19_claim_check.error.summary                              = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
+covid_19_claim_check.join_pilot.open_new_tab                    = (Opens in new tab)
 
 ## Title pattern
 principle_title_pattern.serviceName.govUk                       = {0} - Use software to send Income Tax updates - GOV.UK

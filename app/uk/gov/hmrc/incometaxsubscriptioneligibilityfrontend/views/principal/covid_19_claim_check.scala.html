@@ -31,19 +31,34 @@
 
     <ul class="list list-bullet">
         <li>
-            <a id="selfEmploymentSupportScheme" href="@appConfig.covid19SelfEmploymentSupportSchemeUrl" target="_blank">@messages("covid_19_claim_check.cannot_join.point1.link_text")</a>
-            @messages("covid_19_claim_check.cannot_join.point1.text")</li>
+            <a id="selfEmploymentSupportScheme" href="@appConfig.covid19SelfEmploymentSupportSchemeUrl" target="_blank">@messages("covid_19_claim_check.cannot_join.point1.link_text")
+                <span class="visuallyhidden">@messages("covid_19_claim_check.join_pilot.open_new_tab")</span>
+            </a>
+        </li>
         <li>
-            <a id="jobCoronaRetentionScheme" href="@appConfig.covid19CoronaJobRetentionSchemeUrl" target="_blank">@messages("covid_19_claim_check.cannot_join.point2.link_text")</a>
+            <a id="jobCoronaRetentionScheme" href="@appConfig.covid19CoronaJobRetentionSchemeUrl" target="_blank">@messages("covid_19_claim_check.cannot_join.point2.link_text")
+                <span class="visuallyhidden">@messages("covid_19_claim_check.join_pilot.open_new_tab")</span>
+            </a>
         </li>
     </ul>
 
     <p>@messages("covid_19_claim_check.can_join.description")</p>
 
     <ul class="list list-bullet">
-        <li><a id="sickPayRebateScheme" href="@appConfig.covid19ClaimSickPayUrl" target="_blank">@messages("covid_19_claim_check.can_join.point1.link_text")</a></li>
-        <li><a id="testAndTraceSupportPaymentScheme" href="@appConfig.covid19TestAndTraceUrl" target="_blank">@messages("covid_19_claim_check.can_join.point2.link_text")</a></li>
-        <li><a id="localAuthorityGrant" href="@appConfig.covid19LocalAuthorityGrantUrl" target="_blank">@messages("covid_19_claim_check.can_join.point3.link_text")</a></li>
+        <li><a id="sickPayRebateScheme" href="@appConfig.covid19ClaimSickPayUrl" target="_blank">@messages("covid_19_claim_check.can_join.point1.link_text")
+            <span class="visuallyhidden">@messages("covid_19_claim_check.join_pilot.open_new_tab")</span>
+            </a>
+        </li>
+        <li>
+            <a id="testAndTraceSupportPaymentScheme" href="@appConfig.covid19TestAndTraceUrl" target="_blank">@messages("covid_19_claim_check.can_join.point2.link_text")
+                <span class="visuallyhidden">@messages("covid_19_claim_check.join_pilot.open_new_tab")</span>
+            </a>
+        </li>
+        <li>
+            <a id="localAuthorityGrant" href="@appConfig.covid19LocalAuthorityGrantUrl" target="_blank">@messages("covid_19_claim_check.can_join.point3.link_text")
+                <span class="visuallyhidden">@messages("covid_19_claim_check.join_pilot.open_new_tab")</span>
+            </a>
+        </li>
     </ul>
 }
 
