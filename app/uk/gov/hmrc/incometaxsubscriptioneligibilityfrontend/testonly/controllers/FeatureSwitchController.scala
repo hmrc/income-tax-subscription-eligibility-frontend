@@ -16,21 +16,19 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.controllers
 
-import controllers.Assets.{Ok, Redirect}
-import javax.inject.Inject
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents, Request}
 import play.twirl.api.Html
-import testonly.models.FeatureSwitchSetting
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.switches
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitch, FeatureSwitching}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.views.html.feature_switch
-import uk.gov.hmrc.play.bootstrap.controller.FrontendController
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
+import javax.inject.Inject
 import scala.collection.immutable.ListMap
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.ExecutionContext
 
 class FeatureSwitchController @Inject()(val auditingService: AuditingService)
                                        (implicit val ec: ExecutionContext,

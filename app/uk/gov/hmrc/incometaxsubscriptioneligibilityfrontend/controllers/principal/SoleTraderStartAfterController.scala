@@ -31,7 +31,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.Eligib
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.are_you_sole_trader_after
-import uk.gov.hmrc.play.bootstrap.controller.FrontendController
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.play.language.LanguageUtils
 
 import scala.concurrent.Future

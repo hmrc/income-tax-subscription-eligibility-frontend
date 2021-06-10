@@ -27,7 +27,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.Eligib
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.{covid_19_claim_check, overview}
-import uk.gov.hmrc.play.bootstrap.controller.FrontendController
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import scala.concurrent.Future
 
