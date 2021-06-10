@@ -16,17 +16,14 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents
 
-import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{RemoveCovidPages, FeatureSwitching}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.routes
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.agents.terms
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.overview
-import uk.gov.hmrc.play.bootstrap.controller.FrontendController
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
-import scala.concurrent.Future
+import javax.inject.{Inject, Singleton}
 
 @Singleton
 class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc)
@@ -36,11 +33,9 @@ class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appC
       Ok(terms(postAction = routes.TermsController.submit()))
   }
 
-  val submit: Action[AnyContent] = Action { implicit request =>
-
+  val submit: Action[AnyContent] = Action { _ =>
     if (isEnabled(RemoveCovidPages)) {
       Redirect(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
-
     } else {
       Redirect(appConfig.incometaxSubscriptionFrontendAgentCovidEligibilityPageFullUrl)
     }

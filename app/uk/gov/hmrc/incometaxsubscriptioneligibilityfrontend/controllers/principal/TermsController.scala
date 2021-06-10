@@ -21,7 +21,7 @@ import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.terms
-import uk.gov.hmrc.play.bootstrap.controller.FrontendController
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import scala.concurrent.Future
 
@@ -35,10 +35,8 @@ class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appC
       )
   }
 
-  val submit: Action[AnyContent] = Action {
-    implicit request =>
-      Redirect(appConfig.incometaxSubscriptionFrontendFirstPageFullUrl)
+  val submit: Action[AnyContent] = Action { _ =>
+    Redirect(appConfig.incometaxSubscriptionFrontendFirstPageFullUrl)
   }
-
 
 }

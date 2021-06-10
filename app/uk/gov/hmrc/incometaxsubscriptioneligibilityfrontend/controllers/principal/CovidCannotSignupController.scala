@@ -16,16 +16,15 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
-import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.http.InternalServerException
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.Covid19ClaimCheckForm.covid19ClaimCheckForm
-import uk.gov.hmrc.play.bootstrap.controller.FrontendController
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.{covid_19_claim_check, covid_cannot_signup, overview}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.covid_cannot_signup
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
+import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 

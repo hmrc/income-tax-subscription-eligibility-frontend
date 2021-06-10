@@ -22,7 +22,7 @@ import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.play.bootstrap.controller.FrontendController
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.PropertyTradingStartDateForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.property_trading_after
