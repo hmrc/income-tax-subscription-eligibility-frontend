@@ -30,7 +30,7 @@
     hmrcReportTechnicalIssue: HmrcReportTechnicalIssue
 )
 
-@(title: String, serviceName: String, optForm: Option[Form[_]] = None, backLink: Option[String] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
+@(title: String, serviceName: String, optForm: Option[Form[_]] = None, backLink: Option[String] = None, signOutUrl: Option[String] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
 
 @scripts = {
     <script src='@controllers.routes.Assets.versioned("lib/govuk-frontend/govuk/all.js")'></script>
@@ -84,6 +84,7 @@
     headerBlock = Some(hmrcStandardHeader(
         serviceName = Some(serviceName),
         serviceUrl = None,
+        signOutUrl = signOutUrl,
         phaseBanner = Some(standardBetaBanner(url = appConfig.betaFeedbackUnauthenticatedUrl)),
         displayHmrcBanner = true
     )),
