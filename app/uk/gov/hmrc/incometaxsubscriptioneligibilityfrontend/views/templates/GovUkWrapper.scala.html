@@ -20,6 +20,7 @@
 @this(
     govukLayout: GovukLayout,
     govukBackLink: GovukBackLink,
+    govukErrorSummary: GovukErrorSummary,
     hmrcHead: HmrcHead,
     hmrcStandardHeader: HmrcStandardHeader,
     hmrcStandardFooter: HmrcStandardFooter,
@@ -29,7 +30,7 @@
     hmrcReportTechnicalIssue: HmrcReportTechnicalIssue
 )
 
-@(title: String, serviceName: String, backLink: Boolean = true)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
+@(title: String, serviceName: String, optForm: Option[Form[_]] = None, backLink: Option[String] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
 
 @scripts = {
     <script src='@controllers.routes.Assets.versioned("lib/govuk-frontend/govuk/all.js")'></script>
@@ -42,23 +43,43 @@
 }
 
 @beforeContentBlock = {
-
-    @govukBackLink(BackLink(href = "javascript:history.back()", content = Text(messages("base.back")), attributes = Map("id" -> "back-link")))
     @hmrcLanguageSelectHelper()
+    @backLink.map {href =>
+        @govukBackLink(BackLink(href = href, content = Text(messages("base.back")), attributes = Map("id" -> "back-link")))
+    }
 }
 
 @content = {
+
+    @optForm.map { form =>
+        @if(form.hasErrors) {
+            @govukErrorSummary(ErrorSummary(
+                errorList = form.errors.asTextErrorLinks,
+                title = Text(messages("base.error_heading"))
+            ))
+        }
+    }
+
     @contentBlock
+
     @hmrcReportTechnicalIssue(
         ReportTechnicalIssue(
         serviceCode = appConfig.serviceIdentifier,
         language = if(messages.lang.code == "en") En else Cy
         )
     )
+
+}
+
+@prefixedTitle = @{
+    optForm match {
+        case Some(validationForm) if validationForm.hasErrors => messages("principle_base.title.error", title)
+        case _ => messages("principle_title_pattern.serviceName.govUk", title)
+    }
 }
 
 @govukLayout(
-    pageTitle = Some(title),
+    pageTitle = Some(prefixedTitle),
     headBlock = Some(hmrcHead()),
     headerBlock = Some(hmrcStandardHeader(
         serviceName = Some(serviceName),

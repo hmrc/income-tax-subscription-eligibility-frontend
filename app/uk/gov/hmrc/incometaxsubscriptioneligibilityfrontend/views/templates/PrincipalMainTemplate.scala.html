@@ -21,10 +21,11 @@
     govukWrapper: GovUkWrapper
 )
 
-@(title: String)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
+@(title: String, optForm: Option[Form[_]] = None, backLink: Option[String]= None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
 
 @govukWrapper(
     title = title,
-    serviceName = messages("principal_service_name.title")
+    serviceName = messages("principal_service_name.title"),
+    optForm = optForm,
+    backLink = backLink
 )(contentBlock)
-

@@ -77,12 +77,12 @@
     }
 }
 
-@mainTemplate(title = messages("covid_19_claim_check.title")) {
-
-    @summaryErrorHelper(covid19ClaimCheckForm)
+@mainTemplate(title = messages("covid_19_claim_check.title"), optForm = Some(covid19ClaimCheckForm), backLink = Some("javascript:history.back()")) {
 
     @form(action = postAction) {
-    @heading1(messages("covid_19_claim_check.title"))
+
+        @heading1(messages("covid_19_claim_check.title"))
+
         @govukRadios(Radios(
             fieldset = Some(Fieldset(
                 legend = Some(Legend(
@@ -104,11 +104,11 @@
                 )
             ),
             classes = "govuk-radios--inline"
-        )
-)
+        ))
 
 
         @button()
+
     }
 
 }
