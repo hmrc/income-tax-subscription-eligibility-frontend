@@ -84,7 +84,7 @@
     headerBlock = Some(hmrcStandardHeader(
         serviceName = Some(serviceName),
         serviceUrl = None,
-        phaseBanner = Some(standardBetaBanner(url = "")),
+        phaseBanner = Some(standardBetaBanner(url = appConfig.betaFeedbackUnauthenticatedUrl)),
         displayHmrcBanner = true
     )),
     beforeContentBlock = Some(beforeContentBlock),
