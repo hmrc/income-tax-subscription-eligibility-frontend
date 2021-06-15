@@ -37,13 +37,15 @@ class AppConfig @Inject()(config: ServicesConfig) {
 
 
   private val contactBaseUrl = loadConfig("contact-frontend.host")
+  protected lazy val contactHost: String = config.getString("contact-frontend.host")
+  lazy val contactFormServiceIdentifier = "MTDIT"
 
   private val assetsUrl = loadConfig("assets.url")
   val incometaxSubscriptionFrontendFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendFirstPageUrl}"
   val incometaxSubscriptionFrontendAgentCovidEligibilityPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl}"
   val incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl}"
 
-  private val serviceIdentifier = "MTDIT"
+  val serviceIdentifier = "MTDIT"
 
   val assetsPrefix: String = assetsUrl + loadConfig("assets.version")
   val analyticsToken: String = loadConfig(s"google-analytics.token")
@@ -71,5 +73,8 @@ class AppConfig @Inject()(config: ServicesConfig) {
   def routeToSwitchLanguage: String => Call = (lang: String) => principalRoutes.LanguageSwitchController.switchToLanguage(lang)
 
   def routeToSwitchAgentLanguage: String => Call = (lang: String) => agentRoutes.LanguageSwitchController.switchToLanguage(lang)
+
+  lazy val betaFeedbackUnauthenticatedUrl: String =
+    s"$contactHost/contact/beta-feedback-unauthenticated?service=$contactFormServiceIdentifier"
 
 }
