@@ -67,15 +67,8 @@
 
 }
 
-@prefixedTitle = @{
-    optForm match {
-        case Some(validationForm) if validationForm.hasErrors => messages("principle_base.title.error", title)
-        case _ => messages("principle_title_pattern.serviceName.govUk", title)
-    }
-}
-
 @govukLayout(
-    pageTitle = Some(prefixedTitle),
+    pageTitle = Some(title),
     headBlock = Some(hmrcHead(
         headBlock = signOutUrl.map(url => hmrcTimeoutDialogHelper(signOutUrl = url))
     )),
