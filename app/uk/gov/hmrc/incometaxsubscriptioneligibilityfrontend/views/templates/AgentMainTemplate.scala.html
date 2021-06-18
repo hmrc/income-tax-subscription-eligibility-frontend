@@ -23,6 +23,13 @@
 
 @(title: String, optForm: Option[Form[_]] = None, backLink: Option[String]= None, signOutUrl: Option[String] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
 
+@prefixedTitle = @{
+    optForm match {
+        case Some(validationForm) if validationForm.hasErrors => messages("agent_base.title.error", title)
+        case _ => messages("agent_title_pattern.serviceName.govUk", title)
+    }
+}
+
 @govukWrapper(
     title = title,
     serviceName = messages("agent_service_name.title"),

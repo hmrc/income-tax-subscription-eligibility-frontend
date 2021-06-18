@@ -23,8 +23,15 @@
 
 @(title: String, optForm: Option[Form[_]] = None, backLink: Option[String]= None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
 
+@prefixedTitle = @{
+    optForm match {
+        case Some(validationForm) if validationForm.hasErrors => messages("principle_base.title.error", title)
+        case _ => messages("principle_title_pattern.serviceName.govUk", title)
+    }
+}
+
 @govukWrapper(
-    title = title,
+    title = prefixedTitle,
     serviceName = messages("principal_service_name.title"),
     optForm = optForm,
     backLink = backLink
