@@ -22,7 +22,6 @@ object MessageLookup {
 
   object Overview {
     val heading: String = "The way you complete Self Assessment is changing"
-    val title = s"$heading$suffix"
     val line1 = "This is a pilot to sign up for a new way for sole trader businesses (self-employed) and landlords to send income tax updates and returns to HMRC."
     val line2 = "You will need to use compatible software to:"
     val line3 = "This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab)."

@@ -16,36 +16,30 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
-import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{RemoveCovidPages, FeatureSwitching}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.Covid19ClaimCheckForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.{covid_19_claim_check, overview}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.covid_19_claim_check
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
+import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
-class Covid19ClaimCheckController @Inject()(auditService: AuditingService,mcc: MessagesControllerComponents)
-                                           (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching  {
+class Covid19ClaimCheckController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents)
+                                           (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>
-      if (isEnabled(RemoveCovidPages)) {
-        Future.successful(
-          Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show()))
+      Future.successful(
+        Ok(covid_19_claim_check(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit()))
       )
-  } else {
-        Future.successful(
-          Ok(covid_19_claim_check(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit()))
-        )
-      }
   }
 
 
@@ -54,11 +48,11 @@ class Covid19ClaimCheckController @Inject()(auditService: AuditingService,mcc: M
       covid19ClaimCheckForm.bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(covid_19_claim_check(formWithErrors, routes.Covid19ClaimCheckController.submit()))), {
           case Yes =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, eligible = false, "yes",
               "claimedCovidGrant"))
             Future.successful(Redirect(routes.CovidCannotSignupController.show()))
           case No =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "no",
+            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, eligible = true, "no",
               "claimedCovidGrant"))
             Future.successful(Redirect(routes.HaveAnyOtherIncomeController.show()))
         }

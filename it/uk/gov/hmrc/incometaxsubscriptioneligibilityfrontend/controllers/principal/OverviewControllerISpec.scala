@@ -14,8 +14,7 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
 
     lazy val result = get("/overview")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.content
-
+    lazy val content: Element = doc.mainContent
 
     "return OK" in {
       result must have(
@@ -23,17 +22,10 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "return a view with a title" in {
-      doc.title mustBe messages.title
-    }
+    "have the correct template details" in new TemplateViewTest(doc, messages.heading)
 
     "return a view with a heading" in {
-      doc.getH1Element.text mustBe messages.heading
-    }
-
-    "return a view with the language selector" in {
-      doc.selectFirst("""nav[class="hmrc-language-select"]""")
-        .selectOptionally("""a[href="/report-quarterly/income-and-expenses/sign-up/eligibility/language/cymraeg"]""").isDefined mustBe true
+      content.getH1Element.text mustBe messages.heading
     }
 
     "return a view with the first paragraph" in {
@@ -75,7 +67,6 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
     "return a view with inset text" in {
       content.getElementsByClass("govuk-inset-text").text mustBe messages.insetText
     }
-
 
     "return a view with a continue button" in {
       doc.getSubmitButton.text mustBe base.continue
