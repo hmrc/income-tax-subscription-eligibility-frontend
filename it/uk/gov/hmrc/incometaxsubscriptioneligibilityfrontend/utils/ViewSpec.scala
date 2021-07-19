@@ -1,17 +1,51 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
-import scala.collection.JavaConversions._
-import org.jsoup.nodes.Element
+import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
-import org.scalatest.Matchers.fail
+import org.scalatest.MustMatchers
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
+import play.api.data.FormError
 
-trait ViewSpec {
+import scala.collection.JavaConversions._
+
+trait ViewSpec extends MustMatchers {
+
+  class TemplateViewTest(document: Document,
+                         title: String,
+                         isAgent: Boolean = false,
+                         backLink: Option[String] = None,
+                         hasSignOutLink: Boolean = false,
+                         error: Option[FormError] = None) {
+
+    private val titlePrefix: String = if (error.isDefined) "Error: " else ""
+    private val titleSuffix: String = if (isAgent) {
+      " - Use software to report your client’s Income Tax - GOV.UK"
+    } else {
+      " - Use software to send Income Tax updates - GOV.UK"
+    }
+
+    document.title mustBe s"$titlePrefix$title$titleSuffix"
+
+    backLink.map { href =>
+      val link = document.selectHead(".govuk-back-link")
+      link.text mustBe "Back"
+      link.attr("href") mustBe href
+    }
+
+    error.map { formError =>
+      val errorSummary: Element = document.selectHead(".govuk-error-summary")
+      errorSummary.selectHead("h2").text mustBe "There is a problem"
+      val errorLink: Element = errorSummary.selectHead("div > ul > li > a")
+      errorLink.text mustBe formError.message
+      errorLink.attr("href") mustBe s"#${formError.key}"
+    }
+
+  }
 
   implicit class ElementTest(element: Element) {
 
-    def selectFirst(selector: String): Element = {
+    def selectHead(selector: String): Element = {
       element.select(selector).headOption match {
         case Some(element) => element
         case None => fail(s"No elements returned for selector: $selector")
@@ -23,6 +57,8 @@ trait ViewSpec {
     }
 
     def content: Element = element.selectFirst("article")
+
+    def mainContent: Element = element.selectFirst("main")
 
     def getParagraphs: Elements = element.getElementsByTag("p")
 
