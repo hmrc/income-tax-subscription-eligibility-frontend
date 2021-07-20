@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.implicits
 
-import java.time.LocalDate
-
 import play.api.i18n.Messages
 import uk.gov.hmrc.play.language.LanguageUtils
+
+import java.time.LocalDate
 
 trait ImplicitDateFormatter {
 
@@ -28,7 +28,7 @@ trait ImplicitDateFormatter {
   implicit class longDate(date: LocalDate)(implicit messages: Messages) {
 
     def toLongDate: String = {
-      languageUtils.Dates.formatDate(org.joda.time.LocalDate.parse(date.toString))(messages)
+      languageUtils.Dates.formatDate(date)(messages)
     }
 
   }

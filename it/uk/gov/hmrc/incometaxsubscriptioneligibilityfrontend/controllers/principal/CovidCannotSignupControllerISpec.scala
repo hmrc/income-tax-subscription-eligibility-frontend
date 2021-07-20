@@ -13,7 +13,7 @@ class CovidCannotSignupControllerISpec extends ComponentSpecBase with ViewSpec {
 
     lazy val result = get("/error/covid-cannot-sign-up")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.content
+    lazy val content: Element = doc.mainContent
 
     "return OK" in {
       result must have(
@@ -21,9 +21,7 @@ class CovidCannotSignupControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "have a view with the correct title" in {
-      doc.title mustBe s"${messages.title}${suffix}"
-    }
+    "have the correct template details" in new TemplateViewTest(doc, messages.heading)
 
     "have a view with the correct heading" in {
       content.getH1Element.text mustBe messages.heading
@@ -35,8 +33,8 @@ class CovidCannotSignupControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "have a view with the correct title Self Assessment Paragraph and link" in {
       content.select("p:nth-of-type(2)").text mustBe messages.SelfAssessment
-      content.select("a").text mustBe messages.SelfAssessmentLink
-      content.select("a").attr("href") mustBe messages.SelfAssessmentHref
+      content.select("a[class=govuk-link]").text mustBe messages.SelfAssessmentLink
+      content.select("a[class=govuk-link]").attr("href") mustBe messages.SelfAssessmentHref
     }
   }
 
