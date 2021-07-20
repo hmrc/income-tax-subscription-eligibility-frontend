@@ -53,6 +53,7 @@ object MessageLookup {
     val yes = "Yes"
     val no = "No"
     val acceptAndContinue = "Accept and continue"
+    val backUrl = "Back"
   }
 
   object HaveAnyOtherIncome {
@@ -63,7 +64,7 @@ object MessageLookup {
       Seq("PAYE income as an employee", "UK pensions or annuities", "investments from outside the UK",
         "capital gains", "taxable state benefits")
     val notIncludePoints: Seq[String] = Seq("bank and building society interest", "dividends")
-    val error = "Error: Select yes if you have any sources of income other than self employment or property income"
+    val error = "Select yes if you have any sources of income other than self employment or property income"
   }
 
   object PropertyStartAfter {

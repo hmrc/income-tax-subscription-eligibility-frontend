@@ -18,19 +18,28 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import play.api.data.FormError
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, HaveAnyOtherIncome => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, HaveAnyOtherIncome => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
-class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec {
+class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec with FeatureSwitching {
+
+  override def beforeEach(): Unit = {
+    disable(RemoveCovidPages)
+    super.beforeEach()
+  }
 
   "GET /eligibility/other-income" should {
-    lazy val result = get("/other-income")
-    lazy val doc: Document = Jsoup.parse(result.body)
+    def result = get("/other-income")
+
+    def doc: Document = Jsoup.parse(result.body)
 
     "return OK" in {
       result must have(
@@ -38,13 +47,28 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       )
     }
 
-    "have a view with the correct title" in {
-      doc.title mustBe s"${messages.title}${suffix}"
+    "have the correct template details" when {
+      "there is no error and removeCovid feature switch is disabled" in {
+
+        new TemplateViewTest(doc, messages.title, backLink = Some(routes.Covid19ClaimCheckController.show().url))
+      }
+
+      "there is no error and removeCovid feature switch is enabled" in {
+        enable(RemoveCovidPages)
+        new TemplateViewTest(doc, messages.title, backLink = Some(routes.OverviewController.show().url))
+      }
+
+      "there is an error" in {
+        val errorPage: Document = Jsoup.parse(post("/other-income")(Map.empty).body)
+        new TemplateViewTest(errorPage, messages.title, error = Some(FormError(HaveAnyOtherIncomeForm.fieldName, messages.error)))
+      }
     }
+
 
     "have a view with the correct heading" in {
       doc.getH1Element.text mustBe messages.title
     }
+
 
     "have a view with two correct paragraph lines" in {
       doc.getParagraphs.text().contains(messages.include) mustBe true
@@ -70,7 +94,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       radios.get(1).attr("id") mustBe "yes-no-2"
       labels.get(1).text() mustBe commonMessages.no
 
-      val submitButton = form.select("button[type=submit]")
+      val submitButton = form.select("button[id=continue-button]")
 
       submitButton must have(
         text(commonMessages.continue)
@@ -85,6 +109,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     }
   }
 
+
   class PostSetup(answer: Option[YesNo]) {
     val response: WSResponse = submitHaveAnyOtherIncome(answer)
   }
@@ -93,7 +118,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
 
     "return SEE_OTHER when selecting Yes and send an Audit" in new PostSetup(Some(Yes)) {
       val expectedAuditContainsYes: JsValue = Json.parse(
-      """{ "userType" : "individual", "eligible" : "false" , "answer" : "yes", "question": "otherIncomeSource" }""")
+        """{ "userType" : "individual", "eligible" : "false" , "answer" : "yes", "question": "otherIncomeSource" }""")
       verifyAudit()
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
@@ -116,15 +141,12 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
 
     }
 
-    "return BADREQUEST when no Answer is given" in new PostSetup(None){
+    "return BADREQUEST when no Answer is given" in new PostSetup(None) {
       val doc: Document = Jsoup.parse(response.body)
 
       response must have(
         httpStatus(BAD_REQUEST)
       )
-
-      val errorMessage = doc.select("div[class=error-notification]")
-      errorMessage.text() mustBe messages.error
     }
 
     "have the correct form" in new PostSetup(None) {
