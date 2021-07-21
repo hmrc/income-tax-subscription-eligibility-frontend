@@ -14,22 +14,27 @@
  * limitations under the License.
  *@
 
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.principal_main_template
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm._
-@import uk.gov.hmrc.play.views.html.helpers.form
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers._
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.helpers.RadioOption
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.{ContinueButton, RadioHelper}
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping
 
-@(haveAnyOtherIncomeForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@this(
+        mainTemplate: PrincipalMainTemplate,
+        form: FormWithCSRF,
+        radioHelper: RadioHelper,
+        continueButton: ContinueButton
+)
+
+@(haveAnyOtherIncomeForm: Form[YesNo], postAction: Call, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @inputContent = {
 
-    <p class="bold">@messages("have_any_other_income.include")</p>
+    <p class="govuk-body govuk-!-font-weight-bold">@messages("have_any_other_income.include")</p>
 
-    <ul class="list list-bullet">
+    <ul class="govuk-list govuk-list--bullet">
         <li>@messages("have_any_other_income.includePoint1")</li>
         <li>@messages("have_any_other_income.includePoint2")</li>
         <li>@messages("have_any_other_income.includePoint3")</li>
@@ -37,34 +42,42 @@
         <li>@messages("have_any_other_income.includePoint5")</li>
     </ul>
 
-    <p class="bold">@messages("have_any_other_income.notInclude")</p>
+    <p class="govuk-body govuk-!-font-weight-bold">@messages("have_any_other_income.notInclude")</p>
 
-    <ul class="list list-bullet">
+    <ul class="govuk-list govuk-list--bullet">
         <li>@messages("have_any_other_income.notIncludePoint1")</li>
         <li>@messages("have_any_other_income.notIncludePoint2")</li>
     </ul>
+
 }
 
-@principal_main_template(title = messages("have_any_other_income.title"), form = Some(haveAnyOtherIncomeForm)) {
 
-@summaryErrorHelper(haveAnyOtherIncomeForm)
+@mainTemplate(title = messages("have_any_other_income.title"), optForm = Some(haveAnyOtherIncomeForm), backLink = Some(backUrl) ) {
 
+    <h1 class="govuk-heading-l">@messages("have_any_other_income.title")</h1>
 
-
+    @inputContent
     @form(action = postAction) {
-        @yesNoRadioHelper(
+
+        @radioHelper(
             field = haveAnyOtherIncomeForm(fieldName),
             legend = messages("have_any_other_income.title"),
-            content = Some(inputContent),
-            options = Seq(RadioOption(optionName = YesNoMapping.option_yes, message = messages("base.yes"), classes = None, conditionalContent = None),
-                          RadioOption(optionName = YesNoMapping.option_no, message = messages("base.no"), classes = None, conditionalContent = None)
+            isPageHeading = false,
+            radioItems = Seq(
+                RadioItem(
+                    content = Text(messages("base.yes")),
+                    value = Some(YesNoMapping.option_yes)
+                ),
+                RadioItem(
+                    content = Text(messages("base.no")),
+                    value = Some(YesNoMapping.option_no)
+                )
             ),
-            parentForm = haveAnyOtherIncomeForm,
             inline = true
         )
 
+        @continueButton()
 
-    <button id="continue-button" class="button" type="submit">@messages("base.continue")</button>
     }
 
 }

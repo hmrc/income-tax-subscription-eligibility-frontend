@@ -15,7 +15,6 @@ trait ViewSpec extends MustMatchers {
                          title: String,
                          isAgent: Boolean = false,
                          backLink: Option[String] = None,
-                         hasSignOutLink: Boolean = false,
                          error: Option[FormError] = None) {
 
     private val titlePrefix: String = if (error.isDefined) "Error: " else ""
