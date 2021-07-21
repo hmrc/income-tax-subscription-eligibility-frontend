@@ -40,7 +40,6 @@ object MessageLookup {
   }
 
   object CovidCannotSignup{
-    val title = "You cannot take part in this pilot"
     val heading = "You cannot take part in this pilot"
     val para1= "You will not be able to take part in this pilot if you have ever claimed a coronavirus (COVID-19) grant, or intend to do so in future."
     val SelfAssessment = "You will need to send a Self Assessment tax return instead and you may be able to sign up in future."
