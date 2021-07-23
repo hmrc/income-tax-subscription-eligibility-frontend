@@ -135,7 +135,7 @@ covid_19_claim_check.can_join.description                       = Gallwch gofres
 covid_19_claim_check.can_join.point1.link_text                  = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws
 covid_19_claim_check.can_join.point2.link_text                  = Cynllun Taliadau Cymorth Profi ac Olrhain
 covid_19_claim_check.can_join.point3.link_text                  = Grantiau Awdurdodau Lleol
-covid_19_claim_check.error.summary                              = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
+covid_19_claim_check.error                                      = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
 
 ## Title pattern
 principle_title_pattern.serviceName.govUk                       = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK

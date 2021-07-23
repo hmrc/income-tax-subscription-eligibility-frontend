@@ -20,25 +20,26 @@ import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.Covid19ClaimCheckForm._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.Covid19ClaimCheckForm.covid19ClaimCheckForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.covid_19_claim_check
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.Covid19ClaimCheck
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
-class Covid19ClaimCheckController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents)
+class Covid19ClaimCheckController @Inject()(  covid19ClaimCheck: Covid19ClaimCheck,
+                                             auditService: AuditingService, mcc: MessagesControllerComponents)
                                            (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(covid_19_claim_check(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit()))
+        Ok(covid19ClaimCheck(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit()))
       )
   }
 
@@ -46,7 +47,7 @@ class Covid19ClaimCheckController @Inject()(auditService: AuditingService, mcc: 
   def submit(): Action[AnyContent] = Action.async {
     implicit request =>
       covid19ClaimCheckForm.bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(covid_19_claim_check(formWithErrors, routes.Covid19ClaimCheckController.submit()))), {
+        formWithErrors => Future.successful(BadRequest(covid19ClaimCheck(formWithErrors, routes.Covid19ClaimCheckController.submit()))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, eligible = false, "yes",
               "claimedCovidGrant"))

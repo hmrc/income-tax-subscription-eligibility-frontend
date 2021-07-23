@@ -32,7 +32,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
   "GET /eligibility/covid-19" should {
     lazy val result = get("/covid-19")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.content
+    lazy val content: Element = doc.body()
 
     "return OK" in {
       result must have(
@@ -54,8 +54,8 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with the 2 correct bullet point for cannot join pilot" in {
-      val listItemOne: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(1)")
-      val listItemTwo: Element = content.selectFirst("ul:nth-of-type(1)").selectFirst("li:nth-of-type(2)")
+      val listItemOne: Element = content.selectFirst("ul.govuk-list--bullet").selectFirst("li:nth-of-type(1)")
+      val listItemTwo: Element = content.selectFirst("ul.govuk-list--bullet").selectFirst("li:nth-of-type(2)")
 
       listItemOne.text mustBe messages.linkTextCannotJoin1
       listItemOne.selectFirst("a").attr("href") mustBe appConfig.covid19SelfEmploymentSupportSchemeUrl
@@ -94,7 +94,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       radios.get(1).attr("id") mustBe "yes-no-2"
       labels.get(1).text() mustBe commonMessages.no
 
-      val submitButton = form.select("button[type=submit]")
+      val submitButton = form.select("button[class=govuk-button]")
 
       submitButton must have(
         text(commonMessages.continue)
@@ -144,7 +144,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
         httpStatus(BAD_REQUEST)
       )
 
-      val errorMessage: Elements = doc.select("div[class=error-notification]")
+      val errorMessage: Elements = doc.select("span[class=govuk-error-message]")
       errorMessage.text() mustBe messages.error
     }
 
