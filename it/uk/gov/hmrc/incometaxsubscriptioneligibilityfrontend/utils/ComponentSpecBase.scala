@@ -9,7 +9,8 @@ import play.api.libs.ws.{WSClient, WSRequest, WSResponse}
 import play.api.test.Helpers._
 import play.api.{Application, Environment, Mode}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodCheckForm, Covid19ClaimCheckForm, HaveAnyOtherIncomeForm, PropertyTradingStartDateForm}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.Covid19ClaimCheckForm
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodCheckForm, HaveAnyOtherIncomeForm, PropertyTradingStartDateForm}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.{AuditStub, WireMockMethods}
 
