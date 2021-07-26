@@ -20,10 +20,12 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import org.jsoup.Jsoup
 import org.jsoup.nodes.{Document, Element}
+import play.api.data.FormError
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, SoleTraderStartAfter => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, SoleTraderStartAfter => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AreYouSoleTraderAfterForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
@@ -36,7 +38,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
 
     lazy val result = get("/sole-trader-start-after")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.content
+    lazy val content: Element = doc.mainContent
 
     "return OK" in {
       result must have(
@@ -44,12 +46,17 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
       )
     }
 
-    "have a view with the correct title" in {
-      doc.title mustBe s"${messages.title(date)}$suffix"
+    "have the correct template details" when {
+      "there is no error" in new TemplateViewTest(doc, messages.title(date), backLink = Some(routes.HaveAnyOtherIncomeController.show().url))
+
+      "there is an error" in {
+        val errorPage: Document = Jsoup.parse(submitSoleTraderStartAfter(None).body)
+        new TemplateViewTest(errorPage, messages.title(date), error = Some(FormError(AreYouSoleTraderAfterForm.fieldName, messages.error(date))))
+      }
     }
 
     "have a view with the correct heading" in {
-      doc.getH1Element.text mustBe messages.title(date)
+      doc.getH1Element.text mustBe s"${messages.title(date)}"
     }
 
     "have a view with the correct hint paragraph" in {
@@ -68,7 +75,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
       radios.get(1).attr("id") mustBe "yes-no-2"
       labels.get(1).text() mustBe commonMessages.no
 
-      val submitButton = form.select("button[type=submit]")
+      val submitButton = form.select("button[id=continue-button]")
 
       submitButton must have(
         text(commonMessages.continue)
@@ -118,9 +125,6 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
       response must have(
         httpStatus(BAD_REQUEST)
       )
-
-      val errorMessage = doc.select("div[class=error-notification]")
-      errorMessage.text() mustBe messages.error(date)
 
       doc.getForm must have(
         method("POST"),
