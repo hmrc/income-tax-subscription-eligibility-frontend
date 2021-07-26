@@ -139,12 +139,11 @@ object MessageLookup {
 
   object CheckAccountingPeriod {
     val heading = "Are all of your business accounting periods the same as the standard tax year?"
-    val title = s"$heading$suffix"
     val hint = "The tax year runs from 6 April to 5 April and your accounting periods will be the same, unless you previously chose different dates. This is for all your sole trader and property businesses."
     val yes = "Yes"
     val no = "No"
     val continue = "Continue"
-    val error = "Error: Select yes if all of your business accounting periods are from 6 April to 5 April"
+    val error = "Select yes if all of your business accounting periods are from 6 April to 5 April"
   }
 
   object Covid19ClaimCheck {
