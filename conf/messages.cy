@@ -98,7 +98,7 @@ are_you_sole_trader_after.title                                 = A ddechreuodd 
 are_you_sole_trader_after.heading                               = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are_you_sole_trader_after.para                                  = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn
 are_you_sole_trader_after.para_link                             = hunangyflogedig (yn agor tab newydd).
-are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}
+are_you_sole_trader_after.error                                 = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}
 
 ## Cannot Sign Up Page
 cannot_sign_up.title                                            = Ni allwch gymryd rhan yn y cynllun peilot hwn eto

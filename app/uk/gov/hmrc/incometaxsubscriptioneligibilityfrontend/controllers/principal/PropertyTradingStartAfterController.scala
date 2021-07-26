@@ -17,7 +17,6 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import java.time.LocalDate
-
 import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
@@ -25,17 +24,18 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.PropertyTradingStartDateForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.property_trading_after
 import uk.gov.hmrc.play.language.LanguageUtils
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.implicits.ImplicitDateFormatter
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.PropertyTradingAfter
 
 import scala.concurrent.Future
 
 @Singleton
-class PropertyTradingStartAfterController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents,
+class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: PropertyTradingAfter,
+                                                    auditService: AuditingService, mcc: MessagesControllerComponents,
                                                     val languageUtils: LanguageUtils)
                                                    (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with ImplicitDateFormatter {
 
@@ -43,14 +43,14 @@ class PropertyTradingStartAfterController @Inject()(auditService: AuditingServic
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>
-      Future.successful(Ok(property_trading_after(propertyTradingStartDateForm(startDateLimit.toLongDate),
+      Future.successful(Ok(propertyTradingAfter(propertyTradingStartDateForm(startDateLimit.toLongDate),
         routes.PropertyTradingStartAfterController.submit(), startDateLimit.toLongDate)))
   }
 
   def submit(): Action[AnyContent] = Action.async {
     implicit request =>
       propertyTradingStartDateForm(startDateLimit.toLongDate).bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(property_trading_after(
+        formWithErrors => Future.successful(BadRequest(propertyTradingAfter(
           formWithErrors, routes.PropertyTradingStartAfterController.submit(), startDateLimit.toLongDate))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
