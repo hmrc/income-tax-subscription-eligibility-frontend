@@ -71,7 +71,7 @@ object MessageLookup {
 
     val hintMessage = "This includes being a landlord and letting holiday properties in the UK and overseas."
 
-    def error(date: String) = s"Error: Select yes if you own a property business that began trading on or after $date"
+    def error(date: String) = s"Select yes if you own a property business that began trading on or after $date"
   }
 
   object SoleTraderStartAfter {

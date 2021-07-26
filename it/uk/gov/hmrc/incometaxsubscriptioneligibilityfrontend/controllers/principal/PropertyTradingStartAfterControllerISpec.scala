@@ -18,7 +18,6 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-
 import org.jsoup.Jsoup
 import org.jsoup.nodes.{Document, Element}
 import play.api.libs.json.{JsValue, Json}
@@ -37,7 +36,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
 
     lazy val result = get("/property-start-after")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.content
+    lazy val content: Element = doc.body()
     "return OK" in {
       result must have(
         httpStatus(OK)
@@ -49,11 +48,13 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
     }
 
     "have a view with the correct heading" in {
-      doc.getH1Element.text mustBe messages.title(date)
+      lazy val text1 = doc.getH1Element.text
+      text1 mustBe messages.title(date)
     }
 
     "have a view with the correct hint paragraph" in {
-      content.select("p:nth-of-type(1)").text mustBe messages.hintMessage
+      System.out.println(content)
+      content.select("p:nth-of-type(1)").text must endWith(messages.hintMessage)
     }
 
     "have a view with the correct values displayed in the form" in {
@@ -68,7 +69,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
       radios.get(1).attr("id") mustBe "yes-no-2"
       labels.get(1).text() mustBe commonMessages.no
 
-      val submitButton = form.select("button[type=submit]")
+      val submitButton = form.select("button")
 
       submitButton must have(
         text(commonMessages.continue)
@@ -119,7 +120,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
         httpStatus(BAD_REQUEST)
       )
 
-      val errorMessage = doc.select("div[class=error-notification]")
+      val errorMessage = doc.select("div[class=govuk-error-summary__body]")
       errorMessage.text() mustBe messages.error(date)
 
       doc.getForm must have(
