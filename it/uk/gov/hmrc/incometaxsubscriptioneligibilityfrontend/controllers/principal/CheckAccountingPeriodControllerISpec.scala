@@ -17,14 +17,16 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import org.jsoup.Jsoup
-
+import org.jsoup.nodes.{Document, Element}
+import org.jsoup.select.Elements
+import play.api.data.FormError
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
-import org.jsoup.nodes.{Document, Element}
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => commonMessages, CheckAccountingPeriod => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, CheckAccountingPeriod => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodCheckForm, HaveAnyOtherIncomeForm}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.verifyAuditContains
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -32,7 +34,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
   "GET /eligibility/accounting-period-check" should {
     lazy val result = get("/accounting-period-check")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.content
+    lazy val content: Element = doc.mainContent
 
     "return OK" in {
       result must have(
@@ -40,8 +42,13 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       )
     }
 
-    "have a view with the correct title" in {
-      doc.title mustBe s"${messages.title}"
+    "have the correct template details" when {
+      "there is no error" in new TemplateViewTest(doc, messages.heading, backLink = Some("javascript:history.back()"))
+
+      "there is an error" in {
+        val errorPage: Document = Jsoup.parse(submitAccountingPeriodCheck(None).body)
+        new TemplateViewTest(errorPage, messages.heading, error = Some(FormError(AccountingPeriodCheckForm.fieldName, messages.error)))
+      }
     }
 
     "have a view with the correct heading" in {
@@ -53,12 +60,12 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     }
 
     "have a view with the correct values displayed in the form" in {
-      val form = doc.select("form")
-      val labels = doc.select("form").select("label")
+      val form = content.select("form")
+      val labels = content.select("form").select("label")
 
-      form.isEmpty() mustBe false
+      form.isEmpty mustBe false
 
-      val radios = form.select("input[type=radio]")
+      val radios = content.select("input[type=radio]")
 
       radios.size() mustBe 2
       radios.get(0).attr("id") mustBe "yes-no"
@@ -67,7 +74,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       radios.get(1).attr("id") mustBe "yes-no-2"
       labels.get(1).text() mustBe commonMessages.no
 
-      val submitButton = form.select("button[type=submit]")
+      val submitButton = content.select("#continue-button")
 
       submitButton must have(
         text(commonMessages.continue)
@@ -91,7 +98,6 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     "return SEE_OTHER when selecting Yes and send an Audit" in new PostSetup(Some(Yes)) {
       val expectedAuditContainsYes: JsValue = Json.parse(
         """{ "userType" : "individual", "eligible" : "true" , "answer" : "yes", "question": "standardAccountingPeriod" }""")
-      verifyAudit()
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
         httpStatus(SEE_OTHER),
@@ -102,11 +108,9 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     "return SEE_OTHER when selecting No and send an Audit" in new PostSetup(Some(No)) {
       val expectedAuditContainsNo: JsValue = Json.parse(
         """{ "userType" : "individual", "eligible" : "false" , "answer" : "no", "question": "standardAccountingPeriod" }""")
-      verifyAudit()
       verifyAuditContains(expectedAuditContainsNo)
       response must have(
         httpStatus(SEE_OTHER),
-        //This needs to be changed to CannotSignup page
         redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/error/cannot-sign-up")
       )
 
@@ -118,9 +122,6 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       response must have(
         httpStatus(BAD_REQUEST)
       )
-
-      val errorMessage = doc.select("div[class=error-notification]")
-      errorMessage.text() mustBe messages.error
     }
 
     "have the correct form" in new PostSetup(None) {

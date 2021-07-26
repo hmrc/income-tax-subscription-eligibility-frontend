@@ -38,6 +38,9 @@ trait ViewSpec extends MustMatchers {
       val errorLink: Element = errorSummary.selectHead("div > ul > li > a")
       errorLink.text mustBe formError.message
       errorLink.attr("href") mustBe s"#${formError.key}"
+
+      val errorMessage: Element = document.selectHead("form").selectHead(".govuk-error-message")
+      errorMessage.text mustBe s"Error: ${formError.message}"
     }
 
   }
