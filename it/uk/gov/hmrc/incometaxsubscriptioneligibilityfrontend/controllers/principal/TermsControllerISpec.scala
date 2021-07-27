@@ -62,7 +62,13 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with an accept and continue button" in {
-      doc.getSubmitButton.text mustBe commonMessages.acceptAndContinue
+      val form = doc.select("form")
+
+      val submitButton = form.select("button")
+
+      submitButton must have(
+        text(commonMessages.acceptAndContinue)
+      )
     }
 
     "have the correct form" in {
@@ -70,6 +76,10 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
         method("POST"),
         action(routes.TermsController.submit().url)
       )
+    }
+
+    "have a back link" in {
+      doc.select("a[class=govuk-back-link]").isEmpty must not be true
     }
   }
 }
