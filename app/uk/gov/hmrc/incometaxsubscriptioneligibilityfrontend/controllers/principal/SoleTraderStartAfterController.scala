@@ -30,14 +30,16 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.Eligib
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.are_you_sole_trader_after
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.AreYouSoleTraderAfter
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.play.language.LanguageUtils
 
 import scala.concurrent.Future
 
 @Singleton
-class SoleTraderStartAfterController @Inject()(auditService: AuditingService, mcc: MessagesControllerComponents,
+class SoleTraderStartAfterController @Inject()(auditService: AuditingService,
+                                               areYouSoleTraderAfter: AreYouSoleTraderAfter,
+                                               mcc: MessagesControllerComponents,
                                                val languageUtils: LanguageUtils)
                                               (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with ImplicitDateFormatter {
 
@@ -48,14 +50,14 @@ class SoleTraderStartAfterController @Inject()(auditService: AuditingService, mc
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(are_you_sole_trader_after(form(startDateLimit), routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate))
+        Ok(areYouSoleTraderAfter(form(startDateLimit), routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate, backUrl = backUrl))
       )
   }
 
   def submit(): Action[AnyContent] = Action.async {
     implicit request =>
       form(startDateLimit).bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(are_you_sole_trader_after(formWithErrors, routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate))), {
+        formWithErrors => Future.successful(BadRequest(areYouSoleTraderAfter(formWithErrors, routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
               "soleTraderBusinessStartDate"))
@@ -68,6 +70,8 @@ class SoleTraderStartAfterController @Inject()(auditService: AuditingService, mc
       )
   }
 
+  def backUrl: String = {
+      routes.HaveAnyOtherIncomeController.show().url
+  }
+
 }
-
-

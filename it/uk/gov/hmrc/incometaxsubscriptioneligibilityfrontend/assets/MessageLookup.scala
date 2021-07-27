@@ -77,7 +77,7 @@ object MessageLookup {
   object SoleTraderStartAfter {
     def title(date: String) = s"Did your sole trader business begin on or after $date?"
 
-    def error(date: String) = s"Error: Select yes if you are a sole trader that began trading on or after $date"
+    def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date"
 
     val hintMessage = "If you’re a sole trader, you run your own business as an individual and are self-employed (opens in new tab)."
   }
