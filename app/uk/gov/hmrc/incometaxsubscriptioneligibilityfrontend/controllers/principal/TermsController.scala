@@ -20,13 +20,14 @@ import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.terms
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.Terms
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import scala.concurrent.Future
 
 @Singleton
-class TermsController @Inject()(mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class TermsController @Inject()(terms: Terms,
+                                mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
