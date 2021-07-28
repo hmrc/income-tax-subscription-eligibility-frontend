@@ -83,7 +83,6 @@ object MessageLookup {
   }
 
   object CannotSignUp {
-    val title = "You cannot take part in this pilot yet"
     val heading = "You cannot take part in this pilot yet"
     val incomePara = "This pilot is not available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this pilot if you receive income from:"
     val incomeBullet1 = "PAYE income as an employee"

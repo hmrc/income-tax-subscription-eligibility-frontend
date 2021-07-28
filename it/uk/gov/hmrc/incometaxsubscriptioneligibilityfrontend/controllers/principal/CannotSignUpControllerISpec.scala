@@ -19,14 +19,15 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 import org.jsoup.Jsoup
 import org.jsoup.nodes.{Document, Element}
 import play.api.test.Helpers.OK
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, CannotSignUp => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{CannotSignUp => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
+
   "GET /error/cannot-sign-up" should {
     lazy val result = get("/error/cannot-sign-up")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.content
+    lazy val content: Element = doc.body()
 
     "return OK" in {
       result must have(
@@ -34,28 +35,32 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "have a view with the correct title" in {
-      doc.title mustBe s"${messages.title}${suffix}"
-    }
+    "have the correct template details" in new TemplateViewTest(doc, messages.heading, backLink = Some("javascript:history.back()"))
 
     "have a view with the correct heading" in {
-      content.getH1Element.text mustBe messages.heading
+      doc.getH1Element.text mustBe messages.heading
     }
 
     "have a view with the correct first paragraph" in {
-      content.select("p:nth-of-type(1)").text mustBe messages.incomePara
+      doc.getParagraphs.text().contains(messages.incomePara) mustBe true
     }
 
     "have a view with the correct income bullet points" in {
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(1)").text mustBe messages.incomeBullet1
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(2)").text mustBe messages.incomeBullet2
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(3)").text mustBe messages.incomeBullet3
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(4)").text mustBe messages.incomeBullet4
-      content.select("ul:nth-of-type(1)").select("li:nth-of-type(5)").text mustBe messages.incomeBullet5
+      val listItemOne: Element = content.selectFirst("ul.govuk-list--bullet").selectFirst("li:nth-of-type(1)")
+      val listItemTwo: Element = content.selectFirst("ul.govuk-list--bullet").selectFirst("li:nth-of-type(2)")
+      val listItemThree: Element = content.selectFirst("ul.govuk-list--bullet").selectFirst("li:nth-of-type(3)")
+      val listItemFour: Element = content.selectFirst("ul.govuk-list--bullet").selectFirst("li:nth-of-type(4)")
+      val listItemFive: Element = content.selectFirst("ul.govuk-list--bullet").selectFirst("li:nth-of-type(5)")
+
+      listItemOne.text mustBe messages.incomeBullet1
+      listItemTwo.text mustBe messages.incomeBullet2
+      listItemThree.text mustBe messages.incomeBullet3
+      listItemFour.text mustBe messages.incomeBullet4
+      listItemFive.text mustBe messages.incomeBullet5
     }
 
-    "have a view with the correct second paragraph" in{
-      content.select("p:nth-of-type(2)").text mustBe messages.otherPara
+    "have a view with the correct second paragraph" in {
+      doc.getParagraphs.text().contains(messages.otherPara) mustBe true
     }
 
     "have a view with the correct other bullet points" in {
@@ -65,9 +70,13 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "have a view with the correct Send Self Assessment Paragraph with link" in {
-      content.select("p:nth-of-type(3)").text mustBe messages.sendSelfAssessment
-      content.select("a").text mustBe messages.sendSelfAssessmentLink
-      content.select("a").attr("href") mustBe messages.sendSelfAssessmentHref
+      val paragraph = content.select("p:nth-of-type(3)")
+      paragraph.text mustBe messages.sendSelfAssessment
+
+      val link = paragraph.select("a")
+      link.text mustBe messages.sendSelfAssessmentLink
+      link.attr("href") mustBe messages.sendSelfAssessmentHref
     }
   }
+
 }
