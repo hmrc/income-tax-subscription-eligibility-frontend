@@ -14,6 +14,7 @@ GET         /other-income                     uk.gov.hmrc.incometaxsubscriptione
 POST        /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.submit
 
 GET         /error/cannot-sign-up             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CannotSignUpController.show
+
 ## Overview
 GET         /overview                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OverviewController.show
 
@@ -43,4 +44,3 @@ POST        /covid-19                         uk.gov.hmrc.incometaxsubscriptione
 
 ## Covid-19 claim check Kick out
 GET         /error/covid-cannot-sign-up       uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CovidCannotSignupController.show
-

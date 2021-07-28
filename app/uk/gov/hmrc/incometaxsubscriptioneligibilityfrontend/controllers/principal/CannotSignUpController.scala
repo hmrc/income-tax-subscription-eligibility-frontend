@@ -16,22 +16,22 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
-import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.cannot_sign_up
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.CannotSignUp
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
+import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
-class CannotSignUpController @Inject()(implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class CannotSignUpController @Inject()(cannotSignUp: CannotSignUp)(implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(cannot_sign_up())
+        Ok(cannotSignUp())
       )
   }
 
