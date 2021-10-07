@@ -104,7 +104,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
     "have the correct form" in {
       doc.getForm must have(
         method("POST"),
-        action(routes.Covid19ClaimCheckController.submit().url)
+        action(routes.Covid19ClaimCheckController.submit.url)
       )
     }
   }
@@ -122,7 +122,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.CovidCannotSignupController.show().url)
+        redirectUri(routes.CovidCannotSignupController.show.url)
       )
     }
 
@@ -133,7 +133,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       verifyAuditContains(expectedAuditContainsNo)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.HaveAnyOtherIncomeController.show().url)
+        redirectUri(routes.HaveAnyOtherIncomeController.show.url)
       )
     }
 
@@ -152,7 +152,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
       lazy val doc: Document = Jsoup.parse(response.body)
       doc.getForm must have(
         method("POST"),
-        action(routes.Covid19ClaimCheckController.submit().url)
+        action(routes.Covid19ClaimCheckController.submit.url)
       )
     }
   }

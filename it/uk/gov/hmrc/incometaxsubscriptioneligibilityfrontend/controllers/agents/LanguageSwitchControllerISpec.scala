@@ -42,7 +42,7 @@ class LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
       resultCy.headers.toString.contains("PLAY_LANG=cy;") mustBe true
       resultCy must have(
         httpStatus(Status.SEE_OTHER),
-        redirectUri(agentRoutes.TermsController.show().url)
+        redirectUri(agentRoutes.TermsController.show.url)
       )
     }
   }
@@ -63,7 +63,7 @@ class LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
       resultEn.headers.toString.contains("PLAY_LANG=en;") mustBe true
       resultEn must have(
         httpStatus(Status.SEE_OTHER),
-        redirectUri(agentRoutes.TermsController.show().url)
+        redirectUri(agentRoutes.TermsController.show.url)
       )
     }
   }

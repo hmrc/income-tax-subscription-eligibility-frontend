@@ -35,11 +35,11 @@ class OverviewController @Inject()(overview: Overview, mcc: MessagesControllerCo
     implicit request =>
       if (isEnabled(RemoveCovidPages)) {
         Future.successful(
-          Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show()))
+          Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show))
         )
       } else {
         Future.successful(
-          Ok(overview(postAction = routes.Covid19ClaimCheckController.show()))
+          Ok(overview(postAction = routes.Covid19ClaimCheckController.show))
         )
       }
   }

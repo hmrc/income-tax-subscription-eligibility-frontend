@@ -47,7 +47,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
     }
 
     "have the correct template details" when {
-      "there is no error" in new TemplateViewTest(doc, messages.title(date), backLink = Some(routes.HaveAnyOtherIncomeController.show().url))
+      "there is no error" in new TemplateViewTest(doc, messages.title(date), backLink = Some(routes.HaveAnyOtherIncomeController.show.url))
 
       "there is an error" in {
         val errorPage: Document = Jsoup.parse(submitSoleTraderStartAfter(None).body)
@@ -85,7 +85,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
     "have the correct form" in {
       doc.getForm must have(
         method("POST"),
-        action(routes.SoleTraderStartAfterController.submit().url)
+        action(routes.SoleTraderStartAfterController.submit.url)
       )
     }
   }
@@ -103,7 +103,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.CannotSignUpController.show().url)
+        redirectUri(routes.CannotSignUpController.show.url)
       )
     }
 
@@ -114,7 +114,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
       verifyAuditContains(expectedAuditContainsNo)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.PropertyTradingStartAfterController.show().url)
+        redirectUri(routes.PropertyTradingStartAfterController.show.url)
       )
 
     }
@@ -128,7 +128,7 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
 
       doc.getForm must have(
         method("POST"),
-        action(routes.SoleTraderStartAfterController.submit().url)
+        action(routes.SoleTraderStartAfterController.submit.url)
       )
     }
 

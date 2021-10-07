@@ -25,7 +25,7 @@ import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 class IndexController @Inject()(mcc: MessagesControllerComponents) extends FrontendController(mcc) with I18nSupport {
 
   val index: Action[AnyContent] = Action { _ =>
-    Redirect(routes.TermsController.show())
+    Redirect(routes.TermsController.show)
   }
 
 }

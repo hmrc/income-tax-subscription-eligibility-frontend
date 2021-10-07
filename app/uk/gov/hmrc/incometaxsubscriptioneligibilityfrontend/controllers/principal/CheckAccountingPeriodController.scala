@@ -37,22 +37,30 @@ class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: Accountin
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(accountingPeriodCheck(accountingPeriodCheckForm, routes.CheckAccountingPeriodController.submit()))
+        Ok(accountingPeriodCheck(accountingPeriodCheckForm, routes.CheckAccountingPeriodController.submit))
       )
   }
 
-  def submit(): Action[AnyContent] = Action.async {
+  def submit: Action[AnyContent] = Action.async {
     implicit request =>
       accountingPeriodCheckForm.bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(accountingPeriodCheck(formWithErrors, routes.CheckAccountingPeriodController.submit()))), {
+        formWithErrors => Future.successful(BadRequest(accountingPeriodCheck(formWithErrors, routes.CheckAccountingPeriodController.submit))), {
           case Yes =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "yes",
-              "standardAccountingPeriod"))
-            Future.successful(Redirect(routes.TermsController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = true,
+              answer = "yes",
+              question = "standardAccountingPeriod"
+            ))
+            Future.successful(Redirect(routes.TermsController.show))
           case No =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "no",
-              "standardAccountingPeriod"))
-            Future.successful(Redirect(routes.CannotSignUpController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = false,
+              answer = "no",
+              question = "standardAccountingPeriod"
+            ))
+            Future.successful(Redirect(routes.CannotSignUpController.show))
         }
       )
   }

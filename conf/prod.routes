@@ -2,7 +2,6 @@
 ->         /report-quarterly/income-and-expenses/sign-up/eligibility                     principal.Routes
 ->         /report-quarterly/income-and-expenses/sign-up/eligibility/client              agent.Routes
 ->         /                                                                             health.Routes
-->         /template                                                                     template.Routes
 
 GET        /admin/metrics                                                                com.kenshoo.play.metrics.MetricsController.metrics
 

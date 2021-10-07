@@ -115,7 +115,6 @@ object MessageLookup {
 
   object AgentTerms {
     val heading: String = "Terms of participation"
-    val title = s"$heading$agentSuffix"
     val line1 = "By taking part in this pilot, you agree that either you or your client will:"
     val bullet1 = "use relevant software to record income and expenses"
     val bullet2 = "send a quarterly update from the start of your client’s accounting period"

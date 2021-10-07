@@ -40,31 +40,39 @@ class HaveAnyOtherIncomeController @Inject()(auditService: AuditingService,
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(haveAnyOtherIncome(haveAnyOtherIncomeForm, routes.HaveAnyOtherIncomeController.submit(), backUrl = backUrl))
+        Ok(haveAnyOtherIncome(haveAnyOtherIncomeForm, routes.HaveAnyOtherIncomeController.submit, backUrl = backUrl))
       )
   }
 
-  def submit(): Action[AnyContent] = Action.async {
+  def submit: Action[AnyContent] = Action.async {
     implicit request =>
       haveAnyOtherIncomeForm.bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(haveAnyOtherIncome(formWithErrors, routes.HaveAnyOtherIncomeController.submit(), backUrl = backUrl))), {
+        formWithErrors => Future.successful(BadRequest(haveAnyOtherIncome(formWithErrors, routes.HaveAnyOtherIncomeController.submit, backUrl = backUrl))), {
           case Yes =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
-              "otherIncomeSource"))
-            Future.successful(Redirect(routes.CannotSignUpController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = false,
+              answer = "yes",
+              question = "otherIncomeSource"
+            ))
+            Future.successful(Redirect(routes.CannotSignUpController.show))
           case No =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "no",
-              "otherIncomeSource"))
-            Future.successful(Redirect(routes.SoleTraderStartAfterController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = true,
+              answer = "no",
+              question = "otherIncomeSource"
+            ))
+            Future.successful(Redirect(routes.SoleTraderStartAfterController.show))
         }
       )
   }
 
   def backUrl: String = {
     if (isEnabled(RemoveCovidPages)) {
-      routes.OverviewController.show().url
+      routes.OverviewController.show.url
     } else {
-      routes.Covid19ClaimCheckController.show().url
+      routes.Covid19ClaimCheckController.show.url
     }
   }
 }

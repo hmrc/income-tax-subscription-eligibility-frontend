@@ -15,30 +15,37 @@
  *@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-@import uk.gov.hmrc.play.views.html.helpers.form
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.agent_main_template
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.AgentMainTemplate
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
 
+@this(
+        mainTemplate: AgentMainTemplate,
+        form: FormWithCSRF,
+        continueButton: ContinueButton
+)(
+        implicit appConfig: AppConfig
+)
 
-@(postAction:Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@(postAction:Call)(implicit request: Request[_], messages: Messages)
 
-@agent_main_template(title = messages("agent.terms.heading")) {
+@mainTemplate(title = messages("agent.terms.heading"), backLink = Some("javascript:history.back()")) {
 
-    <h1 class="heading-large">@messages("agent.terms.heading")</h1>
+    <h1 class="govuk-heading-l">@messages("agent.terms.heading")</h1>
 
-    <div class="form-group">
-        <p>@messages("agent.terms.line1")</p>
-        <ul class="list list-bullet">
+    <div class="govuk-form-group">
+        <p class="govuk-body">@messages("agent.terms.line1")</p>
+        <ul class="govuk-list govuk-list--bullet">
             <li>@messages("agent.terms.bullet1")</li>
             <li>@messages("agent.terms.bullet2")</li>
             <li>@messages("agent.terms.bullet3")</li>
             <li>@messages("agent.terms.bullet4")</li>
             <li>@messages("agent.terms.bullet5")</li>
         </ul>
-        <p>@messages("agent.terms.line2")</p>
+        <p class="govuk-body">@messages("agent.terms.line2")</p>
     </div>
 
     @form(action = postAction) {
-        <button class="button" type="submit" id="continue-button">@messages("base.accept_and_continue")</button>
+        @continueButton(alternateText = Some(messages("base.accept_and_continue")))
     }
 
 }

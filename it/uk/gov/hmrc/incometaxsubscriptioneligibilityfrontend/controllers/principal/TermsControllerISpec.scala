@@ -74,7 +74,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     "have the correct form" in {
       doc.getForm must have(
         method("POST"),
-        action(routes.TermsController.submit().url)
+        action(routes.TermsController.submit.url)
       )
     }
 

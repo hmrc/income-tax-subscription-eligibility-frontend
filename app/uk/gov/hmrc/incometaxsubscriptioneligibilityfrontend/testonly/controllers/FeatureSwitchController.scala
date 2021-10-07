@@ -23,29 +23,30 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.switches
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitch, FeatureSwitching}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.views.html.feature_switch
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.views.html.FeatureSwitchView
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.Inject
 import scala.collection.immutable.ListMap
 import scala.concurrent.ExecutionContext
 
-class FeatureSwitchController @Inject()(val auditingService: AuditingService)
+class FeatureSwitchController @Inject()(val auditingService: AuditingService,
+                                        featureSwitch: FeatureSwitchView)
                                        (implicit val ec: ExecutionContext,
                                         implicit val appConfig: AppConfig,
                                         mcc: MessagesControllerComponents) extends FrontendController(mcc) with FeatureSwitching with I18nSupport {
 
   private def view(switchNames: Map[FeatureSwitch, Boolean])(implicit request: Request[_]): Html =
-    feature_switch(
+    featureSwitch(
       switchNames = switchNames,
-      uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.controllers.routes.FeatureSwitchController.submit()
+      uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.controllers.routes.FeatureSwitchController.submit
     )
 
 
-      lazy val show: Action[AnyContent] = Action { implicit req =>
-        val featureSwitches = ListMap(switches.toSeq sortBy(_.displayText) map (switch => switch -> isEnabled(switch)):_*)
-        Ok(view(featureSwitches))
-      }
+  lazy val show: Action[AnyContent] = Action { implicit req =>
+    val featureSwitches = ListMap(switches.toSeq sortBy (_.displayText) map (switch => switch -> isEnabled(switch)): _*)
+    Ok(view(featureSwitches))
+  }
 
   lazy val submit: Action[AnyContent] = Action { implicit req =>
 
@@ -61,6 +62,6 @@ class FeatureSwitchController @Inject()(val auditingService: AuditingService)
       else disable(fs)
     )
 
-    Redirect(uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.controllers.routes.FeatureSwitchController.show())
+    Redirect(uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.controllers.routes.FeatureSwitchController.show)
   }
 }

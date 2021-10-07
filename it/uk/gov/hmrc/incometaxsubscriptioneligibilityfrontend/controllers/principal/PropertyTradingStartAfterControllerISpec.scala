@@ -53,7 +53,6 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
     }
 
     "have a view with the correct hint paragraph" in {
-      System.out.println(content)
       content.select("p:nth-of-type(1)").text must endWith(messages.hintMessage)
     }
 
@@ -79,7 +78,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
     "have the correct form" in {
       doc.getForm must have(
         method("POST"),
-        action(routes.PropertyTradingStartAfterController.submit().url)
+        action(routes.PropertyTradingStartAfterController.submit.url)
       )
     }
   }
@@ -97,7 +96,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.CannotSignUpController.show().url)
+        redirectUri(routes.CannotSignUpController.show.url)
       )
     }
 
@@ -108,7 +107,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
       verifyAuditContains(expectedAuditContainsNo)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.CheckAccountingPeriodController.show().url)
+        redirectUri(routes.CheckAccountingPeriodController.show.url)
       )
 
     }
@@ -125,7 +124,7 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
 
       doc.getForm must have(
         method("POST"),
-        action(routes.PropertyTradingStartAfterController.submit().url)
+        action(routes.PropertyTradingStartAfterController.submit.url)
       )
     }
 
