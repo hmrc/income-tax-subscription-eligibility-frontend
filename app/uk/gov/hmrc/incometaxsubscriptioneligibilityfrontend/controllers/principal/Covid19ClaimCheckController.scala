@@ -32,30 +32,38 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
-class Covid19ClaimCheckController @Inject()(  covid19ClaimCheck: Covid19ClaimCheck,
-                                             auditService: AuditingService, mcc: MessagesControllerComponents)
+class Covid19ClaimCheckController @Inject()(covid19ClaimCheck: Covid19ClaimCheck,
+                                            auditService: AuditingService, mcc: MessagesControllerComponents)
                                            (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(covid19ClaimCheck(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit()))
+        Ok(covid19ClaimCheck(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit))
       )
   }
 
 
-  def submit(): Action[AnyContent] = Action.async {
+  def submit: Action[AnyContent] = Action.async {
     implicit request =>
       covid19ClaimCheckForm.bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(covid19ClaimCheck(formWithErrors, routes.Covid19ClaimCheckController.submit()))), {
+        formWithErrors => Future.successful(BadRequest(covid19ClaimCheck(formWithErrors, routes.Covid19ClaimCheckController.submit))), {
           case Yes =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, eligible = false, "yes",
-              "claimedCovidGrant"))
-            Future.successful(Redirect(routes.CovidCannotSignupController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = false,
+              answer = "yes",
+              question = "claimedCovidGrant"
+            ))
+            Future.successful(Redirect(routes.CovidCannotSignupController.show))
           case No =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, eligible = true, "no",
-              "claimedCovidGrant"))
-            Future.successful(Redirect(routes.HaveAnyOtherIncomeController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = true,
+              answer = "no",
+              question = "claimedCovidGrant"
+            ))
+            Future.successful(Redirect(routes.HaveAnyOtherIncomeController.show))
         }
       )
   }

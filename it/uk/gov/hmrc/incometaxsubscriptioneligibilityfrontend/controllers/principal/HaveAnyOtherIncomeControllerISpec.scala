@@ -50,12 +50,12 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     "have the correct template details" when {
       "there is no error and removeCovid feature switch is disabled" in {
 
-        new TemplateViewTest(doc, messages.title, backLink = Some(routes.Covid19ClaimCheckController.show().url))
+        new TemplateViewTest(doc, messages.title, backLink = Some(routes.Covid19ClaimCheckController.show.url))
       }
 
       "there is no error and removeCovid feature switch is enabled" in {
         enable(RemoveCovidPages)
-        new TemplateViewTest(doc, messages.title, backLink = Some(routes.OverviewController.show().url))
+        new TemplateViewTest(doc, messages.title, backLink = Some(routes.OverviewController.show.url))
       }
 
       "there is an error" in {
@@ -104,7 +104,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     "have the correct form" in {
       doc.getForm must have(
         method("POST"),
-        action(routes.HaveAnyOtherIncomeController.submit().url)
+        action(routes.HaveAnyOtherIncomeController.submit.url)
       )
     }
   }
@@ -123,7 +123,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.CannotSignUpController.show().url)
+        redirectUri(routes.CannotSignUpController.show.url)
 
       )
     }
@@ -135,7 +135,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       verifyAuditContains(expectedAuditContainsNo)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.SoleTraderStartAfterController.show().url)
+        redirectUri(routes.SoleTraderStartAfterController.show.url)
 
       )
 
@@ -153,7 +153,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       lazy val doc: Document = Jsoup.parse(response.body)
       doc.getForm must have(
         method("POST"),
-        action(routes.HaveAnyOtherIncomeController.submit().url)
+        action(routes.HaveAnyOtherIncomeController.submit.url)
       )
     }
   }

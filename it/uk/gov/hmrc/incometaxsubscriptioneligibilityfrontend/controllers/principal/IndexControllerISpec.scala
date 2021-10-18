@@ -9,11 +9,11 @@ class IndexControllerISpec extends ComponentSpecBase {
 
   lazy val result: WSResponse = get("/")
 
-  s"GET ${routes.IndexController.index().url}" should {
+  s"GET ${routes.IndexController.index.url}" should {
     s"return $SEE_OTHER" in {
       result must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.OverviewController.show().url)
+        redirectUri(routes.OverviewController.show.url)
       )
     }
   }

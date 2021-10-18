@@ -20,7 +20,6 @@ import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.covid_cannot_signup
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.CovidCannotSignUp
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 

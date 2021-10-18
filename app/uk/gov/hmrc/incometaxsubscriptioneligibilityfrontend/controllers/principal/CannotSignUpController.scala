@@ -26,7 +26,8 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
-class CannotSignUpController @Inject()(cannotSignUp: CannotSignUp)(implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class CannotSignUpController @Inject()(cannotSignUp: CannotSignUp)
+                                      (implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>

@@ -84,7 +84,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     "have the correct form" in {
       doc.getForm must have(
         method("POST"),
-        action(routes.CheckAccountingPeriodController.submit().url)
+        action(routes.CheckAccountingPeriodController.submit.url)
       )
     }
   }
@@ -128,7 +128,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       lazy val doc: Document = Jsoup.parse(response.body)
       doc.getForm must have(
         method("POST"),
-        action(routes.CheckAccountingPeriodController.submit().url)
+        action(routes.CheckAccountingPeriodController.submit.url)
       )
     }
   }

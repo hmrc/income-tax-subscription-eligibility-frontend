@@ -17,9 +17,6 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 
-import java.time.LocalDate
-
-import javax.inject.{Inject, Singleton}
 import play.api.data.Form
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents, Request}
@@ -34,6 +31,8 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.play.language.LanguageUtils
 
+import java.time.LocalDate
+import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
@@ -50,28 +49,36 @@ class SoleTraderStartAfterController @Inject()(auditService: AuditingService,
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(areYouSoleTraderAfter(form(startDateLimit), routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate, backUrl = backUrl))
+        Ok(areYouSoleTraderAfter(form(startDateLimit), routes.SoleTraderStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl))
       )
   }
 
-  def submit(): Action[AnyContent] = Action.async {
+  def submit: Action[AnyContent] = Action.async {
     implicit request =>
       form(startDateLimit).bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(areYouSoleTraderAfter(formWithErrors, routes.SoleTraderStartAfterController.submit(), startDateLimit.toLongDate, backUrl = backUrl))), {
+        formWithErrors => Future.successful(BadRequest(areYouSoleTraderAfter(formWithErrors, routes.SoleTraderStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl))), {
           case Yes =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, false, "yes",
-              "soleTraderBusinessStartDate"))
-            Future.successful(Redirect(routes.CannotSignUpController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = false,
+              answer = "yes",
+              question = "soleTraderBusinessStartDate"
+            ))
+            Future.successful(Redirect(routes.CannotSignUpController.show))
           case No =>
-            auditService.audit(EligibilityAnswerAuditModel(EligibilityAnswerAuditing.eligibilityAnswerIndividual, true, "no",
-              "soleTraderBusinessStartDate"))
-            Future.successful(Redirect(routes.PropertyTradingStartAfterController.show()))
+            auditService.audit(EligibilityAnswerAuditModel(
+              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
+              eligible = true,
+              answer = "no",
+              question = "soleTraderBusinessStartDate"
+            ))
+            Future.successful(Redirect(routes.PropertyTradingStartAfterController.show))
         }
       )
   }
 
   def backUrl: String = {
-      routes.HaveAnyOtherIncomeController.show().url
+    routes.HaveAnyOtherIncomeController.show.url
   }
 
 }

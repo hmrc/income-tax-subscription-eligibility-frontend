@@ -20,7 +20,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{AgentTerms => messages, Base => commonMessages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{agentSuffix, AgentTerms => messages, Base => commonMessages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -38,7 +38,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with a title" in {
-      doc.title mustBe messages.title
+      doc.title mustBe s"${messages.heading}$agentSuffix"
     }
 
     "return a view with a heading" in {
@@ -63,13 +63,13 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with an accept and continue button" in {
-      doc.getSubmitButton.text mustBe commonMessages.acceptAndContinue
+      doc.selectHead("button").text mustBe commonMessages.acceptAndContinue
     }
 
     "have the correct form" in {
       doc.getForm must have(
         method("POST"),
-        action(routes.TermsController.submit().url)
+        action(routes.TermsController.submit.url)
       )
     }
   }

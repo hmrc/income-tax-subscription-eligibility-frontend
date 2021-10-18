@@ -31,8 +31,8 @@
 }
 
 @govukWrapper(
-    title = title,
-    serviceName = messages("agent_service_name.title"),
+    title = prefixedTitle,
+    serviceName = Some(messages("agent_service_name.title")),
     optForm = optForm,
     backLink = backLink
 )(contentBlock)

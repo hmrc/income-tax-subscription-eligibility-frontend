@@ -16,13 +16,13 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
-import javax.inject.{Inject, Singleton}
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.Terms
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
+import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
@@ -32,7 +32,7 @@ class TermsController @Inject()(terms: Terms,
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(terms(postAction = routes.TermsController.submit()))
+        Ok(terms(postAction = routes.TermsController.submit))
       )
   }
 
