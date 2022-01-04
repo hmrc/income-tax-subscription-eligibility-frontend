@@ -63,7 +63,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with an accept and continue button" in {
-      doc.selectHead("button").text mustBe commonMessages.acceptAndContinue
+      doc.select("button").last().text mustBe commonMessages.acceptAndContinue
     }
 
     "have the correct form" in {
