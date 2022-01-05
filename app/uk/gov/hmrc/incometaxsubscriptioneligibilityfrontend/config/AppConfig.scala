@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 HM Revenue & Customs
+ * Copyright 2022 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ class AppConfig @Inject()(config: ServicesConfig) {
   val reportAProblemNonJSUrl: String = s"$contactBaseUrl/contact/problem_reports_nonjs?service=$serviceIdentifier"
 
   lazy val govUkUrl: String = loadConfig("gov-uk.url")
+  lazy val urBannerUrl: String = loadConfig("urBannerUrl.url")
 
   lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"
   lazy val workingForYourselfUrl: String = s"$govUkUrl/working-for-yourself"

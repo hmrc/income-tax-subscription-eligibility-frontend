@@ -1,5 +1,5 @@
 @*
- * Copyright 2021 HM Revenue & Customs
+ * Copyright 2022 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,10 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import uk.gov.hmrc.hmrcfrontend.views.config.StandardBetaBanner
 @import views.html.helper.CSPNonce
+@import uk.gov.hmrc.hmrcfrontend.views.html.helpers.HmrcLayout
 
 @this(
+    hmrcLayout: HmrcLayout,
     govukLayout: GovukLayout,
     govukBackLink: GovukBackLink,
     govukErrorSummary: GovukErrorSummary,
@@ -44,12 +46,7 @@
     @hmrcScripts()
 }
 
-@beforeContentBlock = {
-    @hmrcLanguageSelectHelper()
-    @backLink.map {href =>
-        @govukBackLink(BackLink(href = href, content = Text(messages("base.back")), attributes = Map("id" -> "back-link")))
-    }
-}
+
 
 @content = {
 
@@ -68,20 +65,12 @@
 
 }
 
-@govukLayout(
+@hmrcLayout(
     pageTitle = Some(title),
-    headBlock = Some(hmrcHead(
-        headBlock = signOutUrl.map(url => hmrcTimeoutDialogHelper(signOutUrl = url))
-    )),
-    headerBlock = Some(hmrcStandardHeader(
-        serviceName = serviceName,
-        serviceUrl = None,
-        signOutUrl = signOutUrl,
-        phaseBanner = Some(standardBetaBanner(url = appConfig.betaFeedbackUnauthenticatedUrl)),
-        displayHmrcBanner = true
-    )),
-    beforeContentBlock = Some(beforeContentBlock),
-    scriptsBlock = Some(scripts),
-    footerBlock = Some(hmrcStandardFooter()),
-    cspNonce = CSPNonce.get
-)(content)
+    isWelshTranslationAvailable = true,
+    serviceUrl = None,
+    backLinkUrl = backLink,
+    signOutUrl = None,
+    phaseBanner = Some(standardBetaBanner(url = appConfig.betaFeedbackUnauthenticatedUrl)),
+    userResearchBannerUrl = Some(appConfig.urBannerUrl),
+    nonce = None)(content)
