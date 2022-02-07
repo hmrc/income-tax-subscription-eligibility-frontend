@@ -22,7 +22,7 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "have the correct template details" in new TemplateViewTest(doc, messages.heading)
+    "have the correct template details" in new TemplateViewTest(doc, messages.heading)(appConfig)
 
     "return a view with a heading" in {
       content.getH1Element.text mustBe messages.heading

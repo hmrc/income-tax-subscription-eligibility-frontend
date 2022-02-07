@@ -35,7 +35,6 @@ class AppConfig @Inject()(config: ServicesConfig) {
   private val incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/covid-19"
   private val incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/income-sources"
 
-
   private val contactBaseUrl = loadConfig("contact-frontend.host")
   protected lazy val contactHost: String = config.getString("contact-frontend.host")
   lazy val contactFormServiceIdentifier = "MTDIT"
@@ -55,6 +54,8 @@ class AppConfig @Inject()(config: ServicesConfig) {
   val reportAProblemNonJSUrl: String = s"$contactBaseUrl/contact/problem_reports_nonjs?service=$serviceIdentifier"
 
   lazy val govUkUrl: String = loadConfig("gov-uk.url")
+  lazy val govukGuidanceITSASignUpIndivLink: String = s"$govUkUrl/guidance/sign-up-your-business-for-making-tax-digital-for-income-tax"
+  lazy val govukGuidanceITSASignUpAgentLink: String = s"$govUkUrl/guidance/sign-up-your-client-for-making-tax-digital-for-income-tax"
   lazy val urBannerUrl: String = loadConfig("urBannerUrl.url")
 
   lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"

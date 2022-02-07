@@ -50,17 +50,17 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     "have the correct template details" when {
       "there is no error and removeCovid feature switch is disabled" in {
 
-        new TemplateViewTest(doc, messages.title, backLink = Some(routes.Covid19ClaimCheckController.show.url))
+        new TemplateViewTest(doc, messages.title, backLink = Some(routes.Covid19ClaimCheckController.show.url))(appConfig)
       }
 
       "there is no error and removeCovid feature switch is enabled" in {
         enable(RemoveCovidPages)
-        new TemplateViewTest(doc, messages.title, backLink = Some(routes.OverviewController.show.url))
+        new TemplateViewTest(doc, messages.title, backLink = Some(routes.OverviewController.show.url))(appConfig)
       }
 
       "there is an error" in {
         val errorPage: Document = Jsoup.parse(post("/other-income")(Map.empty).body)
-        new TemplateViewTest(errorPage, messages.title, error = Some(FormError(HaveAnyOtherIncomeForm.fieldName, messages.error)))
+        new TemplateViewTest(errorPage, messages.title, error = Some(FormError(HaveAnyOtherIncomeForm.fieldName, messages.error)))(appConfig)
       }
     }
 
