@@ -6,7 +6,7 @@ import org.jsoup.select.Elements
 import org.scalatest.MustMatchers
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 import play.api.data.FormError
-
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import scala.collection.JavaConversions._
 
 trait ViewSpec extends MustMatchers {
@@ -15,7 +15,7 @@ trait ViewSpec extends MustMatchers {
                          title: String,
                          isAgent: Boolean = false,
                          backLink: Option[String] = None,
-                         error: Option[FormError] = None) {
+                         error: Option[FormError] = None) (appConfig: AppConfig){
 
     private val titlePrefix: String = if (error.isDefined) "Error: " else ""
     private val titleSuffix: String = if (isAgent) {
@@ -25,6 +25,13 @@ trait ViewSpec extends MustMatchers {
     }
 
     document.title mustBe s"$titlePrefix$title$titleSuffix"
+
+    private val serviceName: String = if(isAgent) "Use software to report your client’s Income Tax" else "Use software to send Income Tax updates"
+    private val serviceNameUrl: String = if(isAgent) appConfig.govukGuidanceITSASignUpAgentLink else appConfig.govukGuidanceITSASignUpIndivLink
+
+    document.getElementsByClass("hmrc-header__service-name").text() mustBe serviceName
+
+    document.getElementsByClass("hmrc-header__service-name--linked").attr("href") mustBe serviceNameUrl
 
     backLink.map { href =>
       val link = document.selectHead(".govuk-back-link")

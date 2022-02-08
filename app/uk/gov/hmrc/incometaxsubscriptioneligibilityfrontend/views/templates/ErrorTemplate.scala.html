@@ -25,7 +25,11 @@
 
 @(pageTitle: String, heading: String, message: String)(implicit request: Request[_], messages: Messages)
 
-@govukWrapper(title = pageTitle, serviceName = None) {
+@isAgent = @{request.path.contains("/client")}
+
+@govukWrapper(title = pageTitle,
+            serviceName = if(isAgent) Some(messages("agent_service_name.title")) else Some(messages("principal_service_name.title")),
+            serviceUrl = if(isAgent) appConfig.govukGuidanceITSASignUpAgentLink else appConfig.govukGuidanceITSASignUpIndivLink) {
 
     <h1 class="govuk-heading-l">@heading</h1>
 

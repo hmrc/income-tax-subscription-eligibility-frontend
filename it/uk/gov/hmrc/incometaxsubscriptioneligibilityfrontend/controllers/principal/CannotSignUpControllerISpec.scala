@@ -35,7 +35,7 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "have the correct template details" in new TemplateViewTest(doc, messages.heading, backLink = Some("javascript:history.back()"))
+    "have the correct template details" in new TemplateViewTest(doc, messages.heading, backLink = Some("javascript:history.back()"))(appConfig)
 
     "have a view with the correct heading" in {
       doc.getH1Element.text mustBe messages.heading
