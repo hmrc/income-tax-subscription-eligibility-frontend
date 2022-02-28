@@ -3,8 +3,8 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.{Document, Element}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, CovidCannotSignup => messages}
 import play.api.test.Helpers.OK
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{CovidCannotSignup => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class CovidCannotSignupControllerISpec extends ComponentSpecBase with ViewSpec {

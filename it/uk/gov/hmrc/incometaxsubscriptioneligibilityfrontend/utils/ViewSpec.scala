@@ -7,7 +7,8 @@ import org.scalatest.MustMatchers
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 import play.api.data.FormError
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import scala.collection.JavaConversions._
+
+import scala.collection.JavaConverters._
 
 trait ViewSpec extends MustMatchers {
 
@@ -55,14 +56,14 @@ trait ViewSpec extends MustMatchers {
   implicit class ElementTest(element: Element) {
 
     def selectHead(selector: String): Element = {
-      element.select(selector).headOption match {
+      element.select(selector).asScala.headOption match {
         case Some(element) => element
         case None => fail(s"No elements returned for selector: $selector")
       }
     }
 
     def selectOptionally(selector: String): Option[Element] = {
-      element.select(selector).headOption
+      element.select(selector).asScala.headOption
     }
 
     def content: Element = element.selectFirst("article")

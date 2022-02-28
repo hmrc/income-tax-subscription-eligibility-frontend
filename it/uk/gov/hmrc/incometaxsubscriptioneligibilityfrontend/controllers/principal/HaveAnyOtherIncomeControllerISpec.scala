@@ -142,8 +142,6 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     }
 
     "return BADREQUEST when no Answer is given" in new PostSetup(None) {
-      val doc: Document = Jsoup.parse(response.body)
-
       response must have(
         httpStatus(BAD_REQUEST)
       )
