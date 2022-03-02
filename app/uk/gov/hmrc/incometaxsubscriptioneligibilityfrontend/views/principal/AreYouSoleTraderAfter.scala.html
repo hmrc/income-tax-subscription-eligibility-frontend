@@ -31,7 +31,7 @@
 @(areYouSoleTraderAfterForm: Form[YesNo], postAction: Call, startDateLimit: String, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @inputContent = {
-    <p class="govuk-body">@messages("are_you_sole_trader_after.para") <a class="govuk-link" id="workingForYourself" href="@appConfig.workingForYourselfUrl" target="_blank">@messages("are_you_sole_trader_after.para_link")</a> </p>
+    <p class="govuk-body">@messages("are_you_sole_trader_after.para") <a class="govuk-link" id="workingForYourself" rel="noreferrer noopener" href="@appConfig.workingForYourselfUrl" target="_blank">@messages("are_you_sole_trader_after.para_link")</a> </p>
 }
 
 @mainTemplate(title = messages("are_you_sole_trader_after.title", startDateLimit), optForm = Some(areYouSoleTraderAfterForm), backLink = Some(backUrl)) {
