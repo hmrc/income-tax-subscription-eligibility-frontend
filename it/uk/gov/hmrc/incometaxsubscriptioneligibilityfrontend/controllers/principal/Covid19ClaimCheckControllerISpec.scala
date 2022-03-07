@@ -144,7 +144,7 @@ class Covid19ClaimCheckControllerISpec extends ComponentSpecBase with ViewSpec {
         httpStatus(BAD_REQUEST)
       )
 
-      val errorMessage: Elements = doc.select("span[class=govuk-error-message]")
+      val errorMessage: Elements = doc.select("p[class=govuk-error-message]")
       errorMessage.text() mustBe messages.error
     }
 
