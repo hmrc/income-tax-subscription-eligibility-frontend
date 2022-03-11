@@ -8,3 +8,9 @@ $hmrc-assets-path: "/report-quarterly/income-and-expenses/sign-up/eligibility/as
   display: block;
   font-weight: bold;
 }
+
+body:not(.js-enabled) {
+    a.govuk-back-link[href*="javascript"] {
+      display: none;
+    }
+}

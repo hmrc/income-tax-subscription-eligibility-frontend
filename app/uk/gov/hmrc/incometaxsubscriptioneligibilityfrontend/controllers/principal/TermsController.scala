@@ -32,12 +32,16 @@ class TermsController @Inject()(terms: Terms,
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(terms(postAction = routes.TermsController.submit))
+        Ok(terms(postAction = routes.TermsController.submit, backUrl = backUrl))
       )
   }
 
   val submit: Action[AnyContent] = Action { _ =>
     Redirect(appConfig.incometaxSubscriptionFrontendFirstPageFullUrl)
+  }
+
+  def backUrl: String = {
+    routes.CheckAccountingPeriodController.show.url
   }
 
 }

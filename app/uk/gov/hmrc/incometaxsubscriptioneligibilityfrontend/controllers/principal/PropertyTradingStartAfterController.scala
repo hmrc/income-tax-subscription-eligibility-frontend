@@ -44,14 +44,14 @@ class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: Proper
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(Ok(propertyTradingAfter(propertyTradingStartDateForm(startDateLimit.toLongDate),
-        routes.PropertyTradingStartAfterController.submit, startDateLimit.toLongDate)))
+        routes.PropertyTradingStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl)))
   }
 
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
       propertyTradingStartDateForm(startDateLimit.toLongDate).bindFromRequest.fold(
         formWithErrors => Future.successful(BadRequest(propertyTradingAfter(
-          formWithErrors, routes.PropertyTradingStartAfterController.submit, startDateLimit.toLongDate))), {
+          formWithErrors, routes.PropertyTradingStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
               userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
@@ -70,5 +70,9 @@ class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: Proper
             Future.successful(Redirect(routes.CheckAccountingPeriodController.show))
         }
       )
+  }
+
+  def backUrl: String = {
+      routes.SoleTraderStartAfterController.show.url
   }
 }
