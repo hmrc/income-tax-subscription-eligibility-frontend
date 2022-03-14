@@ -42,7 +42,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     }
 
     "have the correct template details" when {
-      "there is no error" in new TemplateViewTest(doc, messages.heading, backLink = Some("javascript:history.back()"))(appConfig)
+      "there is no error" in new TemplateViewTest(doc, messages.heading, backLink = Some(routes.PropertyTradingStartAfterController.show.url))(appConfig)
 
       "there is an error" in {
         val errorPage: Document = Jsoup.parse(submitAccountingPeriodCheck(None).body)

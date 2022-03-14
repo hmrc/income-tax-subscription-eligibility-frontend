@@ -28,7 +28,7 @@
     continueButton: ContinueButton,
     form: FormWithCSRF
 )
-@(covid19ClaimCheckForm: Form[YesNo], postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@(covid19ClaimCheckForm: Form[YesNo], postAction: Call, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @inputContent = {
 
@@ -72,7 +72,7 @@
     @if(covid19ClaimCheckForm("yes-no").error.isDefined) {aria-describedby="yes-no-error"}
 }
 
-@mainTemplate(title = messages("covid_19_claim_check.title"), optForm = Some(covid19ClaimCheckForm), backLink = Some("javascript:history.back()")) {
+@mainTemplate(title = messages("covid_19_claim_check.title"), optForm = Some(covid19ClaimCheckForm), backLink = Some(backUrl)) {
 
     <h1 class="govuk-heading-l" >@messages("covid_19_claim_check.title")</h1>
 

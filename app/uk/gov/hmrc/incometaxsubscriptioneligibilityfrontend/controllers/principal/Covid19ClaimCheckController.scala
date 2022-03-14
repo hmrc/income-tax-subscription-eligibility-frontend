@@ -39,7 +39,7 @@ class Covid19ClaimCheckController @Inject()(covid19ClaimCheck: Covid19ClaimCheck
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(covid19ClaimCheck(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit))
+        Ok(covid19ClaimCheck(covid19ClaimCheckForm, routes.Covid19ClaimCheckController.submit, backUrl = backUrl))
       )
   }
 
@@ -47,7 +47,7 @@ class Covid19ClaimCheckController @Inject()(covid19ClaimCheck: Covid19ClaimCheck
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
       covid19ClaimCheckForm.bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(covid19ClaimCheck(formWithErrors, routes.Covid19ClaimCheckController.submit))), {
+        formWithErrors => Future.successful(BadRequest(covid19ClaimCheck(formWithErrors, routes.Covid19ClaimCheckController.submit, backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
               userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
@@ -66,5 +66,9 @@ class Covid19ClaimCheckController @Inject()(covid19ClaimCheck: Covid19ClaimCheck
             Future.successful(Redirect(routes.HaveAnyOtherIncomeController.show))
         }
       )
+  }
+
+  def backUrl: String = {
+    routes.OverviewController.show.url
   }
 }

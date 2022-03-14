@@ -37,14 +37,14 @@ class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: Accountin
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(accountingPeriodCheck(accountingPeriodCheckForm, routes.CheckAccountingPeriodController.submit))
+        Ok(accountingPeriodCheck(accountingPeriodCheckForm, routes.CheckAccountingPeriodController.submit, backUrl = backUrl))
       )
   }
 
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
       accountingPeriodCheckForm.bindFromRequest.fold(
-        formWithErrors => Future.successful(BadRequest(accountingPeriodCheck(formWithErrors, routes.CheckAccountingPeriodController.submit))), {
+        formWithErrors => Future.successful(BadRequest(accountingPeriodCheck(formWithErrors, routes.CheckAccountingPeriodController.submit, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
               userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
@@ -63,5 +63,9 @@ class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: Accountin
             Future.successful(Redirect(routes.CannotSignUpController.show))
         }
       )
+  }
+
+  def backUrl: String = {
+      routes.PropertyTradingStartAfterController.show.url
   }
 }
