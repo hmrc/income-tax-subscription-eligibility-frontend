@@ -52,27 +52,16 @@ covid_cannot_signup.send_self_assessment.link                   = Ffurflen Dreth
 covid_19_claim_check.join_pilot.open_new_tab                    = (Yn agor tab newydd)
 
 ## Get Software
-get_software.title                                              = Bydd angen i chi gael meddalwedd sy’n cydweddu ar ôl cofrestru
-get_software.heading                                            = Bydd angen i chi gael meddalwedd sy’n cydweddu ar ôl cofrestru
-get_software.line_1                                             = Rhaid i’r feddalwedd a ddefnyddiwch allu anfon adroddiadau incwm a threuliau i CThEM.
-get_software.find_software                                      = Dod o hyd i feddalwedd sy’n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor mewn tab newydd)
 
 ## Property Trading Before Date page ##
 property_trading_after.title                                    = A wnaethoch ddechrau busnes eiddo ar neu ôl  {0}?
 property_trading_after.heading                                  = A wnaethoch ddechrau busnes eiddo ar neu ôl  {0}?
 property_trading_after.line                                     = Mae hyn yn cynnwys bod yn landlord ac yn rhoi llety gwyliau ar osod yn y DU a thramor.
-property_trading_after.error.summary                            = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}
+property_trading_after.error                                    = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}
 
 ## "Have you got software" page messages ##
-have_you_got_software.title                                     = A ydych yn defnyddio meddalwedd gyfrifyddu ar hyn o bryd?
-have_you_got_software.hint                                      = Nid yw hyn yn cynnwys unrhyw feddalwedd daenlen.
-have_you_got_software.error                                     = Dewiswch ’Iawn’ os ydych yn defnyddio meddalwedd gyfrifyddu ar hyn o bryd
 
 ## Check for Compatible Software
-check_compatible_software.title                                 = Gwirio bod y feddalwedd rydych yn ei defnyddio yn cydweddu â’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-check_compatible_software.heading                               = Gwirio bod y feddalwedd rydych yn ei defnyddio yn cydweddu â’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-check_compatible_software.line                                  = Rhaid i chi wirio y gall eich meddalwedd gysylltu ac anfon adroddiadau incwm a threuliau i CThEM.
-check_compatible_software.link                                  = Gwirio a yw’ch meddalwedd yn cydweddu (yn agor mewn tab newydd)
 
 ## Do you have any other income page
 have_any_other_income.title                                     = Ar wahân i hunangyflogaeth neu eiddo, a oes gennych unrhyw ffynonellau eraill o incwm?
@@ -98,7 +87,7 @@ are_you_sole_trader_after.title                                 = A ddechreuodd 
 are_you_sole_trader_after.heading                               = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are_you_sole_trader_after.para                                  = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn
 are_you_sole_trader_after.para_link                             = hunangyflogedig (yn agor tab newydd).
-are_you_sole_trader_after.error                                 = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}
+are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}
 
 ## Cannot Sign Up Page
 cannot_sign_up.title                                            = Ni allwch gymryd rhan yn y cynllun peilot hwn eto
