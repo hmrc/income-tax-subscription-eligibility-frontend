@@ -3,14 +3,14 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
 import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
-import org.scalatest.MustMatchers
+import org.scalatest.matchers.must.Matchers
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 import play.api.data.FormError
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 
 import scala.collection.JavaConverters._
 
-trait ViewSpec extends MustMatchers {
+trait ViewSpec extends Matchers {
 
   class TemplateViewTest(document: Document,
                          title: String,

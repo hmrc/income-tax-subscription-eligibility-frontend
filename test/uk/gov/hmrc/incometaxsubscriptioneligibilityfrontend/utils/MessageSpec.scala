@@ -16,12 +16,12 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
-import org.scalatest.FunSuite
-import org.scalatest.Matchers.convertToAnyShouldWrapper
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 
 import scala.io.Source
 
-class MessagesSpec extends FunSuite {
+class MessagesSpec extends AnyFunSuite {
 
   lazy val messageKeysEnglish = getMessageKeys("messages")
   lazy val messageKeysWelsh = getMessageKeys("messages.cy")
