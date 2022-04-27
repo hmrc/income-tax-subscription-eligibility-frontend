@@ -55,7 +55,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     }
 
     "have a view with one hint message" in {
-      content.select("p:nth-of-type(1)").text mustBe messages.hint
+      content.getElementsByClass("govuk-hint").text mustBe messages.hint
     }
 
     "have a view with the correct values displayed in the form" in {

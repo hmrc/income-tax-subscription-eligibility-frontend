@@ -77,8 +77,8 @@ have_any_other_income.notIncludePoint2                          = difidendau
 have_any_other_income.error.summary                             = Dewiswch ’Iawn’ os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo
 
 ## Accounting period check
-accounting_period_check.title                                     = A yw cyfnodau cyfrifyddu’ch busnes i gyd yr un fath â’r flwyddyn dreth safonol?
-accounting_period_check.title.hint                                = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill a bydd eich cyfnodau cyfrifyddu’r un fath, oni bai eich bod wedi dewis dyddiadau gwahanol eisoes. Mae hyn ar gyfer eich busnesau unig fasnachwr a busnesau eiddo i gyd.
+accounting_period_check.title                                     = A yw’ch holl gyfnodau cyfrifyddu busnes yn rhedeg o 6 Ebrill i 5 Ebrill?
+accounting_period_check.title.hint                                = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae angen i’ch cyfnod cyfrifyddu ar gyfer eich hunangyflogaeth neu’ch busnes eiddo gyfateb â hyn os hoffech gofrestru ar gyfer y gwasanaeth hwn.
 accounting_period_check.error                                     = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill
 accounting_period_check.error.summary                             = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill
 

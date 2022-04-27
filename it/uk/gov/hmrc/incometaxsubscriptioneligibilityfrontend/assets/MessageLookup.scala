@@ -136,8 +136,8 @@ object MessageLookup {
   }
 
   object CheckAccountingPeriod {
-    val heading = "Are all of your business accounting periods the same as the standard tax year?"
-    val hint = "The tax year runs from 6 April to 5 April and your accounting periods will be the same, unless you previously chose different dates. This is for all your sole trader and property businesses."
+    val heading = "Do all of your business accounting periods run from 6 April to 5 April?"
+    val hint = "The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property needs to be the same if you would like to sign up to this service."
     val yes = "Yes"
     val no = "No"
     val continue = "Continue"
