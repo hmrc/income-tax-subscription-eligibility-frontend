@@ -42,7 +42,7 @@ trait ViewSpec extends Matchers {
 
     error.map { formError =>
       val errorSummary: Element = document.selectHead(".govuk-error-summary")
-      errorSummary.selectHead("h2").text mustBe "There is a problem"
+      errorSummary.selectHead("h2").text mustBe "There is a problem."
       val errorLink: Element = errorSummary.selectHead("div > ul > li > a")
       errorLink.text mustBe formError.message
       errorLink.attr("href") mustBe s"#${formError.key}"

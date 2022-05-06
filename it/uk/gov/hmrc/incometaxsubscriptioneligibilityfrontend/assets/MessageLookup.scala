@@ -63,7 +63,7 @@ object MessageLookup {
       Seq("PAYE income as an employee", "UK pensions or annuities", "investments from outside the UK",
         "capital gains", "taxable state benefits")
     val notIncludePoints: Seq[String] = Seq("bank and building society interest", "dividends")
-    val error = "Select yes if you have any sources of income other than self employment or property income"
+    val error = "Select yes if you have any sources of income other than self employment or property income."
   }
 
   object PropertyStartAfter {
@@ -71,13 +71,13 @@ object MessageLookup {
 
     val hintMessage = "This includes being a landlord and letting holiday properties in the UK and overseas."
 
-    def error(date: String) = s"Select yes if you own a property business that began trading on or after $date"
+    def error(date: String) = s"Select yes if you own a property business that began trading on or after $date."
   }
 
   object SoleTraderStartAfter {
     def title(date: String) = s"Did your sole trader business begin on or after $date?"
 
-    def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date"
+    def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date."
 
     val hintMessage = "If you’re a sole trader, you run your own business as an individual and are self-employed (opens in new tab)."
   }
@@ -141,7 +141,7 @@ object MessageLookup {
     val yes = "Yes"
     val no = "No"
     val continue = "Continue"
-    val error = "Select yes if all of your business accounting periods are from 6 April to 5 April"
+    val error = "Select yes if all of your business accounting periods are from 6 April to 5 April."
   }
 
   object Covid19ClaimCheck {
@@ -157,6 +157,6 @@ object MessageLookup {
     val linkTextCanJoin2 = "Test and Trace Support Payment Scheme (Opens in new tab)"
     val linkTextCanJoin3 = "Local Authority grants (Opens in new tab)"
     val can_signup_points: Seq[String] = Seq (linkTextCanJoin1, linkTextCanJoin2, linkTextCanJoin3)
-    val error = "Error: Select yes if you have or intend to claim a coronavirus (COVID‑19) grant"
+    val error = "Error: Select yes if you have or intend to claim a coronavirus (COVID‑19) grant."
   }
 }
