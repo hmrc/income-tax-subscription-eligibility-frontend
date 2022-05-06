@@ -57,7 +57,7 @@ covid_19_claim_check.join_pilot.open_new_tab                    = (Yn agor tab n
 property_trading_after.title                                    = A wnaethoch ddechrau busnes eiddo ar neu ôl  {0}?
 property_trading_after.heading                                  = A wnaethoch ddechrau busnes eiddo ar neu ôl  {0}?
 property_trading_after.line                                     = Mae hyn yn cynnwys bod yn landlord ac yn rhoi llety gwyliau ar osod yn y DU a thramor.
-property_trading_after.error                                    = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}
+property_trading_after.error                                    = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}.
 
 ## "Have you got software" page messages ##
 
@@ -74,20 +74,20 @@ have_any_other_income.includePoint4                             = enillion cyfal
 have_any_other_income.includePoint5                             = budd-daliadau trethadwy’r Wladwriaeth
 have_any_other_income.notIncludePoint1                          = llog banc neu gymdeithas adeiladu
 have_any_other_income.notIncludePoint2                          = difidendau
-have_any_other_income.error.summary                             = Dewiswch ’Iawn’ os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo
+have_any_other_income.error.summary                             = Dewiswch ’Iawn’ os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo.
 
 ## Accounting period check
 accounting_period_check.title                                     = A yw’ch holl gyfnodau cyfrifyddu busnes yn rhedeg o 6 Ebrill i 5 Ebrill?
 accounting_period_check.title.hint                                = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae angen i’ch cyfnod cyfrifyddu ar gyfer eich hunangyflogaeth neu’ch busnes eiddo gyfateb â hyn os hoffech gofrestru ar gyfer y gwasanaeth hwn.
-accounting_period_check.error                                     = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill
-accounting_period_check.error.summary                             = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill
+accounting_period_check.error                                     = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
+accounting_period_check.error.summary                             = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
 
 ## Are you a sole trader after page ##
 are_you_sole_trader_after.title                                 = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are_you_sole_trader_after.heading                               = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are_you_sole_trader_after.para                                  = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn
 are_you_sole_trader_after.para_link                             = hunangyflogedig (yn agor tab newydd).
-are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}
+are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}.
 
 ## Cannot Sign Up Page
 cannot_sign_up.title                                            = Ni allwch gymryd rhan yn y cynllun peilot hwn eto
@@ -124,7 +124,7 @@ covid_19_claim_check.can_join.description                       = Gallwch gofres
 covid_19_claim_check.can_join.point1.link_text                  = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws
 covid_19_claim_check.can_join.point2.link_text                  = Cynllun Taliadau Cymorth Profi ac Olrhain
 covid_19_claim_check.can_join.point3.link_text                  = Grantiau Awdurdodau Lleol
-covid_19_claim_check.error                                      = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny
+covid_19_claim_check.error                                      = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny.
 
 ## Title pattern
 principle_title_pattern.serviceName.govUk                       = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK

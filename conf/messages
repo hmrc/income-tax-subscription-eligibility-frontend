@@ -6,7 +6,7 @@ base.yes                                                        = Yes
 base.no                                                         = No
 base.title_error_prefix                                         = Error:
 base.govuk                                                      = GOV.UK
-base.error_heading                                              = There is a problem
+base.error_heading                                              = There is a problem.
 base.accept_and_continue                                        = Accept and continue
 
 ## Service Name
@@ -61,26 +61,26 @@ have_any_other_income.includePoint4                             = capital gains
 have_any_other_income.includePoint5                             = taxable state benefits
 have_any_other_income.notIncludePoint1                          = bank and building society interest
 have_any_other_income.notIncludePoint2                          = dividends
-have_any_other_income.error.summary                             = Select yes if you have any sources of income other than self employment or property income
+have_any_other_income.error.summary                             = Select yes if you have any sources of income other than self employment or property income.
 
 ## Accounting period check
 accounting_period_check.title                                   = Do all of your business accounting periods run from 6 April to 5 April?
 accounting_period_check.title.hint                              = The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property needs to be the same if you would like to sign up to this service.
-accounting_period_check.error                                   = Select yes if all of your business accounting periods are from 6 April to 5 April
-accounting_period_check.error.summary                           = Select yes if all of your business accounting periods are from 6 April to 5 April
+accounting_period_check.error                                   = Select yes if all of your business accounting periods are from 6 April to 5 April.
+accounting_period_check.error.summary                           = Select yes if all of your business accounting periods are from 6 April to 5 April.
 
 ## Are you a sole trader after page ##
 are_you_sole_trader_after.title                                 = Did your sole trader business begin on or after  {0}?
 are_you_sole_trader_after.heading                               = Did your sole trader business begin on or after  {0}?
 are_you_sole_trader_after.para                                  = If you’re a sole trader, you run your own business as an individual and are
 are_you_sole_trader_after.para_link                             = self-employed (opens in new tab).
-are_you_sole_trader_after.error.summary                         = Select yes if you are a sole trader that began trading on or after {0}
+are_you_sole_trader_after.error.summary                         = Select yes if you are a sole trader that began trading on or after {0}.
 
 ## Property Trading After Date page ##
 property_trading_after.title                                    = Did you start a property business on or after  {0}?
 property_trading_after.heading                                  = Did you start a property business on or after  {0}?
 property_trading_after.line                                     = This includes being a landlord and letting holiday properties in the UK and overseas.
-property_trading_after.error                                    = Select yes if you own a property business that began trading on or after {0}
+property_trading_after.error                                    = Select yes if you own a property business that began trading on or after {0}.
 
 ## Cannot Sign Up Page
 cannot_sign_up.title                                            = You cannot take part in this pilot yet
@@ -117,7 +117,7 @@ covid_19_claim_check.can_join.description                       = You can still 
 covid_19_claim_check.can_join.point1.link_text                  = Coronavirus Statutory Sick Pay Rebate Scheme
 covid_19_claim_check.can_join.point2.link_text                  = Test and Trace Support Payment Scheme
 covid_19_claim_check.can_join.point3.link_text                  = Local Authority grants
-covid_19_claim_check.error                                      = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant
+covid_19_claim_check.error                                      = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant.
 covid_19_claim_check.join_pilot.open_new_tab                    = (Opens in new tab)
 
 ## Title pattern
