@@ -29,7 +29,7 @@ import scala.concurrent.Future
 
 @Singleton
 class OverviewController @Inject()(overview: Overview, mcc: MessagesControllerComponents)
-                                  (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+                                  (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>

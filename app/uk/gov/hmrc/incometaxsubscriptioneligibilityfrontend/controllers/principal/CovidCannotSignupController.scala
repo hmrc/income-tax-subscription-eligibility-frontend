@@ -28,7 +28,7 @@ import scala.concurrent.Future
 
 @Singleton
 class CovidCannotSignupController @Inject()(covidCannotSignUp: CovidCannotSignUp)
-                                           (implicit mcc: MessagesControllerComponents, appConfig: AppConfig) extends FrontendController(mcc)
+                                           (implicit mcc: MessagesControllerComponents, val appConfig: AppConfig) extends FrontendController(mcc)
   with I18nSupport
   with FeatureSwitching {
 

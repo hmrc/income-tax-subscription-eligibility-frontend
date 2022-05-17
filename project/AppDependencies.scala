@@ -24,7 +24,9 @@ object AppDependencies {
     "com.typesafe.play" %% "play-test" % playTest % "test, it",
     "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % "test, it",
     "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonModuleVersion % "test, it",
-    "com.github.tomakehurst" % "wiremock-jre8" % "2.32.0" % "test, it"
+    "com.github.tomakehurst" % "wiremock-jre8" % "2.32.0" % "test, it",
+    "org.mockito" % "mockito-core" % "3.12.4"% "test",
+    "org.scalatestplus"            %% "mockito-3-12"         % "3.2.10.0" % "test"
   )
 
 }
