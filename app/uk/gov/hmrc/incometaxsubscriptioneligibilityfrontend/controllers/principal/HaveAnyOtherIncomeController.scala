@@ -35,7 +35,7 @@ import scala.concurrent.Future
 class HaveAnyOtherIncomeController @Inject()(auditService: AuditingService,
                                              haveAnyOtherIncome: HaveAnyOtherIncome,
                                              mcc: MessagesControllerComponents)
-                                            (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+                                            (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>

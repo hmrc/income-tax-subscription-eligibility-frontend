@@ -27,7 +27,7 @@ import javax.inject.{Inject, Singleton}
 
 @Singleton
 class TermsController @Inject()(mcc: MessagesControllerComponents, terms: Terms)
-                               (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+                               (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   val show: Action[AnyContent] = Action { implicit request =>
     Ok(terms(postAction = routes.TermsController.submit))

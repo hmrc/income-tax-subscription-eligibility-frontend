@@ -22,9 +22,10 @@ import play.api.mvc.Call
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.{routes => agentRoutes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.{routes => principalRoutes}
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
+import play.api.Configuration
 
 @Singleton
-class AppConfig @Inject()(config: ServicesConfig) {
+class AppConfig @Inject()(config: ServicesConfig, val configuration: Configuration) {
 
   val appName: String = config.getString("appName")
 

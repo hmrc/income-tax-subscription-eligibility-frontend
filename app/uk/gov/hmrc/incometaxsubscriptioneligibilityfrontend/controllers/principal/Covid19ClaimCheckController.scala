@@ -19,7 +19,6 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.Covid19ClaimCheckForm.covid19ClaimCheckForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
@@ -34,7 +33,7 @@ import scala.concurrent.Future
 @Singleton
 class Covid19ClaimCheckController @Inject()(covid19ClaimCheck: Covid19ClaimCheck,
                                             auditService: AuditingService, mcc: MessagesControllerComponents)
-                                           (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+                                           (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>
