@@ -64,7 +64,7 @@ trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServer
     )
   }
 
-  def post(uri: String)(form: Map[String, Seq[String]]): WSResponse = {
+  def post(uri: String)(form: Map[String, Seq[String]] = Map.empty): WSResponse = {
     await(
       buildClient(uri)
         .withHttpHeaders("Csrf-Token" -> "nocheck")

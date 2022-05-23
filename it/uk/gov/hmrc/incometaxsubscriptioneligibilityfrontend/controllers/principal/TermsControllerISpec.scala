@@ -20,7 +20,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Terms => messages, Base => commonMessages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, Terms => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -82,4 +82,15 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
       doc.select("a[class=govuk-back-link]").isEmpty must not be true
     }
   }
+
+  s"POST ${routes.TermsController.submit}" should {
+    s"redirect the user to ${appConfig.incometaxSubscriptionFrontendFirstPageFullUrl}" in {
+      val submit = post("/terms-of-participation")()
+      submit must have(
+        httpStatus(SEE_OTHER),
+        redirectUri(appConfig.incometaxSubscriptionFrontendFirstPageFullUrl)
+      )
+    }
+  }
+  
 }
