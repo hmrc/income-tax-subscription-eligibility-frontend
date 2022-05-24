@@ -32,7 +32,7 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
   private def loadConfig(key: String) = config.getString(key)
 
   private val incometaxSubscriptionFrontendHost = loadConfig("income-tax-subscription-frontend.host")
-  private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up/user-details"
+  private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up"
   private val incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/covid-19"
   private val incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/income-sources"
 
