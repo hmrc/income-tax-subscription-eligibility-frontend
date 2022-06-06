@@ -33,7 +33,6 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
 
   private val incometaxSubscriptionFrontendHost = loadConfig("income-tax-subscription-frontend.host")
   private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up"
-  private val incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/covid-19"
   private val incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/income-sources"
 
   private val contactBaseUrl = loadConfig("contact-frontend.host")
@@ -42,7 +41,6 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
 
   private val assetsUrl = loadConfig("assets.url")
   val incometaxSubscriptionFrontendFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendFirstPageUrl}"
-  val incometaxSubscriptionFrontendAgentCovidEligibilityPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentCovidEligibilityPageUrl}"
   val incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl}"
 
   val serviceIdentifier = "MTDIT"
@@ -61,12 +59,6 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
 
   lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"
   lazy val workingForYourselfUrl: String = s"$govUkUrl/working-for-yourself"
-
-  lazy val covid19SelfEmploymentSupportSchemeUrl = s"$govUkUrl/guidance/claim-a-grant-through-the-coronavirus-covid-19-self-employment-income-support-scheme"
-  lazy val covid19CoronaJobRetentionSchemeUrl = s"$govUkUrl/guidance/claim-for-wage-costs-through-the-coronavirus-job-retention-scheme"
-  lazy val covid19ClaimSickPayUrl = s"$govUkUrl/guidance/claim-back-statutory-sick-pay-paid-to-employees-due-to-coronavirus-covid-19"
-  lazy val covid19TestAndTraceUrl = s"$govUkUrl/government/publications/test-and-trace-support-payment-scheme-claiming-financial-support/claiming-financial-support-under-the-test-and-trace-support-payment-scheme"
-  lazy val covid19LocalAuthorityGrantUrl = s"$govUkUrl/government/publications/coronavirus-grant-funding-local-authority-payments-to-small-and-medium-businesses"
 
   def languageMap: Map[String, Lang] = Map(
     "english" -> Lang("en"),

@@ -23,18 +23,13 @@ import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, HaveAnyOtherIncome => messages}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec with FeatureSwitching {
-
-  override def beforeEach(): Unit = {
-    disable(RemoveCovidPages)
-    super.beforeEach()
-  }
 
   "GET /eligibility/other-income" should {
     def result = get("/other-income")
@@ -48,13 +43,8 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     }
 
     "have the correct template details" when {
-      "there is no error and removeCovid feature switch is disabled" in {
 
-        new TemplateViewTest(doc, messages.title, backLink = Some(routes.Covid19ClaimCheckController.show.url))(appConfig)
-      }
-
-      "there is no error and removeCovid feature switch is enabled" in {
-        enable(RemoveCovidPages)
+      "there is no error" in {
         new TemplateViewTest(doc, messages.title, backLink = Some(routes.OverviewController.show.url))(appConfig)
       }
 

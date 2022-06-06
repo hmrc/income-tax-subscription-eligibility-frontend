@@ -35,11 +35,3 @@ GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptione
 ## Check accounting period
 GET         /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.show
 POST        /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.submit
-
-
-## Covid-19 claim check
-GET         /covid-19                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.Covid19ClaimCheckController.show
-POST        /covid-19                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.Covid19ClaimCheckController.submit
-
-## Covid-19 claim check Kick out
-GET         /error/covid-cannot-sign-up       uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CovidCannotSignupController.show

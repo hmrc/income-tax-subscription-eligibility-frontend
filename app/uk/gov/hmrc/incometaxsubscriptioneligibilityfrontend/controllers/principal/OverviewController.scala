@@ -19,7 +19,7 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.Overview
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
@@ -33,14 +33,8 @@ class OverviewController @Inject()(overview: Overview, mcc: MessagesControllerCo
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
-      if (isEnabled(RemoveCovidPages)) {
-        Future.successful(
-          Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show))
-        )
-      } else {
-        Future.successful(
-          Ok(overview(postAction = routes.Covid19ClaimCheckController.show))
-        )
-      }
+      Future.successful(
+        Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show))
+      )
   }
 }

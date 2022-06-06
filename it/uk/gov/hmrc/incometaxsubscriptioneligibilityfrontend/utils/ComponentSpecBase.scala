@@ -9,7 +9,7 @@ import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import play.api.{Application, Environment, Mode}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodCheckForm, Covid19ClaimCheckForm, HaveAnyOtherIncomeForm, PropertyTradingStartDateForm}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodCheckForm, HaveAnyOtherIncomeForm, PropertyTradingStartDateForm}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.{AuditStub, WireMockMethods}
 
@@ -76,14 +76,6 @@ trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServer
     post("/accounting-period-check")(
       request.fold(Map.empty[String, Seq[String]])(
         model => AccountingPeriodCheckForm.accountingPeriodCheckForm.fill(model).data.map { case (k, v) => (k, Seq(v)) }
-      )
-    )
-  }
-
-  def submitCovid19ClaimCheck(request: Option[YesNo]): WSResponse = {
-    post("/covid-19")(
-      request.fold(Map.empty[String, Seq[String]])(
-        model => Covid19ClaimCheckForm.covid19ClaimCheckForm.fill(model).data.map { case (k, v) => (k, Seq(v)) }
       )
     )
   }
