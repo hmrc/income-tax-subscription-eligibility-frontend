@@ -15,10 +15,13 @@
  *@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+@import uk.gov.hmrc.hmrcfrontend.views.html.helpers.HmrcNewTabLinkHelper
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 
 @this(
         mainTemplate: PrincipalMainTemplate,
+        hmrcNewTabLinkHelper: HmrcNewTabLinkHelper,
         form: FormWithCSRF
 )
 
@@ -40,9 +43,11 @@
     </ul>
 
     <p class="govuk-list">
-        @messages("overview.line_3")
-        <a class="govuk-link" id="guidance" href="@appConfig.guidanceUrl" rel="noreferrer noopener" target="_blank">@messages("overview.link_text")</a>
-    </p>
+        @Html(messages(
+        key = "overview.line_3",
+        args = hmrcNewTabLinkHelper(NewTabLinkHelper(messages("overview.link_text"), Some(appConfig.guidanceUrl)))
+        ))
+        </p>
 
     <h2 class="govuk-heading-m">@messages("overview.heading_2")</h2>
 
