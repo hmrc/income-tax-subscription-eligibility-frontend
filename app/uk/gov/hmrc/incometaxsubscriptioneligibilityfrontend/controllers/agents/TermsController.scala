@@ -19,7 +19,7 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitching, RemoveCovidPages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.agents.Terms
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
@@ -34,11 +34,7 @@ class TermsController @Inject()(mcc: MessagesControllerComponents, terms: Terms)
   }
 
   val submit: Action[AnyContent] = Action { _ =>
-    if (isEnabled(RemoveCovidPages)) {
-      Redirect(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
-    } else {
-      Redirect(appConfig.incometaxSubscriptionFrontendAgentCovidEligibilityPageFullUrl)
-    }
+    Redirect(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
   }
 
 }

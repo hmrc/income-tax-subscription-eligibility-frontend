@@ -43,13 +43,6 @@ terms.bullet5                                                   = tell HMRC if y
 terms.bullet6                                                   = use your usual Self Assessment method if you leave this pilot
 terms.line2                                                     = You can leave this pilot at any time.
 
-##Covid you cannot signup page
-covid_cannot_signup.title                                       = You cannot take part in this pilot
-covid_cannot_signup.heading                                     = You cannot take part in this pilot
-covid_cannot_signup.para.1                                      = You will not be able to take part in this pilot if you have ever claimed a coronavirus (COVID-19) grant, or intend to do so in future.
-covid_cannot_signup.send_self_assessment                        = You will need to send a {0} instead and you may be able to sign up in future.
-covid_cannot_signup.send_self_assessment.link                   = Self Assessment tax return
-
 ## Do you have any other income page
 have_any_other_income.title                                     = Apart from self-employment or property, do you have any other sources of income?
 have_any_other_income.include                                   = This could include:
@@ -107,18 +100,6 @@ agent.terms.bullet3                                             = submit your cl
 agent.terms.bullet4                                             = tell HMRC if your client stops trading or starts a new business
 agent.terms.bullet5                                             = use your usual Self Assessment method if your client leaves this pilot
 agent.terms.line2                                               = You or your client can leave this pilot at any time.
-
-## Covid-19 page ##
-covid_19_claim_check.title                                      = Have you ever claimed a coronavirus (COVID‑19) grant or intend to do so in the future?
-covid_19_claim_check.cannot_join.description                    = You cannot currently join the pilot if you have claimed one or more of these grants (the following links open in a new tab):
-covid_19_claim_check.cannot_join.point1.link_text               = Self-Employment Support Scheme
-covid_19_claim_check.cannot_join.point2.link_text               = Coronavirus Job Retention Scheme
-covid_19_claim_check.can_join.description                       = You can still sign up if you’ve only claimed a rebate through the:
-covid_19_claim_check.can_join.point1.link_text                  = Coronavirus Statutory Sick Pay Rebate Scheme
-covid_19_claim_check.can_join.point2.link_text                  = Test and Trace Support Payment Scheme
-covid_19_claim_check.can_join.point3.link_text                  = Local Authority grants
-covid_19_claim_check.error                                      = Select yes if you have or intend to claim a coronavirus (COVID‑19) grant.
-covid_19_claim_check.join_pilot.open_new_tab                    = (Opens in new tab)
 
 ## Title pattern
 principle_title_pattern.serviceName.govUk                       = {0} - Use software to send Income Tax updates - GOV.UK

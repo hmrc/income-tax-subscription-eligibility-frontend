@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibility.config
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
 import org.mockito.Mockito.{reset, when}
 import org.scalatest.BeforeAndAfterEach
@@ -22,7 +22,7 @@ import org.scalatestplus.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
 import play.api.Configuration
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitch, FeatureSwitching, RemoveCovidPages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitch, FeatureSwitching}
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 
 class FeatureSwitchingSpec extends PlaySpec with MockitoSugar with FeatureSwitching with BeforeAndAfterEach {
@@ -48,29 +48,39 @@ class FeatureSwitchingSpec extends PlaySpec with MockitoSugar with FeatureSwitch
     }
   }
 
-  "RemoveCovidPages" should {
-    "return true if RemoveCovidPages feature switch is enabled in sys.props" in {
-      enable(RemoveCovidPages)
-      isEnabled(RemoveCovidPages) mustBe true
-    }
-    "return false if RemoveCovidPages feature switch is disabled in sys.props" in {
-      disable(RemoveCovidPages)
-      isEnabled(RemoveCovidPages) mustBe false
-    }
-
-    "return false if RemoveCovidPages feature switch does not exist" in {
-      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(None)
-      isEnabled(RemoveCovidPages) mustBe false
-    }
-
-    "return false if RemoveCovidPages feature switch is not in sys.props but is set to 'off' in config" in {
-      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(Some(FEATURE_SWITCH_OFF))
-      isEnabled(RemoveCovidPages) mustBe false
-    }
-
-    "return true if RemoveCovidPages feature switch is not in sys.props but is set to 'on' in config" in {
-      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(Some(FEATURE_SWITCH_ON))
-      isEnabled(RemoveCovidPages) mustBe true
+  "List of feature switches" should {
+    "be zero" in {
+      // This test will fail when you add a switch, at which point you should uncomment the tests below
+      FeatureSwitch.switches.size mustBe (0)
     }
   }
+
+
+// Current feature switch list is: []
+// As a result we can't simply write tests as the trait is sealed.  So, commenting as we will want this code later.
+//  "RemoveCovidPages" should {
+//    "return true if RemoveCovidPages feature switch is enabled in sys.props" in {
+//      enable(RemoveCovidPages)
+//      isEnabled(RemoveCovidPages) mustBe true
+//    }
+//    "return false if RemoveCovidPages feature switch is disabled in sys.props" in {
+//      disable(RemoveCovidPages)
+//      isEnabled(RemoveCovidPages) mustBe false
+//    }
+//
+//    "return false if RemoveCovidPages feature switch does not exist" in {
+//      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(None)
+//      isEnabled(RemoveCovidPages) mustBe false
+//    }
+//
+//    "return false if RemoveCovidPages feature switch is not in sys.props but is set to 'off' in config" in {
+//      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(Some(FEATURE_SWITCH_OFF))
+//      isEnabled(RemoveCovidPages) mustBe false
+//    }
+//
+//    "return true if RemoveCovidPages feature switch is not in sys.props but is set to 'on' in config" in {
+//      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(Some(FEATURE_SWITCH_ON))
+//      isEnabled(RemoveCovidPages) mustBe true
+//    }
+//  }
 }

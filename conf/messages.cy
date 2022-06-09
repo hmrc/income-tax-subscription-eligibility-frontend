@@ -43,14 +43,6 @@ terms.bullet5                                                   = rhoi gwybod i 
 terms.bullet6                                                   = defnyddio’ch dull arferol ar gyfer Hunanasesiad os ydych yn gadael y cynllun peilot hwn
 terms.line2                                                     = Gallwch adael y cynllun peilot hwn ar unrhyw adeg.
 
-##Covid you cannot signup page
-covid_cannot_signup.title                                       = Ni allwch gymryd rhan yn y cynllun peilot hwn
-covid_cannot_signup.heading                                     = Ni allwch gymryd rhan yn y cynllun peilot hwn
-covid_cannot_signup.para.1                                      = Ni fyddwch yn gallu cymryd rhan yn y cynllun peilot hwn os ydych erioed wedi hawlio grant coronafeirws (COVID-19) neu’n bwriadu gwneud hynny yn y dyfodol.
-covid_cannot_signup.send_self_assessment                        = Bydd angen i chi anfon {0} yn lle hynny, ac efallai y bydd modd i chi gofrestru yn y dyfodol.
-covid_cannot_signup.send_self_assessment.link                   = Ffurflen Dreth Hunanasesiad
-covid_19_claim_check.join_pilot.open_new_tab                    = (Yn agor tab newydd)
-
 ## Get Software
 
 ## Property Trading Before Date page ##
@@ -114,17 +106,6 @@ agent.terms.bullet3                                             = cyflwyno datga
 agent.terms.bullet4                                             = rhoi gwybod i CThEM os yw’ch cleient yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
 agent.terms.bullet5                                             = defnyddio’ch dull arferol ar gyfer Hunanasesiad os yw’ch cleient yn gadael y cynllun peilot hwn
 agent.terms.line2                                               = Gallwch chi neu’ch cleient adael y cynllun peilot hwn ar unrhyw adeg.
-
-## Covid-19 page ##
-covid_19_claim_check.title                                      = A ydych erioed wedi hawlio grant coronafeirws (COVID‑19) neu a ydych yn bwriadu gwneud hynny yn y dyfodol?
-covid_19_claim_check.cannot_join.description                    = Ar hyn o bryd ni allwch ymuno â’r cynllun peilot os ydych wedi hawlio un neu ragor o’r grantiau hyn (mae’r cysylltiadau canlynol yn agor tab newydd):
-covid_19_claim_check.cannot_join.point1.link_text               = Cynllun Cymhorthdal Incwm Hunangyflogaeth
-covid_19_claim_check.cannot_join.point2.link_text               = Cynllun Cadw Swyddi yn sgil Coronafeirws
-covid_19_claim_check.can_join.description                       = Gallwch gofrestru o hyd os ydych dim ond wedi hawlio drwy’r:
-covid_19_claim_check.can_join.point1.link_text                  = Cynllun Ad-dalu Tâl Salwch Statudol Coronafeirws
-covid_19_claim_check.can_join.point2.link_text                  = Cynllun Taliadau Cymorth Profi ac Olrhain
-covid_19_claim_check.can_join.point3.link_text                  = Grantiau Awdurdodau Lleol
-covid_19_claim_check.error                                      = Dewiswch ‘Iawn’ os ydych wedi hawlio grant coronafeirws (COVID‑19) neu’n bwriadu gwneud hynny.
 
 ## Title pattern
 principle_title_pattern.serviceName.govUk                       = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
