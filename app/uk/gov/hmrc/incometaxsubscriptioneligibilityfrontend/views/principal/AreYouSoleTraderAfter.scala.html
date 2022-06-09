@@ -20,9 +20,12 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AreYouSoleTraderAfterForm.fieldName
+@import uk.gov.hmrc.hmrcfrontend.views.html.helpers.HmrcNewTabLinkHelper
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
 @this(
     mainTemplate: PrincipalMainTemplate,
+    hmrcNewTabLinkHelper: HmrcNewTabLinkHelper,
     form: FormWithCSRF,
     radioHelper: RadioHelper,
     continueButton: ContinueButton
@@ -31,7 +34,12 @@
 @(areYouSoleTraderAfterForm: Form[YesNo], postAction: Call, startDateLimit: String, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @inputContent = {
-    <p class="govuk-body">@messages("are_you_sole_trader_after.para") <a class="govuk-link" id="workingForYourself" rel="noreferrer noopener" href="@appConfig.workingForYourselfUrl" target="_blank">@messages("are_you_sole_trader_after.para_link")</a> </p>
+    <p class="govuk-body">
+        @Html(messages(
+        key = "are_you_sole_trader_after.para",
+        args = hmrcNewTabLinkHelper(NewTabLinkHelper(messages("are_you_sole_trader_after.para_link"), Some(appConfig.workingForYourselfUrl)))
+        ))
+    </p>
 }
 
 @mainTemplate(title = messages("are_you_sole_trader_after.title", startDateLimit), optForm = Some(areYouSoleTraderAfterForm), backLink = Some(backUrl)) {

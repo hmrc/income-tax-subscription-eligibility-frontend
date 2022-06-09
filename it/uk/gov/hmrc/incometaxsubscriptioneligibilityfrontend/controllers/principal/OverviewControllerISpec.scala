@@ -44,9 +44,6 @@ class OverviewControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "return a view with the third paragraph with a link" in {
       content.select("p:nth-of-type(3)").text mustBe messages.line3
-      val link = doc.getLink("guidance")
-      link.text mustBe messages.linkText
-      link.attr("href") mustBe appConfig.guidanceUrl
     }
 
     "return a view with the correct second heading" in {

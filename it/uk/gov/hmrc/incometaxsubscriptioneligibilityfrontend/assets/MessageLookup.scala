@@ -24,7 +24,7 @@ object MessageLookup {
     val heading: String = "The way you complete Self Assessment is changing"
     val line1 = "This is a pilot to sign up for a new way for sole trader businesses (self-employed) and landlords to send income tax updates and returns to HMRC."
     val line2 = "You will need to use compatible software to:"
-    val line3 = "This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab)."
+    val line3 = "This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. Find software that’s compatible with Making Tax Digital for Income Tax (opens in a new tab)"
     val bulletCompatibleSoftware1 = "keep your business records up to date"
     val bulletCompatibleSoftware2 = "send updates about your business records to HMRC every quarter"
     val bulletCompatibleSoftware3 = "file your Self Assessment tax return"
@@ -79,7 +79,7 @@ object MessageLookup {
 
     def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date."
 
-    val hintMessage = "If you’re a sole trader, you run your own business as an individual and are self-employed (opens in new tab)."
+    val hintMessage = "If you’re a sole trader, you run your own business as an individual and are self-employed (opens in a new tab)"
   }
 
   object CannotSignUp {
