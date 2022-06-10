@@ -7,6 +7,7 @@ base.title_error_prefix                                         = Gwall:
 base.govuk                                                      = GOV.UK
 base.error_heading                                              = Mae problem wedi codi
 base.accept_and_continue                                        = Derbyn ac yn eich blaen
+base.new_tab_key                                                = {0}
 
 
 ## Service name
@@ -21,8 +22,8 @@ overview.line_2                                                 = Bydd angen i c
 overview.bullet_compatible_software_line_1                      = cadw eich cofnodion i’r funud
 overview.bullet_compatible_software_line_2                      = anfon diweddariadau ynghylch eich cofnodion busnes i CThEM bob chwarter
 overview.bullet_compatible_software_line_3                      = cyflwyno’ch Ffurflen Dreth Hunanasesiad
-overview.line_3                                                 = Bydd hyn y disodli cyflwyno Ffurflen Dreth Hunanasesiad, a gallwch ddewis eich meddalwedd unwaith eich bod yn cofrestru.
-overview.link_text                                              = Dewch o hyd i feddalwedd sy’n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm (yn agor tab newydd).
+overview.line_3                                                 = Bydd hyn y disodli cyflwyno Ffurflen Dreth Hunanasesiad, a gallwch ddewis eich meddalwedd unwaith eich bod yn cofrestru. {0}
+overview.link_text                                              = Dewch o hyd i feddalwedd sy’n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm
 overview.heading_2                                              = Cyn i chi ddechrau
 overview.line_4                                                 = Bydd angen y canlynol arnoch er mwyn cofrestru ar gyfer y cynllun peilot:
 overview.bullet_before_start_line_1                             = eich Dynodydd Defnyddiwr (ID) a chyfrinair ar gyfer Porth y Llywodraeth
@@ -77,8 +78,8 @@ accounting_period_check.error.summary                             = Dewiswch ‘
 ## Are you a sole trader after page ##
 are_you_sole_trader_after.title                                 = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are_you_sole_trader_after.heading                               = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
-are_you_sole_trader_after.para                                  = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn
-are_you_sole_trader_after.para_link                             = hunangyflogedig (yn agor tab newydd).
+are_you_sole_trader_after.para                                  = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn {0}
+are_you_sole_trader_after.para_link                             = hunangyflogedig
 are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}.
 
 ## Cannot Sign Up Page

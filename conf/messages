@@ -8,6 +8,7 @@ base.title_error_prefix                                         = Error:
 base.govuk                                                      = GOV.UK
 base.error_heading                                              = There is a problem.
 base.accept_and_continue                                        = Accept and continue
+base.new_tab_key                                                = {0}
 
 ## Service Name
 principal_service_name.title                                    = Use software to send Income Tax updates
@@ -21,8 +22,8 @@ overview.line_2                                                 = You will need 
 overview.bullet_compatible_software_line_1                      = keep your business records up to date
 overview.bullet_compatible_software_line_2                      = send updates about your business records to HMRC every quarter
 overview.bullet_compatible_software_line_3                      = file your Self Assessment tax return
-overview.line_3                                                 = This will replace filing a Self Assessment tax return and you can choose your software once you have signed up.
-overview.link_text                                              = Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab).
+overview.line_3                                                 = This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. {0}
+overview.link_text                                              = Find software that’s compatible with Making Tax Digital for Income Tax
 overview.heading_2                                              = Before you start
 overview.line_4                                                 = To sign up to this pilot, you will need your:
 overview.bullet_before_start_line_1                             = Government Gateway user ID and password
@@ -65,8 +66,8 @@ accounting_period_check.error.summary                           = Select yes if 
 ## Are you a sole trader after page ##
 are_you_sole_trader_after.title                                 = Did your sole trader business begin on or after  {0}?
 are_you_sole_trader_after.heading                               = Did your sole trader business begin on or after  {0}?
-are_you_sole_trader_after.para                                  = If you’re a sole trader, you run your own business as an individual and are
-are_you_sole_trader_after.para_link                             = self-employed (opens in new tab).
+are_you_sole_trader_after.para                                  = If you’re a sole trader, you run your own business as an individual and are {0}
+are_you_sole_trader_after.para_link                             = self-employed
 are_you_sole_trader_after.error.summary                         = Select yes if you are a sole trader that began trading on or after {0}.
 
 ## Property Trading After Date page ##
