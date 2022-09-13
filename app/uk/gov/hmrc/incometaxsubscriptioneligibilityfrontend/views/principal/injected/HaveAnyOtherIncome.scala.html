@@ -25,6 +25,7 @@
         mainTemplate: PrincipalMainTemplate,
         form: FormWithCSRF,
         radioHelper: RadioHelper,
+        hmrcPageHeading: HmrcPageHeading,
         continueButton: ContinueButton
 )
 
@@ -54,7 +55,10 @@
 
 @mainTemplate(title = messages("have_any_other_income.title"), optForm = Some(haveAnyOtherIncomeForm), backLink = Some(backUrl) ) {
 
-    <h1 class="govuk-heading-l">@messages("have_any_other_income.title")</h1>
+    @hmrcPageHeading( PageHeading(
+        text = messages("have_any_other_income.title"),
+        section = Some(messages("have_any_other_income.caption")),
+    ))
 
     @inputContent
     @form(action = postAction) {

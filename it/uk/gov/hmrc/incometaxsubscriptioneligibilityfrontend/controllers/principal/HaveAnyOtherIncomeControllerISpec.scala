@@ -60,6 +60,11 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     }
 
 
+    "have a view with the correct caption" in {
+      doc.getElementsByClass("hmrc-caption").first().text() mustBe messages.caption
+    }
+
+
     "have a view with two correct paragraph lines" in {
       doc.getParagraphs.text().contains(messages.include) mustBe true
       doc.getParagraphs.text().contains(messages.notInclude) mustBe true

@@ -58,6 +58,7 @@ property_trading_after.error                                    = Dewiswch ‘Ia
 
 ## Do you have any other income page
 have_any_other_income.title                                     = Ar wahân i hunangyflogaeth neu eiddo, a oes gennych unrhyw ffynonellau eraill o incwm?
+have_any_other_income.caption                                   = Gwirio a allwch gofrestru ar gyfer y cynllun peilot - cwestiwn 1
 have_any_other_income.include                                   = Gallai hyn gynnwys:
 have_any_other_income.notInclude                                = Nid yw hyn yn cynnwys:
 have_any_other_income.includePoint1                             = incwm TWE fel cyflogai
