@@ -46,6 +46,7 @@ terms.line2                                                     = You can leave 
 
 ## Do you have any other income page
 have_any_other_income.title                                     = Apart from self-employment or property, do you have any other sources of income?
+have_any_other_income.caption                                   = Check you can sign up to the pilot - question 1
 have_any_other_income.include                                   = This could include:
 have_any_other_income.notInclude                                = This does not include:
 have_any_other_income.includePoint1                             = PAYE income as an employee
