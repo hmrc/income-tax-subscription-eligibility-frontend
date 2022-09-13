@@ -49,7 +49,7 @@ object MessageLookup {
 
   object HaveAnyOtherIncome {
     val title = "Apart from self-employment or property, do you have any other sources of income?"
-    val caption = "Check you can sign up to the pilot - question 1"
+    val caption = "This section is Check you can sign up to the pilot - question 1"
     val include = "This could include:"
     val notInclude = "This does not include:"
     val includePoints: Seq[String] =
