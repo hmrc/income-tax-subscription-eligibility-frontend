@@ -66,6 +66,7 @@ accounting_period_check.error.summary                           = Select yes if 
 ## Are you a sole trader after page ##
 are_you_sole_trader_after.title                                 = Did your sole trader business begin on or after  {0}?
 are_you_sole_trader_after.heading                               = Did your sole trader business begin on or after  {0}?
+are_you_sole_trader_after.caption                               = Check you can sign up to the pilot - question 2
 are_you_sole_trader_after.para                                  = If you’re a sole trader, you run your own business as an individual and are {0}
 are_you_sole_trader_after.para_link                             = self-employed
 are_you_sole_trader_after.error.summary                         = Select yes if you are a sole trader that began trading on or after {0}.

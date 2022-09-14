@@ -59,8 +59,12 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
       doc.getH1Element.text mustBe s"${messages.title(date)}"
     }
 
+    "have a view with the correct caption" in {
+      doc.getElementsByClass("hmrc-caption").first().text() mustBe messages.caption
+    }
+
     "have a view with the correct hint paragraph" in {
-      content.select("p:nth-of-type(1)").text mustBe messages.hintMessage
+      doc.getElementsByClass("govuk-body").first().text mustBe messages.hintMessage
     }
 
     "have a view with the correct values displayed in the form" in {
