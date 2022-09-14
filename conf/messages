@@ -74,6 +74,7 @@ are_you_sole_trader_after.error.summary                         = Select yes if 
 ## Property Trading After Date page ##
 property_trading_after.title                                    = Did you start a property business on or after  {0}?
 property_trading_after.heading                                  = Did you start a property business on or after  {0}?
+property_trading_after.caption                                  = Check you can sign up to the pilot - question 3
 property_trading_after.line                                     = This includes being a landlord and letting holiday properties in the UK and overseas.
 property_trading_after.error                                    = Select yes if you own a property business that began trading on or after {0}.
 
