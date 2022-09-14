@@ -52,6 +52,10 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
       text1 mustBe messages.title(date)
     }
 
+    "have a view with the correct caption" in {
+      doc.getElementsByClass("hmrc-caption").first().text() mustBe messages.caption
+    }
+
     "have a view with the correct hint paragraph" in {
       content.select("p:nth-of-type(1)").text must endWith(messages.hintMessage)
     }

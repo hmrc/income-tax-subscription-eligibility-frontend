@@ -64,6 +64,8 @@ object MessageLookup {
 
     val hintMessage = "This includes being a landlord and letting holiday properties in the UK and overseas."
 
+    val caption = "This section is Check you can sign up to the pilot - question 3"
+
     def error(date: String) = s"Select yes if you own a property business that began trading on or after $date."
   }
 
