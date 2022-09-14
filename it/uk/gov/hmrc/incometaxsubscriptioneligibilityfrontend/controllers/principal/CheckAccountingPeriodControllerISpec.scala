@@ -54,6 +54,10 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       doc.getH1Element.text mustBe messages.heading
     }
 
+    "have a view with the correct caption" in {
+      doc.getElementsByClass("hmrc-caption").first().text() mustBe messages.caption
+    }
+
     "have a view with one hint message" in {
       content.getElementsByClass("govuk-hint").text mustBe messages.hint
     }
