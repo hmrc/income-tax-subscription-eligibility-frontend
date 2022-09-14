@@ -79,6 +79,7 @@ accounting_period_check.error.summary                             = Dewiswch ‘
 ## Are you a sole trader after page ##
 are_you_sole_trader_after.title                                 = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are_you_sole_trader_after.heading                               = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
+are_you_sole_trader_after.caption                               = Gwirio a allwch gofrestru ar gyfer y cynllun peilot - cwestiwn 2
 are_you_sole_trader_after.para                                  = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn {0}
 are_you_sole_trader_after.para_link                             = hunangyflogedig
 are_you_sole_trader_after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}.

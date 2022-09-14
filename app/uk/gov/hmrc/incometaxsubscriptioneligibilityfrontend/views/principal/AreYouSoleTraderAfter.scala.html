@@ -24,6 +24,7 @@
 @import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
 @this(
+    hmrcPageHeading: HmrcPageHeading,
     mainTemplate: PrincipalMainTemplate,
     hmrcNewTabLinkHelper: HmrcNewTabLinkHelper,
     form: FormWithCSRF,
@@ -44,7 +45,10 @@
 
 @mainTemplate(title = messages("are_you_sole_trader_after.title", startDateLimit), optForm = Some(areYouSoleTraderAfterForm), backLink = Some(backUrl)) {
 
-<h1 class="govuk-heading-l">@messages("are_you_sole_trader_after.title", startDateLimit)</h1>
+    @hmrcPageHeading( PageHeading(
+        text = messages("are_you_sole_trader_after.title", startDateLimit),
+        section = Some(messages("are_you_sole_trader_after.caption")),
+    ))
 
 @inputContent
     @form(action = postAction) {
