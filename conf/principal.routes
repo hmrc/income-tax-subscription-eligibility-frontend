@@ -35,3 +35,6 @@ GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptione
 ## Check accounting period
 GET         /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.show
 POST        /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.submit
+
+## Sign up to pilot
+GET         /sign-up-to-pilot                 uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SignUpController.show
