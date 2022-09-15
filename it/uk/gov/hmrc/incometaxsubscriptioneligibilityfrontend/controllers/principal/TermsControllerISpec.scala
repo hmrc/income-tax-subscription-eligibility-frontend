@@ -79,7 +79,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "have a back link" in {
-      doc.select("a[class=govuk-back-link]").isEmpty must not be true
+      doc.select("a[class=govuk-back-link]").attr("href") mustBe routes.SignUpController.show.url
     }
   }
 
