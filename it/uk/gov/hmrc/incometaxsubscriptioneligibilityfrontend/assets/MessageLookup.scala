@@ -139,4 +139,8 @@ object MessageLookup {
     val error = "Select yes if all of your business accounting periods are from 6 April to 5 April."
   }
 
+  object SignUpToPilot {
+    val heading = "Continue your sign up to the pilot"
+    val paragraph = "Based on your answers, you can continue to sign up to the pilot for Making Tax Digital for Income Tax."
+  }
 }

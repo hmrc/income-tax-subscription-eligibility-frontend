@@ -94,6 +94,11 @@ cannot_sign_up.other.bullet3                                    = accounting per
 cannot_sign_up.send_self_assessment                             = You will need to send a {0} instead and you may be able to sign up in future.
 cannot_sign_up.send_self_assessment.link                        = Self Assessment tax return
 
+## Sign Up To Pilot Page ##
+sign_up.title                                                   = Continue your sign up to the pilot
+sign_up.heading                                                 = Continue your sign up to the pilot
+sign_up.paragraph                                               = Based on your answers, you can continue to sign up to the pilot for Making Tax Digital for Income Tax.
+
 ## Terms and Conditions Page ##
 agent.terms.heading                                             = Terms of participation
 agent.terms.line1                                               = By taking part in this pilot, you agree that either you or your client will:

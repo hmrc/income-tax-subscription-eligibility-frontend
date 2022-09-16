@@ -32,6 +32,11 @@ overview.bullet_before_start_line_3                             = dyddiadau dech
 overview.bullet_before_start_line_4                             = gwybodaeth am flwyddyn gyfrifyddu’r busnes
 overview.inset_text                                             = Bydd angen i chi ddefnyddio’r un Dynodydd Defnyddiwr (ID) a chyfrinair ar gyfer Porth y Llywodraeth a ddefnyddiwch ar gyfer eich cyfrif Hunanasesiad presennol. Os nad oes gennych Ddynodydd Defnyddiwr (ID) eto, gallwch greu un pan fyddwch yn defnyddio’r gwasanaeth.
 
+## Sign Up To Pilot Page ##
+sign_up.title                                                   = Yn eich blaen i gofrestru ar gyfer y cynllun peilot
+sign_up.heading                                                 = Yn eich blaen i gofrestru ar gyfer y cynllun peilot
+sign_up.paragraph                                               = Ar sail eich atebion, gallwch fynd yn eich blaen i gofrestru ar gyfer y cynllun peilot Troi Treth yn Ddigidol ar gyfer Treth Incwm.
+
 ## Terms and Conditions Page ##
 terms.title                                                     = Telerau cymryd rhan
 terms.heading                                                   = Telerau cymryd rhan
