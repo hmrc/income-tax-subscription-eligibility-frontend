@@ -135,6 +135,7 @@ object MessageLookup {
   object CheckAccountingPeriod {
     val heading = "Do all of your business accounting periods run from 6 April to 5 April?"
     val hint = "The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property needs to be the same if you would like to sign up to this service."
+    val caption = "This section is Check you can sign up to the pilot - question 4"
     val yes = "Yes"
     val no = "No"
     val continue = "Continue"
