@@ -24,6 +24,7 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
 
 @this(
+    hmrcPageHeading: HmrcPageHeading,
     mainTemplate: PrincipalMainTemplate,
     radioHelper: RadioHelper,
     continueButton: ContinueButton,
@@ -38,7 +39,10 @@
 
 @mainTemplate(title = messages("property_trading_after.title", startDateLimit), optForm = Some(propertyTradingBeforeDateForm), backLink = Some(backUrl)) {
 
-    <h1 class="govuk-heading-l">@messages("property_trading_after.title", startDateLimit)</h1>
+    @hmrcPageHeading( PageHeading(
+        text = messages("property_trading_after.title", startDateLimit),
+        section = Some(messages("property_trading_after.caption")),
+    ))
 
     @inputContent
 
