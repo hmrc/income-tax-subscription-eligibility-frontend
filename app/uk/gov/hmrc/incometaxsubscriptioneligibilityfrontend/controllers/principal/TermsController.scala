@@ -41,7 +41,7 @@ class TermsController @Inject()(terms: Terms,
   }
 
   def backUrl: String = {
-    routes.CheckAccountingPeriodController.show.url
+    routes.SignUpController.show.url
   }
 
 }

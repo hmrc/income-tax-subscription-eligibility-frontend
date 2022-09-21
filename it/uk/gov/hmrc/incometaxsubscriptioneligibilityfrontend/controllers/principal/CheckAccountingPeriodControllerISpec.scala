@@ -104,7 +104,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       verifyAuditContains(expectedAuditContainsYes)
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/terms-of-participation"),
+        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/sign-up-to-pilot"),
       )
     }
 

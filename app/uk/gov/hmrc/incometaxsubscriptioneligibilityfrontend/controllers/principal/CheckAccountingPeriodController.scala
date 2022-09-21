@@ -52,7 +52,7 @@ class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: Accountin
               answer = "yes",
               question = "standardAccountingPeriod"
             ))
-            Future.successful(Redirect(routes.TermsController.show))
+            Future.successful(Redirect(routes.SignUpController.show))
           case No =>
             auditService.audit(EligibilityAnswerAuditModel(
               userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
