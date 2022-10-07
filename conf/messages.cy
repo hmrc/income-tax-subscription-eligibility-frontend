@@ -37,17 +37,20 @@ sign_up.title                                                   = Yn eich blaen 
 sign_up.heading                                                 = Yn eich blaen i gofrestru ar gyfer y cynllun peilot
 sign_up.paragraph                                               = Ar sail eich atebion, gallwch fynd yn eich blaen i gofrestru ar gyfer y cynllun peilot Troi Treth yn Ddigidol ar gyfer Treth Incwm.
 
-## Terms and Conditions Page ##
-terms.title                                                     = Telerau cymryd rhan
-terms.heading                                                   = Telerau cymryd rhan
+## What You Need To Do ##
+terms.title                                                     = Yr hyn y mae angen i chi ei wneud
+terms.heading                                                   = Yr hyn y mae angen i chi ei wneud
 terms.line1                                                     = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y canlynol:
 terms.bullet1                                                   = defnyddio meddalwedd sy’n cydweddu i gofnodi’ch incwm a’ch treuliau
-terms.bullet2                                                   = rhoi cyfeiriad e-bost fel y gall CThEM gysylltu â chi
-terms.bullet3                                                   = cyflwyno adroddiad chwarterol o ddechrau eich cyfnod cyfrifyddu
-terms.bullet4                                                   = anfon eich datganiad terfynol erbyn 31 Ionawr ar ddiwedd y flwyddyn dreth
-terms.bullet5                                                   = rhoi gwybod i CThEM os ydych yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
-terms.bullet6                                                   = defnyddio’ch dull arferol ar gyfer Hunanasesiad os ydych yn gadael y cynllun peilot hwn
-terms.line2                                                     = Gallwch adael y cynllun peilot hwn ar unrhyw adeg.
+terms.bullet2                                                   = anfon diweddariadau chwarterol o ddechrau eich cyfnod cyfrifyddu
+terms.bullet3                                                   = cyflwyno’ch datganiad terfynol erbyn 31 Ionawr yn dilyn eich blwyddyn dreth gyfredol
+terms.bullet4                                                   = rhoi gwybod i CThEM os ydych yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
+terms.line2                                                     = Gallwch roi’r gorau i ddefnyddio’r cynllun peilot hwn ar unrhyw adeg.
+terms.paragraph1                                                = Gallwch ddewis rhoi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar unrhyw adeg hyd at 6 Ebrill 2024. Does dim rhaid i chi roi gwybod i ni, a gallwch anwybyddu unrhyw negeseuon diogel oddi wrth y gwasanaeth. Fodd bynnag, mae’n rhaid i chi:
+terms.bullet5                                                   = cyflwyno’ch Hunanasesiad erbyn 31 Ionawr yn dilyn diwedd y flwyddyn dreth, fel arfer
+terms.bullet6                                                   = defnyddio’r gwasanaeth hwn os yw cyfanswm eich {0} dros £10,000 o 6 Ebrill 2024 ymlaen
+terms.bullet6_link                                              = incwm cymwys
+terms.paragraph2                                                = Gallwch roi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar ôl i’r cynllun peilot ddod i ben ar 5 Ebrill 2024, os yw’ch incwm cymwys yn £10,000 neu’n llai.
 
 ## Get Software
 

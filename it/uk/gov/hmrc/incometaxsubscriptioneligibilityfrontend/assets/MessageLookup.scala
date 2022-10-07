@@ -97,16 +97,18 @@ object MessageLookup {
   }
 
   object Terms {
-    val heading: String = "Terms of participation"
+    val heading: String = "What you need to do"
     val title = s"$heading$suffix"
     val line1 = "By taking part in this pilot, you agree that you will:"
     val bullet1 = "use compatible software to record income and expenses"
-    val bullet2 = "provide an email address so you can be contacted by HMRC"
-    val bullet3 = "send quarterly updates from the start of your accounting period"
-    val bullet4 = "submit your final declaration by 31 January at the end of the tax year"
-    val bullet5 = "tell HMRC if you stop trading or start a new business"
-    val bullet6 = "use your usual Self Assessment method if you leave this pilot"
+    val bullet2 = "send quarterly updates from the start of your accounting period"
+    val bullet3 = "submit your final declaration by 31 January following your current tax year"
+    val bullet4 = "tell HMRC if you stop trading or start a new business"
     val line2 = "You can leave this pilot at any time."
+    val paragraph1 = "You can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2024. You do not have to let us know and you can ignore any secure messages from the service. But you must:"
+    val bullet5 = "file your Self Assessment by 31 January following the end of the tax year as normal"
+    val bullet6 = "use this service if your total qualifying income (opens in a new tab) is above £10,000 from 6 April 2024"
+    val paragraph2 = "You can stop using Making Tax Digital for Income Tax after the pilot ends on 5 April 2024, if your qualifying income is £10,000 or less."
   }
 
 

@@ -14,12 +14,14 @@
  * limitations under the License.
  *@
 
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 
 @this(
         mainTemplate: PrincipalMainTemplate,
+        hmrcNewTabLinkHelper: HmrcNewTabLinkHelper,
         continueButton: ContinueButton,
         form: FormWithCSRF
 )
@@ -36,10 +38,25 @@
         <li>@messages("terms.bullet2")</li>
         <li>@messages("terms.bullet3")</li>
         <li>@messages("terms.bullet4")</li>
-        <li>@messages("terms.bullet5")</li>
-        <li>@messages("terms.bullet6")</li>
     </ul>
-    <p class="govuk-body">@messages("terms.line2")</p>
+    <p class="govuk-body govuk-!-font-weight-bold">@messages("terms.line2")</p>
+
+    <p class="govuk-body">@messages("terms.paragraph1")</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>@messages("terms.bullet5")</li>
+      <li>
+        @Html(messages(
+          "terms.bullet6",
+          hmrcNewTabLinkHelper(NewTabLinkHelper(
+            text = messages("terms.bullet6_link"),
+            href = Some("")
+          ))
+        ))
+      </li>
+    </ul>
+
+    <p class="govuk-body govuk-!-margin-bottom-8">@messages("terms.paragraph2")</p>
 
     @form(action = postAction) {
         @continueButton(alternateText = Some(messages("base.accept_and_continue")))
