@@ -25,7 +25,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/terms-of-participation")
+  lazy val result: WSResponse = get("/what-you-need-to-do")
   lazy val doc: Document = Jsoup.parse(result.body)
 
   "GET /terms-of-participation" should {
@@ -46,7 +46,9 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     "return a view with two paragraph lines" in {
       doc.getParagraphs must have(
         elementWithValue(messages.line1),
-        elementWithValue(messages.line2)
+        elementWithValue(messages.line2),
+        elementWithValue(messages.paragraph1),
+        elementWithValue(messages.paragraph2),
       )
     }
 
@@ -85,7 +87,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
   s"POST ${routes.TermsController.submit}" should {
     s"redirect the user to ${appConfig.incometaxSubscriptionFrontendFirstPageFullUrl}" in {
-      val submit = post("/terms-of-participation")()
+      val submit = post("/what-you-need-to-do")()
       submit must have(
         httpStatus(SEE_OTHER),
         redirectUri(appConfig.incometaxSubscriptionFrontendFirstPageFullUrl)
