@@ -49,7 +49,7 @@ class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: Proper
 
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
-      propertyTradingStartDateForm(startDateLimit.toLongDate).bindFromRequest.fold(
+      propertyTradingStartDateForm(startDateLimit.toLongDate).bindFromRequest().fold(
         formWithErrors => Future.successful(BadRequest(propertyTradingAfter(
           formWithErrors, routes.PropertyTradingStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl))), {
           case Yes =>

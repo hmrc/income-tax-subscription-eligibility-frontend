@@ -43,7 +43,7 @@ class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: Accountin
 
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
-      accountingPeriodCheckForm.bindFromRequest.fold(
+      accountingPeriodCheckForm.bindFromRequest().fold(
         formWithErrors => Future.successful(BadRequest(accountingPeriodCheck(formWithErrors, routes.CheckAccountingPeriodController.submit, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
