@@ -8,7 +8,7 @@ import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 import play.api.data.FormError
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 trait ViewSpec extends Matchers {
 

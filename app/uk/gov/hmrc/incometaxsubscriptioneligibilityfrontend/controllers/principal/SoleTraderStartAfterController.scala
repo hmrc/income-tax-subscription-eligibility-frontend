@@ -55,7 +55,7 @@ class SoleTraderStartAfterController @Inject()(auditService: AuditingService,
 
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
-      form(startDateLimit).bindFromRequest.fold(
+      form(startDateLimit).bindFromRequest().fold(
         formWithErrors => Future.successful(BadRequest(areYouSoleTraderAfter(formWithErrors, routes.SoleTraderStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(

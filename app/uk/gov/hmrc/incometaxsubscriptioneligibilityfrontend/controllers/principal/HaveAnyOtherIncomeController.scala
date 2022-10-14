@@ -46,7 +46,7 @@ class HaveAnyOtherIncomeController @Inject()(auditService: AuditingService,
 
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
-      haveAnyOtherIncomeForm.bindFromRequest.fold(
+      haveAnyOtherIncomeForm.bindFromRequest().fold(
         formWithErrors => Future.successful(BadRequest(haveAnyOtherIncome(formWithErrors, routes.HaveAnyOtherIncomeController.submit, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
