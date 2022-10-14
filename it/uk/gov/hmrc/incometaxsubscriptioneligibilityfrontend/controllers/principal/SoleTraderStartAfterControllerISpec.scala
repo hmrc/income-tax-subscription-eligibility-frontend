@@ -19,7 +19,7 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import org.jsoup.Jsoup
-import org.jsoup.nodes.{Document, Element}
+import org.jsoup.nodes.{Document}
 import play.api.data.FormError
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
@@ -38,7 +38,6 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
 
     lazy val result = get("/sole-trader-start-after")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.mainContent
 
     "return OK" in {
       result must have(

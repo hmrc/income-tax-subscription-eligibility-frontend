@@ -40,7 +40,7 @@ class MessagesSpec extends AnyFunSuite {
 
   private def getMessageKeys(fileName: String) = {
     Source.fromResource(fileName)
-      .getLines
+      .getLines()
       .map(_.trim)
       .filter(!_.startsWith("#"))
       .filter(_.nonEmpty)
