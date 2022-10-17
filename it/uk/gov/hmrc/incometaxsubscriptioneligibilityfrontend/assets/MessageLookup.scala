@@ -113,14 +113,19 @@ object MessageLookup {
 
 
   object AgentTerms {
-    val heading: String = "Terms of participation"
-    val line1 = "By taking part in this pilot, you agree that either you or your client will:"
-    val bullet1 = "use relevant software to record income and expenses"
-    val bullet2 = "send a quarterly update from the start of your client’s accounting period"
-    val bullet3 = "submit your client’s final declaration by the 31 January at the end of their tax year"
-    val bullet4 = "tell HMRC if your client stops trading or starts a new business"
-    val bullet5 = "use your usual Self Assessment method if your client leaves this pilot"
-    val line2 = "You or your client can leave this pilot at any time."
+    val heading: String = "What you need to do"
+    val line1 = "By taking part in this pilot you agree that you will:"
+    val bullet1 = "use compatible software to record your client’s income and expenses"
+    val bullet2 = "send quarterly updates from the start of their accounting period"
+    val bullet3 = "submit their final declaration by 31 January following their current tax year"
+    val bullet4 = "tell HMRC if they stop trading or start a new business"
+    val line2 = "Your client can stop using this pilot at any time"
+    val paragraph1 = "Your client can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2024. " +
+                      "You do not have to let us know and they can ignore any secure messages from the service. But they must:"
+    val bullet5 = "file their Self Assessment by 31 January following the end of the tax year as normal"
+    val bullet6 = "use this service if their total qualifying income (opens in a new tab) is above £10,000 from 6 April 2024"
+    val line3 = "They can stop using Making Tax Digital for Income Tax after the pilot ends on 5 April 2024, if their qualifying income is £10,000 or less."
+
   }
 
   object OtherSourcesOfIncomeError {

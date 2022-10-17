@@ -7,8 +7,8 @@
 GET         /                                 uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.IndexController.index
 
 ## Terms of Participation
-GET         /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
-POST        /terms-of-participation           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
+GET         /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
+POST        /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
 
 ## Welsh language support
 GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.LanguageSwitchController.switchToLanguage(lang: String)

@@ -111,14 +111,18 @@ cannot_sign_up.send_self_assessment                             = Bydd angen i c
 cannot_sign_up.send_self_assessment.link                        = Ffurflen Dreth Hunanasesiad
 
 ## Agent Terms and Conditions Page ##
-agent.terms.heading                                             = Telerau cymryd rhan
-agent.terms.line1                                               = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch chi neu’ch cleient yn gwneud y canlynol:
-agent.terms.bullet1                                             = defnyddio meddalwedd berthnasol i gofnodi’ch incwm a’ch treuliau
-agent.terms.bullet2                                             = anfon diweddariad chwarterol o ddechrau cyfnod cyfrifyddu’ch cleient
-agent.terms.bullet3                                             = cyflwyno datganiad terfynol eich cleient erbyn 31 Ionawr ar ddiwedd ei flwyddyn dreth
-agent.terms.bullet4                                             = rhoi gwybod i CThEM os yw’ch cleient yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
-agent.terms.bullet5                                             = defnyddio’ch dull arferol ar gyfer Hunanasesiad os yw’ch cleient yn gadael y cynllun peilot hwn
-agent.terms.line2                                               = Gallwch chi neu’ch cleient adael y cynllun peilot hwn ar unrhyw adeg.
+agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud
+agent.terms.line1                                               = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y canlynol:
+agent.terms.bullet1                                             = defnyddio meddalwedd sy’n cydweddu i gofnodi’ch incwm a’ch treuliau
+agent.terms.bullet2                                             = anfon diweddariadau chwarterol o ddechrau eich cyfnod cyfrifyddu
+agent.terms.bullet3                                             = cyflwyno’ch datganiad terfynol erbyn 31 Ionawr yn dilyn eich blwyddyn dreth gyfredol
+agent.terms.bullet4                                             = rhoi gwybod i CThEM os ydych yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
+agent.terms.line2                                               = Gallwch roi’r gorau i ddefnyddio’r cynllun peilot hwn ar unrhyw adeg
+agent.terms.paragraph1                                          = Gallwch ddewis rhoi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar unrhyw adeg hyd at 6 Ebrill 2024. Does dim rhaid i chi roi gwybod i ni, a gallwch anwybyddu unrhyw negeseuon diogel oddi wrth y gwasanaeth. Fodd bynnag, mae’n rhaid i chi:
+agent.terms.bullet5                                             = cyflwyno’ch Hunanasesiad erbyn 31 Ionawr yn dilyn diwedd y flwyddyn dreth, fel arfer
+agent.terms.bullet6                                             = defnyddio’r gwasanaeth hwn os yw cyfanswm eich {0} dros £10,000 o 6 Ebrill 2024 ymlaen
+agent.terms.line3                                               = Gallwch roi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar ôl i’r cynllun peilot ddod i ben ar 5 Ebrill 2024, os yw’ch incwm cymwys yn £10,000 neu’n llai.
+agent.terms.bullet6_link                                        = incwm cymwys
 
 ## Title pattern
 principle_title_pattern.serviceName.govUk                       = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
