@@ -21,7 +21,7 @@ import play.api.libs.ws.WSResponse
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.{routes => agentRoutes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
-class LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
+class  LanguageSwitchControllerISpec extends ComponentSpecBase with ViewSpec {
 
   val testRefererRoute: String = "/test/referer/route"
 

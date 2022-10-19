@@ -105,14 +105,18 @@ sign_up.heading                                                 = Continue your 
 sign_up.paragraph                                               = Based on your answers, you can continue to sign up to the pilot for Making Tax Digital for Income Tax.
 
 ## Terms and Conditions Page ##
-agent.terms.heading                                             = Terms of participation
-agent.terms.line1                                               = By taking part in this pilot, you agree that either you or your client will:
-agent.terms.bullet1                                             = use relevant software to record income and expenses
-agent.terms.bullet2                                             = send a quarterly update from the start of your client’s accounting period
-agent.terms.bullet3                                             = submit your client’s final declaration by the 31 January at the end of their tax year
-agent.terms.bullet4                                             = tell HMRC if your client stops trading or starts a new business
-agent.terms.bullet5                                             = use your usual Self Assessment method if your client leaves this pilot
-agent.terms.line2                                               = You or your client can leave this pilot at any time.
+agent.terms.heading                                             = What you need to do
+agent.terms.line1                                               = By taking part in this pilot you agree that you will:
+agent.terms.bullet1                                             = use compatible software to record your client’s income and expenses
+agent.terms.bullet2                                             = send quarterly updates from the start of their accounting period
+agent.terms.bullet3                                             = submit their final declaration by 31 January following their current tax year
+agent.terms.bullet4                                             = tell HMRC if they stop trading or start a new business
+agent.terms.line2                                               = Your client can stop using this pilot at any time
+agent.terms.paragraph1                                          = Your client can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2024. You do not have to let us know and they can ignore any secure messages from the service. But they must:
+agent.terms.bullet5                                             = file their Self Assessment by 31 January following the end of the tax year as normal
+agent.terms.bullet6                                             = use this service if their total {0} is above £10,000 from 6 April 2024
+agent.terms.bullet6_link                                        = qualifying income
+agent.terms.line3                                               = They can stop using Making Tax Digital for Income Tax after the pilot ends on 5 April 2024, if their qualifying income is £10,000 or less.
 
 ## Title pattern
 principle_title_pattern.serviceName.govUk                       = {0} - Use software to send Income Tax updates - GOV.UK

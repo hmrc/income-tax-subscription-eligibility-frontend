@@ -25,12 +25,12 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpec
 
 class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
 
-  lazy val result: WSResponse = get("/client/terms-of-participation")
+  lazy val result: WSResponse = get("/client/what-you-need-to-do")
   lazy val doc: Document = Jsoup.parse(result.body)
 
-  lazy val submitResult: WSResponse = post("/client/terms-of-participation")(Map.empty)
+  lazy val submitResult: WSResponse = post("/client/what-you-need-to-do")(Map.empty)
 
-  "GET /client/terms-of-participation" should {
+  "GET /client/what-you-need-to-do" should {
     "return OK" in {
       result must have(
         httpStatus(OK)
@@ -45,20 +45,43 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
       doc.getH1Element.text mustBe messages.heading
     }
 
-    "return a view with two paragraph lines" in {
-      doc.getParagraphs must have(
-        elementWithValue(messages.line1),
-        elementWithValue(messages.line2)
+    "return a view with 1 paragraph lines" in {
+      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(1)").select("p") must have(
+        elementWithValue(messages.line1)
       )
     }
 
     "return a view with a bullet point list" in {
-      doc.getBulletPoints must have(
+      doc.select("div[class=govuk-form-group]").select("ul:nth-of-type(1)").select("li") must have(
         elementWithValue(messages.bullet1),
         elementWithValue(messages.bullet2),
         elementWithValue(messages.bullet3),
-        elementWithValue(messages.bullet4),
-        elementWithValue(messages.bullet5)
+        elementWithValue(messages.bullet4)
+      )
+    }
+
+    "return a view with the second paragraph line" in {
+      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(2)").select("p") must have(
+        elementWithValue(messages.line2),
+      )
+    }
+
+    "return a view with the third paragraph line" in {
+      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(3)").select("p") must have(
+        elementWithValue(messages.paragraph1),
+      )
+    }
+
+    "return a view with a second bullet point list" in {
+      doc.select("div[class=govuk-form-group]").select("ul:nth-of-type(2)").select("li") must have(
+        elementWithValue(messages.bullet5),
+        elementWithValue(messages.bullet6)
+      )
+    }
+
+    "return a view with the fourth paragraph line" in {
+      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(4)").select("p") must have(
+        elementWithValue(messages.line3),
       )
     }
 
@@ -74,7 +97,7 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
     }
   }
 
-  "POST /client/terms-of-participation" should {
+  "POST /client/what-you-need-to-do" should {
     "redirect to the start of the agent sign up" in {
       submitResult must have(
         httpStatus(SEE_OTHER),
