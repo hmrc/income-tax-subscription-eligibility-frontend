@@ -60,9 +60,15 @@ object MessageLookup {
   }
 
   object PropertyStartAfter {
-    def title(date: String) = s"Did you start a property business on or after $date?"
+    def title(date: String) = s"Did you start renting out a property on or after $date?"
 
-    val hintMessage = "This includes being a landlord and letting holiday properties in the UK and overseas."
+    val hintMessage1 = "This includes being a landlord or using a letting agency for:"
+    val hintMessage2 = "UK properties"
+    val hintMessage3 = "overseas properties"
+    val hintMessage4 = "holiday properties"
+    val hintMessage5 = "This does not include renting out:"
+    val hintMessage6 = "a room"
+    val hintMessage7 = "part of your property"
 
     val caption = "This section is Check you can sign up to the pilot - question 3"
 
