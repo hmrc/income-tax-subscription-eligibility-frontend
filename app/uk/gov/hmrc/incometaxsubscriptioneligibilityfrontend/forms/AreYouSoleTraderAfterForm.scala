@@ -30,7 +30,7 @@ object AreYouSoleTraderAfterForm {
 
   def areYouSoleTraderAfterForm(startDate: String): Form[YesNo] = Form(
     single(
-      fieldName -> of(yesNoMapping("are_you_sole_trader_after.error.summary", Seq(startDate)))
+      fieldName -> of(yesNoMapping("are-you-sole-trader-after.error.summary", Seq(startDate)))
     )
   )
 }

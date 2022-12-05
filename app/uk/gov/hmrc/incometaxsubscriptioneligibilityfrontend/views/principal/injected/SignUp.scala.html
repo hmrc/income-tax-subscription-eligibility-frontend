@@ -26,12 +26,12 @@
 @(backUrl: String, continueUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @mainTemplate(
-  title = messages("sign_up.title"),
+  title = messages("sign-up.title"),
   backLink = Some(backUrl)
 ) {
- <h1 class="govuk-heading-l">@messages("sign_up.heading")</h1>
+ <h1 class="govuk-heading-l">@messages("sign-up.heading")</h1>
 
- <p class="govuk-body">@messages("sign_up.paragraph")</p>
+ <p class="govuk-body">@messages("sign-up.paragraph")</p>
 
  <div>
  @continueButton(href = Some(continueUrl))

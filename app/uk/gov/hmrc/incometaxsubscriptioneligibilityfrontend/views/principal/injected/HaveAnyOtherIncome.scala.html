@@ -33,31 +33,31 @@
 
 @inputContent = {
 
-    <p class="govuk-body govuk-!-font-weight-bold">@messages("have_any_other_income.include")</p>
+    <p class="govuk-body govuk-!-font-weight-bold">@messages("have-any-other-income.include")</p>
 
     <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("have_any_other_income.includePoint1")</li>
-        <li>@messages("have_any_other_income.includePoint2")</li>
-        <li>@messages("have_any_other_income.includePoint3")</li>
-        <li>@messages("have_any_other_income.includePoint4")</li>
-        <li>@messages("have_any_other_income.includePoint5")</li>
+        <li>@messages("have-any-other-income.include-point-1")</li>
+        <li>@messages("have-any-other-income.include-point-2")</li>
+        <li>@messages("have-any-other-income.include-point-3")</li>
+        <li>@messages("have-any-other-income.include-point-4")</li>
+        <li>@messages("have-any-other-income.include-point-5")</li>
     </ul>
 
-    <p class="govuk-body govuk-!-font-weight-bold">@messages("have_any_other_income.notInclude")</p>
+    <p class="govuk-body govuk-!-font-weight-bold">@messages("have-any-other-income.not-include")</p>
 
     <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("have_any_other_income.notIncludePoint1")</li>
-        <li>@messages("have_any_other_income.notIncludePoint2")</li>
+        <li>@messages("have-any-other-income.not-include-point-1")</li>
+        <li>@messages("have-any-other-income.not-include-point-2")</li>
     </ul>
 
 }
 
 
-@mainTemplate(title = messages("have_any_other_income.title"), optForm = Some(haveAnyOtherIncomeForm), backLink = Some(backUrl) ) {
+@mainTemplate(title = messages("have-any-other-income.title"), optForm = Some(haveAnyOtherIncomeForm), backLink = Some(backUrl) ) {
 
     @hmrcPageHeading( PageHeading(
-        text = messages("have_any_other_income.title"),
-        section = Some(messages("have_any_other_income.caption")),
+        text = messages("have-any-other-income.title"),
+        section = Some(messages("have-any-other-income.caption")),
     ))
 
     @inputContent
@@ -65,7 +65,7 @@
 
         @radioHelper(
             field = haveAnyOtherIncomeForm(fieldName),
-            legend = messages("have_any_other_income.title"),
+            legend = messages("have-any-other-income.title"),
             isPageHeading = false,
             radioItems = Seq(
                 RadioItem(

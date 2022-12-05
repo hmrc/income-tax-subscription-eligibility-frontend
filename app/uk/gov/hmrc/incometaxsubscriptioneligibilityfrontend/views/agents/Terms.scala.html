@@ -52,7 +52,7 @@
             <li>@Html(messages(
                 "agent.terms.bullet6",
                 hmrcNewTabLinkHelper(NewTabLinkHelper(
-                    text = messages("agent.terms.bullet6_link"),
+                    text = messages("agent.terms.bullet6-link"),
                     href = Some(appConfig.qualifyingIncomeUrl)
                 ))
             ))</li>
@@ -61,7 +61,7 @@
     </div>
 
     @form(action = postAction) {
-        @continueButton(alternateText = Some(messages("base.accept_and_continue")))
+        @continueButton(alternateText = Some(messages("base.accept-and-continue")))
     }
 
 }

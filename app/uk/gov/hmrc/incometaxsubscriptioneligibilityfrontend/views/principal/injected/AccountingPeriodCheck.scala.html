@@ -33,23 +33,23 @@
 
 
 @mainTemplate(
-    title = messages("accounting_period_check.title"),
+    title = messages("accounting-period-check.title"),
     optForm = Some(accountingPeriodCheckForm),
     backLink = Some(backUrl)
 ) {
 
     @hmrcPageHeading( PageHeading(
-        text = messages("accounting_period_check.title"),
-        section = Some(messages("accounting_period_check.caption"))
+        text = messages("accounting-period-check.title"),
+        section = Some(messages("accounting-period-check.caption"))
     ))
 
     @form(action = postAction) {
 
         @radioHelper(
             field = accountingPeriodCheckForm(fieldName),
-            legend = messages("accounting_period_check.title"),
+            legend = messages("accounting-period-check.title"),
             isPageHeading = false,
-            hint = Some(messages("accounting_period_check.title.hint")),
+            hint = Some(messages("accounting-period-check.title.hint")),
             radioItems = Seq(
                 RadioItem(
                     content = Text(messages("base.yes")),

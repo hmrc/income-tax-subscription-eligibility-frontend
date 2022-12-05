@@ -29,7 +29,7 @@ object AccountingPeriodCheckForm {
 
   val accountingPeriodCheckForm: Form[YesNo] = Form(
     single(
-      fieldName -> of(yesNoMapping("accounting_period_check.error"))
+      fieldName -> of(yesNoMapping("accounting-period-check.error"))
     )
   )
 }
