@@ -55,10 +55,16 @@ terms.paragraph2                                                = Gallwch roi’
 ## Get Software
 
 ## Property Trading Before Date page ##
-property_trading_after.title                                    = A wnaethoch ddechrau busnes eiddo ar neu ôl  {0}?
-property_trading_after.heading                                  = A wnaethoch ddechrau busnes eiddo ar neu ôl  {0}?
+property_trading_after.title                                    = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
+property_trading_after.heading                                  = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
 property_trading_after.caption                                  = Gwirio a allwch gofrestru ar gyfer y cynllun peilot - cwestiwn 3
-property_trading_after.line                                     = Mae hyn yn cynnwys bod yn landlord ac yn rhoi llety gwyliau ar osod yn y DU a thramor.
+property_trading_after.line1                                    = Mae hyn yn cynnwys bod yn landlord neu ddefnyddio asiantaeth gosod eiddo ar gyfer:
+property_trading_after.line2                                    = eiddo yn y DU
+property_trading_after.line3                                    = eiddo tramor
+property_trading_after.line4                                    = eiddo gwyliau
+property_trading_after.line5                                    = Nid yw hyn yn cynnwys rhoi’r canlynol ar osod:
+property_trading_after.line6                                    = ystafell
+property_trading_after.line7                                    = rhan o’ch eiddo
 property_trading_after.error                                    = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}.
 
 ## "Have you got software" page messages ##

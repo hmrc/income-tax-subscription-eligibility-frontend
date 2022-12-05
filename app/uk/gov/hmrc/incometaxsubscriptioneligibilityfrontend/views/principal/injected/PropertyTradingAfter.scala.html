@@ -34,7 +34,17 @@
 @(propertyTradingBeforeDateForm: Form[YesNo], postAction: Call, startDateLimit: String, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @inputContent = {
-    <p class="govuk-body" id="property-trading-hint">@messages("property_trading_after.line")</p>
+        <p class="govuk-heading-s">@messages("property_trading_after.line1")</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>@messages("property_trading_after.line2")</li>
+                <li>@messages("property_trading_after.line3")</li>
+                <li>@messages("property_trading_after.line4")</li>
+            </ul>
+        <p class="govuk-heading-s">@messages("property_trading_after.line5")</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>@messages("property_trading_after.line6")</li>
+                <li>@messages("property_trading_after.line7")</li>
+            </ul>
 }
 
 @mainTemplate(title = messages("property_trading_after.title", startDateLimit), optForm = Some(propertyTradingBeforeDateForm), backLink = Some(backUrl)) {

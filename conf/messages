@@ -77,10 +77,16 @@ are_you_sole_trader_after.para_link                             = self-employed
 are_you_sole_trader_after.error.summary                         = Select yes if you are a sole trader that began trading on or after {0}.
 
 ## Property Trading After Date page ##
-property_trading_after.title                                    = Did you start a property business on or after  {0}?
-property_trading_after.heading                                  = Did you start a property business on or after  {0}?
+property_trading_after.title                                    = Did you start renting out a property on or after  {0}?
+property_trading_after.heading                                  = Did you start renting out a property on or after  {0}?
 property_trading_after.caption                                  = Check you can sign up to the pilot - question 3
-property_trading_after.line                                     = This includes being a landlord and letting holiday properties in the UK and overseas.
+property_trading_after.line1                                    = This includes being a landlord or using a letting agency for:
+property_trading_after.line2                                    = UK properties
+property_trading_after.line3                                    = overseas properties
+property_trading_after.line4                                    = holiday properties
+property_trading_after.line5                                    = This does not include renting out:
+property_trading_after.line6                                    = a room
+property_trading_after.line7                                    = part of your property
 property_trading_after.error                                    = Select yes if you own a property business that began trading on or after {0}.
 
 ## Cannot Sign Up Page

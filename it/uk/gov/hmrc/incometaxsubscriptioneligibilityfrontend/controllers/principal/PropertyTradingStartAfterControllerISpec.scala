@@ -56,8 +56,33 @@ class PropertyTradingStartAfterControllerISpec extends ComponentSpecBase with Vi
       doc.getElementsByClass("hmrc-caption").first().text() mustBe messages.caption
     }
 
-    "have a view with the correct hint paragraph" in {
-      content.select("p:nth-of-type(1)").text must endWith(messages.hintMessage)
+    "have a view with the correct hint paragraph" which {
+
+      "has a paragraph 1" in {
+        content.mainContent.select("p:nth-of-type(1)").text must endWith(messages.hintMessage1)
+      }
+      "has a list of including criteria" which {
+        "has correct first bullet point" in {
+          content.mainContent.select("ul:nth-of-type(1)").select("li:nth-of-type(1)").text mustBe (messages.hintMessage2)
+        }
+        "has correct second bullet point" in {
+          content.mainContent.select("ul:nth-of-type(1)").select("li:nth-of-type(2)").text mustBe (messages.hintMessage3)
+        }
+        "has correct third bullet point" in {
+          content.mainContent.select("ul:nth-of-type(1)").select("li:nth-of-type(3)").text mustBe (messages.hintMessage4)
+        }
+      }
+      "has a paragraph 2" in {
+        content.mainContent.select("p:nth-of-type(2)").text must endWith(messages.hintMessage5)
+      }
+      "has a list of not including criteria" which {
+        "has correct first bullet point" in {
+          content.mainContent.select("ul:nth-of-type(2)").select("li:nth-of-type(1)").text mustBe (messages.hintMessage6)
+        }
+        "has correct second bullet point" in {
+          content.mainContent.select("ul:nth-of-type(2)").select("li:nth-of-type(2)").text mustBe (messages.hintMessage7)
+        }
+      }
     }
 
     "have a view with the correct values displayed in the form" in {
