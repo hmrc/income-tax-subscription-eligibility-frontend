@@ -25,14 +25,14 @@
 
 @prefixedTitle = @{
     optForm match {
-        case Some(validationForm) if validationForm.hasErrors => messages("principle_base.title.error", title)
-        case _ => messages("principle_title_pattern.serviceName.govUk", title)
+        case Some(validationForm) if validationForm.hasErrors => messages("principle-base.title.error", title)
+        case _ => messages("principle-title-pattern.service-name.gov-uk", title)
     }
 }
 
 @govukWrapper(
     title = prefixedTitle,
-    serviceName = Some(messages("principal_service_name.title")),
+    serviceName = Some(messages("principal-service-name.title")),
     serviceUrl = appConfig.govukGuidanceITSASignUpIndivLink,
     optForm = optForm,
     backLink = backLink

@@ -17,15 +17,18 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
 import org.scalatestplus.play.PlaySpec
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.helpers.MessagesMatcher
 
 import scala.io.Source
 
 class MessagesSpec extends PlaySpec with MessagesMatcher {
+  override val excludedKeys: Set[String] = Set.empty
+
   private val messageKeysEnglish: List[String] = getMessageKeys("messages").toList
-  private val messageKeySetEnglish = messageKeysEnglish.toSet
+  private lazy val messageKeySetEnglish = messageKeysEnglish.toSet
 
   private val messageKeysWelsh: List[String] = getMessageKeys("messages.cy").toList
-  private val messageKeySetWelsh = messageKeysWelsh.toSet
+  private lazy val messageKeySetWelsh = messageKeysWelsh.toSet
 
   "Messages present in Welsh (conf/messages.cy)" should {
     "also have an English translation (conf/messages)" in {
@@ -34,6 +37,10 @@ class MessagesSpec extends PlaySpec with MessagesMatcher {
 
     "not contain duplicate keys" in {
       messageKeysWelsh must containUniqueKeys
+    }
+
+    "contain only permitted characters" in {
+      messageKeysWelsh must containOnlyPermittedCharacters
     }
   }
 
@@ -44,6 +51,10 @@ class MessagesSpec extends PlaySpec with MessagesMatcher {
 
     "not contain duplicate keys" in {
       messageKeysEnglish must containUniqueKeys
+    }
+
+    "contain only permitted characters" in {
+      messageKeysEnglish must containOnlyPermittedCharacters
     }
   }
 

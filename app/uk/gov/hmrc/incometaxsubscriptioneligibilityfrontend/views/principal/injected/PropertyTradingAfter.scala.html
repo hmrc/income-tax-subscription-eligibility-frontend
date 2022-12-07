@@ -34,24 +34,24 @@
 @(propertyTradingBeforeDateForm: Form[YesNo], postAction: Call, startDateLimit: String, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @inputContent = {
-        <p class="govuk-heading-s">@messages("property_trading_after.line1")</p>
+        <p class="govuk-heading-s">@messages("property-trading-after.line1")</p>
             <ul class="govuk-list govuk-list--bullet">
-                <li>@messages("property_trading_after.line2")</li>
-                <li>@messages("property_trading_after.line3")</li>
-                <li>@messages("property_trading_after.line4")</li>
+                <li>@messages("property-trading-after.line2")</li>
+                <li>@messages("property-trading-after.line3")</li>
+                <li>@messages("property-trading-after.line4")</li>
             </ul>
-        <p class="govuk-heading-s">@messages("property_trading_after.line5")</p>
+        <p class="govuk-heading-s">@messages("property-trading-after.line5")</p>
             <ul class="govuk-list govuk-list--bullet">
-                <li>@messages("property_trading_after.line6")</li>
-                <li>@messages("property_trading_after.line7")</li>
+                <li>@messages("property-trading-after.line6")</li>
+                <li>@messages("property-trading-after.line7")</li>
             </ul>
 }
 
-@mainTemplate(title = messages("property_trading_after.title", startDateLimit), optForm = Some(propertyTradingBeforeDateForm), backLink = Some(backUrl)) {
+@mainTemplate(title = messages("property-trading-after.title", startDateLimit), optForm = Some(propertyTradingBeforeDateForm), backLink = Some(backUrl)) {
 
     @hmrcPageHeading( PageHeading(
-        text = messages("property_trading_after.title", startDateLimit),
-        section = Some(messages("property_trading_after.caption")),
+        text = messages("property-trading-after.title", startDateLimit),
+        section = Some(messages("property-trading-after.caption")),
     ))
 
     @inputContent
@@ -65,7 +65,7 @@
                 radioItems = Seq(
                     RadioItem(value = Some(option_yes), content = Text(messages("base.yes"))),
                     RadioItem(value = Some(option_no), content = Text(messages("base.no")))),
-                legend = messages("property_trading_after.title", startDateLimit))
+                legend = messages("property-trading-after.title", startDateLimit))
 
             @continueButton()
         }

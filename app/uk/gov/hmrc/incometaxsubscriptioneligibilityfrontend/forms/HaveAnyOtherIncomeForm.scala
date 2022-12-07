@@ -29,7 +29,7 @@ object HaveAnyOtherIncomeForm {
 
   val haveAnyOtherIncomeForm: Form[YesNo] = Form(
     single(
-      fieldName -> of(yesNoMapping("have_any_other_income.error.summary"))
+      fieldName -> of(yesNoMapping("have-any-other-income.error.summary"))
     )
   )
 }

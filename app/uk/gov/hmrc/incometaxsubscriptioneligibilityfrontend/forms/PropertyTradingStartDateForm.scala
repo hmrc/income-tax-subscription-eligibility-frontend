@@ -29,7 +29,7 @@ object PropertyTradingStartDateForm {
 
   def propertyTradingStartDateForm(startDate: String): Form[YesNo] = Form(
     single(
-      fieldName -> of(yesNoMapping(s"property_trading_after.error", Seq(startDate)))
+      fieldName -> of(yesNoMapping(s"property-trading-after.error", Seq(startDate)))
     )
   )
 }

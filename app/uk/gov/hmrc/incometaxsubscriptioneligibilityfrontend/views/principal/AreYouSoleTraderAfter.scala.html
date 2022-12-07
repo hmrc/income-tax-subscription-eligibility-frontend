@@ -37,17 +37,17 @@
 @inputContent = {
     <p class="govuk-body">
         @Html(messages(
-        key = "are_you_sole_trader_after.para",
-        args = hmrcNewTabLinkHelper(NewTabLinkHelper(messages("are_you_sole_trader_after.para_link"), Some(appConfig.workingForYourselfUrl)))
+        key = "are-you-sole-trader-after.para",
+        args = hmrcNewTabLinkHelper(NewTabLinkHelper(messages("are-you-sole-trader-after.para-link"), Some(appConfig.workingForYourselfUrl)))
         ))
     </p>
 }
 
-@mainTemplate(title = messages("are_you_sole_trader_after.title", startDateLimit), optForm = Some(areYouSoleTraderAfterForm), backLink = Some(backUrl)) {
+@mainTemplate(title = messages("are-you-sole-trader-after.title", startDateLimit), optForm = Some(areYouSoleTraderAfterForm), backLink = Some(backUrl)) {
 
     @hmrcPageHeading( PageHeading(
-        text = messages("are_you_sole_trader_after.title", startDateLimit),
-        section = Some(messages("are_you_sole_trader_after.caption")),
+        text = messages("are-you-sole-trader-after.title", startDateLimit),
+        section = Some(messages("are-you-sole-trader-after.caption")),
     ))
 
 @inputContent
@@ -55,7 +55,7 @@
 
         @radioHelper(
             field = areYouSoleTraderAfterForm(fieldName),
-            legend = messages("are_you_sole_trader_after.heading", startDateLimit),
+            legend = messages("are-you-sole-trader-after.heading", startDateLimit),
             isPageHeading = false,
                 radioItems = Seq(
                     RadioItem(

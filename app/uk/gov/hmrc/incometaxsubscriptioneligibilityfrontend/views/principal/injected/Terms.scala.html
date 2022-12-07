@@ -49,7 +49,7 @@
         @Html(messages(
           "terms.bullet6",
           hmrcNewTabLinkHelper(NewTabLinkHelper(
-            text = messages("terms.bullet6_link"),
+            text = messages("terms.bullet6-link"),
             href = Some(appConfig.qualifyingIncomeUrl)
           ))
         ))
@@ -59,7 +59,7 @@
     <p class="govuk-body govuk-!-margin-bottom-8">@messages("terms.paragraph2")</p>
 
     @form(action = postAction) {
-        @continueButton(alternateText = Some(messages("base.accept_and_continue")))
+        @continueButton(alternateText = Some(messages("base.accept-and-continue")))
     }
 
 }
