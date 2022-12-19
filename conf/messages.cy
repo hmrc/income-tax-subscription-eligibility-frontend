@@ -6,6 +6,7 @@ base.no                                                         = Na
 base.govuk                                                      = GOV.UK
 base.error-heading                                              = Mae problem wedi codi
 base.accept-and-continue                                        = Derbyn ac yn eich blaen
+base.update                                                     = Diweddaru
 
 ## Service name
 principal-service-name.title                                    = Defnyddio meddalwedd i anfon diweddariadau Treth Incwm
