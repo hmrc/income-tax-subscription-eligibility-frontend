@@ -166,17 +166,24 @@ agent.signing-up.how-to-sign-up.confirm.para                    = You’ll get c
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud
-agent.terms.line1                                               = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y canlynol:
+agent.terms.paragraph1                                          = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y canlynol:
 agent.terms.bullet1                                             = defnyddio meddalwedd sy’n cydweddu i gofnodi’ch incwm a’ch treuliau
 agent.terms.bullet2                                             = anfon diweddariadau chwarterol o ddechrau eich cyfnod cyfrifyddu
 agent.terms.bullet3                                             = cyflwyno’ch datganiad terfynol erbyn 31 Ionawr yn dilyn eich blwyddyn dreth gyfredol
 agent.terms.bullet4                                             = rhoi gwybod i CThEM os ydych yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
-agent.terms.line2                                               = Gallwch roi’r gorau i ddefnyddio’r cynllun peilot hwn ar unrhyw adeg
-agent.terms.paragraph1                                          = Gallwch ddewis rhoi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar unrhyw adeg hyd at 6 Ebrill 2024. Does dim rhaid i chi roi gwybod i ni, a gallwch anwybyddu unrhyw negeseuon diogel oddi wrth y gwasanaeth. Fodd bynnag, mae’n rhaid i chi:
+agent.terms.subheading                                          = Gallwch roi’r gorau i ddefnyddio’r cynllun peilot hwn ar unrhyw adeg
+agent.terms.paragraph2                                          = Gallwch ddewis rhoi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar unrhyw adeg hyd at 6 Ebrill 2024. Does dim rhaid i chi roi gwybod i ni, a gallwch anwybyddu unrhyw negeseuon diogel oddi wrth y gwasanaeth. Fodd bynnag, mae’n rhaid i chi:
+agent.terms.paragraph3                                          =
 agent.terms.bullet5                                             = cyflwyno’ch Hunanasesiad erbyn 31 Ionawr yn dilyn diwedd y flwyddyn dreth, fel arfer
-agent.terms.bullet6                                             = defnyddio’r gwasanaeth hwn os yw cyfanswm eich {0} dros £10,000 o 6 Ebrill 2024 ymlaen
-agent.terms.line3                                               = Gallwch roi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar ôl i’r cynllun peilot ddod i ben ar 5 Ebrill 2024, os yw’ch incwm cymwys yn £10,000 neu’n llai.
-agent.terms.bullet6-link                                        = incwm cymwys
+agent.terms.bullet6                                             =
+agent.terms.bullet7                                             = defnyddio’r gwasanaeth hwn os yw cyfanswm eich {0} dros £10,000 o 6 Ebrill 2024 ymlaen
+agent.terms.paragraph4                                          =
+agent.terms.bullet8                                             =
+agent.terms.bullet9                                             =
+agent.terms.bullet10                                            =
+agent.terms.paragraph5                                          =
+agent.terms.qualifying-income-link                              = incwm cymwys
+agent.terms.sa-tax-return-link                                  =
 
 ## Title pattern
 principle-title-pattern.service-name.gov-uk                     = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
