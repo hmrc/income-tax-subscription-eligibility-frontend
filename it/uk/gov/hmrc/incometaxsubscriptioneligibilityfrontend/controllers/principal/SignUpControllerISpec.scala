@@ -44,7 +44,7 @@ class SignUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "have a view with the correct continue button" in {
       content.getElementsByClass("govuk-button").text mustBe commonMessages.continue
-      content.getElementsByClass("govuk-button").attr("href") mustBe routes.TermsController.show.url
+      content.getElementsByClass("govuk-button").attr("href") mustBe routes.WhatYouNeedToDoController.show.url
     }
 
     "have a view with the correct back link" in {

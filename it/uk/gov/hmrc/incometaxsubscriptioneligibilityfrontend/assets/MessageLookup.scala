@@ -103,19 +103,20 @@ object MessageLookup {
     val sendSelfAssessmentHref = "https://www.gov.uk/self-assessment-tax-returns/sending-return"
   }
 
-  object Terms {
+  object WhatYouNeedToDo {
     val heading: String = "What you need to do"
     val title = s"$heading$suffix"
-    val line1 = "By taking part in this pilot, you agree that you will:"
-    val bullet1 = "use compatible software to record income and expenses"
-    val bullet2 = "send quarterly updates from the start of your accounting period"
-    val bullet3 = "submit your final declaration by 31 January following your current tax year"
-    val bullet4 = "tell HMRC if you stop trading or start a new business"
-    val line2 = "You can leave this pilot at any time."
-    val paragraph1 = "You can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2024. You do not have to let us know and you can ignore any secure messages from the service. But you must:"
-    val bullet5 = "file your Self Assessment by 31 January following the end of the tax year as normal"
-    val bullet6 = "use this service if your total qualifying income (opens in new tab) is above £10,000 from 6 April 2024"
-    val paragraph2 = "You can stop using Making Tax Digital for Income Tax after the pilot ends on 5 April 2024, if your qualifying income is £10,000 or less."
+    val paraOne = "You can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2026. You do not have to let us know and you can ignore any secure message from the service. But you must file your Self Assessment tax return at the end of the year as normal."
+    val yearOnePara = "You must meet the Making Tax Digital for Income Tax requirements for 6 April 2026, if all of the following apply:"
+    val yearOneBulletOneLinkText = "find out more about registering and sending a Self Assessment tax return (opens in new tab)"
+    val yearOneBulletOne = s"you are registered for Self Assessment - $yearOneBulletOneLinkText"
+    val yearOneBulletTwo = "you get income from self-employment or property, or both"
+    val yearOneBulletThree = "your total qualifying income is more than £50,000"
+    val yearTwoPara = "You must meet the Making Tax Digital for Income Tax requirements for 6 April 2027, if all of the following apply:"
+    val yearTwoBulletOne = "you are registered for Self Assessment"
+    val yearTwoBulletTwo = "you get income from self-employment or property, or both"
+    val yearTwoBulletThree = "your total qualifying income is more than £30,000"
+    val paraTwo = "You can stop using Making Tax Digital for Income Tax when the pilot ends on 5 April 2026 if your income is less than £50,000."
   }
 
  object IndividualSignUpTerms {
