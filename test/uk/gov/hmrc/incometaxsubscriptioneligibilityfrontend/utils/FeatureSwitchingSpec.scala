@@ -49,9 +49,9 @@ class FeatureSwitchingSpec extends PlaySpec with MockitoSugar with FeatureSwitch
   }
 
   "List of feature switches" should {
-    "be one" in {
+    "be zero" in {
       // This test will fail when you add a switch, at which point you should uncomment the tests below
-      FeatureSwitch.switches.size mustBe (1)
+      FeatureSwitch.switches.size mustBe (0)
     }
   }
 

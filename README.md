@@ -41,7 +41,6 @@ to submit their Self Assessment returns using software.
 
 * Login via: [http://localhost:9949/auth-login-stub/gg-sign-in](http://localhost:9949/auth-login-stub/gg-sign-in)
 * Entry page: [http://localhost:9589/report-quarterly/income-and-expenses/sign-up/eligibility](http://localhost:9589/report-quarterly/income-and-expenses/sign-up/eligibility)
-* Feature switches: [http://localhost:9589/report-quarterly/income-and-expenses/sign-up/eligibility/test-only/feature-switch](http://localhost:9589/report-quarterly/income-and-expenses/sign-up/eligibility/test-only/feature-switch)
 
 ### Staging
 
@@ -49,7 +48,6 @@ to submit their Self Assessment returns using software.
 
 * Login via: [https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in](https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in)
 * Entry page : [https://www.staging.tax.service.gov.uk/report-quarterly/income-and-expenses/sign-up/eligibility](https://www.staging.tax.service.gov.uk/report-quarterly/income-and-expenses/sign-up/eligibility)
-* Feature switches: [https://www.staging.tax.service.gov.uk/report-quarterly/income-and-expenses/sign-up/test-only/feature-switch](https://www.staging.tax.service.gov.uk/report-quarterly/income-and-expenses/sign-up/test-only/feature-switch)
 
 ## How to test
 
