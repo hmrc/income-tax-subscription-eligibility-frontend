@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ sealed trait FeatureSwitch {
 object FeatureSwitch {
   val prefix = "feature-switch"
 
-  val switches: Set[FeatureSwitch] = Set.empty
+  val switches: Set[FeatureSwitch] = Set {
+    SignUpEligibilityInterrupt
+  }
 
   def apply(str: String): FeatureSwitch =
     switches find (_.name == str) match {
@@ -34,4 +36,8 @@ object FeatureSwitch {
 
   def get(str: String): Option[FeatureSwitch] = switches find (_.name == str)
 
+  case object SignUpEligibilityInterrupt extends FeatureSwitch {
+    override val name: String = s"$prefix.sign-up-eligibility-interrupt-page"
+    override val displayText: String = "Sign up eligibility interrupt page"
+  }
 }
