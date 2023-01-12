@@ -118,6 +118,11 @@ object MessageLookup {
   }
 
 
+  object AgentSignupTerms {
+    val heading = "Signing your clients up for Making Tax Digit for Income Tax"
+  }
+
+
   object AgentTerms {
     val heading: String = "What you need to do"
     val line1 = "By taking part in this pilot you agree that you will:"

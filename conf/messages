@@ -108,6 +108,9 @@ sign-up.title                                                   = Continue your 
 sign-up.heading                                                 = Continue your sign up to the pilot
 sign-up.paragraph                                               = Based on your answers, you can continue to sign up to the pilot for Making Tax Digital for Income Tax.
 
+## Agent Signing Up Page ##
+agent.signing-up.heading                                        = Signing your clients up for Making Tax Digit for Income Tax
+
 ## Terms and Conditions Page ##
 agent.terms.heading                                             = What you need to do
 agent.terms.line1                                               = By taking part in this pilot you agree that you will:

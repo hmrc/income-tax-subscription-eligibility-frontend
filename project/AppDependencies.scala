@@ -4,7 +4,6 @@ import sbt._
 
 object AppDependencies {
 
-  private val playLanguageVersion = "5.3.0-play-28"
   private val bootstrapVersion = "7.7.0"
   private val playHmrcFrontendVersion = "3.31.0-play-28"
   private val jacksonModuleVersion     = "2.13.2"
@@ -12,7 +11,6 @@ object AppDependencies {
 
   val compile = Seq(
     "uk.gov.hmrc" %% "bootstrap-frontend-play-28" % bootstrapVersion,
-    "uk.gov.hmrc" %% "play-language" % playLanguageVersion,
     "uk.gov.hmrc" %% "play-frontend-hmrc" % playHmrcFrontendVersion
   )
 
