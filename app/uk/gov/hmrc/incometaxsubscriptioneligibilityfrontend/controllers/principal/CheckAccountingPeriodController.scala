@@ -24,14 +24,16 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.Eligib
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.AccountingPeriodCheck
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.AccountingPeriodCheck
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
-class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: AccountingPeriodCheck, auditService: AuditingService, mcc: MessagesControllerComponents)
+class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: AccountingPeriodCheck,
+                                                auditService: AuditingService,
+                                                mcc: MessagesControllerComponents)
                                                (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   def show: Action[AnyContent] = Action.async {
@@ -66,6 +68,6 @@ class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: Accountin
   }
 
   def backUrl: String = {
-      routes.PropertyTradingStartAfterController.show.url
+    routes.PropertyTradingStartAfterController.show.url
   }
 }

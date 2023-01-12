@@ -36,21 +36,18 @@ sign-up.heading                                                 = Yn eich blaen 
 sign-up.paragraph                                               = Ar sail eich atebion, gallwch fynd yn eich blaen i gofrestru ar gyfer y cynllun peilot Troi Treth yn Ddigidol ar gyfer Treth Incwm.
 
 ## What You Need To Do ##
-terms.title                                                     = Yr hyn y mae angen i chi ei wneud
-terms.heading                                                   = Yr hyn y mae angen i chi ei wneud
-terms.line1                                                     = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y canlynol:
-terms.bullet1                                                   = defnyddio meddalwedd sy’n cydweddu i gofnodi’ch incwm a’ch treuliau
-terms.bullet2                                                   = anfon diweddariadau chwarterol o ddechrau eich cyfnod cyfrifyddu
-terms.bullet3                                                   = cyflwyno’ch datganiad terfynol erbyn 31 Ionawr yn dilyn eich blwyddyn dreth gyfredol
-terms.bullet4                                                   = rhoi gwybod i CThEM os ydych yn rhoi’r gorau i fasnachu neu’n dechrau busnes newydd
-terms.line2                                                     = Gallwch roi’r gorau i ddefnyddio’r cynllun peilot hwn ar unrhyw adeg.
-terms.paragraph1                                                = Gallwch ddewis rhoi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar unrhyw adeg hyd at 6 Ebrill 2024. Does dim rhaid i chi roi gwybod i ni, a gallwch anwybyddu unrhyw negeseuon diogel oddi wrth y gwasanaeth. Fodd bynnag, mae’n rhaid i chi:
-terms.bullet5                                                   = cyflwyno’ch Hunanasesiad erbyn 31 Ionawr yn dilyn diwedd y flwyddyn dreth, fel arfer
-terms.bullet6                                                   = defnyddio’r gwasanaeth hwn os yw cyfanswm eich {0} dros £10,000 o 6 Ebrill 2024 ymlaen
-terms.bullet6-link                                              = incwm cymwys
-terms.paragraph2                                                = Gallwch roi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar ôl i’r cynllun peilot ddod i ben ar 5 Ebrill 2024, os yw’ch incwm cymwys yn £10,000 neu’n llai.
-
-## Get Software
+what-you-need-to-do.heading                                     = Yr hyn y mae angen i chi ei wneud
+what-you-need-to-do.para-1                                      = You can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2026. You do not have to let us know and you can ignore any secure message from the service. But you must file your Self Assessment tax return at the end of the year as normal.
+what-you-need-to-do.2026.para                                   = You must meet the Making Tax Digital for Income Tax requirements for 6 April 2026, if all of the following apply:
+what-you-need-to-do.2026.bullet-1                               = you are registered for Self Assessment - {0}
+what-you-need-to-do.2026.bullet-1.link-text                     = find out more about registering and sending a Self Assessment tax return
+what-you-need-to-do.2026.bullet-2                               = you get income from self-employment or property, or both
+what-you-need-to-do.2026.bullet-3                               = your total qualifying income is more than £50,000
+what-you-need-to-do.2027.para                                   = You must meet the Making Tax Digital for Income Tax requirements for 6 April 2027, if all of the following apply:
+what-you-need-to-do.2027.bullet-1                               = you are registered for Self Assessment
+what-you-need-to-do.2027.bullet-2                               = you get income from self-employment or property, or both
+what-you-need-to-do.2027.bullet-3                               = your total qualifying income is more than £30,000
+what-you-need-to-do.para-2                                      = You can stop using Making Tax Digital for Income Tax when the pilot ends on 5 April 2026 if your income is less than £50,000.
 
 ## Property Trading Before Date page ##
 property-trading-after.title                                    = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
@@ -64,10 +61,6 @@ property-trading-after.line5                                    = Nid yw hyn yn 
 property-trading-after.line6                                    = ystafell
 property-trading-after.line7                                    = rhan o’ch eiddo
 property-trading-after.error                                    = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}.
-
-## "Have you got software" page messages ##
-
-## Check for Compatible Software
 
 ## Do you have any other income page
 have-any-other-income.title                                     = Ar wahân i hunangyflogaeth neu eiddo, a oes gennych unrhyw ffynonellau eraill o incwm?

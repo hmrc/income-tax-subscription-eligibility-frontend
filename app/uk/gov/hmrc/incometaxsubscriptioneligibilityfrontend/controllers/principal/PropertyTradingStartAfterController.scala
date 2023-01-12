@@ -25,7 +25,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.Eligib
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.PropertyTradingAfter
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.PropertyTradingAfter
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.play.language.LanguageUtils
 
@@ -73,6 +73,6 @@ class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: Proper
   }
 
   def backUrl: String = {
-      routes.SoleTraderStartAfterController.show.url
+    routes.SoleTraderStartAfterController.show.url
   }
 }

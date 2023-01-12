@@ -19,7 +19,7 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.SignUp
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.SignUp
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.Inject
@@ -33,7 +33,7 @@ class SignUpController @Inject()(
       Future.successful(
         Ok(signUp(
           backUrl = routes.CheckAccountingPeriodController.show.url,
-          continueUrl = routes.TermsController.show.url
+          continueUrl = routes.WhatYouNeedToDoController.show.url
         ))
       )
   }
