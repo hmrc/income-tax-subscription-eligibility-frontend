@@ -35,6 +35,7 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
   private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up"
   private val incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/income-sources"
 
+
   private val contactBaseUrl = loadConfig("contact-frontend.host")
   protected lazy val contactHost: String = config.getString("contact-frontend.host")
   lazy val contactFormServiceIdentifier = "MTDIT"
@@ -42,6 +43,7 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
   private val assetsUrl = loadConfig("assets.url")
   val incometaxSubscriptionFrontendFirstPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendFirstPageUrl}"
   val incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl = s"${incometaxSubscriptionFrontendHost}${incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl}"
+
 
   val serviceIdentifier = "MTDIT"
 
