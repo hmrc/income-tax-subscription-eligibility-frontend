@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,13 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
-import org.mockito.Mockito.reset
+import org.mockito.Mockito.{reset, when}
 import org.scalatest.BeforeAndAfterEach
 import org.scalatestplus.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
 import play.api.Configuration
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitch, FeatureSwitching}
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 
@@ -50,37 +51,34 @@ class FeatureSwitchingSpec extends PlaySpec with MockitoSugar with FeatureSwitch
 
   "List of feature switches" should {
     "be one" in {
-      // This test will fail when you add a switch, at which point you should uncomment the tests below
       FeatureSwitch.switches.size mustBe (1)
     }
   }
 
 
-// Current feature switch list is: []
-// As a result we can't simply write tests as the trait is sealed.  So, commenting as we will want this code later.
-//  "RemoveCovidPages" should {
-//    "return true if RemoveCovidPages feature switch is enabled in sys.props" in {
-//      enable(RemoveCovidPages)
-//      isEnabled(RemoveCovidPages) mustBe true
-//    }
-//    "return false if RemoveCovidPages feature switch is disabled in sys.props" in {
-//      disable(RemoveCovidPages)
-//      isEnabled(RemoveCovidPages) mustBe false
-//    }
-//
-//    "return false if RemoveCovidPages feature switch does not exist" in {
-//      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(None)
-//      isEnabled(RemoveCovidPages) mustBe false
-//    }
-//
-//    "return false if RemoveCovidPages feature switch is not in sys.props but is set to 'off' in config" in {
-//      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(Some(FEATURE_SWITCH_OFF))
-//      isEnabled(RemoveCovidPages) mustBe false
-//    }
-//
-//    "return true if RemoveCovidPages feature switch is not in sys.props but is set to 'on' in config" in {
-//      when(mockConfig.getOptional[String]("feature-switch.remove-covid-eligibility-and-kickout-page")).thenReturn(Some(FEATURE_SWITCH_ON))
-//      isEnabled(RemoveCovidPages) mustBe true
-//    }
-//  }
+  "SignUpEligibilityInterrupt" should {
+    "return true if SignUpEligibilityInterrupt feature switch is enabled in sys.props" in {
+      enable(SignUpEligibilityInterrupt)
+      isEnabled(SignUpEligibilityInterrupt) mustBe true
+    }
+    "return false if SignUpEligibilityInterrupt feature switch is disabled in sys.props" in {
+      disable(SignUpEligibilityInterrupt)
+      isEnabled(SignUpEligibilityInterrupt) mustBe false
+    }
+
+    "return false if SignUpEligibilityInterrupt feature switch does not exist" in {
+      when(mockConfig.getOptional[String]("feature-switch.sign-up-eligibility-interrupt-page")).thenReturn(None)
+      isEnabled(SignUpEligibilityInterrupt) mustBe false
+    }
+
+    "return false if SignUpEligibilityInterrupt feature switch is not in sys.props but is set to 'off' in config" in {
+      when(mockConfig.getOptional[String]("feature-switch.sign-up-eligibility-interrupt-page")).thenReturn(Some(FEATURE_SWITCH_OFF))
+      isEnabled(SignUpEligibilityInterrupt) mustBe false
+    }
+
+    "return true if SignUpEligibilityInterrupt feature switch is not in sys.props but is set to 'on' in config" in {
+      when(mockConfig.getOptional[String]("feature-switch.sign-up-eligibility-interrupt-page")).thenReturn(Some(FEATURE_SWITCH_ON))
+      isEnabled(SignUpEligibilityInterrupt) mustBe true
+    }
+  }
 }
