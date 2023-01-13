@@ -119,6 +119,12 @@ individual.signing-up.heading                                        = Signing f
 
 ## Agent Signing Up Page ##
 agent.signing-up.heading                                        = Signing your clients up for Making Tax Digital for Income Tax ... but in Welsh
+agent.signing-up.header-section.para1                           = Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords. ... but in Welsh
+agent.signing-up.header-section.para2                           = You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future. ... but in Welsh
+agent.signing-up.header-section.para3                           = You may be able to sign your client up for Making Tax Digital for Income Tax if they: ... but in Welsh
+agent.signing-up.header-section.bullet1                         = are a sole trader ... but in Welsh
+agent.signing-up.header-section.bullet2                         = receive income from property ... but in Welsh
+agent.signing-up.header-section.bullet3                         = earn more than £10,000 a year from their sole trader or property business ... but in Welsh
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud

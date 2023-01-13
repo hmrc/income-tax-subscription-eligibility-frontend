@@ -24,7 +24,7 @@ object MessageLookup {
     val heading: String = "The way you complete Self Assessment is changing"
     val line1 = "This is a pilot to sign up for a new way for sole trader businesses (self-employed) and landlords to send income tax updates and returns to HMRC."
     val line2 = "You will need to use compatible software to:"
-    val line3 = "This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. Find software that’s compatible with Making Tax Digital for Income Tax (opens in a new tab)"
+    val line3 = "This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. Find software that’s compatible with Making Tax Digital for Income Tax (opens in new tab)"
     val bulletCompatibleSoftware1 = "keep your business records up to date"
     val bulletCompatibleSoftware2 = "send updates about your business records to HMRC every quarter"
     val bulletCompatibleSoftware3 = "file your Self Assessment tax return"
@@ -82,7 +82,7 @@ object MessageLookup {
 
     def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date."
 
-    val hintMessage = "If you’re a sole trader, you run your own business as an individual and are self-employed (opens in a new tab)"
+    val hintMessage = "If you’re a sole trader, you run your own business as an individual and are self-employed (opens in new tab)"
   }
 
   object CannotSignUp {
@@ -113,7 +113,7 @@ object MessageLookup {
     val line2 = "You can leave this pilot at any time."
     val paragraph1 = "You can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2024. You do not have to let us know and you can ignore any secure messages from the service. But you must:"
     val bullet5 = "file your Self Assessment by 31 January following the end of the tax year as normal"
-    val bullet6 = "use this service if your total qualifying income (opens in a new tab) is above £10,000 from 6 April 2024"
+    val bullet6 = "use this service if your total qualifying income (opens in new tab) is above £10,000 from 6 April 2024"
     val paragraph2 = "You can stop using Making Tax Digital for Income Tax after the pilot ends on 5 April 2024, if your qualifying income is £10,000 or less."
   }
 
@@ -123,6 +123,12 @@ object MessageLookup {
 
   object AgentSignupTerms {
     val heading = "Signing your clients up for Making Tax Digital for Income Tax"
+    val para1 = """Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."""
+    val para2 = """You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."""
+    val para3 = """You may be able to sign your client up for Making Tax Digital for Income Tax if they:"""
+    val bullet1 = """are a sole trader"""
+    val bullet2 = """receive income from property"""
+    val bullet3 = """earn more than £10,000 a year from their sole trader or property business"""
   }
 
 
@@ -137,7 +143,7 @@ object MessageLookup {
     val paragraph1 = "Your client can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2024. " +
                       "You do not have to let us know and they can ignore any secure messages from the service. But they must:"
     val bullet5 = "file their Self Assessment by 31 January following the end of the tax year as normal"
-    val bullet6 = "use this service if their total qualifying income (opens in a new tab) is above £10,000 from 6 April 2024"
+    val bullet6 = "use this service if their total qualifying income (opens in new tab) is above £10,000 from 6 April 2024"
     val line3 = "They can stop using Making Tax Digital for Income Tax after the pilot ends on 5 April 2024, if their qualifying income is £10,000 or less."
 
   }

@@ -31,6 +31,6 @@
 @govukButton(Button(
   content = Text(alternateText.getOrElse(buttonContent)),
   attributes = Map("id" -> "continue-button"),
-  preventDoubleClick = true,
+  preventDoubleClick = Some(true),
   href = href
 ))
