@@ -8,6 +8,11 @@ GET        /assets/*file                                                        
 ## Index route
 GET         /                                 uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.IndexController.index
 
+## Signing Up route
+GET         /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SigningUpController.show
+POST        /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SigningUpController.submit
+
+
 ## Have you got other income
 GET         /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.show
 POST        /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.submit

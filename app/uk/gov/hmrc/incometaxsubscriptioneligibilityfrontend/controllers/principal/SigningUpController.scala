@@ -17,26 +17,25 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import play.api.i18n.I18nSupport
-import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
+import play.api.mvc._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.routes
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.SigningUp
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 
 import javax.inject.{Inject, Singleton}
 
 @Singleton
-class IndexController @Inject()(
-                                 val appConfig: AppConfig,
-                                 mcc: MessagesControllerComponents) extends FrontendController(mcc) with I18nSupport with FeatureSwitching{
+class SigningUpController @Inject()(mcc: MessagesControllerComponents, signingUp: SigningUp)
+                                   (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
-  val index: Action[AnyContent] = Action { _ =>
-    if (isEnabled(SignUpEligibilityInterrupt)) {
-      Redirect(routes.SigningUpController.show)
-    } else {
-      Redirect(routes.OverviewController.show)
-    }
+  val show: Action[AnyContent] = Action { implicit request =>
+    Ok(signingUp(postAction = routes.SigningUpController.submit))
+  }
+
+  val submit: Action[AnyContent] = Action { _ =>
+    Redirect(routes.HaveAnyOtherIncomeController.show)
   }
 
 }

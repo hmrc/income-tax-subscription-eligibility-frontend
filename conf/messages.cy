@@ -114,8 +114,11 @@ cannot-sign-up.other.bullet3                                    = nid yw’ch cy
 cannot-sign-up.send-self-assessment                             = Bydd angen i chi anfon {0} yn lle hynny, ac efallai y bydd modd i chi gofrestru yn y dyfodol.
 cannot-sign-up.send-self-assessment.link                        = Ffurflen Dreth Hunanasesiad
 
+## Individual Signing Up Page ##
+individual.signing-up.heading                                        = Signing for Making Tax Digital for Income Tax ... but in Welsh
+
 ## Agent Signing Up Page ##
-agent.signing-up.heading                                        = Signing your clients up for Making Tax Digit for Income Tax ... but in Welsh
+agent.signing-up.heading                                        = Signing your clients up for Making Tax Digital for Income Tax ... but in Welsh
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud

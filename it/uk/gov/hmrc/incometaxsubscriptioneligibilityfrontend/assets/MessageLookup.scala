@@ -117,9 +117,12 @@ object MessageLookup {
     val paragraph2 = "You can stop using Making Tax Digital for Income Tax after the pilot ends on 5 April 2024, if your qualifying income is £10,000 or less."
   }
 
+ object IndividualSignUpTerms {
+   val heading = "Signing for Making Tax Digital for Income Tax"
+ }
 
   object AgentSignupTerms {
-    val heading = "Signing your clients up for Making Tax Digit for Income Tax"
+    val heading = "Signing your clients up for Making Tax Digital for Income Tax"
   }
 
 
