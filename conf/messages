@@ -109,7 +109,10 @@ sign-up.heading                                                 = Continue your 
 sign-up.paragraph                                               = Based on your answers, you can continue to sign up to the pilot for Making Tax Digital for Income Tax.
 
 ## Individual Signing Up Page ##
-individual.signing-up.heading                                        = Signing for Making Tax Digital for Income Tax
+individual.signing-up.heading                                   = Signing up for Making Tax Digital for Income Tax
+individual.signing-up.subheading                                = How to sign up
+individual.signing-up.section1.heading                          = Check your eligibility
+individual.signing-up.section1.paragraph                        = Answer the questions to find out if you may be eligible to take part in the pilot.
 
 ## Agent Signing Up Page ##
 agent.signing-up.heading                                        = Signing your clients up for Making Tax Digital for Income Tax

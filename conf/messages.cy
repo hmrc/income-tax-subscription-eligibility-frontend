@@ -115,7 +115,10 @@ cannot-sign-up.send-self-assessment                             = Bydd angen i c
 cannot-sign-up.send-self-assessment.link                        = Ffurflen Dreth Hunanasesiad
 
 ## Individual Signing Up Page ##
-individual.signing-up.heading                                        = Signing for Making Tax Digital for Income Tax ... but in Welsh
+individual.signing-up.heading                                   = Signing up for Making Tax Digital for Income Tax ... but in Welsh
+individual.signing-up.subheading                                = How to sign up... but in Welsh
+individual.signing-up.section1.heading                          = Check your eligibility... but in Welsh
+individual.signing-up.section1.paragraph                        = Answer the questions to find out if you may be eligible to take part in the pilot... but in Welsh.
 
 ## Agent Signing Up Page ##
 agent.signing-up.heading                                        = Signing your clients up for Making Tax Digital for Income Tax ... but in Welsh
