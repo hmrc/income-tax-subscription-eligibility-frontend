@@ -38,23 +38,45 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "return a view with a title" in {
-      doc.title mustBe s"${messages.heading}$agentSuffix"
-    }
+    "return a view" which {
+      "has a title" in {
+        doc.title mustBe s"${messages.heading}$agentSuffix"
+      }
 
-    "return a view with a heading" in {
-      doc.getH1Element.text mustBe messages.heading
-    }
 
-    "return a view with an accept and continue button" in {
-      doc.select("button").last().text mustBe commonMessages.acceptAndContinue
-    }
+      "has a heading" in {
+        doc.getH1Element.text mustBe messages.heading
+      }
 
-    "have the correct form" in {
-      doc.getForm must have(
-        method("POST"),
-        action(routes.SigningUpController.submit.url)
-      )
+      "has main content" which {
+        val mainContent = doc.getElementById("main-content")
+        "has a first para" in {
+          mainContent.select("p").get(0).text mustBe messages.para1
+        }
+
+        "has a second para" in {
+          mainContent.select("p").get(1).text mustBe messages.para2
+        }
+
+        "has a third para" in {
+          mainContent.select("p").get(2).text mustBe messages.para3
+        }
+
+        "has a first bullet point" in {
+          mainContent.selectFirst("ul").select("li").get(0).text mustBe messages.bullet1
+        }
+      }
+
+      "has an accept and continue button" in {
+        doc.select("button").last().text mustBe commonMessages.acceptAndContinue
+      }
+
+      "has the correct form" in {
+        doc.getForm must have(
+          method("POST"),
+          action(routes.SigningUpController.submit.url)
+        )
+      }
     }
   }
 
