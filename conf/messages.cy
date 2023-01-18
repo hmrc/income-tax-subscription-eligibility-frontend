@@ -116,6 +116,14 @@ cannot-sign-up.send-self-assessment.link                        = Ffurflen Dreth
 
 ## Individual Signing Up Page ##
 individual.signing-up.heading                                   = Signing up for Making Tax Digital for Income Tax ... but in Welsh
+individual.signing-up.intro.para-1                              = Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords. ... but in Welsh
+individual.signing-up.intro.inset.para-1                        = Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, you will have to sign up if you earn: ... but in Welsh
+individual.signing-up.intro.inset.bullet-1                      = £50,000 or more for April 2026 ... but in Welsh
+individual.signing-up.intro.inset.bullet-2                      = £30,000 or more for April 2027 ... but in Welsh
+individual.signing-up.intro.inset.para-2                        = You can still choose to voluntarily sign up. ... but in Welsh
+individual.signing-up.intro.para-2                              = You may be able to sign up for Making Tax Digital for Income Tax if you: ... but in Welsh
+individual.signing-up.intro.bullet-1                            = are a sole trader ... but in Welsh
+individual.signing-up.intro.bullet-2                            = receive income from property ... but in Welsh
 individual.signing-up.subheading                                = How to sign up... but in Welsh
 individual.signing-up.section1.heading                          = Check your eligibility... but in Welsh
 individual.signing-up.section1.paragraph                        = Answer the questions to find out if you may be eligible to take part in the pilot... but in Welsh.
