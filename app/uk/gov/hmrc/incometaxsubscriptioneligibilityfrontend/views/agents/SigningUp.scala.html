@@ -31,7 +31,7 @@
 
 @mainTemplate(title = messages("agent.signing-up.heading"), backLink = None) {
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-9">@messages("agent.signing-up.heading")</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">@messages("agent.signing-up.heading")</h1>
 
     <p class="govuk-body">@messages("agent.signing-up.header-section.para1")</p>
     <p class="govuk-body govuk-inset-text">@messages("agent.signing-up.header-section.para2")</p>
@@ -42,8 +42,23 @@
         <li class="">@messages("agent.signing-up.header-section.bullet3")</li>
     </ul>
 
-    @form(action = postAction) {
-        @continueButton(alternateText = Some(messages("base.accept-and-continue")))
-    }
+    <h2 class="govuk-heading-l">@messages("agent.signing-up.how-to-sign-up.heading")</h2>
 
+    <div class="govuk-body">
+        <ol class="govuk-list govuk-list--number govuk-!-margin-2 govuk-list--bold-marker">
+            <li>
+                <h3 class="govuk-heading-s">@messages("agent.signing-up.how-to-sign-up.get-ready.heading")</h3>
+                <p>@messages("agent.signing-up.how-to-sign-up.get-ready.para")</p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"/>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">@messages("agent.signing-up.how-to-sign-up.check-eligibility.heading")</h3>
+                <p>@messages("agent.signing-up.how-to-sign-up.check-eligibility.para")</p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"/>
+            </li>
+            @form(action = postAction) {
+                @continueButton()
+            }
+        </ol>
+    </div>
 }

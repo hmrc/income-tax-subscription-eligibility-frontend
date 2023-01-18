@@ -14,3 +14,7 @@ body:not(.js-enabled) {
       display: none;
     }
 }
+
+.govuk-list--bold-marker > li::marker {
+  font-weight: bold;
+}
