@@ -187,7 +187,7 @@ trait ViewSpec extends Matchers {
           elem.text() == value,
           "paragraph",
           value,
-          elem.text()
+          "(exact value not found)"
         )
       }
     }
