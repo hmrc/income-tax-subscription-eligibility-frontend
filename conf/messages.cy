@@ -141,6 +141,8 @@ agent.signing-up.how-to-sign-up.get-ready.heading               = Get your clien
 agent.signing-up.how-to-sign-up.get-ready.para                  = Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up. ... but in Welsh
 agent.signing-up.how-to-sign-up.check-eligibility.heading       = Check their eligibility ... but in Welsh
 agent.signing-up.how-to-sign-up.check-eligibility.para          = Answer the survey to check if your client is eligible for the pilot. ... but in Welsh
+agent.signing-up.how-to-sign-up.get-client-information.heading  = Get your client’s information ready ... but in Welsh
+agent.signing-up.how-to-sign-up.get-client-information.para     = Make sure you’ve got the necessary information to sign up your client. This includes their name, National Insurance Number, date of birth and when their business started trading. ... but in Welsh
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud
