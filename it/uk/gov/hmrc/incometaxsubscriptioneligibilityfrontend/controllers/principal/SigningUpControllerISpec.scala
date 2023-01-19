@@ -21,9 +21,12 @@ import org.jsoup.nodes.{Document, Element}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => CommonMessages, IndividualSignUpTerms => Messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AccountingPeriodService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
+
+  private val accountingPeriodService = new AccountingPeriodService()
 
   private val path = "/signing-up"
   lazy val result: WSResponse = get(path)
@@ -101,6 +104,42 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
         "contains a paragraph" in {
           section1.selectHead("p").text mustBe Messages.SectionOne.paragraph
+        }
+      }
+
+      "has a section 2" that {
+        val section2 =
+          doc
+            .mainContent
+            .selectHead("ol")
+            .selectNth("li", 2)
+
+        "contains a header" in {
+          section2.selectHead("h3").text mustBe Messages.SectionTwo.heading
+        }
+
+        "contains paragraph 1" in {
+          section2.selectNth("p", 1).text mustBe Messages.SectionTwo.paragraph1
+        }
+
+        "contains paragraph 2" in {
+          section2.selectNth("p", 2).text mustBe Messages.SectionTwo.paragraph2
+        }
+
+        "contains bullet 1" in {
+          section2.selectNth("ul li", 1).text mustBe Messages.SectionTwo.bullet1(accountingPeriodService.currentTaxYear)
+        }
+
+        "contains bullet 2" in {
+          section2.selectNth("ul li", 2).text mustBe Messages.SectionTwo.bullet2(accountingPeriodService.nextTaxYear)
+        }
+
+        "contains inset text" in {
+          section2.selectHead(".govuk-inset-text").text mustBe Messages.SectionTwo.insetText
+        }
+
+        "contains paragraph 3" in {
+          section2.selectNth("p", 3).text mustBe Messages.SectionTwo.paragraph3
         }
       }
 
