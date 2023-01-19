@@ -43,7 +43,27 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view with a heading" in {
-      doc.getH1Element.text mustBe messages.heading
+      doc.mainContent.getH1Element.text mustBe messages.heading
+    }
+
+    "return a view with a subheading" in {
+      doc.mainContent.getH2Elements.text mustBe messages.subheading
+    }
+
+    "return a view with a section 1" that {
+      val section1 =
+        doc
+          .mainContent
+          .selectHead("ol")
+          .selectNth("li", 1)
+
+      "contains a header" in {
+        section1.selectHead("h3").text mustBe messages.section1Heading
+      }
+
+      "contains a paragraph" in {
+        section1.selectHead("p").text mustBe messages.section1Paragraph
+      }
     }
 
     "return a view with an accept and continue button" in {

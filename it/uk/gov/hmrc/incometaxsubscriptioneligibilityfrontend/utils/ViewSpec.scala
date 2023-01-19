@@ -66,6 +66,13 @@ trait ViewSpec extends Matchers {
       element.select(selector).asScala.headOption
     }
 
+    def selectNth(selector: String, nth: Int): Element = {
+      element.select(selector).asScala.lift(nth - 1) match {
+        case Some(element) => element
+        case None => fail(s"Could not retrieve $selector number $nth")
+      }
+    }
+
     def content: Element = element.selectFirst("article")
 
     def mainContent: Element = element.selectFirst("main")

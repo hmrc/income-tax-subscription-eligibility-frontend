@@ -118,7 +118,10 @@ object MessageLookup {
   }
 
  object IndividualSignUpTerms {
-   val heading = "Signing for Making Tax Digital for Income Tax"
+   val heading = "Signing up for Making Tax Digital for Income Tax"
+   val subheading = "How to sign up"
+   val section1Heading = "Check your eligibility"
+   val section1Paragraph= "Answer the questions to find out if you may be eligible to take part in the pilot."
  }
 
   object AgentSignupTerms {
