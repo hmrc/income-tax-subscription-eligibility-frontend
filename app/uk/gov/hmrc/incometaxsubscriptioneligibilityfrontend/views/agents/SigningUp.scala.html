@@ -17,7 +17,7 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.AgentMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
-
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
 @this(
         mainTemplate: AgentMainTemplate,
         form: FormWithCSRF,
@@ -59,6 +59,18 @@
             <li>
                 <h3 class="govuk-heading-s">@messages("agent.signing-up.how-to-sign-up.get-client-information.heading")</h3>
                 <p>@messages("agent.signing-up.how-to-sign-up.get-client-information.para")</p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"/>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">@messages("agent.signing-up.how-to-sign-up.confirm-client-details.heading")</h3>
+                <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para1")</p>
+                <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para2")</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet1", AccountingPeriodUtil.getCurrentTaxYearRange)</li>
+                    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet2", AccountingPeriodUtil.getNextTaxYearRange)</li>
+                </ul>
+                <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para3")</p>
+                <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para4")</p>
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"/>
             </li>
             @form(action = postAction) {
