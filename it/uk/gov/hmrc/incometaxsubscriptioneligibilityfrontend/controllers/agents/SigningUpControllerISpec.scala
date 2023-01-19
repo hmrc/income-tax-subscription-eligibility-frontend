@@ -44,31 +44,59 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
       }
 
 
-      "has a heading" in {
-        doc.getH1Element.text mustBe messages.heading
-      }
-
       "has main content" which {
         val mainContent = doc.getElementById("main-content")
-        "has a first para" in {
-          mainContent.select("p").get(0).text mustBe messages.para1
+        "has a heading section" which {
+          "has a heading" in {
+            mainContent.getH1Element.text mustBe messages.heading
+          }
+          "has a first para" in {
+            mainContent.select("p").get(0).text mustBe messages.para1
+          }
+
+          "has a second para" in {
+            mainContent.select("p").get(1).text mustBe messages.para2
+          }
+
+          "has a third para" in {
+            mainContent.select("p").get(2).text mustBe messages.para3
+          }
+
+          "has a first bullet point" in {
+            mainContent.selectFirst("ul").select("li").get(0).text mustBe messages.bullet1
+          }
+          "has a second bullet point" in {
+            mainContent.selectFirst("ul").select("li").get(1).text mustBe messages.bullet2
+          }
+          "has a third bullet point" in {
+            mainContent.selectFirst("ul").select("li").get(2).text mustBe messages.bullet3
+          }
         }
 
-        "has a second para" in {
-          mainContent.select("p").get(1).text mustBe messages.para2
+        "has a how to sign up section" which {
+          "has a second heading" in {
+            mainContent.getH2Elements.get(0).text mustBe messages.heading2
+          }
+
+          "has a third heading" in {
+            mainContent.select("h3").get(0).text mustBe messages.heading3
+          }
+
+          "has a fourth heading" in {
+            mainContent.select("h3").get(1).text mustBe messages.heading4
+          }
+          "has a first para" in {
+            mainContent.select("p").get(3).text mustBe messages.para4
+          }
+          "has a second para" in {
+            mainContent.select("p").get(4).text mustBe messages.para5
+          }
         }
 
-        "has a third para" in {
-          mainContent.select("p").get(2).text mustBe messages.para3
-        }
-
-        "has a first bullet point" in {
-          mainContent.selectFirst("ul").select("li").get(0).text mustBe messages.bullet1
-        }
       }
 
-      "has an accept and continue button" in {
-        doc.select("button").last().text mustBe commonMessages.acceptAndContinue
+      "has a continue button" in {
+        doc.select("button").last().text mustBe commonMessages.continue
       }
 
       "has the correct form" in {

@@ -126,12 +126,17 @@ object MessageLookup {
 
   object AgentSignupTerms {
     val heading = "Signing your clients up for Making Tax Digital for Income Tax"
-    val para1 = """Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."""
-    val para2 = """You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."""
-    val para3 = """You may be able to sign your client up for Making Tax Digital for Income Tax if they:"""
-    val bullet1 = """are a sole trader"""
-    val bullet2 = """receive income from property"""
-    val bullet3 = """earn more than £10,000 a year from their sole trader or property business"""
+    val heading2 = "How to sign up"
+    val heading3 = "Get your clients ready"
+    val heading4 = "Check their eligibility"
+    val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
+    val para2 = "You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."
+    val para3 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
+    val bullet1 = "are a sole trader"
+    val bullet2 = "receive income from property"
+    val bullet3 = "earn more than £10,000 a year from their sole trader or property business"
+    val para4 = "Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up."
+    val para5 = "Answer the survey to check if your client is eligible for the pilot."
   }
 
 

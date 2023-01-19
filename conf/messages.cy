@@ -128,6 +128,11 @@ agent.signing-up.header-section.para3                           = You may be abl
 agent.signing-up.header-section.bullet1                         = are a sole trader ... but in Welsh
 agent.signing-up.header-section.bullet2                         = receive income from property ... but in Welsh
 agent.signing-up.header-section.bullet3                         = earn more than £10,000 a year from their sole trader or property business ... but in Welsh
+agent.signing-up.how-to-sign-up.heading                         = How to sign up ... but in Welsh
+agent.signing-up.how-to-sign-up.get-ready.heading               = Get your clients ready ... but in Welsh
+agent.signing-up.how-to-sign-up.get-ready.para                  = Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up. ... but in Welsh
+agent.signing-up.how-to-sign-up.check-eligibility.heading       = Check their eligibility ... but in Welsh
+agent.signing-up.how-to-sign-up.check-eligibility.para          = Answer the survey to check if your client is eligible for the pilot. ... but in Welsh
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud
