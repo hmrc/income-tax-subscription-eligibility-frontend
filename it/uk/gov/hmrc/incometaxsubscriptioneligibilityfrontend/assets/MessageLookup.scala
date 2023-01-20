@@ -119,9 +119,11 @@ object MessageLookup {
 
  object IndividualSignUpTerms {
    val heading = "Signing up for Making Tax Digital for Income Tax"
+   val subheading = "How to sign up"
 
    object Intro {
-     val paraOne = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
+     val paraOne = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. " +
+       "It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
 
      object Inset {
        val paraOne = "Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, you will have to sign up if you earn:"
@@ -139,7 +141,18 @@ object MessageLookup {
      val heading = "Check your eligibility"
      val paragraph = "Answer the questions to find out if you may be eligible to take part in the pilot."
    }
-   val subheading = "How to sign up"
+
+   object SectionTwo {
+     val heading = "Sign in to your HMRC account"
+     val paragraph1 = "If you find out you may be eligible, sign in to your HMRC account."
+     val paragraph2 = "Depending on your circumstances, you will be offered to sign up for the:"
+     def bullet1(currentTaxYear: String): String = s"current tax year ($currentTaxYear)"
+     def bullet2(nextTaxYear: String): String = s"next tax year ($nextTaxYear)"
+     val insetText = "There may be circumstances which stop you from joining the pilot. " +
+       "These may include certain other incomes or activities, or the length of time you’ve been self-employed."
+     val paragraph3 = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
+       "continue to submit your annual Self Assessment as normal."
+   }
  }
 
   object AgentSignupTerms {
