@@ -162,6 +162,8 @@ agent.signing-up.how-to-sign-up.complete-sign-up.para           = To sign up you
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet1        = confirm the details we have about your client and their business are correct ... but in Welsh
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet2        = add any other income sources ... but in Welsh
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet3        = select which year you want to start using Making Tax Digital for Income Tax ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm.heading                 = Confirm sign-up ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm.para                    = You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up. ... but in Welsh
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud

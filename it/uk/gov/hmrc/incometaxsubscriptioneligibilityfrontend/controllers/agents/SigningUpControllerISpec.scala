@@ -20,7 +20,8 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{agentSuffix, AgentSignupTerms => messages, Base => commonMessages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, agentSuffix}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -40,118 +41,145 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "return a view" which {
       "has a title" in {
-        doc.title mustBe s"${messages.heading}$agentSuffix"
+        doc.title mustBe s"${Heading.heading}$agentSuffix"
       }
 
 
       "has main content" which {
         val mainContent = doc.getElementById("main-content")
         "has a heading section" which {
+          import Heading._
           "has a heading" in {
-            mainContent.getH1Element.text mustBe messages.heading
+            mainContent.getH1Element.text mustBe heading
           }
           "has a first para" in {
-            mainContent.select("p").get(0).text mustBe messages.para1
+            mainContent.select("p").get(0).text mustBe para1
           }
 
           "has a second para" in {
-            mainContent.select("p").get(1).text mustBe messages.para2
+            mainContent.select("p").get(1).text mustBe para2
           }
 
           "has a third para" in {
-            mainContent.select("p").get(2).text mustBe messages.para3
+            mainContent.select("p").get(2).text mustBe para3
           }
 
           "has a first bullet point" in {
-            mainContent.selectFirst("ul").select("li").get(0).text mustBe messages.bullet1
+            mainContent.selectFirst("ul").select("li").get(0).text mustBe bullet1
           }
           "has a second bullet point" in {
-            mainContent.selectFirst("ul").select("li").get(1).text mustBe messages.bullet2
+            mainContent.selectFirst("ul").select("li").get(1).text mustBe bullet2
           }
           "has a third bullet point" in {
-            mainContent.selectFirst("ul").select("li").get(2).text mustBe messages.bullet3
+            mainContent.selectFirst("ul").select("li").get(2).text mustBe bullet3
           }
         }
 
         "has a how to sign up section" which {
-          "has a second heading" in {
-            mainContent.getH2Elements.get(0).text mustBe messages.heading2
+          "has a heading section" which {
+            import HowToSignUp.Heading._
+            "has a second heading" in {
+              mainContent.getH2Elements.get(0).text mustBe heading
+            }
           }
 
-          "has a third heading" in {
-            mainContent.select("h3").get(0).text mustBe messages.heading3
+          "has a Get your clients ready section" which {
+            import HowToSignUp.GetReady._
+            "has a heading" in {
+              mainContent.select("h3").get(0).text mustBe heading
+            }
+            "has a para" in {
+              mainContent.select("p").get(3).text mustBe para
+            }
           }
 
-          "has a fourth heading" in {
-            mainContent.select("h3").get(1).text mustBe messages.heading4
+          "has a Check their eligibility section" which {
+            import HowToSignUp.CheckAvailability._
+            "has a heading" in {
+              mainContent.select("h3").get(1).text mustBe heading
+            }
+            "has a para" in {
+              mainContent.select("p").get(4).text mustBe para
+            }
+
           }
 
-          "has a fifth heading" in {
-            mainContent.select("h3").get(2).text mustBe messages.heading5
+          "has a Get your client’s information ready section" which {
+            import HowToSignUp.GetInformation._
+            "has a heading" in {
+              mainContent.select("h3").get(2).text mustBe heading
+            }
+
+            "has a para" in {
+              mainContent.select("p").get(5).text mustBe para
+            }
           }
 
-          "has a sixth heading" in {
-            mainContent.select("h3").get(3).text mustBe messages.heading6
-          }
+          "has a Confirm client details section" which {
+            import HowToSignUp.ConfirmClientDetails._
+            "has a heading" in {
+              mainContent.select("h3").get(3).text mustBe heading
+            }
 
-          "has a seventh heading" in {
-            mainContent.select("h3").get(4).text mustBe messages.heading7
-          }
+            "has a first para" in {
+              mainContent.select("p").get(6).text mustBe para1
+            }
 
-          "has a first para" in {
-            mainContent.select("p").get(3).text mustBe messages.para4
-          }
-          "has a second para" in {
-            mainContent.select("p").get(4).text mustBe messages.para5
-          }
+            "has a second para" in {
+              mainContent.select("p").get(7).text mustBe para2
+            }
 
-          "has a third para" in {
-            mainContent.select("p").get(5).text mustBe messages.para6
-          }
+            "has a first bullet point" in {
+              mainContent.selectFirst("ol").selectFirst("ul").select("li").get(0).text mustBe bullet1
+            }
+            "has a second bullet point" in {
+              mainContent.selectFirst("ol").selectFirst("ul").select("li").get(1).text mustBe bullet2
+            }
 
-          "has a fourth para" in {
-            mainContent.select("p").get(6).text mustBe messages.para7
-          }
+            "has a third para" in {
+              mainContent.select("p").get(8).text mustBe para3
+            }
 
-          "has a fifth para" in {
-            mainContent.select("p").get(7).text mustBe messages.para8
-          }
-
-          "has a sixth para" in {
-            mainContent.select("p").get(8).text mustBe messages.para9
-          }
-
-          "has a seventh para" in {
-            mainContent.select("p").get(9).text mustBe messages.para10
-          }
-
-          "has a eighth para" in {
-            mainContent.select("p").get(10).text mustBe messages.para11
+            "has a fourth para" in {
+              mainContent.select("p").get(9).text mustBe para4
+            }
           }
         }
 
-        "has a first bullet point" in {
-          mainContent.selectFirst("ol").selectFirst("ul").select("li").get(0).text mustBe messages.bullet4
-        }
-        "has a second bullet point" in {
-          mainContent.selectFirst("ol").selectFirst("ul").select("li").get(1).text mustBe messages.bullet5
+        "has a Complete Sign Up section" which {
+          import HowToSignUp.CompleteSignUp._
+          "has a heading" in {
+            mainContent.select("h3").get(4).text mustBe heading
+          }
+
+          "has a para" in {
+            mainContent.select("p").get(10).text mustBe para
+          }
+
+          "has a first bullet point" in {
+            mainContent.select("ol").select("ul").get(1).select("li").get(0).text mustBe bullet1
+          }
+
+          "has a second bullet point" in {
+            mainContent.select("ol").select("ul").get(1).select("li").get(1).text mustBe bullet2
+          }
+
+          "has a third bullet point" in {
+            mainContent.select("ol").select("ul").get(1).select("li").get(2).text mustBe bullet3
+          }
         }
 
-        "has a third bullet point" in {
-          mainContent.select("ol").select("ul").get(1).select("li").get(0).text mustBe messages.bullet6
-        }
+        "has a Confirm sign-up section" which {
+          import HowToSignUp.Confirm._
+          "has a heading" in {
+            mainContent.select("h3").get(5).text mustBe heading
+          }
 
-        "has a fourth bullet point" in {
-          mainContent.select("ol").select("ul").get(1).select("li").get(1).text mustBe messages.bullet7
-        }
-
-        "has a fifth bullet point" in {
-          mainContent.select("ol").select("ul").get(1).select("li").get(2).text mustBe messages.bullet8
         }
       }
 
       "has a continue button" in {
-        doc.select("button").last().text mustBe commonMessages.continue
+        doc.select("button").last().text mustBe Base.continue
       }
 
       "has the correct form" in {

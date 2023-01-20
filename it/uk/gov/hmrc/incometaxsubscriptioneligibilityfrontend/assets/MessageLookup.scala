@@ -157,32 +157,56 @@ object MessageLookup {
  }
 
   object AgentSignupTerms {
-    val heading = "Signing your clients up for Making Tax Digital for Income Tax"
-    val heading2 = "How to sign up"
-    val heading3 = "Get your clients ready"
-    val heading4 = "Check their eligibility"
-    val heading5 = "Get your client’s information ready"
-    val heading6 = "Confirm client details"
-    val heading7 = "Complete sign-up tasks"
-    val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
-    val para2 = "You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."
-    val para3 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
-    val bullet1 = "are a sole trader"
-    val bullet2 = "receive income from property"
-    val bullet3 = "earn more than £10,000 a year from their sole trader or property business"
-    val bullet4 = "current tax year (" + AccountingPeriodUtil.getCurrentTaxYearRange + ")"
-    val bullet5 = "next tax year (" + AccountingPeriodUtil.getNextTaxYearRange + ")"
-    val para4 = "Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up."
-    val para5 = "Answer the survey to check if your client is eligible for the pilot."
-    val para6 = "Make sure you’ve got the necessary information to sign up your client. This includes their name, National Insurance Number, date of birth and when their business started trading."
-    val para7 = "If you find out your client may be eligible, sign in to your HMRC agent account."
-    val para8 = "Depending on their circumstances, you will be offered to sign them up for the:"
-    val para9 = "There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
-    val para10 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
-    val para11 = "To sign up your client you need to:"
-    val bullet6 = "confirm the details we have about your client and their business are correct"
-    val bullet7 = "add any other income sources"
-    val bullet8 = "select which year you want to start using Making Tax Digital for Income Tax"
+    object Heading {
+      val heading = "Signing your clients up for Making Tax Digital for Income Tax"
+      val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
+      val para2 = "You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."
+      val para3 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
+      val bullet1 = "are a sole trader"
+      val bullet2 = "receive income from property"
+      val bullet3 = "earn more than £10,000 a year from their sole trader or property business"
+    }
+
+    object HowToSignUp {
+      object Heading {
+        val heading = "How to sign up"
+      }
+      object GetReady {
+        val heading = "Get your clients ready"
+        val para = "Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up."
+      }
+      object CheckAvailability {
+        val heading = "Check their eligibility"
+        val para = "Answer the survey to check if your client is eligible for the pilot."
+      }
+      object GetInformation {
+        val heading = "Get your client’s information ready"
+        val para = "Make sure you’ve got the necessary information to sign up your client. This includes their name, National Insurance Number, date of birth and when their business started trading."
+
+      }
+      object ConfirmClientDetails {
+        val heading = "Confirm client details"
+        val para1 = "If you find out your client may be eligible, sign in to your HMRC agent account."
+        val para2 = "Depending on their circumstances, you will be offered to sign them up for the:"
+        val bullet1 = "current tax year (" + AccountingPeriodUtil.getCurrentTaxYearRange + ")"
+        val bullet2 = "next tax year (" + AccountingPeriodUtil.getNextTaxYearRange + ")"
+        val para3 = "There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
+        val para4 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
+      }
+      object CompleteSignUp {
+        val heading = "Complete sign-up tasks"
+        val para = "To sign up your client you need to:"
+        val bullet1 = "confirm the details we have about your client and their business are correct"
+        val bullet2 = "add any other income sources"
+        val bullet3 = "select which year you want to start using Making Tax Digital for Income Tax"
+
+      }
+      object Confirm {
+        val heading = "Confirm sign-up"
+        val para = "You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up."
+
+      }
+    }
   }
 
 
