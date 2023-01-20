@@ -110,6 +110,14 @@ sign-up.paragraph                                               = Based on your 
 
 ## Individual Signing Up Page ##
 individual.signing-up.heading                                   = Signing up for Making Tax Digital for Income Tax
+individual.signing-up.intro.para-1                              = Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords.
+individual.signing-up.intro.inset.para-1                        = Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, you will have to sign up if you earn:
+individual.signing-up.intro.inset.bullet-1                      = £50,000 or more for April 2026
+individual.signing-up.intro.inset.bullet-2                      = £30,000 or more for April 2027
+individual.signing-up.intro.inset.para-2                        = You can still choose to voluntarily sign up.
+individual.signing-up.intro.para-2                              = You may be able to sign up for Making Tax Digital for Income Tax if you:
+individual.signing-up.intro.bullet-1                            = are a sole trader
+individual.signing-up.intro.bullet-2                            = receive income from property
 individual.signing-up.subheading                                = How to sign up
 individual.signing-up.section1.heading                          = Check your eligibility
 individual.signing-up.section1.paragraph                        = Answer the questions to find out if you may be eligible to take part in the pilot.

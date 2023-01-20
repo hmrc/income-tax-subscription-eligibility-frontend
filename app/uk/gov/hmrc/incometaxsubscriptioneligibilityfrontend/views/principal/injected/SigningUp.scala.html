@@ -19,23 +19,49 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
 
 @this(
-        mainTemplate: PrincipalMainTemplate,
-        form: FormWithCSRF,
-        continueButton: ContinueButton
+  mainTemplate: PrincipalMainTemplate,
+  form: FormWithCSRF,
+  continueButton: ContinueButton,
+  govukInsetText: GovukInsetText
 )(
-        implicit appConfig: AppConfig
+  implicit appConfig: AppConfig
 )
 
-
 @(postAction:Call)(implicit request: Request[_], messages: Messages)
+
+@insetText = {
+
+  <p class="govuk-body">@messages("individual.signing-up.intro.inset.para-1")</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>@messages("individual.signing-up.intro.inset.bullet-1")</li>
+    <li>@messages("individual.signing-up.intro.inset.bullet-2")</li>
+  </ul>
+
+  <p class="govuk-body">@messages("individual.signing-up.intro.inset.para-2")</p>
+
+}
 
 @mainTemplate(title = messages("individual.signing-up.heading"), backLink = None) {
 
   <h1 class="govuk-heading-xl">@messages("individual.signing-up.heading")</h1>
 
+  <p class="govuk-body">@messages("individual.signing-up.intro.para-1")</p>
+
+  @govukInsetText(InsetText(
+    content = HtmlContent(insetText)
+  ))
+
+  <p class="govuk-body">@messages("individual.signing-up.intro.para-2")</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>@messages("individual.signing-up.intro.bullet-1")</li>
+    <li>@messages("individual.signing-up.intro.bullet-2")</li>
+  </ul>
+
   <h2 class="govuk-heading-l">@messages("individual.signing-up.subheading")</h2>
 
-  <ol class="govuk-list govuk-list--number">
+  <ol class="govuk-list govuk-list--number ">
     <li>
       <h3 class="govuk-heading-s">@messages("individual.signing-up.section1.heading")</h3>
       <p class="govuk-body">@messages("individual.signing-up.section1.paragraph")</p>

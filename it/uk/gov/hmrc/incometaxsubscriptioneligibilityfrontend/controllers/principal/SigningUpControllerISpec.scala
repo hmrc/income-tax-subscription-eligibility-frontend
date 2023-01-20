@@ -17,10 +17,10 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
+import org.jsoup.nodes.{Document, Element}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, IndividualSignUpTerms => messages, Base => commonMessages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => CommonMessages, IndividualSignUpTerms => Messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
@@ -38,43 +38,86 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "return a view with a title" in {
-      doc.title mustBe s"${messages.heading}$suffix"
-    }
+    "return a view" which {
 
-    "return a view with a heading" in {
-      doc.mainContent.getH1Element.text mustBe messages.heading
-    }
-
-    "return a view with a subheading" in {
-      doc.mainContent.getH2Elements.text mustBe messages.subheading
-    }
-
-    "return a view with a section 1" that {
-      val section1 =
-        doc
-          .mainContent
-          .selectHead("ol")
-          .selectNth("li", 1)
-
-      "contains a header" in {
-        section1.selectHead("h3").text mustBe messages.section1Heading
+      "has a title" in {
+        doc.title mustBe s"${Messages.heading}$suffix"
       }
 
-      "contains a paragraph" in {
-        section1.selectHead("p").text mustBe messages.section1Paragraph
+      "has a main heading" in {
+        doc.mainContent.getH1Element.text mustBe Messages.heading
       }
-    }
 
-    "return a view with an accept and continue button" in {
-      doc.select("button").last().text mustBe commonMessages.continue
-    }
+      "has a first paragraph" in {
+        doc.mainContent.selectHead("p").text mustBe Messages.Intro.paraOne
+      }
 
-    "have the correct form" in {
-      doc.getForm must have(
-        method("POST"),
-        action(routes.SigningUpController.submit.url)
-      )
+      "has an inset text" which {
+        def inset: Element = doc.mainContent.selectHead(".govuk-inset-text")
+
+        "has a first paragraph" in {
+          inset.selectHead("p").text mustBe Messages.Intro.Inset.paraOne
+        }
+        "has a bullet list" which {
+          def bulletList: Element = inset.selectHead("ul")
+
+          "has a first bullet" in {
+            bulletList.selectNth("li", 1).text mustBe Messages.Intro.Inset.bulletOne
+          }
+          "has a second bullet" in {
+            bulletList.selectNth("li", 2).text mustBe Messages.Intro.Inset.bulletTwo
+          }
+        }
+        "has a second paragraph" in {
+          inset.selectNth("p", 2).text mustBe Messages.Intro.Inset.paraTwo
+        }
+      }
+
+      "has a second paragraph" in {
+        doc.mainContent.selectNth("p", 4).text mustBe Messages.Intro.paraTwo
+      }
+
+      "has a bullet list" which {
+        def bulletList: Element = doc.mainContent.selectNth("ul", 2)
+
+        "has a first bullet" in {
+          bulletList.selectNth("li", 1).text mustBe Messages.Intro.bulletOne
+        }
+        "has a second bullet" in {
+          bulletList.selectNth("li", 2).text mustBe Messages.Intro.bulletTwo
+        }
+      }
+
+      "has a section 1" that {
+        val section1 =
+          doc
+            .mainContent
+            .selectHead("ol")
+            .selectNth("li", 1)
+
+        "contains a header" in {
+          section1.selectHead("h3").text mustBe Messages.SectionOne.heading
+        }
+
+        "contains a paragraph" in {
+          section1.selectHead("p").text mustBe Messages.SectionOne.paragraph
+        }
+      }
+
+      "has a form" which {
+        def form: Element = doc.getForm
+
+        "has the correct form attributes" in {
+          form must have(
+            method("POST"),
+            action(routes.SigningUpController.submit.url)
+          )
+        }
+        "has a continue button" in {
+          form.selectHead("button").text mustBe CommonMessages.continue
+        }
+      }
+
     }
   }
 

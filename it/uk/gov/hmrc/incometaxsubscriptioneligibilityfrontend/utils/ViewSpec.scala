@@ -16,7 +16,7 @@ trait ViewSpec extends Matchers {
                          title: String,
                          isAgent: Boolean = false,
                          backLink: Option[String] = None,
-                         error: Option[FormError] = None) (appConfig: AppConfig){
+                         error: Option[FormError] = None)(appConfig: AppConfig) {
 
     private val titlePrefix: String = if (error.isDefined) "Error: " else ""
     private val titleSuffix: String = if (isAgent) {
@@ -27,8 +27,8 @@ trait ViewSpec extends Matchers {
 
     document.title mustBe s"$titlePrefix$title$titleSuffix"
 
-    private val serviceName: String = if(isAgent) "Use software to report your client’s Income Tax" else "Use software to send Income Tax updates"
-    private val serviceNameUrl: String = if(isAgent) appConfig.govukGuidanceITSASignUpAgentLink else appConfig.govukGuidanceITSASignUpIndivLink
+    private val serviceName: String = if (isAgent) "Use software to report your client’s Income Tax" else "Use software to send Income Tax updates"
+    private val serviceNameUrl: String = if (isAgent) appConfig.govukGuidanceITSASignUpAgentLink else appConfig.govukGuidanceITSASignUpIndivLink
 
     document.getElementsByClass("hmrc-header__service-name").text() mustBe serviceName
 
@@ -93,7 +93,7 @@ trait ViewSpec extends Matchers {
 
     def getHintText: String = element.select(s"""[class=form-hint]""").text()
 
-    def getForm: Elements = element.select("form")
+    def getForm: Element = element.selectHead("form")
 
     def getSpan(id: String): Elements = element.select(s"""span[id=$id]""")
 
@@ -129,27 +129,21 @@ trait ViewSpec extends Matchers {
         )
     }
 
-  def method(method: String): HavePropertyMatcher[Elements, String] =
-    new HavePropertyMatcher[Elements, String] {
-      def apply(element: Elements) =
-        HavePropertyMatchResult(
-          element.attr("method") == method,
-          "method",
-          method,
-          element.attr("method")
-        )
-    }
+  def method(method: String): HavePropertyMatcher[Element, String] =
+    (element: Element) => HavePropertyMatchResult(
+      element.attr("method") == method,
+      "method",
+      method,
+      element.attr("method")
+    )
 
-  def action(action: String): HavePropertyMatcher[Elements, String] =
-    new HavePropertyMatcher[Elements, String] {
-      def apply(element: Elements) =
-        HavePropertyMatchResult(
-          element.attr("action") == action,
-          "action",
-          action,
-          element.attr("action")
-        )
-    }
+  def action(action: String): HavePropertyMatcher[Element, String] =
+    (element: Element) => HavePropertyMatchResult(
+      element.attr("action") == action,
+      "action",
+      action,
+      element.attr("action")
+    )
 
   def text(text: String): HavePropertyMatcher[Elements, String] =
     new HavePropertyMatcher[Elements, String] {
@@ -193,7 +187,7 @@ trait ViewSpec extends Matchers {
           elem.text() == value,
           "paragraph",
           value,
-          elem.text()
+          "(exact value not found)"
         )
       }
     }
