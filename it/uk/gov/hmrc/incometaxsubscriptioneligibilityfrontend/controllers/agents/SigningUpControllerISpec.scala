@@ -85,11 +85,20 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           "has a fourth heading" in {
             mainContent.select("h3").get(1).text mustBe messages.heading4
           }
+
+          "has a fifth heading" in {
+            mainContent.select("h3").get(2).text mustBe messages.heading5
+          }
+
           "has a first para" in {
             mainContent.select("p").get(3).text mustBe messages.para4
           }
           "has a second para" in {
             mainContent.select("p").get(4).text mustBe messages.para5
+          }
+
+          "has a third para" in {
+            mainContent.select("p").get(5).text mustBe messages.para6
           }
         }
 
