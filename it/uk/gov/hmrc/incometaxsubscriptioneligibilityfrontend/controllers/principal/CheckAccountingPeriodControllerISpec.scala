@@ -42,11 +42,20 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     }
 
     "have the correct template details" when {
-      "there is no error" in new TemplateViewTest(doc, messages.heading, backLink = Some(routes.PropertyTradingStartAfterController.show.url))(appConfig)
+      "there is no error" in new TemplateViewTest(
+        document = doc,
+        title = messages.heading,
+        backLink = Some(routes.PropertyTradingStartAfterController.show.url)
+      )
 
       "there is an error" in {
         val errorPage: Document = Jsoup.parse(submitAccountingPeriodCheck(None).body)
-        new TemplateViewTest(errorPage, messages.heading, error = Some(FormError(AccountingPeriodCheckForm.fieldName, messages.error)))(appConfig)
+        new TemplateViewTest(
+          document = errorPage,
+          title = messages.heading,
+          error = Some(FormError(AccountingPeriodCheckForm.fieldName, messages.error)),
+          backLink = Some(routes.PropertyTradingStartAfterController.show.url)
+        )
       }
     }
 

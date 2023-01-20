@@ -46,11 +46,20 @@ class SoleTraderStartAfterControllerISpec extends ComponentSpecBase with ViewSpe
     }
 
     "have the correct template details" when {
-      "there is no error" in new TemplateViewTest(doc, messages.title(date), backLink = Some(routes.HaveAnyOtherIncomeController.show.url))(appConfig)
+      "there is no error" in new TemplateViewTest(
+        document = doc,
+        title = messages.title(date),
+        backLink = Some(routes.HaveAnyOtherIncomeController.show.url)
+      )
 
       "there is an error" in {
         val errorPage: Document = Jsoup.parse(submitSoleTraderStartAfter(None).body)
-        new TemplateViewTest(errorPage, messages.title(date), error = Some(FormError(AreYouSoleTraderAfterForm.fieldName, messages.error(date))))(appConfig)
+        new TemplateViewTest(
+          document = errorPage,
+          title = messages.title(date),
+          backLink = Some(routes.HaveAnyOtherIncomeController.show.url),
+          error = Some(FormError(AreYouSoleTraderAfterForm.fieldName, messages.error(date)))
+        )
       }
     }
 
