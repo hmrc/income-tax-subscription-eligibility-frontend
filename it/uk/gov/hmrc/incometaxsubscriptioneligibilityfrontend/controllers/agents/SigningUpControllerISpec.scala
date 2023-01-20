@@ -94,6 +94,10 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             mainContent.select("h3").get(3).text mustBe messages.heading6
           }
 
+          "has a seventh heading" in {
+            mainContent.select("h3").get(4).text mustBe messages.heading7
+          }
+
           "has a first para" in {
             mainContent.select("p").get(3).text mustBe messages.para4
           }
@@ -120,6 +124,10 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           "has a seventh para" in {
             mainContent.select("p").get(9).text mustBe messages.para10
           }
+
+          "has a eighth para" in {
+            mainContent.select("p").get(10).text mustBe messages.para11
+          }
         }
 
         "has a first bullet point" in {
@@ -129,6 +137,17 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           mainContent.selectFirst("ol").selectFirst("ul").select("li").get(1).text mustBe messages.bullet5
         }
 
+        "has a third bullet point" in {
+          mainContent.select("ol").select("ul").get(1).select("li").get(0).text mustBe messages.bullet6
+        }
+
+        "has a fourth bullet point" in {
+          mainContent.select("ol").select("ul").get(1).select("li").get(1).text mustBe messages.bullet7
+        }
+
+        "has a fifth bullet point" in {
+          mainContent.select("ol").select("ul").get(1).select("li").get(2).text mustBe messages.bullet8
+        }
       }
 
       "has a continue button" in {
