@@ -163,6 +163,7 @@ object MessageLookup {
     val heading4 = "Check their eligibility"
     val heading5 = "Get your client’s information ready"
     val heading6 = "Confirm client details"
+    val heading7 = "Complete sign-up tasks"
     val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
     val para2 = "You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."
     val para3 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
@@ -178,6 +179,10 @@ object MessageLookup {
     val para8 = "Depending on their circumstances, you will be offered to sign them up for the:"
     val para9 = "There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
     val para10 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
+    val para11 = "To sign up your client you need to:"
+    val bullet6 = "confirm the details we have about your client and their business are correct"
+    val bullet7 = "add any other income sources"
+    val bullet8 = "select which year you want to start using Making Tax Digital for Income Tax"
   }
 
 

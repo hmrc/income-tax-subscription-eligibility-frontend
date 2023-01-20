@@ -73,6 +73,16 @@
                 <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para4")</p>
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"/>
             </li>
+            <li>
+                <h3 class="govuk-heading-s">@messages("agent.signing-up.how-to-sign-up.complete-sign-up.heading")</h3>
+                <p>@messages("agent.signing-up.how-to-sign-up.complete-sign-up.para")</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>@messages("agent.signing-up.how-to-sign-up.complete-sign-up.bullet1")</li>
+                    <li>@messages("agent.signing-up.how-to-sign-up.complete-sign-up.bullet2")</li>
+                    <li>@messages("agent.signing-up.how-to-sign-up.complete-sign-up.bullet3")</li>
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"/>
+            </li>
             @form(action = postAction) {
                 @continueButton()
             }

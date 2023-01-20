@@ -157,6 +157,11 @@ agent.signing-up.how-to-sign-up.confirm-client-details.bullet1  = current tax ye
 agent.signing-up.how-to-sign-up.confirm-client-details.bullet2  = next tax year ({0}) ... but in Welsh
 agent.signing-up.how-to-sign-up.confirm-client-details.para3    = There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed. ... but in Welsh
 agent.signing-up.how-to-sign-up.confirm-client-details.para4    = If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual. ... but in Welsh
+agent.signing-up.how-to-sign-up.complete-sign-up.heading        = Complete sign-up tasks ... but in Welsh
+agent.signing-up.how-to-sign-up.complete-sign-up.para           = To sign up your client you need to: ... but in Welsh
+agent.signing-up.how-to-sign-up.complete-sign-up.bullet1        = confirm the details we have about your client and their business are correct ... but in Welsh
+agent.signing-up.how-to-sign-up.complete-sign-up.bullet2        = add any other income sources ... but in Welsh
+agent.signing-up.how-to-sign-up.complete-sign-up.bullet3        = select which year you want to start using Making Tax Digital for Income Tax ... but in Welsh
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud
