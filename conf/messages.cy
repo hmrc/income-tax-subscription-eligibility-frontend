@@ -150,6 +150,13 @@ agent.signing-up.how-to-sign-up.check-eligibility.heading       = Check their el
 agent.signing-up.how-to-sign-up.check-eligibility.para          = Answer the survey to check if your client is eligible for the pilot. ... but in Welsh
 agent.signing-up.how-to-sign-up.get-client-information.heading  = Get your client’s information ready ... but in Welsh
 agent.signing-up.how-to-sign-up.get-client-information.para     = Make sure you’ve got the necessary information to sign up your client. This includes their name, National Insurance Number, date of birth and when their business started trading. ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm-client-details.heading  = Confirm client details ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm-client-details.para1    = If you find out your client may be eligible, sign in to your HMRC agent account. ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm-client-details.para2    = Depending on their circumstances, you will be offered to sign them up for the: ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm-client-details.bullet1  = current tax year ({0}) ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm-client-details.bullet2  = next tax year ({0}) ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm-client-details.para3    = There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed. ... but in Welsh
+agent.signing-up.how-to-sign-up.confirm-client-details.para4    = If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual. ... but in Welsh
 
 ## Agent Terms and Conditions Page ##
 agent.terms.heading                                             = Yr hyn y mae angen i chi ei wneud

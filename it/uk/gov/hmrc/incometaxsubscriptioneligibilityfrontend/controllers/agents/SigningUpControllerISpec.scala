@@ -90,6 +90,10 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             mainContent.select("h3").get(2).text mustBe messages.heading5
           }
 
+          "has a sixth heading" in {
+            mainContent.select("h3").get(3).text mustBe messages.heading6
+          }
+
           "has a first para" in {
             mainContent.select("p").get(3).text mustBe messages.para4
           }
@@ -100,6 +104,29 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           "has a third para" in {
             mainContent.select("p").get(5).text mustBe messages.para6
           }
+
+          "has a fourth para" in {
+            mainContent.select("p").get(6).text mustBe messages.para7
+          }
+
+          "has a fifth para" in {
+            mainContent.select("p").get(7).text mustBe messages.para8
+          }
+
+          "has a sixth para" in {
+            mainContent.select("p").get(8).text mustBe messages.para9
+          }
+
+          "has a seventh para" in {
+            mainContent.select("p").get(9).text mustBe messages.para10
+          }
+        }
+
+        "has a first bullet point" in {
+          mainContent.selectFirst("ol").selectFirst("ul").select("li").get(0).text mustBe messages.bullet4
+        }
+        "has a second bullet point" in {
+          mainContent.selectFirst("ol").selectFirst("ul").select("li").get(1).text mustBe messages.bullet5
         }
 
       }

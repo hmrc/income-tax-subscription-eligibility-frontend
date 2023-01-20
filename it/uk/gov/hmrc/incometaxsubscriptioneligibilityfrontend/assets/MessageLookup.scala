@@ -15,6 +15,7 @@
  */
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
 
 object MessageLookup {
   val suffix = " - Use software to send Income Tax updates - GOV.UK"
@@ -161,15 +162,22 @@ object MessageLookup {
     val heading3 = "Get your clients ready"
     val heading4 = "Check their eligibility"
     val heading5 = "Get your client’s information ready"
+    val heading6 = "Confirm client details"
     val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
     val para2 = "You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."
     val para3 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
     val bullet1 = "are a sole trader"
     val bullet2 = "receive income from property"
     val bullet3 = "earn more than £10,000 a year from their sole trader or property business"
+    val bullet4 = "current tax year (" + AccountingPeriodUtil.getCurrentTaxYearRange + ")"
+    val bullet5 = "next tax year (" + AccountingPeriodUtil.getNextTaxYearRange + ")"
     val para4 = "Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up."
     val para5 = "Answer the survey to check if your client is eligible for the pilot."
     val para6 = "Make sure you’ve got the necessary information to sign up your client. This includes their name, National Insurance Number, date of birth and when their business started trading."
+    val para7 = "If you find out your client may be eligible, sign in to your HMRC agent account."
+    val para8 = "Depending on their circumstances, you will be offered to sign them up for the:"
+    val para9 = "There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
+    val para10 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
   }
 
 
