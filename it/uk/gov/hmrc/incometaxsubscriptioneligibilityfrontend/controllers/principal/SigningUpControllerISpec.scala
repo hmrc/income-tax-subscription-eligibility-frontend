@@ -103,8 +103,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         val section1 =
           doc
             .mainContent
-            .selectHead("ol")
-            .selectNth("li", 1)
+            .selectNth("ol > li", 1)
 
         "contains a header" in {
           section1.selectHead("h3").text mustBe Messages.SectionOne.heading
@@ -119,8 +118,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         val section2 =
           doc
             .mainContent
-            .selectHead("ol")
-            .selectNth("li", 2)
+            .selectNth("ol > li", 2)
 
         "contains a header" in {
           section2.selectHead("h3").text mustBe Messages.SectionTwo.heading
@@ -155,8 +153,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         val section3 =
           doc
             .mainContent
-            .selectHead("ol")
-            .selectNth("li", 5)
+            .selectNth("ol > li", 3)
 
         "contains a header" in {
           section3.selectHead("h3").text mustBe Messages.SectionThree.heading
@@ -178,6 +175,21 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           section3.selectNth("ul li", 3).text mustBe Messages.SectionThree.bullet3
         }
 
+      }
+
+      "has a section 4" that {
+        val section4 =
+          doc
+            .mainContent
+            .selectNth("ol > li", 4)
+
+        "contains a header" in {
+          section4.selectHead("h3").text mustBe Messages.SectionFour.heading
+        }
+
+        "contains a paragraph" in {
+          section4.selectHead("p").text mustBe Messages.SectionFour.paragraph
+        }
       }
 
       "has a form" which {
