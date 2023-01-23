@@ -29,11 +29,11 @@
 )
 
 
-@(postAction:Call)(implicit request: Request[_], messages: Messages)
+@(postAction:Call, backLink: String)(implicit request: Request[_], messages: Messages)
 
 
 
-@mainTemplate(title = messages("agent.terms.heading"), backLink = None) {
+@mainTemplate(title = messages("agent.terms.heading"), backLink = Some(backLink)) {
 
     <h1 class="govuk-heading-l">@messages("agent.terms.heading")</h1>
 

@@ -28,7 +28,7 @@
 )
 
 
-@(postAction:Call)(implicit request: Request[_], messages: Messages)
+@(postAction:Call, backLink: String)(implicit request: Request[_], messages: Messages)
 
 @indent = {
     <p>
@@ -101,22 +101,21 @@
     @break
 }
 
-@mainTemplate(title = messages("agent.signing-up.heading"), backLink = None) {
+@mainTemplate(title = messages("agent.signing-up.heading"), backLink = Some(backLink)) {
 
-    @header
-    <h2 class="govuk-heading-l">@messages("agent.signing-up.how-to-sign-up.heading")</h2>
-    <div class="govuk-body">
-        <ol class="govuk-list govuk-list--number govuk-!-margin-2 govuk-list--bold-marker">
-            <li>@getReady</li>
-            <li>@checkEligibility</li>
-            <li>@getClientInformation</li>
-            <li>@confirmClientDetails</li>
-            <li>@completeSignUp</li>
-            <li>@confirm</li>
-            @form(action = postAction) {
-                @continueButton()
-            }
-        </ol>
-    </div>
-
+  @header
+  <h2 class="govuk-heading-l">@messages("agent.signing-up.how-to-sign-up.heading")</h2>
+  <div class="govuk-body">
+    <ol class="govuk-list govuk-list--number govuk-!-margin-2 govuk-list--bold-marker">
+      <li>@getReady</li>
+      <li>@checkEligibility</li>
+      <li>@getClientInformation</li>
+      <li>@confirmClientDetails</li>
+      <li>@completeSignUp</li>
+      <li>@confirm</li>
+      @form(action = postAction) {
+        @continueButton()
+      }
+    </ol>
+  </div>
 }

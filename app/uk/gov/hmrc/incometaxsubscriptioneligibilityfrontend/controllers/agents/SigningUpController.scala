@@ -30,11 +30,13 @@ class SigningUpController @Inject()(mcc: MessagesControllerComponents, signingUp
                                    (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   val show: Action[AnyContent] = Action { implicit request =>
-    Ok(signingUp(postAction = routes.SigningUpController.submit))
+    Ok(signingUp(postAction = routes.SigningUpController.submit, backLink))
   }
 
   val submit: Action[AnyContent] = Action { _ =>
     Redirect(routes.TermsController.show)
   }
+
+  val backLink: String = appConfig.govukGuidanceITSASignUpAgentLink
 
 }

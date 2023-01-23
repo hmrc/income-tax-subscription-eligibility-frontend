@@ -19,6 +19,7 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.agents.Terms
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
@@ -30,11 +31,17 @@ class TermsController @Inject()(mcc: MessagesControllerComponents, terms: Terms)
                                (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   val show: Action[AnyContent] = Action { implicit request =>
-    Ok(terms(postAction = routes.TermsController.submit))
+    Ok(terms(postAction = routes.TermsController.submit, backLink = backURL))
   }
 
   val submit: Action[AnyContent] = Action { _ =>
     Redirect(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
+  }
+
+  def backURL: String = if (isEnabled(SignUpEligibilityInterrupt)) {
+    routes.SigningUpController.show.url
+  } else {
+    appConfig.govukGuidanceITSASignUpAgentLink
   }
 
 }
