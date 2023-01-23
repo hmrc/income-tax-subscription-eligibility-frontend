@@ -164,7 +164,6 @@ object MessageLookup {
       val para3 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
       val bullet1 = "are a sole trader"
       val bullet2 = "receive income from property"
-      val bullet3 = "earn more than £10,000 a year from their sole trader or property business"
     }
 
     object HowToSignUp {
