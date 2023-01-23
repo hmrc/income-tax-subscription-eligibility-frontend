@@ -151,6 +151,35 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         }
       }
 
+      "has a section 3" that {
+        val section3 =
+          doc
+            .mainContent
+            .selectHead("ol")
+            .selectNth("li", 5)
+
+        "contains a header" in {
+          section3.selectHead("h3").text mustBe Messages.SectionThree.heading
+        }
+
+        "contains paragraph 1" in {
+          section3.selectNth("p", 1).text mustBe Messages.SectionThree.paragraph1
+        }
+
+        "contains bullet 1" in {
+          section3.selectNth("ul li", 1).text mustBe Messages.SectionThree.bullet1
+        }
+
+        "contains bullet 2" in {
+          section3.selectNth("ul li", 2).text mustBe Messages.SectionThree.bullet2
+        }
+
+        "contains bullet 3" in {
+          section3.selectNth("ul li", 3).text mustBe Messages.SectionThree.bullet3
+        }
+
+      }
+
       "has a form" which {
         def form: Element = doc.getForm
 
