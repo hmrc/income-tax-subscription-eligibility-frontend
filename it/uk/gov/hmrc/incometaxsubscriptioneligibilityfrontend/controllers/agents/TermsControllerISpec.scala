@@ -21,14 +21,21 @@ import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{agentSuffix, AgentTerms => messages, Base => commonMessages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
-class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
+class TermsControllerISpec extends ComponentSpecBase with ViewSpec with FeatureSwitching {
 
-  lazy val result: WSResponse = get("/client/what-you-need-to-do")
-  lazy val doc: Document = Jsoup.parse(result.body)
+  def result: WSResponse = get("/client/what-you-need-to-do")
+  def doc: Document = Jsoup.parse(result.body)
 
   lazy val submitResult: WSResponse = post("/client/what-you-need-to-do")(Map.empty)
+
+  override def beforeEach(): Unit = {
+    super.beforeEach()
+    disable(SignUpEligibilityInterrupt)
+  }
 
   "GET /client/what-you-need-to-do" should {
     "return OK" in {
@@ -37,8 +44,25 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec {
       )
     }
 
-    "return a view with a title" in {
-      doc.title mustBe s"${messages.heading}$agentSuffix"
+    "uses the correct template details" when {
+      "feature switch is enabled" in {
+        enable(SignUpEligibilityInterrupt)
+        new TemplateViewTest(
+          document = doc,
+          title = messages.heading,
+          isAgent = true,
+          backLink = Some(routes.SigningUpController.show.url)
+        )(appConfig)
+      }
+      "feature switch is disabled" in {
+
+        new TemplateViewTest(
+          document = doc,
+          title = messages.heading,
+          isAgent = true,
+          backLink = Some(appConfig.govukGuidanceITSASignUpAgentLink)
+        )(appConfig)
+      }
     }
 
     "return a view with a heading" in {

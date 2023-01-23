@@ -23,6 +23,7 @@ import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, agentSuffix}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.Heading._
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
@@ -43,6 +44,19 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
       "has a title" in {
         doc.title mustBe s"${Heading.heading}$agentSuffix"
       }
+
+    "return a view" which{
+      "uses the correct template details" in new TemplateViewTest(
+        document = doc,
+        title = heading,
+        isAgent = true,
+        backLink = Some(appConfig.govukGuidanceITSASignUpAgentLink)
+      )(appConfig)
+    }
+
+    "return a view with a title" in {
+      doc.title mustBe s"${heading}$agentSuffix"
+    }
 
 
       "has main content" which {
