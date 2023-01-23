@@ -81,10 +81,9 @@
       <p class="govuk-body">@messages("individual.signing-up.section2.paragraph3")</p>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </li>
+      @form(action = postAction) {
+        @continueButton()
+      }
   </ol>
-
-  @form(action = postAction) {
-    @continueButton()
-  }
 
 }
