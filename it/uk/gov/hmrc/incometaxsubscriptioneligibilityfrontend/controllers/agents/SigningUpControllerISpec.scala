@@ -70,9 +70,6 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           "has a second bullet point" in {
             mainContent.selectFirst("ul").select("li").get(1).text mustBe bullet2
           }
-          "has a third bullet point" in {
-            mainContent.selectFirst("ul").select("li").get(2).text mustBe bullet3
-          }
         }
 
         "has a how to sign up section" which {
