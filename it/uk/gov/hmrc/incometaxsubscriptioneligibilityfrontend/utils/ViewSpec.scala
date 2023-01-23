@@ -16,7 +16,7 @@ trait ViewSpec extends Matchers {
                          title: String,
                          isAgent: Boolean = false,
                          backLink: Option[String] = None,
-                         error: Option[FormError] = None)(appConfig: AppConfig) {
+                         error: Option[FormError] = None)(implicit appConfig: AppConfig) {
 
     private val titlePrefix: String = if (error.isDefined) "Error: " else ""
     private val titleSuffix: String = if (isAgent) {
@@ -34,7 +34,7 @@ trait ViewSpec extends Matchers {
 
     document.getElementsByClass("hmrc-header__service-name--linked").attr("href") mustBe serviceNameUrl
 
-    backLink.map { href =>
+    backLink.fold(document.selectOptionally(".govuk-back-link") mustBe None) { href =>
       val link = document.selectHead(".govuk-back-link")
       link.text mustBe "Back"
       link.attr("href") mustBe href

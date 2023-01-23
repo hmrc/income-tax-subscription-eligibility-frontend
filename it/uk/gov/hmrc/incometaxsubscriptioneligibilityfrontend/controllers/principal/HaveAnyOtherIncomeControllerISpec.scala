@@ -23,6 +23,7 @@ import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, HaveAnyOtherIncome => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
@@ -30,6 +31,11 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.A
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
 class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec with FeatureSwitching {
+
+  override def beforeEach(): Unit = {
+    super.beforeEach()
+    disable(SignUpEligibilityInterrupt)
+  }
 
   "GET /eligibility/other-income" should {
     def result = get("/other-income")
@@ -50,8 +56,25 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
 
       "there is an error" in {
         val errorPage: Document = Jsoup.parse(post("/other-income")(Map.empty).body)
-        new TemplateViewTest(errorPage, messages.title, error = Some(FormError(HaveAnyOtherIncomeForm.fieldName, messages.error)))(appConfig)
+        new TemplateViewTest(
+          document = errorPage,
+          title = messages.title,
+          isAgent = false,
+          backLink = Some(routes.OverviewController.show.url),
+          error = Some(FormError(HaveAnyOtherIncomeForm.fieldName, messages.error))
+        )
       }
+
+      "the SignUpEligibilityInterrupt feature switch is enabled" in {
+        enable(SignUpEligibilityInterrupt)
+        new TemplateViewTest(
+          document = doc,
+          title = messages.title,
+          isAgent = false,
+          backLink = Some(routes.SigningUpController.show.url)
+        )
+      }
+
     }
 
 
@@ -78,7 +101,7 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
       val form = doc.select("form")
       val labels = doc.select("form").select("label")
 
-      form.isEmpty() mustBe false
+      form.isEmpty mustBe false
 
       val radios = form.select("input[type=radio]")
 

@@ -35,6 +35,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
   lazy val submitResult: WSResponse = post(path)(Map.empty)
 
   s"GET $path" should {
+
     "return OK" in {
       result must have(
         httpStatus(OK)
@@ -42,6 +43,13 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "return a view" which {
+
+      "uses the correct template details" in new TemplateViewTest(
+        document = doc,
+        title = Messages.heading,
+        isAgent = false,
+        backLink = Some(appConfig.govukGuidanceITSASignUpIndivLink)
+      )
 
       "has a title" in {
         doc.title mustBe s"${Messages.heading}$suffix"
