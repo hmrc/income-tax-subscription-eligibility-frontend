@@ -156,7 +156,8 @@ agent.signing-up.how-to-sign-up.complete-sign-up.para           = To sign up you
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet1        = confirm the details we have about your client and their business are correct
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet2        = add any other income sources
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet3        = select which year you want to start using Making Tax Digital for Income Tax
-
+agent.signing-up.how-to-sign-up.confirm.heading                 = Confirm sign-up
+agent.signing-up.how-to-sign-up.confirm.para                    = You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up.
 
 ## Terms and Conditions Page ##
 agent.terms.heading                                             = What you need to do
