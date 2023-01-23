@@ -134,6 +134,11 @@ individual.signing-up.section2.bullet1                          = current tax ye
 individual.signing-up.section2.bullet2                          = next tax year ({0})... but in Welsh
 individual.signing-up.section2.inset-text                       = There may be circumstances which stop you from joining the pilot. These may include certain other incomes or activities, or the length of time you’ve been self-employed... but in Welsh.
 individual.signing-up.section2.paragraph3                       = If you’re not eligible for Making Tax Digital for Income Tax yet, continue to submit your annual Self Assessment as normal... but in Welsh.
+individual.signing-up.section3.heading                          = Complete sign-up tasks... but in Welsh.
+individual.signing-up.section3.paragraph                        = To sign up you need to:... but in Welsh.
+individual.signing-up.section3.bullet1                          = confirm the details we have about you and your business are correct... but in Welsh.
+individual.signing-up.section3.bullet2                          = add any other income sources... but in Welsh.
+individual.signing-up.section3.bullet3                          = select which year you want to start using Making Tax Digital for Income Tax... but in Welsh.
 
 ## Agent Signing Up Page ##
 agent.signing-up.heading                                        = Signing your clients up for Making Tax Digital for Income Tax ... but in Welsh

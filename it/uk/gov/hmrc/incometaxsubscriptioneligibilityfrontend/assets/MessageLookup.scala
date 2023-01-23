@@ -154,6 +154,14 @@ object MessageLookup {
      val paragraph3 = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
        "continue to submit your annual Self Assessment as normal."
    }
+
+   object SectionThree {
+     val heading = "Complete sign-up tasks"
+     val paragraph1 = "To sign up you need to:"
+     val bullet1 = "confirm the details we have about you and your business are correct"
+     val bullet2 = "add any other income sources"
+     val bullet3 = "select which year you want to start using Making Tax Digital for Income Tax"
+   }
  }
 
   object AgentSignupTerms {
