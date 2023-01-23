@@ -139,6 +139,8 @@ individual.signing-up.section3.paragraph                        = To sign up you
 individual.signing-up.section3.bullet1                          = confirm the details we have about you and your business are correct... but in Welsh.
 individual.signing-up.section3.bullet2                          = add any other income sources... but in Welsh.
 individual.signing-up.section3.bullet3                          = select which year you want to start using Making Tax Digital for Income Tax... but in Welsh.
+individual.signing-up.section4.heading                          = Sign up... but in Welsh
+individual.signing-up.section4.paragraph                        = You’ll be told you’ve successfully signed up for Making Tax Digital for Income Tax... but in Welsh.
 
 ## Agent Signing Up Page ##
 agent.signing-up.heading                                        = Signing your clients up for Making Tax Digital for Income Tax ... but in Welsh

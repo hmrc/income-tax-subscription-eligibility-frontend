@@ -162,6 +162,11 @@ object MessageLookup {
      val bullet2 = "add any other income sources"
      val bullet3 = "select which year you want to start using Making Tax Digital for Income Tax"
    }
+
+   object SectionFour {
+     val heading = "Sign up"
+     val paragraph = "You’ll be told you’ve successfully signed up for Making Tax Digital for Income Tax."
+   }
  }
 
   object AgentSignupTerms {
