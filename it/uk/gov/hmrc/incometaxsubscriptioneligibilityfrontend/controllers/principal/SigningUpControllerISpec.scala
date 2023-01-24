@@ -20,7 +20,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.{Document, Element}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{suffix, Base => CommonMessages, IndividualSignUpTerms => Messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, IndividualSignUpTerms, suffix}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AccountingPeriodService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
@@ -46,56 +46,58 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
       "uses the correct template details" in new TemplateViewTest(
         document = doc,
-        title = Messages.heading,
+        title = IndividualSignUpTerms.heading,
         isAgent = false,
         backLink = Some(appConfig.govukGuidanceITSASignUpIndivLink)
       )
 
       "has a title" in {
-        doc.title mustBe s"${Messages.heading}$suffix"
+        doc.title mustBe s"${IndividualSignUpTerms.heading}$suffix"
       }
 
       "has a main heading" in {
-        doc.mainContent.getH1Element.text mustBe Messages.heading
+        doc.mainContent.getH1Element.text mustBe IndividualSignUpTerms.heading
       }
 
+      import IndividualSignUpTerms.Heading._
       "has a first paragraph" in {
-        doc.mainContent.selectHead("p").text mustBe Messages.Heading.paraOne
+        doc.mainContent.selectHead("p").text mustBe paraOne
       }
 
       "has an inset text" which {
         def inset: Element = doc.mainContent.selectHead(".govuk-inset-text")
 
+        import IndividualSignUpTerms.Heading.Inset._
         "has a first paragraph" in {
-          inset.selectHead("p").text mustBe Messages.Heading.Inset.paraOne
+          inset.selectHead("p").text mustBe paraOne
         }
         "has a bullet list" which {
           def bulletList: Element = inset.selectHead("ul")
 
           "has a first bullet" in {
-            bulletList.selectNth("li", 1).text mustBe Messages.Heading.Inset.bulletOne
+            bulletList.selectNth("li", 1).text mustBe bulletOne
           }
           "has a second bullet" in {
-            bulletList.selectNth("li", 2).text mustBe Messages.Heading.Inset.bulletTwo
+            bulletList.selectNth("li", 2).text mustBe bulletTwo
           }
         }
         "has a second paragraph" in {
-          inset.selectNth("p", 2).text mustBe Messages.Heading.Inset.paraTwo
+          inset.selectNth("p", 2).text mustBe paraTwo
         }
       }
 
       "has a second paragraph" in {
-        doc.mainContent.selectNth("p", 4).text mustBe Messages.Heading.paraTwo
+        doc.mainContent.selectNth("p", 4).text mustBe paraTwo
       }
 
       "has a bullet list" which {
         def bulletList: Element = doc.mainContent.selectNth("ul", 2)
 
         "has a first bullet" in {
-          bulletList.selectNth("li", 1).text mustBe Messages.Heading.bulletOne
+          bulletList.selectNth("li", 1).text mustBe bulletOne
         }
         "has a second bullet" in {
-          bulletList.selectNth("li", 2).text mustBe Messages.Heading.bulletTwo
+          bulletList.selectNth("li", 2).text mustBe bulletTwo
         }
       }
 
@@ -105,12 +107,13 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             .mainContent
             .selectNth("ol > li", 1)
 
+        import IndividualSignUpTerms.CheckEligibility._
         "contains a header" in {
-          section1.selectHead("h3").text mustBe Messages.CheckEligibility.heading
+          section1.selectHead("h3").text mustBe heading
         }
 
         "contains a paragraph" in {
-          section1.selectHead("p").text mustBe Messages.CheckEligibility.paragraph
+          section1.selectHead("p").text mustBe paragraph
         }
       }
 
@@ -120,32 +123,33 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             .mainContent
             .selectNth("ol > li", 2)
 
+        import IndividualSignUpTerms.HMRCAccount._
         "contains a header" in {
-          section2.selectHead("h3").text mustBe Messages.HMRCAccount.heading
+          section2.selectHead("h3").text mustBe heading
         }
 
         "contains paragraph 1" in {
-          section2.selectNth("p", 1).text mustBe Messages.HMRCAccount.paragraph1
+          section2.selectNth("p", 1).text mustBe paragraph1
         }
 
         "contains paragraph 2" in {
-          section2.selectNth("p", 2).text mustBe Messages.HMRCAccount.paragraph2
+          section2.selectNth("p", 2).text mustBe paragraph2
         }
 
         "contains bullet 1" in {
-          section2.selectNth("ul li", 1).text mustBe Messages.HMRCAccount.bullet1(accountingPeriodService.currentTaxYear)
+          section2.selectNth("ul li", 1).text mustBe bullet1(accountingPeriodService.currentTaxYear)
         }
 
         "contains bullet 2" in {
-          section2.selectNth("ul li", 2).text mustBe Messages.HMRCAccount.bullet2(accountingPeriodService.nextTaxYear)
+          section2.selectNth("ul li", 2).text mustBe bullet2(accountingPeriodService.nextTaxYear)
         }
 
         "contains inset text" in {
-          section2.selectHead(".govuk-inset-text").text mustBe Messages.HMRCAccount.insetText
+          section2.selectHead(".govuk-inset-text").text mustBe insetText
         }
 
         "contains paragraph 3" in {
-          section2.selectNth("p", 3).text mustBe Messages.HMRCAccount.paragraph3
+          section2.selectNth("p", 3).text mustBe paragraph3
         }
       }
 
@@ -155,24 +159,25 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             .mainContent
             .selectNth("ol > li", 3)
 
+        import IndividualSignUpTerms.CompleteSignUp._
         "contains a header" in {
-          section3.selectHead("h3").text mustBe Messages.CompleteSignUp.heading
+          section3.selectHead("h3").text mustBe heading
         }
 
         "contains paragraph 1" in {
-          section3.selectNth("p", 1).text mustBe Messages.CompleteSignUp.paragraph1
+          section3.selectNth("p", 1).text mustBe paragraph1
         }
 
         "contains bullet 1" in {
-          section3.selectNth("ul li", 1).text mustBe Messages.CompleteSignUp.bullet1
+          section3.selectNth("ul li", 1).text mustBe bullet1
         }
 
         "contains bullet 2" in {
-          section3.selectNth("ul li", 2).text mustBe Messages.CompleteSignUp.bullet2
+          section3.selectNth("ul li", 2).text mustBe bullet2
         }
 
         "contains bullet 3" in {
-          section3.selectNth("ul li", 3).text mustBe Messages.CompleteSignUp.bullet3
+          section3.selectNth("ul li", 3).text mustBe bullet3
         }
 
       }
@@ -183,12 +188,13 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             .mainContent
             .selectNth("ol > li", 4)
 
+        import IndividualSignUpTerms.SignUp._
         "contains a header" in {
-          section4.selectHead("h3").text mustBe Messages.SignUp.heading
+          section4.selectHead("h3").text mustBe heading
         }
 
         "contains a paragraph" in {
-          section4.selectHead("p").text mustBe Messages.SignUp.paragraph
+          section4.selectHead("p").text mustBe paragraph
         }
       }
 
@@ -202,7 +208,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           )
         }
         "has a continue button" in {
-          form.selectHead("button").text mustBe CommonMessages.continue
+          form.selectHead("button").text mustBe Base.continue
         }
       }
 
