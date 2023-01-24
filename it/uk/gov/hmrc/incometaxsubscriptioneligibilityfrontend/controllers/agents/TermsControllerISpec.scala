@@ -66,55 +66,59 @@ class TermsControllerISpec extends ComponentSpecBase with ViewSpec with FeatureS
     }
 
     "return a view with a heading" in {
-      doc.getH1Element.text mustBe messages.heading
+      doc.mainContent.getH1Element.text mustBe messages.heading
     }
 
-    "return a view with 1 paragraph lines" in {
-      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(1)").select("p") must have(
-        elementWithValue(messages.line1)
-      )
+    "return a view with paragraph 1" in {
+      doc.mainContent.selectNth("p", 1).select("p").text mustBe messages.paragraph1
     }
 
     "return a view with a bullet point list" in {
-      doc.select("div[class=govuk-form-group]").select("ul:nth-of-type(1)").select("li") must have(
-        elementWithValue(messages.bullet1),
-        elementWithValue(messages.bullet2),
-        elementWithValue(messages.bullet3),
-        elementWithValue(messages.bullet4)
-      )
+      doc.mainContent.selectNth("ul", 1).selectNth("li", 1).text mustBe messages.bullet1
+      doc.mainContent.selectNth("ul", 1).selectNth("li", 2).text mustBe messages.bullet2
+      doc.mainContent.selectNth("ul", 1).selectNth("li", 3).text mustBe messages.bullet3
+      doc.mainContent.selectNth("ul", 1).selectNth("li", 4).text mustBe messages.bullet4
     }
 
-    "return a view with the second paragraph line" in {
-      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(2)").select("p") must have(
-        elementWithValue(messages.line2),
-      )
+    "return a view with a subheading" in {
+      doc.mainContent.selectNth("p", 2).text mustBe messages.subheading
     }
 
-    "return a view with the third paragraph line" in {
-      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(3)").select("p") must have(
-        elementWithValue(messages.paragraph1),
-      )
+    "return a view with paragraph 2" in {
+      doc.mainContent.selectNth("p", 3).text  mustBe messages.paragraph2
+    }
+
+    "return a view with paragraph 3" in {
+      doc.mainContent.selectNth("p", 4).text mustBe messages.paragraph3
     }
 
     "return a view with a second bullet point list" in {
-      doc.select("div[class=govuk-form-group]").select("ul:nth-of-type(2)").select("li") must have(
-        elementWithValue(messages.bullet5),
-        elementWithValue(messages.bullet6)
-      )
+      doc.mainContent.selectNth("ul", 2).selectNth("li", 1).text mustBe messages.bullet5
+      doc.mainContent.selectNth("ul", 2).selectNth("li", 2).text mustBe messages.bullet6
+      doc.mainContent.selectNth("ul", 2).selectNth("li", 3).text mustBe messages.bullet7
+
     }
 
-    "return a view with the fourth paragraph line" in {
-      doc.select("div[class=govuk-form-group]").select("p:nth-of-type(4)").select("p") must have(
-        elementWithValue(messages.line3),
-      )
+    "return a view with paragraph 4" in {
+      doc.mainContent.selectNth("p", 5).text mustBe messages.paragraph4
+    }
+
+    "return a view with a third bullet point list" in {
+      doc.mainContent.selectNth("ul", 3).selectNth("li", 1).text mustBe messages.bullet8
+      doc.mainContent.selectNth("ul", 3).selectNth("li", 2).text mustBe messages.bullet9
+      doc.mainContent.selectNth("ul", 3).selectNth("li", 3).text mustBe messages.bullet10
+    }
+
+    "return a view with paragraph 5" in {
+      doc.mainContent.selectNth("p", 6).text mustBe messages.paragraph5
     }
 
     "return a view with an accept and continue button" in {
-      doc.select("button").last().text mustBe commonMessages.acceptAndContinue
+      doc.mainContent.select("button").last().text mustBe commonMessages.acceptAndContinue
     }
 
     "have the correct form" in {
-      doc.getForm must have(
+      doc.mainContent.getForm must have(
         method("POST"),
         action(routes.TermsController.submit.url)
       )

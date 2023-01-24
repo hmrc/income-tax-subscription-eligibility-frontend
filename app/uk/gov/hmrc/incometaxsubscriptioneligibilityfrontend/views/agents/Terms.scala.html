@@ -38,26 +38,46 @@
     <h1 class="govuk-heading-l">@messages("agent.terms.heading")</h1>
 
     <div class="govuk-form-group">
-        <p class="govuk-body">@messages("agent.terms.line1")</p>
+        <p class="govuk-body">@messages("agent.terms.paragraph1")</p>
         <ul class="govuk-list govuk-list--bullet">
             <li>@messages("agent.terms.bullet1")</li>
             <li>@messages("agent.terms.bullet2")</li>
             <li>@messages("agent.terms.bullet3")</li>
             <li>@messages("agent.terms.bullet4")</li>
         </ul>
-        <p class="govuk-heading-s">@messages("agent.terms.line2")</p>
-        <p class="govuk-body">@messages("agent.terms.paragraph1")</p>
+        <p class="govuk-heading-s">@messages("agent.terms.subheading")</p>
+        <p class="govuk-body">@messages("agent.terms.paragraph2")</p>
+        <p class="govuk-body">@messages("agent.terms.paragraph3")</p>
         <ul class="govuk-list govuk-list--bullet">
-            <li>@messages("agent.terms.bullet5")</li>
             <li>@Html(messages(
-                "agent.terms.bullet6",
+              "agent.terms.bullet5",
+              hmrcNewTabLinkHelper(NewTabLinkHelper(
+                text = messages("agent.terms.sa-tax-return-link"),
+                href = Some(appConfig.saTaxReturnLink)
+              ))
+            ))</li>
+            <li>@messages("agent.terms.bullet6")</li>
+            <li>@Html(messages(
+                "agent.terms.bullet7",
                 hmrcNewTabLinkHelper(NewTabLinkHelper(
-                    text = messages("agent.terms.bullet6-link"),
+                    text = messages("agent.terms.qualifying-income-link"),
                     href = Some(appConfig.qualifyingIncomeUrl)
                 ))
             ))</li>
         </ul>
-        <p class="govuk-body">@messages("agent.terms.line3")</p>
+        <p class="govuk-body">@messages("agent.terms.paragraph4")</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>@messages("agent.terms.bullet8")</li>
+          <li>@messages("agent.terms.bullet9")</li>
+          <li>@Html(messages(
+            "agent.terms.bullet10",
+            hmrcNewTabLinkHelper(NewTabLinkHelper(
+              text = messages("agent.terms.qualifying-income-link"),
+              href = Some(appConfig.qualifyingIncomeUrl)
+            ))
+          ))</li>
+        </ul>
+        <p class="govuk-body">@messages("agent.terms.paragraph5")</p>
     </div>
 
     @form(action = postAction) {
