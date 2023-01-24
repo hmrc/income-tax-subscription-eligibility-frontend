@@ -23,7 +23,7 @@ import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, agentSuffix}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.Heading._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.AgentHeading._
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
@@ -42,7 +42,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "return a view" which {
       "has a title" in {
-        doc.title mustBe s"${Heading.heading}$agentSuffix"
+        doc.title mustBe s"${AgentHeading.heading}$agentSuffix"
       }
 
     "return a view" which{
@@ -62,7 +62,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
       "has main content" which {
         val mainContent = doc.getElementById("main-content")
         "has a heading section" which {
-          import Heading._
+          import AgentHeading._
           "has a heading" in {
             mainContent.getH1Element.text mustBe heading
           }
@@ -88,14 +88,14 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
         "has a how to sign up section" which {
           "has a heading section" which {
-            import HowToSignUp.Heading._
+            import AgentHowToSignUp.Heading._
             "has a second heading" in {
               mainContent.getH2Elements.get(0).text mustBe heading
             }
           }
 
           "has a Get your clients ready section" which {
-            import HowToSignUp.GetReady._
+            import AgentHowToSignUp.AgentGetReady._
             "has a heading" in {
               mainContent.select("h3").get(0).text mustBe heading
             }
@@ -105,7 +105,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           }
 
           "has a Check their eligibility section" which {
-            import HowToSignUp.CheckAvailability._
+            import AgentHowToSignUp.AgentCheckAvailability._
             "has a heading" in {
               mainContent.select("h3").get(1).text mustBe heading
             }
@@ -116,7 +116,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           }
 
           "has a Get your client’s information ready section" which {
-            import HowToSignUp.GetInformation._
+            import AgentHowToSignUp.AgentGetInformation._
             "has a heading" in {
               mainContent.select("h3").get(2).text mustBe heading
             }
@@ -127,7 +127,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           }
 
           "has a Confirm client details section" which {
-            import HowToSignUp.ConfirmClientDetails._
+            import AgentHowToSignUp.AgentConfirmClientDetails._
             "has a heading" in {
               mainContent.select("h3").get(3).text mustBe heading
             }
@@ -158,7 +158,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         }
 
         "has a Complete Sign Up section" which {
-          import HowToSignUp.CompleteSignUp._
+          import AgentHowToSignUp.AgentCompleteSignUp._
           "has a heading" in {
             mainContent.select("h3").get(4).text mustBe heading
           }
@@ -181,7 +181,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         }
 
         "has a Confirm sign-up section" which {
-          import HowToSignUp.Confirm._
+          import AgentHowToSignUp.AgentConfirm._
           "has a heading" in {
             mainContent.select("h3").get(5).text mustBe heading
           }

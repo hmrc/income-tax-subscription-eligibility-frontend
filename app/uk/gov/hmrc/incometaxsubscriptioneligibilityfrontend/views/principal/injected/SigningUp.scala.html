@@ -31,75 +31,77 @@
 
 @(postAction: Call, backLink: String)(implicit request: Request[_], messages: Messages)
 
-@insetText = {
-
-  <p class="govuk-body">@messages("individual.signing-up.intro.inset.para-1")</p>
-
+@header = {
+  <h1 class="govuk-heading-xl">@messages("individual.signing-up.heading")</h1>
+  <p class="govuk-body">@messages("individual.signing-up.header-section.para-1")</p>
+  @govukInsetText(InsetText(
+    content = HtmlContent(insetText)
+  ))
+  <p class="govuk-body">@messages("individual.signing-up.header-section.para-2")</p>
   <ul class="govuk-list govuk-list--bullet">
-    <li>@messages("individual.signing-up.intro.inset.bullet-1")</li>
-    <li>@messages("individual.signing-up.intro.inset.bullet-2")</li>
+    <li>@messages("individual.signing-up.header-section.bullet-1")</li>
+    <li>@messages("individual.signing-up.header-section.bullet-2")</li>
   </ul>
+}
 
-  <p class="govuk-body">@messages("individual.signing-up.intro.inset.para-2")</p>
+@insetText = {
+  <p class="govuk-body">@messages("individual.signing-up.header-section.inset.para-1")</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>@messages("individual.signing-up.header-section.inset.bullet-1")</li>
+    <li>@messages("individual.signing-up.header-section.inset.bullet-2")</li>
+  </ul>
+  <p class="govuk-body">@messages("individual.signing-up.header-section.inset.para-2")</p>
+}
 
+@checkEligibility = {
+  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.check-eligibility.heading")</h3>
+  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.check-eligibility.para")</p>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+}
+
+@hmrcAccount = {
+  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.hmrc-account.heading")</h3>
+  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para1")</p>
+  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para2")</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet1", accountingPeriodService.currentTaxYear)</li>
+    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet2", accountingPeriodService.nextTaxYear)</li>
+  </ul>
+  <div class="govuk-inset-text">@messages("individual.signing-up.how-to-sign-up.hmrc-account.inset-text")</div>
+  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para3")</p>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+}
+
+@completeSignUp = {
+  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.complete-sign-up.heading")</h3>
+  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.complete-sign-up.para")</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>@messages("individual.signing-up.how-to-sign-up.complete-sign-up.bullet1")</li>
+    <li>@messages("individual.signing-up.how-to-sign-up.complete-sign-up.bullet2")</li>
+    <li>@messages("individual.signing-up.how-to-sign-up.complete-sign-up.bullet3")</li>
+  </ul>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+}
+
+@signUp = {
+  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.sign-up.heading")</h3>
+  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.sign-up.para")</p>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
 }
 
 @mainTemplate(title = messages("individual.signing-up.heading"), backLink = Some(backLink)) {
 
-  <h1 class="govuk-heading-xl">@messages("individual.signing-up.heading")</h1>
-
-  <p class="govuk-body">@messages("individual.signing-up.intro.para-1")</p>
-
-  @govukInsetText(InsetText(
-    content = HtmlContent(insetText)
-  ))
-
-  <p class="govuk-body">@messages("individual.signing-up.intro.para-2")</p>
-
-  <ul class="govuk-list govuk-list--bullet">
-    <li>@messages("individual.signing-up.intro.bullet-1")</li>
-    <li>@messages("individual.signing-up.intro.bullet-2")</li>
-  </ul>
-
-  <h2 class="govuk-heading-l">@messages("individual.signing-up.subheading")</h2>
-
-  <ol class="govuk-list govuk-list--number govuk-list--bold-marker">
-    <li>
-      <h3 class="govuk-heading-s">@messages("individual.signing-up.section1.heading")</h3>
-      <p class="govuk-body">@messages("individual.signing-up.section1.paragraph")</p>
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
-    </li>
-    <li>
-      <h3 class="govuk-heading-s">@messages("individual.signing-up.section2.heading")</h3>
-      <p class="govuk-body">@messages("individual.signing-up.section2.paragraph1")</p>
-      <p class="govuk-body">@messages("individual.signing-up.section2.paragraph2")</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("individual.signing-up.section2.bullet1", accountingPeriodService.currentTaxYear)</li>
-        <li>@messages("individual.signing-up.section2.bullet2", accountingPeriodService.nextTaxYear)</li>
-      </ul>
-      <div class="govuk-inset-text">@messages("individual.signing-up.section2.inset-text")</div>
-      <p class="govuk-body">@messages("individual.signing-up.section2.paragraph3")</p>
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
-    </li>
-    <li>
-      <h3 class="govuk-heading-s">@messages("individual.signing-up.section3.heading")</h3>
-      <p class="govuk-body">@messages("individual.signing-up.section3.paragraph")</p>
-      <ul class="govuk-list govuk-list--bullet">
-          <li>@messages("individual.signing-up.section3.bullet1")</li>
-          <li>@messages("individual.signing-up.section3.bullet2")</li>
-          <li>@messages("individual.signing-up.section3.bullet3")</li>
-      </ul>
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
-    </li>
-    <li>
-      <h3 class="govuk-heading-s">@messages("individual.signing-up.section4.heading")</h3>
-      <p class="govuk-body">@messages("individual.signing-up.section4.paragraph")</p>
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
-    </li>
-  </ol>
-
-  @form(action = postAction) {
-    @continueButton()
-  }
-
+  @header
+  <h2 class="govuk-heading-l">@messages("individual.signing-up.how-to-sign-up.heading")</h2>
+  <div class="govuk-body">
+    <ol class="govuk-list govuk-list--number govuk-list--bold-marker">
+      <li>@checkEligibility</li>
+      <li>@hmrcAccount</li>
+      <li>@completeSignUp</li>
+      <li>@signUp</li>
+    </ol>
+    @form(action = postAction) {
+      @continueButton()
+    }
+  </div>
 }

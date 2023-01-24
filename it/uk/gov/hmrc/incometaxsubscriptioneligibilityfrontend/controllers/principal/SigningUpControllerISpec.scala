@@ -60,135 +60,135 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
       }
 
       "has a first paragraph" in {
-        doc.mainContent.selectHead("p").text mustBe Messages.Intro.paraOne
+        doc.mainContent.selectHead("p").text mustBe Messages.Heading.paraOne
       }
 
       "has an inset text" which {
         def inset: Element = doc.mainContent.selectHead(".govuk-inset-text")
 
         "has a first paragraph" in {
-          inset.selectHead("p").text mustBe Messages.Intro.Inset.paraOne
+          inset.selectHead("p").text mustBe Messages.Heading.Inset.paraOne
         }
         "has a bullet list" which {
           def bulletList: Element = inset.selectHead("ul")
 
           "has a first bullet" in {
-            bulletList.selectNth("li", 1).text mustBe Messages.Intro.Inset.bulletOne
+            bulletList.selectNth("li", 1).text mustBe Messages.Heading.Inset.bulletOne
           }
           "has a second bullet" in {
-            bulletList.selectNth("li", 2).text mustBe Messages.Intro.Inset.bulletTwo
+            bulletList.selectNth("li", 2).text mustBe Messages.Heading.Inset.bulletTwo
           }
         }
         "has a second paragraph" in {
-          inset.selectNth("p", 2).text mustBe Messages.Intro.Inset.paraTwo
+          inset.selectNth("p", 2).text mustBe Messages.Heading.Inset.paraTwo
         }
       }
 
       "has a second paragraph" in {
-        doc.mainContent.selectNth("p", 4).text mustBe Messages.Intro.paraTwo
+        doc.mainContent.selectNth("p", 4).text mustBe Messages.Heading.paraTwo
       }
 
       "has a bullet list" which {
         def bulletList: Element = doc.mainContent.selectNth("ul", 2)
 
         "has a first bullet" in {
-          bulletList.selectNth("li", 1).text mustBe Messages.Intro.bulletOne
+          bulletList.selectNth("li", 1).text mustBe Messages.Heading.bulletOne
         }
         "has a second bullet" in {
-          bulletList.selectNth("li", 2).text mustBe Messages.Intro.bulletTwo
+          bulletList.selectNth("li", 2).text mustBe Messages.Heading.bulletTwo
         }
       }
 
-      "has a section 1" that {
+      "has a Check your eligibility section" that {
         val section1 =
           doc
             .mainContent
             .selectNth("ol > li", 1)
 
         "contains a header" in {
-          section1.selectHead("h3").text mustBe Messages.SectionOne.heading
+          section1.selectHead("h3").text mustBe Messages.CheckEligibility.heading
         }
 
         "contains a paragraph" in {
-          section1.selectHead("p").text mustBe Messages.SectionOne.paragraph
+          section1.selectHead("p").text mustBe Messages.CheckEligibility.paragraph
         }
       }
 
-      "has a section 2" that {
+      "has a Sign in to your HMRC account section" that {
         val section2 =
           doc
             .mainContent
             .selectNth("ol > li", 2)
 
         "contains a header" in {
-          section2.selectHead("h3").text mustBe Messages.SectionTwo.heading
+          section2.selectHead("h3").text mustBe Messages.HMRCAccount.heading
         }
 
         "contains paragraph 1" in {
-          section2.selectNth("p", 1).text mustBe Messages.SectionTwo.paragraph1
+          section2.selectNth("p", 1).text mustBe Messages.HMRCAccount.paragraph1
         }
 
         "contains paragraph 2" in {
-          section2.selectNth("p", 2).text mustBe Messages.SectionTwo.paragraph2
+          section2.selectNth("p", 2).text mustBe Messages.HMRCAccount.paragraph2
         }
 
         "contains bullet 1" in {
-          section2.selectNth("ul li", 1).text mustBe Messages.SectionTwo.bullet1(accountingPeriodService.currentTaxYear)
+          section2.selectNth("ul li", 1).text mustBe Messages.HMRCAccount.bullet1(accountingPeriodService.currentTaxYear)
         }
 
         "contains bullet 2" in {
-          section2.selectNth("ul li", 2).text mustBe Messages.SectionTwo.bullet2(accountingPeriodService.nextTaxYear)
+          section2.selectNth("ul li", 2).text mustBe Messages.HMRCAccount.bullet2(accountingPeriodService.nextTaxYear)
         }
 
         "contains inset text" in {
-          section2.selectHead(".govuk-inset-text").text mustBe Messages.SectionTwo.insetText
+          section2.selectHead(".govuk-inset-text").text mustBe Messages.HMRCAccount.insetText
         }
 
         "contains paragraph 3" in {
-          section2.selectNth("p", 3).text mustBe Messages.SectionTwo.paragraph3
+          section2.selectNth("p", 3).text mustBe Messages.HMRCAccount.paragraph3
         }
       }
 
-      "has a section 3" that {
+      "has a Complete sign-up tasks section" that {
         val section3 =
           doc
             .mainContent
             .selectNth("ol > li", 3)
 
         "contains a header" in {
-          section3.selectHead("h3").text mustBe Messages.SectionThree.heading
+          section3.selectHead("h3").text mustBe Messages.CompleteSignUp.heading
         }
 
         "contains paragraph 1" in {
-          section3.selectNth("p", 1).text mustBe Messages.SectionThree.paragraph1
+          section3.selectNth("p", 1).text mustBe Messages.CompleteSignUp.paragraph1
         }
 
         "contains bullet 1" in {
-          section3.selectNth("ul li", 1).text mustBe Messages.SectionThree.bullet1
+          section3.selectNth("ul li", 1).text mustBe Messages.CompleteSignUp.bullet1
         }
 
         "contains bullet 2" in {
-          section3.selectNth("ul li", 2).text mustBe Messages.SectionThree.bullet2
+          section3.selectNth("ul li", 2).text mustBe Messages.CompleteSignUp.bullet2
         }
 
         "contains bullet 3" in {
-          section3.selectNth("ul li", 3).text mustBe Messages.SectionThree.bullet3
+          section3.selectNth("ul li", 3).text mustBe Messages.CompleteSignUp.bullet3
         }
 
       }
 
-      "has a section 4" that {
+      "has a Sign up section" that {
         val section4 =
           doc
             .mainContent
             .selectNth("ol > li", 4)
 
         "contains a header" in {
-          section4.selectHead("h3").text mustBe Messages.SectionFour.heading
+          section4.selectHead("h3").text mustBe Messages.SignUp.heading
         }
 
         "contains a paragraph" in {
-          section4.selectHead("p").text mustBe Messages.SectionFour.paragraph
+          section4.selectHead("p").text mustBe Messages.SignUp.paragraph
         }
       }
 

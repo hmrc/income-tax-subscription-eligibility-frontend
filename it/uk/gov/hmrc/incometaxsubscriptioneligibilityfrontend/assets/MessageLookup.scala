@@ -122,7 +122,7 @@ object MessageLookup {
    val heading = "Signing up for Making Tax Digital for Income Tax"
    val subheading = "How to sign up"
 
-   object Intro {
+   object Heading {
      val paraOne = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. " +
        "It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
 
@@ -138,12 +138,12 @@ object MessageLookup {
      val bulletTwo = "receive income from property"
    }
 
-   object SectionOne {
+   object CheckEligibility {
      val heading = "Check your eligibility"
      val paragraph = "Answer the questions to find out if you may be eligible to take part in the pilot."
    }
 
-   object SectionTwo {
+   object HMRCAccount {
      val heading = "Sign in to your HMRC account"
      val paragraph1 = "If you find out you may be eligible, sign in to your HMRC account."
      val paragraph2 = "Depending on your circumstances, you will be offered to sign up for the:"
@@ -155,7 +155,7 @@ object MessageLookup {
        "continue to submit your annual Self Assessment as normal."
    }
 
-   object SectionThree {
+   object CompleteSignUp {
      val heading = "Complete sign-up tasks"
      val paragraph1 = "To sign up you need to:"
      val bullet1 = "confirm the details we have about you and your business are correct"
@@ -163,14 +163,14 @@ object MessageLookup {
      val bullet3 = "select which year you want to start using Making Tax Digital for Income Tax"
    }
 
-   object SectionFour {
+   object SignUp {
      val heading = "Sign up"
      val paragraph = "You’ll be told you’ve successfully signed up for Making Tax Digital for Income Tax."
    }
  }
 
   object AgentSignupTerms {
-    object Heading {
+    object AgentHeading {
       val heading = "Signing your clients up for Making Tax Digital for Income Tax"
       val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
       val para2 = "You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."
@@ -179,24 +179,24 @@ object MessageLookup {
       val bullet2 = "receive income from property"
     }
 
-    object HowToSignUp {
+    object AgentHowToSignUp {
       object Heading {
         val heading = "How to sign up"
       }
-      object GetReady {
+      object AgentGetReady {
         val heading = "Get your clients ready"
         val para = "Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up."
       }
-      object CheckAvailability {
+      object AgentCheckAvailability {
         val heading = "Check their eligibility"
         val para = "Answer the survey to check if your client is eligible for the pilot."
       }
-      object GetInformation {
+      object AgentGetInformation {
         val heading = "Get your client’s information ready"
         val para = "Make sure you’ve got the necessary information to sign up your client. This includes their name, National Insurance Number, date of birth and when their business started trading."
 
       }
-      object ConfirmClientDetails {
+      object AgentConfirmClientDetails {
         val heading = "Confirm client details"
         val para1 = "If you find out your client may be eligible, sign in to your HMRC agent account."
         val para2 = "Depending on their circumstances, you will be offered to sign them up for the:"
@@ -205,7 +205,7 @@ object MessageLookup {
         val para3 = "There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
         val para4 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
       }
-      object CompleteSignUp {
+      object AgentCompleteSignUp {
         val heading = "Complete sign-up tasks"
         val para = "To sign up your client you need to:"
         val bullet1 = "confirm the details we have about your client and their business are correct"
@@ -213,7 +213,7 @@ object MessageLookup {
         val bullet3 = "select which year you want to start using Making Tax Digital for Income Tax"
 
       }
-      object Confirm {
+      object AgentConfirm {
         val heading = "Confirm sign-up"
         val para = "You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up."
 
