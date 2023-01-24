@@ -16,13 +16,14 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config
 
-import javax.inject.{Inject, Singleton}
+import play.api.Configuration
 import play.api.i18n.Lang
 import play.api.mvc.Call
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.{routes => agentRoutes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.{routes => principalRoutes}
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
-import play.api.Configuration
+
+import javax.inject.{Inject, Singleton}
 
 @Singleton
 class AppConfig @Inject()(config: ServicesConfig, val configuration: Configuration) {
@@ -62,7 +63,8 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
   lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"
   lazy val workingForYourselfUrl: String = s"$govUkUrl/working-for-yourself"
 
-  lazy val  qualifyingIncomeUrl: String = s"$govUkUrl/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax#find-out-about-qualifying-income"
+  lazy val qualifyingIncomeUrl: String = s"$govUkUrl/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax#find-out-about-qualifying-income"
+  lazy val sendingReturnGovUkUrl: String = s"$govUkUrl/self-assessment-tax-returns/sending-return"
 
   def languageMap: Map[String, Lang] = Map(
     "english" -> Lang("en"),

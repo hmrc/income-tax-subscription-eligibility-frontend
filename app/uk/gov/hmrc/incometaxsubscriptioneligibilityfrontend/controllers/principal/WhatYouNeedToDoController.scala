@@ -19,20 +19,20 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.Terms
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.WhatYouNeedToDo
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton
-class TermsController @Inject()(terms: Terms,
-                                mcc: MessagesControllerComponents)(implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
+class WhatYouNeedToDoController @Inject()(whatYouNeedToDo: WhatYouNeedToDo, mcc: MessagesControllerComponents)
+                                         (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(terms(postAction = routes.TermsController.submit, backUrl = backUrl))
+        Ok(whatYouNeedToDo(postAction = routes.WhatYouNeedToDoController.submit, backUrl = backUrl))
       )
   }
 

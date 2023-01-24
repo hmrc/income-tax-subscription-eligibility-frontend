@@ -27,8 +27,8 @@ GET         /property-start-after             uk.gov.hmrc.incometaxsubscriptione
 POST        /property-start-after             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.submit
 
 ## Terms of Participation
-GET         /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.show
-POST        /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.TermsController.submit
+GET         /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.WhatYouNeedToDoController.show
+POST        /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.WhatYouNeedToDoController.submit
 
 ## Are you sole trader after
 GET         /sole-trader-start-after          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.show

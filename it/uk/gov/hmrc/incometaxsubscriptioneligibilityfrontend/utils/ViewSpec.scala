@@ -67,6 +67,7 @@ trait ViewSpec extends Matchers {
     }
 
     def selectNth(selector: String, nth: Int): Element = {
+      if (nth < 1) fail(s"Unable to select the $nth element, use a number >= 1")
       element.select(selector).asScala.lift(nth - 1) match {
         case Some(element) => element
         case None => fail(s"Could not retrieve $selector number $nth")

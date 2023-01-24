@@ -20,8 +20,7 @@ import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.routes
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.injected.SigningUp
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.SigningUp
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
