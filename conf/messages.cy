@@ -36,18 +36,18 @@ sign-up.heading                                                 = Yn eich blaen 
 sign-up.paragraph                                               = Ar sail eich atebion, gallwch fynd yn eich blaen i gofrestru ar gyfer y cynllun peilot Troi Treth yn Ddigidol ar gyfer Treth Incwm.
 
 ## What You Need To Do ##
-what-you-need-to-do.heading                                     = Yr hyn y mae angen i chi ei wneud
-what-you-need-to-do.para-1                                      = You can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2026. You do not have to let us know and you can ignore any secure message from the service. But you must file your Self Assessment tax return at the end of the year as normal.
-what-you-need-to-do.2026.para                                   = You must meet the Making Tax Digital for Income Tax requirements for 6 April 2026, if all of the following apply:
-what-you-need-to-do.2026.bullet-1                               = you are registered for Self Assessment - {0}
-what-you-need-to-do.2026.bullet-1.link-text                     = find out more about registering and sending a Self Assessment tax return
-what-you-need-to-do.2026.bullet-2                               = you get income from self-employment or property, or both
-what-you-need-to-do.2026.bullet-3                               = your total qualifying income is more than £50,000
-what-you-need-to-do.2027.para                                   = You must meet the Making Tax Digital for Income Tax requirements for 6 April 2027, if all of the following apply:
-what-you-need-to-do.2027.bullet-1                               = you are registered for Self Assessment
-what-you-need-to-do.2027.bullet-2                               = you get income from self-employment or property, or both
-what-you-need-to-do.2027.bullet-3                               = your total qualifying income is more than £30,000
-what-you-need-to-do.para-2                                      = You can stop using Making Tax Digital for Income Tax when the pilot ends on 5 April 2026 if your income is less than £50,000.
+what-you-need-to-do.heading                                     = Beth y mae angen i chi ei wneud
+what-you-need-to-do.para-1                                      = Gallwch ddewis rhoi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar unrhyw adeg hyd at 6 Ebrill 2026. Does dim rhaid i chi roi gwybod i ni, a gallwch anwybyddu unrhyw neges ddiogel oddi wrth y gwasanaeth. Ond, mae’n rhaid i chi gyflwyno’ch Ffurflen Dreth Hunanasesiad ar ddiwedd y flwyddyn dreth yn ôl yr arfer.
+what-you-need-to-do.2026.para                                   = Mae’n rhaid i chi fodloni’r gofynion ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gyfer 6 Ebrill 2026, os yw pob un o’r canlynol yn berthnasol:
+what-you-need-to-do.2026.bullet-1                               = rydych wedi cofrestru ar gyfer Hunanasesiad - {0}
+what-you-need-to-do.2026.bullet-1.link-text                     = dysgwch ragor am gofrestru ac anfon Ffurflen Dreth Hunanasesiad
+what-you-need-to-do.2026.bullet-2                               = rydych yn cael incwm o hunangyflogaeth neu o eiddo, neu o’r ddau
+what-you-need-to-do.2026.bullet-3                               = mae cyfanswm eich incwm cymwys yn fwy na £50,000
+what-you-need-to-do.2027.para                                   = Mae’n rhaid i chi fodloni’r gofynion ar gyfer Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gyfer 6 Ebrill 2027, os yw pob un o’r canlynol yn berthnasol:
+what-you-need-to-do.2027.bullet-1                               = rydych wedi cofrestru ar gyfer Hunanasesiad
+what-you-need-to-do.2027.bullet-2                               = rydych yn cael incwm o hunangyflogaeth neu o eiddo, neu o’r ddau
+what-you-need-to-do.2027.bullet-3                               = mae cyfanswm eich incwm cymwys yn fwy na £30,000
+what-you-need-to-do.para-2                                      = Gallwch roi’r gorau i ddefnyddio Treth Incwm pan ddaw’r peilot i ben ar 5 Ebrill 2026 os yw’ch incwm yn llai na £50,000.
 
 ## Property Trading Before Date page ##
 property-trading-after.title                                    = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
