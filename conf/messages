@@ -164,7 +164,7 @@ agent.signing-up.how-to-sign-up.complete-sign-up.bullet3        = select which y
 agent.signing-up.how-to-sign-up.confirm.heading                 = Confirm sign-up
 agent.signing-up.how-to-sign-up.confirm.para                    = You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up.
 
-## Terms and Conditions Page ##
+## Agent what you need to do page ##
 agent.terms.heading                                             = What you need to do
 agent.terms.paragraph1                                          = By taking part in this pilot you agree that you will:
 agent.terms.bullet1                                             = use compatible software to record your client’s income and expenses
