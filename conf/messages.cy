@@ -150,27 +150,6 @@ agent.signing-up.how-to-sign-up.complete-sign-up.bullet3        = select which y
 agent.signing-up.how-to-sign-up.confirm.heading                 = Confirm sign-up ... but in Welsh
 agent.signing-up.how-to-sign-up.confirm.para                    = You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up. ... but in Welsh
 
-## Agent what you need to do page ##
-agent.terms.heading                                             = Beth y mae angen i chi ei wneud
-agent.terms.paragraph1                                          = Drwy gymryd rhan yn y cynllun peilot hwn, rydych yn cytuno y byddwch yn gwneud y canlynol:
-agent.terms.bullet1                                             = defnyddio meddalwedd sy’n cydweddu i gofnodi incwm a threuliau eich cleient
-agent.terms.bullet2                                             = anfon diweddariadau chwarterol o ddechrau ei gyfnod cyfrifyddu
-agent.terms.bullet3                                             = cyflwyno ei ddatganiad terfynol erbyn 31 Ionawr yn dilyn ei flwyddyn dreth bresennol
-agent.terms.bullet4                                             = rhoi gwybod i CThEF os yw’n rhoi’r gorau i fasnachu neu’n ddechrau busnes newydd
-agent.terms.subheading                                          = Gall eich cleient roi’r gorau i ddefnyddio’r cynllun peilot hwn ar unrhyw adeg.
-agent.terms.paragraph2                                          = Gall eich cleient ddewis rhoi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar unrhyw adeg hyd at 6 Ebrill 2026. Does dim rhaid i chi roi gwybod i ni, a gall eich cleient anwybyddu unrhyw negeseuon diogel oddi wrth y gwasanaeth. Ond, mae’n rhaid iddo gyflwyno ei Hunanasesiad erbyn 31 Ionawr yn dilyn diwedd y flwyddyn dreth yn ôl yr arfer.
-agent.terms.paragraph3                                          = Mae’n rhaid i’ch cleient fodloni gofynion y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gyfer 6 Ebrill 2026, os bydd y canlynol i gyd yn berthnasol:
-agent.terms.bullet5                                             = mae wedi’i gofrestru ar gyfer Hunanasesiad ({0})
-agent.terms.bullet6                                             = mae’n cael incwm o hunangyflogaeth neu o eiddo, neu o’r ddau
-agent.terms.bullet7                                             = mae cyfanswm ei {0} yn fwy na £50,000
-agent.terms.paragraph4                                          = Mae’n rhaid i’ch cleient fodloni gofynion Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gyfer 6 Ebrill 2027, os bydd y canlynol i gyd yn berthnasol:
-agent.terms.bullet8                                             = mae wedi’i gofrestru ar gyfer Hunanasesiad
-agent.terms.bullet9                                             = mae’n cael incwm o hunangyflogaeth neu o eiddo, neu o’r ddau
-agent.terms.bullet10                                            = mae cyfanswm ei incwm cymwys yn fwy na £30,000
-agent.terms.paragraph5                                          = Gall eich cleient roi’r gorau i ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar ôl i’r cynllun peilot ddod i ben ar 5 Ebrill 2026, os yw ei incwm cymwys yn llai na £50,000.
-agent.terms.qualifying-income-link                              = incwm cymwys
-agent.terms.sa-tax-return-link                                  = dysgwch ragor am gofrestru ac anfon Ffurflen Dreth Hunanasesiad
-
 ## Title pattern
 principle-title-pattern.service-name.gov-uk                     = {0} - Defnyddio meddalwedd i anfon diweddariadau Treth Incwm - GOV.UK
 agent-title-pattern.service-name.gov-uk                         = {0} - Defnyddiwch feddalwedd i roi gwybod am Dreth Incwm eich cleient - GOV.UK

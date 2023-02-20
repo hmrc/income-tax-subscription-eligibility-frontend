@@ -30,6 +30,6 @@ class LanguageSwitchController @Inject()(appConfig: AppConfig,
 
   override def languageMap: Map[String, Lang] = appConfig.languageMap
 
-  override def fallbackURL: String = agents.routes.TermsController.show.url
+  override def fallbackURL: String = agents.routes.IndexController.index.url
 
 }
