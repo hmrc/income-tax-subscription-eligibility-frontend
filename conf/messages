@@ -30,20 +30,6 @@ overview.bullet-before-start-line-3                             = business start
 overview.bullet-before-start-line-4                             = business accounting year information
 overview.inset-text                                             = You will need to use the same Government Gateway user ID and password that you use for your current Self Assessment account. If you do not have a user ID yet, you can create one when you use the service.
 
-##  What You Need To Do  ##
-what-you-need-to-do.heading                                     = What you need to do
-what-you-need-to-do.para-1                                      = You can choose to stop using Making Tax Digital for Income Tax at any time until 6 April 2026. You do not have to let us know and you can ignore any secure message from the service. But you must file your Self Assessment tax return at the end of the year as normal.
-what-you-need-to-do.2026.para                                   = You must meet the Making Tax Digital for Income Tax requirements for 6 April 2026, if all of the following apply:
-what-you-need-to-do.2026.bullet-1                               = you are registered for Self Assessment - {0}
-what-you-need-to-do.2026.bullet-1.link-text                     = find out more about registering and sending a Self Assessment tax return
-what-you-need-to-do.2026.bullet-2                               = you get income from self-employment or property, or both
-what-you-need-to-do.2026.bullet-3                               = your total qualifying income is more than £50,000
-what-you-need-to-do.2027.para                                   = You must meet the Making Tax Digital for Income Tax requirements for 6 April 2027, if all of the following apply:
-what-you-need-to-do.2027.bullet-1                               = you are registered for Self Assessment
-what-you-need-to-do.2027.bullet-2                               = you get income from self-employment or property, or both
-what-you-need-to-do.2027.bullet-3                               = your total qualifying income is more than £30,000
-what-you-need-to-do.para-2                                      = You can stop using Making Tax Digital for Income Tax when the pilot ends on 5 April 2026 if your income is less than £50,000.
-
 ## Do you have any other income page
 have-any-other-income.title                                     = Apart from self-employment or property, do you have any other sources of income?
 have-any-other-income.caption                                   = Check you can sign up to the pilot - question 1
