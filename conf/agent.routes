@@ -9,9 +9,5 @@ GET         /                              uk.gov.hmrc.incometaxsubscriptionelig
 GET         /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.SigningUpController.show
 POST        /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.SigningUpController.submit
 
-## Terms of Participation
-GET         /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.show
-POST        /what-you-need-to-do           uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.TermsController.submit
-
 ## Welsh language support
 GET         /language/:lang                uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.LanguageSwitchController.switchToLanguage(lang: String)

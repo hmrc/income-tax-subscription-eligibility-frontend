@@ -35,7 +35,7 @@ class IndexController @Inject()(
     if (isEnabled(SignUpEligibilityInterrupt)) {
       Redirect(routes.SigningUpController.show)
     } else {
-      Redirect(routes.TermsController.show)
+      Redirect(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
     }
   }
 

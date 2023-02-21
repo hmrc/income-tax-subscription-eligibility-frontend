@@ -206,7 +206,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
     "redirect to the start of the agent sign up" in {
       submitResult must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.TermsController.show.url)
+        redirectUri(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
       )
     }
   }

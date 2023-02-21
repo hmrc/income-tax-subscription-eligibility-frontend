@@ -31,7 +31,7 @@ class IndexControllerISpec extends ComponentSpecBase with FeatureSwitching {
       s"return $SEE_OTHER" in {
         result() must have(
           httpStatus(SEE_OTHER),
-          redirectUri(routes.TermsController.show.url)
+          redirectUri(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
         )
       }
     }
