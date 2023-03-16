@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
-
+import java.time.format.DateTimeFormatter
 object MessageLookup {
   val suffix = " - Use software to send Income Tax updates - GOV.UK"
   val agentSuffix = " - Use software to report your client’s Income Tax - GOV.UK"
@@ -148,8 +148,12 @@ object MessageLookup {
      val heading = "Sign in to your HMRC account"
      val paragraph1 = "If you find out you may be eligible, sign in to your HMRC account."
      val paragraph2 = "Depending on your circumstances, you will be offered to sign up for the:"
-     def bullet1(currentTaxYear: String): String = s"current tax year ($currentTaxYear)"
-     def bullet2(nextTaxYear: String): String = s"next tax year ($nextTaxYear)"
+     val currentTaxYear = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+     val nextTaxYear = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+     val currentTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+     val nextTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+     val bullet1 = s"current tax year (${currentTaxYear} to ${currentTaxYearEnd})"
+     val bullet2 = s"next tax year (${nextTaxYear} to ${nextTaxYearEnd})"
      val insetText = "There may be circumstances which stop you from joining the pilot. " +
        "These may include certain other incomes or activities, or the length of time you’ve been self-employed."
      val paragraph3 = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +

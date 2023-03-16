@@ -18,18 +18,22 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AccountingPeriodService
+@import uk.gov.hmrc.play.language.LanguageUtils
+@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
+@import models.common.AccountingPeriodModel
 
 @this(
   mainTemplate: PrincipalMainTemplate,
   accountingPeriodService: AccountingPeriodService,
   form: FormWithCSRF,
   continueButton: ContinueButton,
-  govukInsetText: GovukInsetText
+  govukInsetText: GovukInsetText,
+        languageUtils: LanguageUtils
 )(
   implicit appConfig: AppConfig
 )
 
-@(postAction: Call, backLink: String)(implicit request: Request[_], messages: Messages)
+@(postAction: Call, currentTaxYear: AccountingPeriodModel, nextTaxYear: AccountingPeriodModel, backLink: String)(implicit request: Request[_], messages: Messages)
 
 @header = {
   <h1 class="govuk-heading-xl">@messages("individual.signing-up.heading")</h1>
@@ -64,8 +68,8 @@
   <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para1")</p>
   <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para2")</p>
   <ul class="govuk-list govuk-list--bullet">
-    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet1", accountingPeriodService.currentTaxYear)</li>
-    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet2", accountingPeriodService.nextTaxYear)</li>
+    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet1", languageUtils.Dates.formatDate(currentTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(currentTaxYear.endDate.toLocalDate))</li>
+    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet2", languageUtils.Dates.formatDate(nextTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(nextTaxYear.endDate.toLocalDate))</li>
   </ul>
   <div class="govuk-inset-text">@messages("individual.signing-up.how-to-sign-up.hmrc-account.inset-text")</div>
   <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para3")</p>
