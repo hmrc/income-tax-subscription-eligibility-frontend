@@ -21,8 +21,11 @@ import org.jsoup.nodes.{Document, Element}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, IndividualSignUpTerms, suffix}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AccountingPeriodService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
+
+import java.time.format.DateTimeFormatter
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
@@ -137,11 +140,11 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         }
 
         "contains bullet 1" in {
-          section2.selectNth("ul li", 1).text mustBe bullet1(accountingPeriodService.currentTaxYear)
+          section2.selectNth("ul li", 1).text mustBe bullet1
         }
 
         "contains bullet 2" in {
-          section2.selectNth("ul li", 2).text mustBe bullet2(accountingPeriodService.nextTaxYear)
+          section2.selectNth("ul li", 2).text mustBe bullet2
         }
 
         "contains inset text" in {
