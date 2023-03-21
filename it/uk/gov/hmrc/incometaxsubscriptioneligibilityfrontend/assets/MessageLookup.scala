@@ -17,6 +17,7 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
 import java.time.format.DateTimeFormatter
+
 object MessageLookup {
   val suffix = " - Use software to send Income Tax updates - GOV.UK"
   val agentSuffix = " - Use software to report your client’s Income Tax - GOV.UK"
@@ -178,10 +179,10 @@ object MessageLookup {
     object AgentHeading {
       val heading = "Signing your clients up for Making Tax Digital for Income Tax"
       val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
-      val para2 = "You don’t have to sign your clients up yet, but it will be compulsory for most self-employed businesses to declare their income through Making Tax Digital in the future."
-      val para3 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
+      val para2 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
       val bullet1 = "are a sole trader"
       val bullet2 = "receive income from property"
+      val para3 = "Self-employed people trading through limited companies cannot sign-up for Making Tax Digital for Income Tax."
     }
 
     object AgentHowToSignUp {
@@ -190,7 +191,7 @@ object MessageLookup {
       }
       object AgentGetReady {
         val heading = "Get your clients ready"
-        val para = "Put together a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from participating in the pilot, check with them if they’d like to take part. You’ll need authorisation from them to sign them up."
+        val para = "Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the pilot, check if they’d like to take part. Your client will need to authorise you to sign them up."
       }
       object AgentCheckAvailability {
         val heading = "Check their eligibility"
@@ -198,15 +199,22 @@ object MessageLookup {
       }
       object AgentGetInformation {
         val heading = "Get your client’s information ready"
-        val para = "Make sure you’ve got the necessary information to sign up your client. This includes their name, National Insurance Number, date of birth and when their business started trading."
-
+        val para = "Make sure you’ve got the necessary information to sign up your client. This includes their:"
+        val bullet1 = "name"
+        val bullet2 = "National Insurance number"
+        val bullet3 = "date of birth"
+        val bullet4 = "the date their business started trading"
       }
       object AgentConfirmClientDetails {
         val heading = "Confirm client details"
         val para1 = "If you find out your client may be eligible, sign in to your HMRC agent account."
         val para2 = "Depending on their circumstances, you will be offered to sign them up for the:"
-        val bullet1 = "current tax year (" + AccountingPeriodUtil.getCurrentTaxYearRange + ")"
-        val bullet2 = "next tax year (" + AccountingPeriodUtil.getNextTaxYearRange + ")"
+        val currentTaxYear = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+        val nextTaxYear = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+        val currentTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+        val nextTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
+        val bullet1 = s"current tax year (${currentTaxYear} to ${currentTaxYearEnd})"
+        val bullet2 = s"next tax year (${nextTaxYear} to ${nextTaxYearEnd})"
         val para3 = "There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
         val para4 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
       }

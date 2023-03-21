@@ -20,6 +20,7 @@ import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.agents.SigningUp
 
@@ -30,7 +31,7 @@ class SigningUpController @Inject()(mcc: MessagesControllerComponents, signingUp
                                    (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   val show: Action[AnyContent] = Action { implicit request =>
-    Ok(signingUp(postAction = routes.SigningUpController.submit, backLink))
+    Ok(signingUp(postAction = routes.SigningUpController.submit, AccountingPeriodUtil.getCurrentTaxYear, AccountingPeriodUtil.getNextTaxYear, backLink))
   }
 
   val submit: Action[AnyContent] = Action { _ =>
