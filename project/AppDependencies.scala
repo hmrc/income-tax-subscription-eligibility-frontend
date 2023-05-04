@@ -3,8 +3,8 @@ import sbt._
 
 object AppDependencies {
 
-  private val bootstrapVersion = "7.7.0"
-  private val playHmrcFrontendVersion = "6.2.0-play-28"
+  private val bootstrapVersion = "7.15.0"
+  private val playHmrcFrontendVersion = "7.7.0-play-28"
   private val jacksonModuleVersion = "2.13.2"
   private val playTest = "2.8.14"
 
@@ -14,7 +14,7 @@ object AppDependencies {
   )
 
   val test: Seq[ModuleID] = Seq(
-    "uk.gov.hmrc" %% "bootstrap-frontend-play-28" % bootstrapVersion % Test,
+    "uk.gov.hmrc" %% "bootstrap-test-play-28" % bootstrapVersion % Test,
     "org.scalatest" %% "scalatest" % "3.2.11" % "test, it",
     "com.vladsch.flexmark" % "flexmark-all" % "0.62.2" % "test, it",
     "org.jsoup" % "jsoup" % "1.14.3" % "test, it",
