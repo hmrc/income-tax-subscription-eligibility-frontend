@@ -26,7 +26,9 @@
         form: FormWithCSRF,
         continueButton: ContinueButton,
         govukInsetText: GovukInsetText,
-        languageUtils: LanguageUtils
+        govukNotificationBanner : GovukNotificationBanner,
+        languageUtils: LanguageUtils,
+        govukDetails:GovukDetails
 )(
         implicit appConfig: AppConfig
 )
@@ -52,6 +54,19 @@
 
     @govukInsetText(InsetText(content = HtmlContent(indent)))
 }
+
+@detailsContent = {
+  <div class="govuk-body">
+    <ol class="govuk-list govuk-list--number govuk-!-margin-2 govuk-list--bold-marker">
+      <li>@getReady</li>
+      <li>@checkEligibility</li>
+      <li>@getClientInformation</li>
+      <li>@confirmClientDetails</li>
+      <li>@completeSignUp</li>
+      <li>@confirm</li>
+    </ol>
+  </div>
+    }
 
 @break = {
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"/>
@@ -82,17 +97,22 @@
 }
 
 @confirmClientDetails = {
-    <h3 class="govuk-heading-s">@messages("agent.signing-up.how-to-sign-up.confirm-client-details.heading")</h3>
-    <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para1")</p>
-    <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para2")</p>
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-2">
-        <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet1", languageUtils.Dates.formatDate(currentTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(currentTaxYear.endDate.toLocalDate))</li>
-        <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet2", languageUtils.Dates.formatDate(nextTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(nextTaxYear.endDate.toLocalDate))</li>
-    </ul>
+  <h3 class="govuk-heading-s">@messages("agent.signing-up.how-to-sign-up.confirm-client-details.heading")</h3>
+  <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para1")</p>
+  <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para2")</p>
+  <ul class="govuk-list govuk-list--bullet govuk-!-margin-2">
+    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet1", languageUtils.Dates.formatDate(currentTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(currentTaxYear.endDate.toLocalDate))</li>
+    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet2", languageUtils.Dates.formatDate(nextTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(nextTaxYear.endDate.toLocalDate))</li>
+  </ul>
+@govukNotificationBanner(NotificationBanner(content = HtmlContent(confirmClientDetailsNotificationBanner)))
+@break
+}
 
-    <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para3")</p>
-    <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para4")</p>
-    @break
+  @confirmClientDetailsNotificationBanner = {
+  <ul class="govuk-list">
+    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para3")</li>
+    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para4")</li>
+  </ul>
 }
 
 @confirm = {
@@ -115,18 +135,13 @@
 @mainTemplate(title = messages("agent.signing-up.heading"), backLink = Some(backLink)) {
 
   @header
-  <h2 class="govuk-heading-l">@messages("agent.signing-up.how-to-sign-up.heading")</h2>
-  <div class="govuk-body">
-    <ol class="govuk-list govuk-list--number govuk-!-margin-2 govuk-list--bold-marker">
-      <li>@getReady</li>
-      <li>@checkEligibility</li>
-      <li>@getClientInformation</li>
-      <li>@confirmClientDetails</li>
-      <li>@completeSignUp</li>
-      <li>@confirm</li>
-    </ol>
+
+  @govukDetails(Details(
+    summary = Text(messages("agent.signing-up.how-to-sign-up.heading")),
+    content =HtmlContent(detailsContent)
+  ))
+
     @form(action = postAction) {
       @continueButton()
     }
-  </div>
 }
