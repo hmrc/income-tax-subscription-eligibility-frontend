@@ -90,9 +90,6 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         "has a how to sign up section" which {
           "has a heading section" which {
             import AgentHowToSignUp.Heading._
-            "has a second heading" in {
-              mainContent.getH2Elements.get(0).text mustBe heading
-            }
           }
 
           "has a Get your clients ready section" which {
@@ -162,11 +159,11 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             }
 
             "has a third para" in {
-              mainContent.select("p").get(8).text mustBe para3
+              mainContent.select("ol").select("ul").get(2).select("li").get(0).text mustBe para3
             }
 
             "has a fourth para" in {
-              mainContent.select("p").get(9).text mustBe para4
+              mainContent.select("ol").select("ul").get(2).select("li").get(1).text mustBe para4
             }
           }
         }
@@ -178,19 +175,19 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           }
 
           "has a para" in {
-            mainContent.select("p").get(10).text mustBe para
+            mainContent.select("p").get(8).text mustBe para
           }
 
           "has a first bullet point" in {
-            mainContent.select("ol").select("ul").get(2).select("li").get(0).text mustBe bullet1
+            mainContent.select("ol").select("ul").get(3).select("li").get(0).text mustBe bullet1
           }
 
           "has a second bullet point" in {
-            mainContent.select("ol").select("ul").get(2).select("li").get(1).text mustBe bullet2
+            mainContent.select("ol").select("ul").get(3).select("li").get(1).text mustBe bullet2
           }
 
           "has a third bullet point" in {
-            mainContent.select("ol").select("ul").get(2).select("li").get(2).text mustBe bullet3
+            mainContent.select("ol").select("ul").get(3).select("li").get(2).text mustBe bullet3
           }
         }
 
