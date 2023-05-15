@@ -178,7 +178,7 @@ object MessageLookup {
   object AgentSignupTerms {
     object AgentHeading {
       val heading = "Signing your clients up for Making Tax Digital for Income Tax"
-      val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a This pilot is not available right phase for selected self-employed businesses and landlords."
+      val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary phase for selected self-employed businesses and landlords."
       val para2 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
       val bullet1 = "are a sole trader"
       val bullet2 = "receive income from property"
@@ -191,11 +191,11 @@ object MessageLookup {
       }
       object AgentGetReady {
         val heading = "Get your clients ready"
-        val para = "Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the pilot, check if they’d like to take part. Your client will need to authorise you to sign them up."
+        val para = "Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the voluntary phase, check if they’d like to take part. Your client will need to authorise you to sign them up."
       }
       object AgentCheckAvailability {
         val heading = "Check their eligibility"
-        val para = "Answer the survey to check if your client is eligible for the pilot."
+        val para = "Answer the survey to check if your client is eligible."
       }
       object AgentGetInformation {
         val heading = "Get your client’s information ready"
@@ -215,7 +215,7 @@ object MessageLookup {
         val nextTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
         val bullet1 = s"current tax year (${currentTaxYear} to ${currentTaxYearEnd})"
         val bullet2 = s"next tax year (${nextTaxYear} to ${nextTaxYearEnd})"
-        val para3 = "There may be circumstances which stop your client from joining the pilot. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
+        val para3 = "There may be circumstances which stop your client from using Making Tax Digital for Income Tax right now. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
         val para4 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
       }
       object AgentCompleteSignUp {
