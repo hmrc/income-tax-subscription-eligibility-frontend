@@ -51,7 +51,7 @@ object MessageLookup {
 
   object HaveAnyOtherIncome {
     val title = "Apart from self-employment or property, do you have any other sources of income?"
-    val caption = "This section is Check you can sign up to the pilot - question 1"
+    val caption = "This section is Check you can sign up - question 1"
     val include = "This could include:"
     val notInclude = "This does not include:"
     val includePoints: Seq[String] =
@@ -72,7 +72,7 @@ object MessageLookup {
     val hintMessage6 = "a room"
     val hintMessage7 = "part of your property"
 
-    val caption = "This section is Check you can sign up to the pilot - question 3"
+    val caption = "This section is Check you can sign up - question 3"
 
     def error(date: String) = s"Select yes if you own a property business that began trading on or after $date."
   }
@@ -80,7 +80,7 @@ object MessageLookup {
   object SoleTraderStartAfter {
     def title(date: String) = s"Did your sole trader business begin on or after $date?"
 
-    val caption = "This section is Check you can sign up to the pilot - question 2"
+    val caption = "This section is Check you can sign up - question 2"
 
     def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date."
 
@@ -88,8 +88,8 @@ object MessageLookup {
   }
 
   object CannotSignUp {
-    val heading = "You cannot take part in this pilot yet"
-    val incomePara = "This pilot is not available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this pilot if you receive income from:"
+    val heading = "You cannot take part yet"
+    val incomePara = "Making Tax Digital for Income Tax is not currently available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this voluntary phase if you receive income from:"
     val incomeBullet1 = "PAYE income as an employee"
     val incomeBullet2 = "UK pensions or annuities"
     val incomeBullet3 = "investments from outside the UK"
@@ -126,7 +126,7 @@ object MessageLookup {
 
    object Heading {
      val paraOne = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. " +
-       "It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
+       "It’s currently in a voluntary phase for selected self-employed businesses and landlords."
 
      object Inset {
        val paraOne = "Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, you will have to sign up if you earn:"
@@ -142,7 +142,7 @@ object MessageLookup {
 
    object CheckEligibility {
      val heading = "Check your eligibility"
-     val paragraph = "Answer the questions to find out if you may be eligible to take part in the pilot."
+     val paragraph = "Answer the questions to find out if you may be eligible to take part in the voluntary phase."
    }
 
    object HMRCAccount {
@@ -155,7 +155,7 @@ object MessageLookup {
      val nextTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
      val bullet1 = s"current tax year (${currentTaxYear} to ${currentTaxYearEnd})"
      val bullet2 = s"next tax year (${nextTaxYear} to ${nextTaxYearEnd})"
-     val insetText = "There may be circumstances which stop you from joining the pilot. " +
+     val insetText = "There may be circumstances which stop you from joining the voluntary phase. " +
        "These may include certain other incomes or activities, or the length of time you’ve been self-employed."
      val paragraph3 = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
        "continue to submit your annual Self Assessment as normal."
@@ -178,7 +178,7 @@ object MessageLookup {
   object AgentSignupTerms {
     object AgentHeading {
       val heading = "Signing your clients up for Making Tax Digital for Income Tax"
-      val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary pilot phase for selected self-employed businesses and landlords."
+      val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a This pilot is not available right phase for selected self-employed businesses and landlords."
       val para2 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
       val bullet1 = "are a sole trader"
       val bullet2 = "receive income from property"
@@ -237,7 +237,7 @@ object MessageLookup {
 
   object AgentTerms {
     val heading: String = "What you need to do"
-    val paragraph1 = "By taking part in this pilot you agree that you will:"
+    val paragraph1 = "By taking part you agree that you will:"
     val bullet1 = "use compatible software to record your client’s income and expenses"
     val bullet2 = "send quarterly updates from the start of their accounting period"
     val bullet3 = "submit their final declaration by 31 January following their current tax year"
@@ -273,7 +273,7 @@ object MessageLookup {
   object CheckAccountingPeriod {
     val heading = "Do all of your business accounting periods run from 6 April to 5 April?"
     val hint = "The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property needs to be the same if you would like to sign up to this service."
-    val caption = "This section is Check you can sign up to the pilot - question 4"
+    val caption = "This section is Check you can sign up - question 4"
     val yes = "Yes"
     val no = "No"
     val continue = "Continue"
@@ -281,7 +281,7 @@ object MessageLookup {
   }
 
   object SignUpToPilot {
-    val heading = "Continue your sign up to the pilot"
-    val paragraph = "Based on your answers, you can continue to sign up to the pilot for Making Tax Digital for Income Tax."
+    val heading = "Continue your sign up for Making Tax Digital for Income Tax"
+    val paragraph = "Based on your answers, you can continue to sign up for Making Tax Digital for Income Tax."
   }
 }
