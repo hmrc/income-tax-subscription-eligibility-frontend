@@ -31,14 +31,14 @@ overview.bullet-before-start-line-4                             = gwybodaeth am 
 overview.inset-text                                             = Bydd angen i chi ddefnyddio’r un Dynodydd Defnyddiwr (ID) a chyfrinair ar gyfer Porth y Llywodraeth a ddefnyddiwch ar gyfer eich cyfrif Hunanasesiad presennol. Os nad oes gennych Ddynodydd Defnyddiwr (ID) eto, gallwch greu un pan fyddwch yn defnyddio’r gwasanaeth.
 
 ## Sign Up To Pilot Page ##
-sign-up.title                                                   = Yn eich blaen i gofrestru ar gyfer y cynllun peilot
-sign-up.heading                                                 = Yn eich blaen i gofrestru ar gyfer y cynllun peilot
-sign-up.paragraph                                               = Ar sail eich atebion, gallwch fynd yn eich blaen i gofrestru ar gyfer y cynllun peilot Troi Treth yn Ddigidol ar gyfer Treth Incwm.
+sign-up.title                                                   = Continue your sign up for Making Tax Digital for Income Tax ... but in Welsh
+sign-up.heading                                                 = Continue your sign up for Making Tax Digital for Income Tax ... but in Welsh
+sign-up.paragraph                                               = Based on your answers, you can continue to sign up for Making Tax Digital for Income Tax. ... but in Welsh
 
 ## Property Trading Before Date page ##
 property-trading-after.title                                    = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
 property-trading-after.heading                                  = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
-property-trading-after.caption                                  = Gwirio a allwch gofrestru ar gyfer y cynllun peilot - cwestiwn 3
+property-trading-after.caption                                  = Gwirio a allwch gofrestru - cwestiwn 3
 property-trading-after.line1                                    = Mae hyn yn cynnwys bod yn landlord neu ddefnyddio asiantaeth gosod eiddo ar gyfer:
 property-trading-after.line2                                    = eiddo yn y DU
 property-trading-after.line3                                    = eiddo tramor
@@ -50,7 +50,7 @@ property-trading-after.error                                    = Dewiswch ‘Ia
 
 ## Do you have any other income page
 have-any-other-income.title                                     = Ar wahân i hunangyflogaeth neu eiddo, a oes gennych unrhyw ffynonellau eraill o incwm?
-have-any-other-income.caption                                   = Gwirio a allwch gofrestru ar gyfer y cynllun peilot - cwestiwn 1
+have-any-other-income.caption                                   = Gwirio a allwch gofrestru - cwestiwn 1
 have-any-other-income.include                                   = Gallai hyn gynnwys:
 have-any-other-income.not-include                               = Nid yw hyn yn cynnwys:
 have-any-other-income.include-point-1                           = incwm TWE fel cyflogai
@@ -64,7 +64,7 @@ have-any-other-income.error.summary                             = Dewiswch ’Ia
 
 ## Accounting period check
 accounting-period-check.title                                   = A yw’ch holl gyfnodau cyfrifyddu busnes yn rhedeg o 6 Ebrill i 5 Ebrill?
-accounting-period-check.caption                                 = Gwirio a allwch gofrestru ar gyfer y cynllun peilot - cwestiwn 4
+accounting-period-check.caption                                 = Gwirio a allwch gofrestru - cwestiwn 4
 accounting-period-check.title.hint                              = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae angen i’ch cyfnod cyfrifyddu ar gyfer eich hunangyflogaeth neu’ch busnes eiddo gyfateb â hyn os hoffech gofrestru ar gyfer y gwasanaeth hwn.
 accounting-period-check.error                                   = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
 accounting-period-check.error.summary                           = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
@@ -72,15 +72,15 @@ accounting-period-check.error.summary                           = Dewiswch ‘Ia
 ## Are you a sole trader after page ##
 are-you-sole-trader-after.title                                 = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are-you-sole-trader-after.heading                               = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
-are-you-sole-trader-after.caption                               = Gwirio a allwch gofrestru ar gyfer y cynllun peilot - cwestiwn 2
+are-you-sole-trader-after.caption                               = Gwirio a allwch gofrestru - cwestiwn 2
 are-you-sole-trader-after.para                                  = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn {0}
 are-you-sole-trader-after.para-link                             = hunangyflogedig
 are-you-sole-trader-after.error.summary                         = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}.
 
 ## Cannot Sign Up Page
-cannot-sign-up.title                                            = Ni allwch gymryd rhan yn y cynllun peilot hwn eto
-cannot-sign-up.heading                                          = Ni allwch gymryd rhan yn y cynllun peilot hwn eto
-cannot-sign-up.income.para                                      = Nid yw’r cynllun peilot hwn ar gael ar hyn o bryd ar gyfer defnyddwyr sydd â mathau penodol o incwm neu sydd heb fod yn masnachu am ddigon hir. Ni fyddwch yn gallu cymryd rhan yn y cynllun peilot os ydych yn cael incwm o’r canlynol:
+cannot-sign-up.title                                            = Ni allwch gymryd rhan eto
+cannot-sign-up.heading                                          = Ni allwch gymryd rhan eto
+cannot-sign-up.income.para                                      = Making Tax Digital for Income Tax is not currently available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this voluntary phase if you receive income from: ... but in Welsh
 cannot-sign-up.income.bullet1                                   = incwm TWE fel cyflogai
 cannot-sign-up.income.bullet2                                   = pensiynau neu flwydd-daliadau’r DU
 cannot-sign-up.income.bullet3                                   = buddsoddiadau y tu allan i’r DU
