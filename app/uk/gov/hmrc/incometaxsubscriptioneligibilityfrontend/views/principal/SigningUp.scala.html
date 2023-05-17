@@ -26,6 +26,7 @@
   mainTemplate: PrincipalMainTemplate,
   accountingPeriodService: AccountingPeriodService,
   form: FormWithCSRF,
+  govukNotificationBanner : GovukNotificationBanner,
   continueButton: ContinueButton,
   govukInsetText: GovukInsetText,
         languageUtils: LanguageUtils
@@ -54,13 +55,16 @@
     <li>@messages("individual.signing-up.header-section.inset.bullet-1")</li>
     <li>@messages("individual.signing-up.header-section.inset.bullet-2")</li>
   </ul>
-  <p class="govuk-body">@messages("individual.signing-up.header-section.inset.para-2")</p>
+}
+
+@break = {
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
 }
 
 @checkEligibility = {
   <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.check-eligibility.heading")</h3>
   <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.check-eligibility.para")</p>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+  @break
 }
 
 @hmrcAccount = {
@@ -71,9 +75,15 @@
     <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet1", languageUtils.Dates.formatDate(currentTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(currentTaxYear.endDate.toLocalDate))</li>
     <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet2", languageUtils.Dates.formatDate(nextTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(nextTaxYear.endDate.toLocalDate))</li>
   </ul>
-  <div class="govuk-inset-text">@messages("individual.signing-up.how-to-sign-up.hmrc-account.inset-text")</div>
-  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para3")</p>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+  @govukNotificationBanner(NotificationBanner(content = HtmlContent(hmrcAccountNotificationBannerContent)))
+  @break
+}
+
+@hmrcAccountNotificationBannerContent = {
+  <ul class="govuk-list">
+    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.notification-para1")</li>
+    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.notification-para2")</li>
+  </ul>
 }
 
 @completeSignUp = {
@@ -84,13 +94,13 @@
     <li>@messages("individual.signing-up.how-to-sign-up.complete-sign-up.bullet2")</li>
     <li>@messages("individual.signing-up.how-to-sign-up.complete-sign-up.bullet3")</li>
   </ul>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+  @break
 }
 
 @signUp = {
   <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.sign-up.heading")</h3>
   <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.sign-up.para")</p>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+  @break
 }
 
 @mainTemplate(title = messages("individual.signing-up.heading"), backLink = Some(backLink)) {

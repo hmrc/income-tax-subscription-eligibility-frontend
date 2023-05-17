@@ -129,7 +129,7 @@ object MessageLookup {
        "It’s currently in a voluntary phase for selected self-employed businesses and landlords."
 
      object Inset {
-       val paraOne = "Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, you will have to sign up if you earn:"
+       val paraOne = "Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, if your total qualifying income is more than:"
        val bulletOne = "£50,000 or more for April 2026"
        val bulletTwo = "£30,000 or more for April 2027"
        val paraTwo = "You can still choose to voluntarily sign up."
@@ -142,7 +142,7 @@ object MessageLookup {
 
    object CheckEligibility {
      val heading = "Check your eligibility"
-     val paragraph = "Answer the questions to find out if you may be eligible to take part in the voluntary phase."
+     val paragraph = "Answer the questions to find out if you may be eligible."
    }
 
    object HMRCAccount {
@@ -155,9 +155,9 @@ object MessageLookup {
      val nextTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
      val bullet1 = s"current tax year (${currentTaxYear} to ${currentTaxYearEnd})"
      val bullet2 = s"next tax year (${nextTaxYear} to ${nextTaxYearEnd})"
-     val insetText = "There may be circumstances which stop you from joining the voluntary phase. " +
+     val notificationPara1 = "There may be circumstances which stop you from using Making Tax Digital for Income Tax at the moment. " +
        "These may include certain other incomes or activities, or the length of time you’ve been self-employed."
-     val paragraph3 = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
+     val notificationPara2 = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
        "continue to submit your annual Self Assessment as normal."
    }
 
