@@ -121,7 +121,7 @@ individual.signing-up.how-to-sign-up.sign-up.heading                    = Sign u
 individual.signing-up.how-to-sign-up.sign-up.para                       = You’ll be told you’ve successfully signed up for Making Tax Digital for Income Tax.
 
 ## Agent Signing Up Page ##
-agent.signing-up.heading                                        = Signing your clients up for Making Tax Digital for Income Tax
+agent.signing-up.heading                                        = Signing up your clients up for Making Tax Digital for Income Tax
 agent.signing-up.header-section.para1                           = Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary phase for selected self-employed businesses and landlords.
 agent.signing-up.header-section.para2                           = Self-employed people trading through limited companies cannot sign-up for Making Tax Digital for Income Tax.
 agent.signing-up.header-section.para3                           = You may be able to sign your client up for Making Tax Digital for Income Tax if they:
@@ -130,9 +130,9 @@ agent.signing-up.header-section.bullet2                         = receive income
 agent.signing-up.how-to-sign-up.heading                         = How to sign up
 agent.signing-up.how-to-sign-up.get-ready.heading               = Get your clients ready
 agent.signing-up.how-to-sign-up.get-ready.para                  = Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the voluntary phase, check if they’d like to take part. Your client will need to authorise you to sign them up.
-agent.signing-up.how-to-sign-up.check-eligibility.heading       = Check their eligibility
+agent.signing-up.how-to-sign-up.check-eligibility.heading       = Check your client is eligible
 agent.signing-up.how-to-sign-up.check-eligibility.para          = Answer the survey to check if your client is eligible.
-agent.signing-up.how-to-sign-up.get-client-information.heading  = Get your client’s information ready
+agent.signing-up.how-to-sign-up.get-client-information.heading  = Prepare your client’s information
 agent.signing-up.how-to-sign-up.get-client-information.para     = Make sure you’ve got the necessary information to sign up your client. This includes their:
 agent.signing-up.how-to-sign-up.get-client-information.bullet1  = name
 agent.signing-up.how-to-sign-up.get-client-information.bullet2  = National Insurance number
@@ -151,7 +151,7 @@ agent.signing-up.how-to-sign-up.complete-sign-up.bullet1        = confirm the de
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet2        = add any other income sources
 agent.signing-up.how-to-sign-up.complete-sign-up.bullet3        = select which year you want to start using Making Tax Digital for Income Tax
 agent.signing-up.how-to-sign-up.confirm.heading                 = Confirm sign-up
-agent.signing-up.how-to-sign-up.confirm.para                    = You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up.
+agent.signing-up.how-to-sign-up.confirm.para                    = We’ll confirm your client has been signed up. You’ll also be offered to sign up another client.
 
 ## Title pattern
 principle-title-pattern.service-name.gov-uk                     = {0} - Use software to send Income Tax updates - GOV.UK

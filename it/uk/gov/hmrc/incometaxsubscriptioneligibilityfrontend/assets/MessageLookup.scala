@@ -177,7 +177,7 @@ object MessageLookup {
 
   object AgentSignupTerms {
     object AgentHeading {
-      val heading = "Signing your clients up for Making Tax Digital for Income Tax"
+      val heading = "Signing up your clients up for Making Tax Digital for Income Tax"
       val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary phase for selected self-employed businesses and landlords."
       val para2 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
       val bullet1 = "are a sole trader"
@@ -194,11 +194,11 @@ object MessageLookup {
         val para = "Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the voluntary phase, check if they’d like to take part. Your client will need to authorise you to sign them up."
       }
       object AgentCheckAvailability {
-        val heading = "Check their eligibility"
+        val heading = "Check your client is eligible"
         val para = "Answer the survey to check if your client is eligible."
       }
       object AgentGetInformation {
-        val heading = "Get your client’s information ready"
+        val heading = "Prepare your client’s information"
         val para = "Make sure you’ve got the necessary information to sign up your client. This includes their:"
         val bullet1 = "name"
         val bullet2 = "National Insurance number"
@@ -228,7 +228,7 @@ object MessageLookup {
       }
       object AgentConfirm {
         val heading = "Confirm sign-up"
-        val para = "You’ll get confirmation that your client has been successfully signed up. You will also be given the option to sign another client up."
+        val para = "We’ll confirm your client has been signed up. You’ll also be offered to sign up another client."
 
       }
     }
