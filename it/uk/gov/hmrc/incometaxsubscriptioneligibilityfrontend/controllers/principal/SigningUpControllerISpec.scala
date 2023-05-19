@@ -84,13 +84,10 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             bulletList.selectNth("li", 2).text mustBe bulletTwo
           }
         }
-        "has a second paragraph" in {
-          inset.selectNth("p", 2).text mustBe paraTwo
-        }
       }
 
       "has a second paragraph" in {
-        doc.mainContent.selectNth("p", 4).text mustBe paraTwo
+        doc.mainContent.selectNth("p", 3).text mustBe paraTwo
       }
 
       "has a bullet list" which {
@@ -147,12 +144,12 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           section2.selectNth("ul li", 2).text mustBe bullet2
         }
 
-        "contains inset text" in {
-          section2.selectHead(".govuk-inset-text").text mustBe insetText
+        "contains notification paragraph 1" in {
+          section2.selectHead(".govuk-notification-banner__content").selectNth("li", 1).text mustBe notificationPara1
         }
 
-        "contains paragraph 3" in {
-          section2.selectNth("p", 3).text mustBe paragraph3
+        "contains notification paragraph 2" in {
+          section2.selectHead(".govuk-notification-banner__content").selectNth("li", 2).text mustBe notificationPara2
         }
       }
 
