@@ -197,6 +197,10 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             mainContent.select("h3").get(5).text mustBe heading
           }
 
+          "has a paragraph" in {
+            mainContent.selectNth("p",10).text mustBe para
+          }
+
         }
       }
 
