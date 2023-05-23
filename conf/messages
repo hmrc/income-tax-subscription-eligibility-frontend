@@ -1,99 +1,21 @@
 ## Base ##
-base.back                                                       = Back
-base.continue                                                   = Continue
-base.yes                                                        = Yes
-base.no                                                         = No
-base.govuk                                                      = GOV.UK
-base.error-heading                                              = There is a problem.
-base.accept-and-continue                                        = Accept and continue
-base.update                                                     = Update
+base.continue                                                           = Continue
+base.yes                                                                = Yes
+base.no                                                                 = No
+base.error-heading                                                      = There is a problem.
+base.update                                                             = Update
 
 ## Service Name
-principal-service-name.title                                    = Use software to send Income Tax updates
-agent-service-name.title                                        = Use software to report your client’s Income Tax
+principal-service-name.title                                            = Use software to send Income Tax updates
+agent-service-name.title                                                = Use software to report your client’s Income Tax
 
-## Overview Page Content
-overview.title                                                  = The way you complete Self Assessment is changing
-overview.heading                                                = The way you complete Self Assessment is changing
-overview.line-1                                                 = This is a pilot to sign up for a new way for sole trader businesses (self-employed) and landlords to send income tax updates and returns to HMRC.
-overview.line-2                                                 = You will need to use compatible software to:
-overview.bullet-compatible-software-line-1                      = keep your business records up to date
-overview.bullet-compatible-software-line-2                      = send updates about your business records to HMRC every quarter
-overview.bullet-compatible-software-line-3                      = file your Self Assessment tax return
-overview.line-3                                                 = This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. {0}
-overview.link-text                                              = Find software that’s compatible with Making Tax Digital for Income Tax
-overview.heading-2                                              = Before you start
-overview.line-4                                                 = To sign up to this pilot, you will need your:
-overview.bullet-before-start-line-1                             = Government Gateway user ID and password
-overview.bullet-before-start-line-2                             = National Insurance number
-overview.bullet-before-start-line-3                             = business start dates and registered addresses
-overview.bullet-before-start-line-4                             = business accounting year information
-overview.inset-text                                             = You will need to use the same Government Gateway user ID and password that you use for your current Self Assessment account. If you do not have a user ID yet, you can create one when you use the service.
+## Title pattern
+principle-title-pattern.service-name.gov-uk                             = {0} - Use software to send Income Tax updates - GOV.UK
+agent-title-pattern.service-name.gov-uk                                 = {0} - Use software to report your client’s Income Tax - GOV.UK
+principle-base.title.error                                              = Error: {0} - Use software to send Income Tax updates - GOV.UK
+agent-base.title.error                                                  = Error: {0} - Use software to report your client’s Income Tax - GOV.UK
 
-## Do you have any other income page
-have-any-other-income.title                                     = Apart from self-employment or property, do you have any other sources of income?
-have-any-other-income.caption                                   = Check you can sign up - question 1
-have-any-other-income.include                                   = This could include:
-have-any-other-income.not-include                               = This does not include:
-have-any-other-income.include-point-1                           = PAYE income as an employee
-have-any-other-income.include-point-2                           = UK pensions or annuities
-have-any-other-income.include-point-3                           = investments from outside the UK
-have-any-other-income.include-point-4                           = capital gains
-have-any-other-income.include-point-5                           = taxable state benefits
-have-any-other-income.not-include-point-1                       = bank and building society interest
-have-any-other-income.not-include-point-2                       = dividends
-have-any-other-income.error.summary                             = Select yes if you have any sources of income other than self employment or property income.
-
-## Accounting period check
-accounting-period-check.title                                   = Do all of your business accounting periods run from 6 April to 5 April?
-accounting-period-check.caption                                 = Check you can sign up - question 4
-accounting-period-check.title.hint                              = The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property needs to be the same if you would like to sign up to this service.
-accounting-period-check.error                                   = Select yes if all of your business accounting periods are from 6 April to 5 April.
-accounting-period-check.error.summary                           = Select yes if all of your business accounting periods are from 6 April to 5 April.
-
-## Are you a sole trader after page ##
-are-you-sole-trader-after.title                                 = Did your sole trader business begin on or after  {0}?
-are-you-sole-trader-after.heading                               = Did your sole trader business begin on or after  {0}?
-are-you-sole-trader-after.caption                               = Check you can sign up - question 2
-are-you-sole-trader-after.para                                  = If you’re a sole trader, you run your own business as an individual and are {0}
-are-you-sole-trader-after.para-link                             = self-employed
-are-you-sole-trader-after.error.summary                         = Select yes if you are a sole trader that began trading on or after {0}.
-
-## Property Trading After Date page ##
-property-trading-after.title                                    = Did you start renting out a property on or after  {0}?
-property-trading-after.heading                                  = Did you start renting out a property on or after  {0}?
-property-trading-after.caption                                  = Check you can sign up - question 3
-property-trading-after.line1                                    = This includes being a landlord or using a letting agency for:
-property-trading-after.line2                                    = UK properties
-property-trading-after.line3                                    = overseas properties
-property-trading-after.line4                                    = holiday properties
-property-trading-after.line5                                    = This does not include renting out:
-property-trading-after.line6                                    = a room
-property-trading-after.line7                                    = part of your property
-property-trading-after.error                                    = Select yes if you own a property business that began trading on or after {0}.
-
-## Cannot Sign Up Page
-cannot-sign-up.title                                            = You cannot take part yet
-cannot-sign-up.heading                                          = You cannot take part yet
-cannot-sign-up.income.para                                      = Making Tax Digital for Income Tax is not currently available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this voluntary phase if you receive income from:
-cannot-sign-up.income.bullet1                                   = PAYE income as an employee
-cannot-sign-up.income.bullet2                                   = UK pensions or annuities
-cannot-sign-up.income.bullet3                                   = investments from outside the UK
-cannot-sign-up.income.bullet4                                   = capital gains
-cannot-sign-up.income.bullet5                                   = taxable state benefits
-cannot-sign-up.other.para                                       = You also cannot take part if your:
-cannot-sign-up.other.bullet1                                    = sole trader business began within the last two years
-cannot-sign-up.other.bullet2                                    = property business began within the last year
-cannot-sign-up.other.bullet3                                    = accounting period does not align with the standard tax year
-cannot-sign-up.send-self-assessment                             = You will need to send a {0} instead and you may be able to sign up in future.
-cannot-sign-up.send-self-assessment.link                        = Self Assessment tax return
-
-## Sign Up To Pilot Page ##
-sign-up.title                                                   = Continue your sign up for Making Tax Digital for Income Tax
-sign-up.heading                                                 = Continue your sign up for Making Tax Digital for Income Tax
-sign-up.paragraph                                               = Based on your answers, you can continue to sign up for Making Tax Digital for Income Tax.
-
-## Individual Signing Up Page ##
+# Individual Signing Up Page
 individual.signing-up.heading                                           = Signing up for Making Tax Digital for Income Tax
 individual.signing-up.header-section.para-1                             = Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary phase for selected self-employed businesses and landlords.
 individual.signing-up.header-section.inset.para-1                       = Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, if your total qualifying income is more than:
@@ -120,45 +42,116 @@ individual.signing-up.how-to-sign-up.complete-sign-up.bullet3           = select
 individual.signing-up.how-to-sign-up.sign-up.heading                    = Sign up
 individual.signing-up.how-to-sign-up.sign-up.para                       = You’ll be told you’ve successfully signed up for Making Tax Digital for Income Tax.
 
+## Overview Page Content
+overview.title                                                          = The way you complete Self Assessment is changing
+overview.heading                                                        = The way you complete Self Assessment is changing
+overview.line-1                                                         = This is a pilot to sign up for a new way for sole trader businesses (self-employed) and landlords to send income tax updates and returns to HMRC.
+overview.line-2                                                         = You will need to use compatible software to:
+overview.bullet-compatible-software-line-1                              = keep your business records up to date
+overview.bullet-compatible-software-line-2                              = send updates about your business records to HMRC every quarter
+overview.bullet-compatible-software-line-3                              = file your Self Assessment tax return
+overview.line-3                                                         = This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. {0}
+overview.link-text                                                      = Find software that’s compatible with Making Tax Digital for Income Tax
+overview.heading-2                                                      = Before you start
+overview.line-4                                                         = To sign up to this pilot, you will need your:
+overview.bullet-before-start-line-1                                     = Government Gateway user ID and password
+overview.bullet-before-start-line-2                                     = National Insurance number
+overview.bullet-before-start-line-3                                     = business start dates and registered addresses
+overview.bullet-before-start-line-4                                     = business accounting year information
+overview.inset-text                                                     = You will need to use the same Government Gateway user ID and password that you use for your current Self Assessment account. If you do not have a user ID yet, you can create one when you use the service.
+
+## Are you a sole trader after page ##
+are-you-sole-trader-after.title                                         = Did your sole trader business begin on or after  {0}?
+are-you-sole-trader-after.heading                                       = Did your sole trader business begin on or after  {0}?
+are-you-sole-trader-after.caption                                       = Check you can sign up - question 2
+are-you-sole-trader-after.para                                          = If you’re a sole trader, you run your own business as an individual and are {0}
+are-you-sole-trader-after.para-link                                     = self-employed
+are-you-sole-trader-after.error.summary                                 = Select yes if you are a sole trader that began trading on or after {0}.
+
+## Property Trading After Date page ##
+property-trading-after.title                                            = Did you start renting out a property on or after  {0}?
+property-trading-after.heading                                          = Did you start renting out a property on or after  {0}?
+property-trading-after.caption                                          = Check you can sign up - question 3
+property-trading-after.line1                                            = This includes being a landlord or using a letting agency for:
+property-trading-after.line2                                            = UK properties
+property-trading-after.line3                                            = overseas properties
+property-trading-after.line4                                            = holiday properties
+property-trading-after.line5                                            = This does not include renting out:
+property-trading-after.line6                                            = a room
+property-trading-after.line7                                            = part of your property
+property-trading-after.error                                            = Select yes if you own a property business that began trading on or after {0}.
+
+## Do you have any other income page
+have-any-other-income.title                                             = Apart from self-employment or property, do you have any other sources of income?
+have-any-other-income.caption                                           = Check you can sign up - question 1
+have-any-other-income.include                                           = This could include:
+have-any-other-income.not-include                                       = This does not include:
+have-any-other-income.include-point-1                                   = PAYE income as an employee
+have-any-other-income.include-point-2                                   = UK pensions or annuities
+have-any-other-income.include-point-3                                   = investments from outside the UK
+have-any-other-income.include-point-4                                   = capital gains
+have-any-other-income.include-point-5                                   = taxable state benefits
+have-any-other-income.not-include-point-1                               = bank and building society interest
+have-any-other-income.not-include-point-2                               = dividends
+have-any-other-income.error.summary                                     = Select yes if you have any sources of income other than self employment or property income.
+
+## Accounting period check
+accounting-period-check.title                                           = Do all of your business accounting periods run from 6 April to 5 April?
+accounting-period-check.caption                                         = Check you can sign up - question 4
+accounting-period-check.title.hint                                      = The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property needs to be the same if you would like to sign up to this service.
+accounting-period-check.error                                           = Select yes if all of your business accounting periods are from 6 April to 5 April.
+accounting-period-check.error.summary                                   = Select yes if all of your business accounting periods are from 6 April to 5 April.
+
+## Cannot Sign Up Page
+cannot-sign-up.title                                                    = You cannot take part yet
+cannot-sign-up.heading                                                  = You cannot take part yet
+cannot-sign-up.income.para                                              = Making Tax Digital for Income Tax is not currently available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this voluntary phase if you receive income from:
+cannot-sign-up.income.bullet1                                           = PAYE income as an employee
+cannot-sign-up.income.bullet2                                           = UK pensions or annuities
+cannot-sign-up.income.bullet3                                           = investments from outside the UK
+cannot-sign-up.income.bullet4                                           = capital gains
+cannot-sign-up.income.bullet5                                           = taxable state benefits
+cannot-sign-up.other.para                                               = You also cannot take part if your:
+cannot-sign-up.other.bullet1                                            = sole trader business began within the last two years
+cannot-sign-up.other.bullet2                                            = property business began within the last year
+cannot-sign-up.other.bullet3                                            = accounting period does not align with the standard tax year
+cannot-sign-up.send-self-assessment                                     = You will need to send a {0} instead and you may be able to sign up in future.
+cannot-sign-up.send-self-assessment.link                                = Self Assessment tax return
+
+## Sign Up To Pilot Page ##
+sign-up.title                                                           = Continue your sign up for Making Tax Digital for Income Tax
+sign-up.heading                                                         = Continue your sign up for Making Tax Digital for Income Tax
+sign-up.paragraph                                                       = Based on your answers, you can continue to sign up for Making Tax Digital for Income Tax.
+
 ## Agent Signing Up Page ##
-agent.signing-up.heading                                        = Signing up your clients up for Making Tax Digital for Income Tax
-agent.signing-up.header-section.para1                           = Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary phase for selected self-employed businesses and landlords.
-agent.signing-up.header-section.para2                           = Self-employed people trading through limited companies cannot sign-up for Making Tax Digital for Income Tax.
-agent.signing-up.header-section.para3                           = You may be able to sign your client up for Making Tax Digital for Income Tax if they:
-agent.signing-up.header-section.bullet1                         = are a sole trader
-agent.signing-up.header-section.bullet2                         = receive income from property
-agent.signing-up.how-to-sign-up.heading                         = How to sign up
-agent.signing-up.how-to-sign-up.get-ready.heading               = Get your clients ready
-agent.signing-up.how-to-sign-up.get-ready.para                  = Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the voluntary phase, check if they’d like to take part. Your client will need to authorise you to sign them up.
-agent.signing-up.how-to-sign-up.check-eligibility.heading       = Check your client is eligible
-agent.signing-up.how-to-sign-up.check-eligibility.para          = Answer the survey to check if your client is eligible.
-agent.signing-up.how-to-sign-up.get-client-information.heading  = Prepare your client’s information
-agent.signing-up.how-to-sign-up.get-client-information.para     = Make sure you’ve got the necessary information to sign up your client. This includes their:
-agent.signing-up.how-to-sign-up.get-client-information.bullet1  = name
-agent.signing-up.how-to-sign-up.get-client-information.bullet2  = National Insurance number
-agent.signing-up.how-to-sign-up.get-client-information.bullet3  = date of birth
-agent.signing-up.how-to-sign-up.get-client-information.bullet4  = the date their business started trading
-agent.signing-up.how-to-sign-up.confirm-client-details.heading  = Confirm client details
-agent.signing-up.how-to-sign-up.confirm-client-details.para1    = If you find out your client may be eligible, sign in to your HMRC agent account.
-agent.signing-up.how-to-sign-up.confirm-client-details.para2    = Depending on their circumstances, you will be offered to sign them up for the:
-agent.signing-up.how-to-sign-up.confirm-client-details.bullet1  = current tax year ({0} to {1})
-agent.signing-up.how-to-sign-up.confirm-client-details.bullet2  = next tax year ({0} to {1})
-agent.signing-up.how-to-sign-up.confirm-client-details.para3    = There may be circumstances which stop your client from using Making Tax Digital for Income Tax right now. These may include certain other incomes or activities, or the length of time they’ve been self-employed.
-agent.signing-up.how-to-sign-up.confirm-client-details.para4    = If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual.
-agent.signing-up.how-to-sign-up.complete-sign-up.heading        = Complete sign-up tasks
-agent.signing-up.how-to-sign-up.complete-sign-up.para           = To sign up your client you need to:
-agent.signing-up.how-to-sign-up.complete-sign-up.bullet1        = confirm the details we have about your client and their business are correct
-agent.signing-up.how-to-sign-up.complete-sign-up.bullet2        = add any other income sources
-agent.signing-up.how-to-sign-up.complete-sign-up.bullet3        = select which year you want to start using Making Tax Digital for Income Tax
-agent.signing-up.how-to-sign-up.confirm.heading                 = Confirm sign-up
-agent.signing-up.how-to-sign-up.confirm.para                    = We’ll confirm your client has been signed up. You’ll also be offered to sign up another client.
-
-## Title pattern
-principle-title-pattern.service-name.gov-uk                     = {0} - Use software to send Income Tax updates - GOV.UK
-agent-title-pattern.service-name.gov-uk                         = {0} - Use software to report your client’s Income Tax - GOV.UK
-principle-base.title.error                                      = Error: {0} - Use software to send Income Tax updates - GOV.UK
-agent-base.title.error                                          = Error: {0} - Use software to report your client’s Income Tax - GOV.UK
-
-## Language switching
-language-selector.change-to-language                            = Newid yr iaith ir Gymraeg
-language-selector.nav-label                                     = Language switcher
+agent.signing-up.heading                                                = Signing up your clients up for Making Tax Digital for Income Tax
+agent.signing-up.header-section.para1                                   = Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary phase for selected self-employed businesses and landlords.
+agent.signing-up.header-section.para2                                   = Self-employed people trading through limited companies cannot sign-up for Making Tax Digital for Income Tax.
+agent.signing-up.header-section.para3                                   = You may be able to sign your client up for Making Tax Digital for Income Tax if they:
+agent.signing-up.header-section.bullet1                                 = are a sole trader
+agent.signing-up.header-section.bullet2                                 = receive income from property
+agent.signing-up.how-to-sign-up.heading                                 = How to sign up
+agent.signing-up.how-to-sign-up.get-ready.heading                       = Get your clients ready
+agent.signing-up.how-to-sign-up.get-ready.para                          = Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the voluntary phase, check if they’d like to take part. Your client will need to authorise you to sign them up.
+agent.signing-up.how-to-sign-up.check-eligibility.heading               = Check your client is eligible
+agent.signing-up.how-to-sign-up.check-eligibility.para                  = Answer the survey to check if your client is eligible.
+agent.signing-up.how-to-sign-up.get-client-information.heading          = Prepare your client’s information
+agent.signing-up.how-to-sign-up.get-client-information.para             = Make sure you’ve got the necessary information to sign up your client. This includes their:
+agent.signing-up.how-to-sign-up.get-client-information.bullet1          = name
+agent.signing-up.how-to-sign-up.get-client-information.bullet2          = National Insurance number
+agent.signing-up.how-to-sign-up.get-client-information.bullet3          = date of birth
+agent.signing-up.how-to-sign-up.get-client-information.bullet4          = the date their business started trading
+agent.signing-up.how-to-sign-up.confirm-client-details.heading          = Confirm client details
+agent.signing-up.how-to-sign-up.confirm-client-details.para1            = If you find out your client may be eligible, sign in to your HMRC agent account.
+agent.signing-up.how-to-sign-up.confirm-client-details.para2            = Depending on their circumstances, you will be offered to sign them up for the:
+agent.signing-up.how-to-sign-up.confirm-client-details.bullet1          = current tax year ({0} to {1})
+agent.signing-up.how-to-sign-up.confirm-client-details.bullet2          = next tax year ({0} to {1})
+agent.signing-up.how-to-sign-up.confirm-client-details.para3            = There may be circumstances which stop your client from using Making Tax Digital for Income Tax right now. These may include certain other incomes or activities, or the length of time they’ve been self-employed.
+agent.signing-up.how-to-sign-up.confirm-client-details.para4            = If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual.
+agent.signing-up.how-to-sign-up.complete-sign-up.heading                = Complete sign-up tasks
+agent.signing-up.how-to-sign-up.complete-sign-up.para                   = To sign up your client you need to:
+agent.signing-up.how-to-sign-up.complete-sign-up.bullet1                = confirm the details we have about your client and their business are correct
+agent.signing-up.how-to-sign-up.complete-sign-up.bullet2                = add any other income sources
+agent.signing-up.how-to-sign-up.complete-sign-up.bullet3                = select which year you want to start using Making Tax Digital for Income Tax
+agent.signing-up.how-to-sign-up.confirm.heading                         = Confirm sign-up
+agent.signing-up.how-to-sign-up.confirm.para                            = We’ll confirm your client has been signed up. You’ll also be offered to sign up another client.
