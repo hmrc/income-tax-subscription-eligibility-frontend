@@ -105,7 +105,7 @@ accounting-period-check.error.summary                                   = Dewisw
 ## Cannot Sign Up Page
 cannot-sign-up.title                                                    = Ni allwch gymryd rhan eto
 cannot-sign-up.heading                                                  = Ni allwch gymryd rhan eto
-cannot-sign-up.income.para                                              = Making Tax Digital for Income Tax is not currently available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this voluntary phase if you receive income from: ... but in Welsh
+cannot-sign-up.income.para                                              = Nid yw’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gael ar hyn o bryd ar gyfer defnyddwyr sydd â mathau penodol o incwm neu sydd heb fod yn masnachu am ddigon o amser. Ni fyddwch yn gallu cymryd rhan yn y cyfnod gwirfoddol hwn os ydych yn cael incwm o’r canlynol:
 cannot-sign-up.income.bullet1                                           = incwm TWE fel cyflogai
 cannot-sign-up.income.bullet2                                           = pensiynau neu flwydd-daliadau’r DU
 cannot-sign-up.income.bullet3                                           = buddsoddiadau y tu allan i’r DU
@@ -119,9 +119,9 @@ cannot-sign-up.send-self-assessment                                     = Bydd a
 cannot-sign-up.send-self-assessment.link                                = Ffurflen Dreth Hunanasesiad
 
 ## Sign Up To Pilot Page ##
-sign-up.title                                                           = Continue your sign up for Making Tax Digital for Income Tax ... but in Welsh
-sign-up.heading                                                         = Continue your sign up for Making Tax Digital for Income Tax ... but in Welsh
-sign-up.paragraph                                                       = Based on your answers, you can continue to sign up for Making Tax Digital for Income Tax. ... but in Welsh
+sign-up.title                                                           = Parhau i gofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
+sign-up.heading                                                         = Parhau i gofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
+sign-up.paragraph                                                       = Ar sail eich atebion, gallwch barhau i gofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
 
 ## Agent Signing Up Page ##
 agent.signing-up.heading                                                = Cofrestru’ch cleientiaid ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
