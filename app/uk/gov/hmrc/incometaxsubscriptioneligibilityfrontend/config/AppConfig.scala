@@ -34,7 +34,7 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
 
   private val incometaxSubscriptionFrontendHost = loadConfig("income-tax-subscription-frontend.host")
   private val incometaxSubscriptionFrontendFirstPageUrl = "/report-quarterly/income-and-expenses/sign-up"
-  private val incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl = "/report-quarterly/income-and-expenses/sign-up/client/eligibility/income-sources"
+  private val incometaxSubscriptionFrontendAgentIncomeSourcesPageUrl = "/report-quarterly/income-and-expenses/sign-up/client"
 
 
   private val contactBaseUrl = loadConfig("contact-frontend.host")
