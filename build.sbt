@@ -1,5 +1,4 @@
 import uk.gov.hmrc.DefaultBuildSettings.addTestReportOption
-import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
 
 val appName = "income-tax-subscription-eligibility-frontend"
 
@@ -45,7 +44,6 @@ lazy val microservice = Project(appName, file("."))
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     scoverageSettings
   )
-  .settings(publishingSettings: _*)
   .configs(IntegrationTest)
   .settings(inConfig(IntegrationTest)(Defaults.itSettings): _*)
   .settings(resolvers += Resolver.jcenterRepo)

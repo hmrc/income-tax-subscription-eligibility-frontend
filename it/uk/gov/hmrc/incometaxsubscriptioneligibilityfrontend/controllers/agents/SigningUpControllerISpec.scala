@@ -24,6 +24,7 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, agentSuffix}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.AgentHeading._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.AgentHowToSignUp.AgentCompleteSignUp
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
@@ -158,12 +159,12 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
               mainContent.selectFirst("ol").selectNth("ul", 2).select("li").get(1).text mustBe bullet2
             }
 
-            "has a third para" in {
-              mainContent.select("ol").select("ul").get(2).select("li").get(0).text mustBe para3
+            "has a first inset para" in {
+              mainContent.selectNth("p",9).text mustBe para3
             }
 
-            "has a fourth para" in {
-              mainContent.select("ol").select("ul").get(2).select("li").get(1).text mustBe para4
+            "has a second inset para" in {
+              mainContent.selectNth("p", 10).text mustBe para4
             }
           }
         }
@@ -175,19 +176,19 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           }
 
           "has a para" in {
-            mainContent.select("p").get(8).text mustBe para
+            mainContent.select("p").get(10).text mustBe AgentCompleteSignUp.para
           }
 
           "has a first bullet point" in {
-            mainContent.select("ol").select("ul").get(3).select("li").get(0).text mustBe bullet1
+            mainContent.select("ol").select("ul").get(2).select("li").get(0).text mustBe bullet1
           }
 
           "has a second bullet point" in {
-            mainContent.select("ol").select("ul").get(3).select("li").get(1).text mustBe bullet2
+            mainContent.select("ol").select("ul").get(2).select("li").get(1).text mustBe bullet2
           }
 
           "has a third bullet point" in {
-            mainContent.select("ol").select("ul").get(3).select("li").get(2).text mustBe bullet3
+            mainContent.select("ol").select("ul").get(2).select("li").get(2).text mustBe bullet3
           }
         }
 
@@ -198,7 +199,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           }
 
           "has a paragraph" in {
-            mainContent.selectNth("p",10).text mustBe para
+            mainContent.selectNth("p",12).text mustBe para
           }
 
         }
