@@ -155,9 +155,9 @@ object MessageLookup {
      val nextTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
      val bullet1 = s"current tax year (${currentTaxYear} to ${currentTaxYearEnd})"
      val bullet2 = s"next tax year (${nextTaxYear} to ${nextTaxYearEnd})"
-     val notificationPara1 = "There may be circumstances which stop you from using Making Tax Digital for Income Tax at the moment. " +
+     val insetPara = "There may be circumstances which stop you from using Making Tax Digital for Income Tax at the moment. " +
        "These may include certain other incomes or activities, or the length of time you’ve been self-employed."
-     val notificationPara2 = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
+     val afterInsetPara = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
        "continue to submit your annual Self Assessment as normal."
    }
 

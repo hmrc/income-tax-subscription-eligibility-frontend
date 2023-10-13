@@ -104,15 +104,11 @@
     <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet1", languageUtils.Dates.formatDate(currentTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(currentTaxYear.endDate.toLocalDate))</li>
     <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.bullet2", languageUtils.Dates.formatDate(nextTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(nextTaxYear.endDate.toLocalDate))</li>
   </ul>
-@govukNotificationBanner(NotificationBanner(content = HtmlContent(confirmClientDetailsNotificationBanner)))
-@break
-}
-
-  @confirmClientDetailsNotificationBanner = {
-  <ul class="govuk-list">
-    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para3")</li>
-    <li>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.para4")</li>
-  </ul>
+  <div class="govuk-inset-text" id="inset-text">
+      <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.inset-para1")</P>
+      <p>@messages("agent.signing-up.how-to-sign-up.confirm-client-details.inset-para2")</p>
+  </div>
+  @break
 }
 
 @confirm = {

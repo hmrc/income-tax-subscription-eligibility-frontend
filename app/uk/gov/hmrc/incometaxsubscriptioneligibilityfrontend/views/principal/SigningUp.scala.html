@@ -75,15 +75,11 @@
     <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet1", languageUtils.Dates.formatDate(currentTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(currentTaxYear.endDate.toLocalDate))</li>
     <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet2", languageUtils.Dates.formatDate(nextTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(nextTaxYear.endDate.toLocalDate))</li>
   </ul>
-  @govukNotificationBanner(NotificationBanner(content = HtmlContent(hmrcAccountNotificationBannerContent)))
+  <div class="govuk-inset-text" id="inset-text">
+    @messages("individual.signing-up.how-to-sign-up.hmrc-account.inset-para")
+  </div>
+  <p>@messages("individual.signing-up.how-to-sign-up.hmrc-account.after-inset-para")</p>
   @break
-}
-
-@hmrcAccountNotificationBannerContent = {
-  <ul class="govuk-list">
-    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.notification-para1")</li>
-    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.notification-para2")</li>
-  </ul>
 }
 
 @completeSignUp = {

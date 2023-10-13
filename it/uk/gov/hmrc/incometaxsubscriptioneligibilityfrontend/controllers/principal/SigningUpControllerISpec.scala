@@ -144,12 +144,12 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           section2.selectNth("ul li", 2).text mustBe bullet2
         }
 
-        "contains notification paragraph 1" in {
-          section2.selectHead(".govuk-notification-banner__content").selectNth("li", 1).text mustBe notificationPara1
+        "contains inset paragraph " in {
+          section2.selectHead(".govuk-inset-text").text mustBe insetPara
         }
 
-        "contains notification paragraph 2" in {
-          section2.selectHead(".govuk-notification-banner__content").selectNth("li", 2).text mustBe notificationPara2
+        "contains a paragraph after the inset paragraph" in {
+          section2.selectNth("p",3).text mustBe afterInsetPara
         }
       }
 
