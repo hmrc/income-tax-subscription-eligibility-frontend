@@ -27,7 +27,7 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
   "GET /error/cannot-sign-up" should {
     lazy val result = get("/error/cannot-sign-up")
     lazy val doc: Document = Jsoup.parse(result.body)
-    lazy val content: Element = doc.body()
+    lazy val content: Element = doc.mainContent
 
     "return OK" in {
       result must have(
@@ -42,7 +42,15 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
     }
 
     "have a view with the correct first paragraph" in {
-      doc.getParagraphs.text().contains(messages.incomePara) mustBe true
+      content.selectNth("p", 1).text mustBe messages.paraOne
+    }
+
+    "have a view with the correct second paragraph" in {
+      content.selectNth("p", 2).text mustBe messages.paraTwo
+    }
+
+    "have a view with the correct third paragraph" in {
+      content.selectNth("p", 3).text mustBe messages.incomePreText
     }
 
     "have a view with the correct income bullet points" in {
@@ -59,18 +67,12 @@ class CannotSignUpControllerISpec extends ComponentSpecBase with ViewSpec {
       listItemFive.text mustBe messages.incomeBullet5
     }
 
-    "have a view with the correct second paragraph" in {
-      doc.getParagraphs.text().contains(messages.otherPara) mustBe true
-    }
-
-    "have a view with the correct other bullet points" in {
-      content.select("ul:nth-of-type(2)").select("li:nth-of-type(1)").text mustBe messages.otherBullet1
-      content.select("ul:nth-of-type(2)").select("li:nth-of-type(2)").text mustBe messages.otherBullet2
-      content.select("ul:nth-of-type(2)").select("li:nth-of-type(3)").text mustBe messages.otherBullet3
+    "have a view with the correct forth paragraph" in {
+      content.selectNth("p", 4).text mustBe messages.paraThree
     }
 
     "have a view with the correct Send Self Assessment Paragraph with link" in {
-      val paragraph = content.select("p:nth-of-type(3)")
+      val paragraph = content.selectNth("p", 5)
       paragraph.text mustBe messages.sendSelfAssessment
 
       val link = paragraph.select("a")

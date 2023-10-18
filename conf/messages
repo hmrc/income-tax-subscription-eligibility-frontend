@@ -103,19 +103,17 @@ accounting-period-check.error                                           = Select
 accounting-period-check.error.summary                                   = Select yes if all of your business accounting periods are from 6 April to 5 April.
 
 ## Cannot Sign Up Page
-cannot-sign-up.title                                                    = You cannot take part yet
 cannot-sign-up.heading                                                  = You cannot take part yet
-cannot-sign-up.income.para                                              = Making Tax Digital for Income Tax is not currently available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this voluntary phase if you receive income from:
+cannot-sign-up.para-one                                                 = You’ve told us you have other income sources aside from self-employment or property.
+cannot-sign-up.para-two                                                 = Making Tax Digital for Income Tax is not currently available to people who receive certain incomes.
+cannot-sign-up.income.pre-text                                          = This could include:
 cannot-sign-up.income.bullet1                                           = PAYE income as an employee
 cannot-sign-up.income.bullet2                                           = UK pensions or annuities
 cannot-sign-up.income.bullet3                                           = investments from outside the UK
 cannot-sign-up.income.bullet4                                           = capital gains
-cannot-sign-up.income.bullet5                                           = taxable state benefits
-cannot-sign-up.other.para                                               = You also cannot take part if your:
-cannot-sign-up.other.bullet1                                            = sole trader business began within the last two years
-cannot-sign-up.other.bullet2                                            = property business began within the last year
-cannot-sign-up.other.bullet3                                            = accounting period does not align with the standard tax year
-cannot-sign-up.send-self-assessment                                     = You will need to send a {0} instead and you may be able to sign up in future.
+cannot-sign-up.income.bullet5                                           = taxable state benefits (for example: Bereavement or Carer’s Allowance)
+cannot-sign-up.para-three                                               = You may be able to sign up in the future.
+cannot-sign-up.send-self-assessment                                     = Continue submitting your {0}.
 cannot-sign-up.send-self-assessment.link                                = Self Assessment tax return
 
 ## Sign Up To Pilot Page ##
