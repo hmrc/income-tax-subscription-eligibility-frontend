@@ -66,7 +66,7 @@ object MessageLookup {
 
     val hintMessage1 = "This includes being a landlord or using a letting agency for:"
     val hintMessage2 = "UK properties"
-    val hintMessage3 = "overseas properties"
+    val hintMessage3 = "foreign properties"
     val hintMessage4 = "holiday properties"
     val hintMessage5 = "This does not include renting out:"
     val hintMessage6 = "a room"
