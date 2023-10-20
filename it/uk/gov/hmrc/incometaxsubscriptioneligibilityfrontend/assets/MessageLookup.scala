@@ -89,17 +89,16 @@ object MessageLookup {
 
   object CannotSignUp {
     val heading = "You cannot take part yet"
-    val incomePara = "Making Tax Digital for Income Tax is not currently available right now to users who have certain types of income or who have not been trading long enough. You will not be able to take part in this voluntary phase if you receive income from:"
+    val paraOne = "You’ve told us you have other income sources aside from self-employment or property."
+    val paraTwo = "Making Tax Digital for Income Tax is not currently available to people who receive certain incomes."
+    val incomePreText = "This could include:"
     val incomeBullet1 = "PAYE income as an employee"
     val incomeBullet2 = "UK pensions or annuities"
     val incomeBullet3 = "investments from outside the UK"
     val incomeBullet4 = "capital gains"
-    val incomeBullet5 = "taxable state benefits"
-    val otherPara = "You also cannot take part if your:"
-    val otherBullet1 = "sole trader business began within the last two years"
-    val otherBullet2 = "property business began within the last year"
-    val otherBullet3 = "accounting period does not align with the standard tax year"
-    val sendSelfAssessment = "You will need to send a Self Assessment tax return instead and you may be able to sign up in future."
+    val incomeBullet5 = "taxable state benefits (for example: Bereavement or Carer’s Allowance)"
+    val paraThree = "You may be able to sign up in the future."
+    val sendSelfAssessment = "Continue submitting your Self Assessment tax return."
     val sendSelfAssessmentLink = "Self Assessment tax return"
     val sendSelfAssessmentHref = "https://www.gov.uk/self-assessment-tax-returns/sending-return"
   }

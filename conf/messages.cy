@@ -103,18 +103,16 @@ accounting-period-check.error                                           = Dewisw
 accounting-period-check.error.summary                                   = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
 
 ## Cannot Sign Up Page
-cannot-sign-up.title                                                    = Ni allwch gymryd rhan eto
 cannot-sign-up.heading                                                  = Ni allwch gymryd rhan eto
-cannot-sign-up.income.para                                              = Nid yw’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gael ar hyn o bryd ar gyfer defnyddwyr sydd â mathau penodol o incwm neu sydd heb fod yn masnachu am ddigon o amser. Ni fyddwch yn gallu cymryd rhan yn y cyfnod gwirfoddol hwn os ydych yn cael incwm o’r canlynol:
+cannot-sign-up.para-one                                                 = Rydych wedi rhoi gwybod i ni fod gennych ffynonellau incwm eraill ar wahân i hunangyflogaeth neu eiddo.
+cannot-sign-up.para-two                                                 = Nid yw cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gael ar hyn o bryd i bobl sy’n cael rhai incwm.
+cannot-sign-up.income.pre-text                                          = Gallai’r rhain hyn gynnwys:
 cannot-sign-up.income.bullet1                                           = incwm TWE fel cyflogai
 cannot-sign-up.income.bullet2                                           = pensiynau neu flwydd-daliadau’r DU
 cannot-sign-up.income.bullet3                                           = buddsoddiadau y tu allan i’r DU
 cannot-sign-up.income.bullet4                                           = enillion cyfalaf
-cannot-sign-up.income.bullet5                                           = budd-daliadau trethadwy’r Wladwriaeth
-cannot-sign-up.other.para                                               = Hefyd, ni allwch gymryd rhan os yw’r canlynol yn wir:
-cannot-sign-up.other.bullet1                                            = dechreuoch eich busnes fel unig fasnachwr o fewn y ddwy flynedd ddiwethaf
-cannot-sign-up.other.bullet2                                            = dechreuoch eich busnes eiddo o fewn y flwyddyn ddiwethaf
-cannot-sign-up.other.bullet3                                            = nid yw’ch cyfnod cyfrifyddu yn cyd-fynd â’r flwyddyn dreth safonol
+cannot-sign-up.income.bullet5                                           = budd-daliadau trethadwy’r wladwriaeth (er enghraifft, Profedigaeth neu Lwfans Profedigaeth)
+cannot-sign-up.para-three                                               = Efallai y byddwch yn gallu cofrestru yn y dyfodol.
 cannot-sign-up.send-self-assessment                                     = Bydd angen i chi anfon {0} yn lle hynny, ac efallai y bydd modd i chi gofrestru yn y dyfodol.
 cannot-sign-up.send-self-assessment.link                                = Ffurflen Dreth Hunanasesiad
 

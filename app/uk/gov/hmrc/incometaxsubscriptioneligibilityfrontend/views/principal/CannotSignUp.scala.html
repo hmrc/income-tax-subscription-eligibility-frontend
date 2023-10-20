@@ -23,11 +23,15 @@
 
 @()(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
-@mainTemplate(title = messages("cannot-sign-up.title"), backLink = Some("javascript:history.back()")) {
+@mainTemplate(title = messages("cannot-sign-up.heading"), backLink = Some("javascript:history.back()")) {
 
     <h1 class="govuk-heading-l">@messages("cannot-sign-up.heading")</h1>
 
-    <p class="govuk-body">@messages("cannot-sign-up.income.para") </p>
+    <p class="govuk-body">@messages("cannot-sign-up.para-one")</p>
+
+    <p class="govuk-body">@messages("cannot-sign-up.para-two")</p>
+
+    <p class="govuk-body">@messages("cannot-sign-up.income.pre-text")</p>
 
     <ul class="govuk-list govuk-list--bullet">
         <li>@messages("cannot-sign-up.income.bullet1")</li>
@@ -37,13 +41,7 @@
         <li>@messages("cannot-sign-up.income.bullet5")</li>
     </ul>
 
-    <p class="govuk-body">@messages("cannot-sign-up.other.para") </p>
-
-    <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("cannot-sign-up.other.bullet1")</li>
-        <li>@messages("cannot-sign-up.other.bullet2")</li>
-        <li>@messages("cannot-sign-up.other.bullet3")</li>
-    </ul>
+    <p class="govuk-body">@messages("cannot-sign-up.para-three") </p>
 
     <p class="govuk-body">
         @Html(messages("cannot-sign-up.send-self-assessment",
