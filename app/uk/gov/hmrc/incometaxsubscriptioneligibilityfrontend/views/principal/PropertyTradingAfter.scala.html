@@ -34,13 +34,13 @@
 @(propertyTradingBeforeDateForm: Form[YesNo], postAction: Call, startDateLimit: String, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
 
 @inputContent = {
-        <p class="govuk-heading-s">@messages("property-trading-after.line1")</p>
+        <p class="govuk-body">@messages("property-trading-after.line1")</p>
             <ul class="govuk-list govuk-list--bullet">
                 <li>@messages("property-trading-after.line2")</li>
                 <li>@messages("property-trading-after.line3")</li>
                 <li>@messages("property-trading-after.line4")</li>
             </ul>
-        <p class="govuk-heading-s">@messages("property-trading-after.line5")</p>
+        <p class="govuk-body">@messages("property-trading-after.line5")</p>
             <ul class="govuk-list govuk-list--bullet">
                 <li>@messages("property-trading-after.line6")</li>
                 <li>@messages("property-trading-after.line7")</li>
