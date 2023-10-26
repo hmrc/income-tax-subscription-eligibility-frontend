@@ -104,7 +104,7 @@ accounting-period-check.error.summary                                   = Select
 
 ## Cannot Sign Up Page
 cannot-sign-up.heading                                                  = You cannot take part yet
-cannot-sign-up.para-one                                                 = You’ve told us you have other income sources aside from self-employment or property.
+cannot-sign-up.para-one                                                 = You have told us you have other income sources aside from self-employment or property.
 cannot-sign-up.para-two                                                 = Making Tax Digital for Income Tax is not currently available to people who receive certain incomes.
 cannot-sign-up.income.pre-text                                          = This could include:
 cannot-sign-up.income.bullet1                                           = PAYE income as an employee

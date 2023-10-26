@@ -89,7 +89,7 @@ object MessageLookup {
 
   object CannotSignUp {
     val heading = "You cannot take part yet"
-    val paraOne = "You’ve told us you have other income sources aside from self-employment or property."
+    val paraOne = "You have told us you have other income sources aside from self-employment or property."
     val paraTwo = "Making Tax Digital for Income Tax is not currently available to people who receive certain incomes."
     val incomePreText = "This could include:"
     val incomeBullet1 = "PAYE income as an employee"
