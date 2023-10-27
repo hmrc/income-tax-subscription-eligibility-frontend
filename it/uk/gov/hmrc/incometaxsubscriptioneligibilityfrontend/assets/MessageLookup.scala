@@ -96,7 +96,7 @@ object MessageLookup {
     val incomeBullet2 = "UK pensions or annuities"
     val incomeBullet3 = "investments from outside the UK"
     val incomeBullet4 = "capital gains"
-    val incomeBullet5 = "taxable state benefits (for example: Bereavement or Carer’s Allowance)"
+    val incomeBullet5 = "taxable state benefits (for example, Bereavement or Carer’s Allowance)"
     val paraThree = "You may be able to sign up in the future."
     val sendSelfAssessment = "Continue submitting your Self Assessment tax return."
     val sendSelfAssessmentLink = "Self Assessment tax return"
