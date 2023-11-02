@@ -98,7 +98,7 @@ have-any-other-income.error.summary                                     = Select
 ## Accounting period check
 accounting-period-check.title                                           = Do all of your business accounting periods run from 6 April to 5 April?
 accounting-period-check.caption                                         = Check you can sign up - question 4
-accounting-period-check.title.hint                                      = The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property needs to be the same if you would like to sign up to this service.
+accounting-period-check.title.hint                                      = The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property income needs to be the same if you would like to sign up to this service.
 accounting-period-check.error                                           = Select yes if all of your business accounting periods are from 6 April to 5 April.
 accounting-period-check.error.summary                                   = Select yes if all of your business accounting periods are from 6 April to 5 April.
 

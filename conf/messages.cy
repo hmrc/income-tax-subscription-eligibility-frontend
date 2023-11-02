@@ -98,7 +98,7 @@ have-any-other-income.error.summary                                     = Dewisw
 ## Accounting period check
 accounting-period-check.title                                           = A yw’ch holl gyfnodau cyfrifyddu busnes yn rhedeg o 6 Ebrill i 5 Ebrill?
 accounting-period-check.caption                                         = Gwirio a allwch gofrestru - cwestiwn 4
-accounting-period-check.title.hint                                      = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae angen i’ch cyfnod cyfrifyddu ar gyfer eich hunangyflogaeth neu’ch busnes eiddo gyfateb â hyn os hoffech gofrestru ar gyfer y gwasanaeth hwn.
+accounting-period-check.title.hint                                      = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae angen i’ch cyfnod cyfrifyddu ar gyfer eich hunangyflogaeth neu’ch incwm eiddo gyfateb â hyn os hoffech gofrestru ar gyfer y gwasanaeth hwn.
 accounting-period-check.error                                           = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
 accounting-period-check.error.summary                                   = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
 
