@@ -63,7 +63,7 @@ overview.inset-text                                                     = Bydd a
 ## Are you a sole trader after page ##
 are-you-sole-trader-after.title                                         = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
 are-you-sole-trader-after.heading                                       = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
-are-you-sole-trader-after.caption                                       = Gwirio a allwch gofrestru - cwestiwn 2
+are-you-sole-trader-after.caption                                       = GCwestiynau ynghylch cymhwystra
 are-you-sole-trader-after.para                                          = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn {0}
 are-you-sole-trader-after.para-link                                     = hunangyflogedig
 are-you-sole-trader-after.error.summary                                 = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}.
@@ -71,7 +71,7 @@ are-you-sole-trader-after.error.summary                                 = Dewisw
 ## Property Trading Before Date page ##
 property-trading-after.title                                            = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
 property-trading-after.heading                                          = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
-property-trading-after.caption                                          = Gwirio a allwch gofrestru - cwestiwn 3
+property-trading-after.caption                                          = Cwestiynau ynghylch cymhwystra
 property-trading-after.line1                                            = Mae hyn yn cynnwys bod yn landlord neu ddefnyddio asiantaeth gosod eiddo ar gyfer:
 property-trading-after.line2                                            = eiddo yn y DU
 property-trading-after.line3                                            = eiddo tramor
@@ -83,7 +83,7 @@ property-trading-after.error                                            = Dewisw
 
 ## Do you have any other income page
 have-any-other-income.title                                             = Ar wahân i hunangyflogaeth neu eiddo, a oes gennych unrhyw ffynonellau eraill o incwm?
-have-any-other-income.caption                                           = Gwirio a allwch gofrestru - cwestiwn 1
+have-any-other-income.caption                                           = Cwestiynau ynghylch cymhwystra
 have-any-other-income.include                                           = Gallai hyn gynnwys:
 have-any-other-income.not-include                                       = Nid yw hyn yn cynnwys:
 have-any-other-income.include-point-1                                   = incwm TWE fel cyflogai
@@ -97,7 +97,7 @@ have-any-other-income.error.summary                                     = Dewisw
 
 ## Accounting period check
 accounting-period-check.title                                           = A yw’ch holl gyfnodau cyfrifyddu busnes yn rhedeg o 6 Ebrill i 5 Ebrill?
-accounting-period-check.caption                                         = Gwirio a allwch gofrestru - cwestiwn 4
+accounting-period-check.caption                                         = Cwestiynau ynghylch cymhwystra
 accounting-period-check.title.hint                                      = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae angen i’ch cyfnod cyfrifyddu ar gyfer eich hunangyflogaeth neu’ch incwm eiddo gyfateb â hyn os hoffech gofrestru ar gyfer y gwasanaeth hwn.
 accounting-period-check.error                                           = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
 accounting-period-check.error.summary                                   = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
