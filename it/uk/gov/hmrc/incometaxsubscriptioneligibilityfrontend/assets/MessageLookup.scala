@@ -170,7 +170,7 @@ object MessageLookup {
 
    object SignUp {
      val heading = "Sign up"
-     val paragraph = "You’ll be told you’ve successfully signed up for Making Tax Digital for Income Tax."
+     val paragraph = "You’ll be told you have successfully signed up for Making Tax Digital for Income Tax."
    }
  }
 
