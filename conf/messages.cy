@@ -40,7 +40,7 @@ individual.signing-up.how-to-sign-up.complete-sign-up.bullet1           = cadarn
 individual.signing-up.how-to-sign-up.complete-sign-up.bullet2           = ychwanegu unrhyw ffynonellau incwm eraill
 individual.signing-up.how-to-sign-up.complete-sign-up.bullet3           = dewiswch ym mha flwyddyn rydych am ddechrau defnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
 individual.signing-up.how-to-sign-up.sign-up.heading                    = Cofrestru
-individual.signing-up.how-to-sign-up.sign-up.para                       = Byddwch yn cael gwybod eich bod wedi cofrestru’n llwyddiannus ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm.
+individual.signing-up.how-to-sign-up.sign-up.para                       = Byddwch yn cael gwybod eich bod wedi cael eich cofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm.
 
 ## Overview Page Content
 overview.title                                                          = Mae’r ffordd rydych yn llenwi Hunanasesiad yn newid
