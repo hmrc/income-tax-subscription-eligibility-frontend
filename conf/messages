@@ -63,7 +63,7 @@ overview.inset-text                                                     = You wi
 ## Are you a sole trader after page ##
 are-you-sole-trader-after.title                                         = Did your sole trader business begin on or after  {0}?
 are-you-sole-trader-after.heading                                       = Did your sole trader business begin on or after  {0}?
-are-you-sole-trader-after.caption                                       = Check you can sign up - question 2
+are-you-sole-trader-after.caption                                       = Eligibility questions
 are-you-sole-trader-after.para                                          = If you’re a sole trader, you run your own business as an individual and are {0}
 are-you-sole-trader-after.para-link                                     = self-employed
 are-you-sole-trader-after.error.summary                                 = Select yes if you are a sole trader that began trading on or after {0}.
@@ -71,7 +71,7 @@ are-you-sole-trader-after.error.summary                                 = Select
 ## Property Trading After Date page ##
 property-trading-after.title                                            = Did you start renting out a property on or after  {0}?
 property-trading-after.heading                                          = Did you start renting out a property on or after  {0}?
-property-trading-after.caption                                          = Check you can sign up - question 3
+property-trading-after.caption                                          = Eligibility questions
 property-trading-after.line1                                            = This includes being a landlord or using a letting agency for:
 property-trading-after.line2                                            = UK properties
 property-trading-after.line3                                            = foreign properties
@@ -83,7 +83,7 @@ property-trading-after.error                                            = Select
 
 ## Do you have any other income page
 have-any-other-income.title                                             = Apart from self-employment or property, do you have any other sources of income?
-have-any-other-income.caption                                           = Check you can sign up - question 1
+have-any-other-income.caption                                           = Eligibility questions
 have-any-other-income.include                                           = This could include:
 have-any-other-income.not-include                                       = This does not include:
 have-any-other-income.include-point-1                                   = PAYE income as an employee
@@ -97,7 +97,7 @@ have-any-other-income.error.summary                                     = Select
 
 ## Accounting period check
 accounting-period-check.title                                           = Do all of your business accounting periods run from 6 April to 5 April?
-accounting-period-check.caption                                         = Check you can sign up - question 4
+accounting-period-check.caption                                         = Eligibility questions
 accounting-period-check.title.hint                                      = The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property income needs to be the same if you would like to sign up to this service.
 accounting-period-check.error                                           = Select yes if all of your business accounting periods are from 6 April to 5 April.
 accounting-period-check.error.summary                                   = Select yes if all of your business accounting periods are from 6 April to 5 April.

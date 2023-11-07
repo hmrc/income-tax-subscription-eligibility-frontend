@@ -51,7 +51,7 @@ object MessageLookup {
 
   object HaveAnyOtherIncome {
     val title = "Apart from self-employment or property, do you have any other sources of income?"
-    val caption = "This section is Check you can sign up - question 1"
+    val caption = "This section is Eligibility questions"
     val include = "This could include:"
     val notInclude = "This does not include:"
     val includePoints: Seq[String] =
@@ -72,7 +72,7 @@ object MessageLookup {
     val hintMessage6 = "a room"
     val hintMessage7 = "part of your property"
 
-    val caption = "This section is Check you can sign up - question 3"
+    val caption = "This section is Eligibility questions"
 
     def error(date: String) = s"Select yes if you own a property business that began trading on or after $date."
   }
@@ -80,7 +80,7 @@ object MessageLookup {
   object SoleTraderStartAfter {
     def title(date: String) = s"Did your sole trader business begin on or after $date?"
 
-    val caption = "This section is Check you can sign up - question 2"
+    val caption = "This section is Eligibility questions"
 
     def error(date: String) = s"Select yes if you are a sole trader that began trading on or after $date."
 
@@ -272,7 +272,7 @@ object MessageLookup {
   object CheckAccountingPeriod {
     val heading = "Do all of your business accounting periods run from 6 April to 5 April?"
     val hint = "The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property income needs to be the same if you would like to sign up to this service."
-    val caption = "This section is Check you can sign up - question 4"
+    val caption = "This section is Eligibility questions"
     val yes = "Yes"
     val no = "No"
     val continue = "Continue"
