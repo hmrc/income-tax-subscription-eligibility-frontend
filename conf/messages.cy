@@ -45,10 +45,10 @@ individual.signing-up.how-to-sign-up.sign-up.para                       = Byddwc
 ## Overview Page Content
 overview.title                                                          = Mae’r ffordd rydych yn llenwi Hunanasesiad yn newid
 overview.heading                                                        = Mae’r ffordd rydych yn llenwi Hunanasesiad yn newid
-overview.line-1                                                         = Cynllun peilot yw hwn ar gyfer cofrestru am ddull newydd ar gyfer busnesau unig fasnachwyr (hunangyflogedig) a landlordiaid i anfon diweddariadau Treth Incwm a Ffurflenni Treth i CThEM.
+overview.line-1                                                         = Cynllun peilot yw hwn ar gyfer cofrestru am ddull newydd ar gyfer busnesau unig fasnachwyr (hunangyflogedig) a landlordiaid i anfon diweddariadau Treth Incwm a Ffurflenni Treth i CThEF.
 overview.line-2                                                         = Bydd angen i chi ddefnyddio meddalwedd sy’n cydweddu er mwyn gwneud y canlynol:
 overview.bullet-compatible-software-line-1                              = cadw eich cofnodion i’r funud
-overview.bullet-compatible-software-line-2                              = anfon diweddariadau ynghylch eich cofnodion busnes i CThEM bob chwarter
+overview.bullet-compatible-software-line-2                              = anfon diweddariadau ynghylch eich cofnodion busnes i CThEF bob chwarter
 overview.bullet-compatible-software-line-3                              = cyflwyno’ch Ffurflen Dreth Hunanasesiad
 overview.line-3                                                         = Bydd hyn y disodli cyflwyno Ffurflen Dreth Hunanasesiad, a gallwch ddewis eich meddalwedd unwaith eich bod yn cofrestru. {0}
 overview.link-text                                                      = Dewch o hyd i feddalwedd sy’n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm
