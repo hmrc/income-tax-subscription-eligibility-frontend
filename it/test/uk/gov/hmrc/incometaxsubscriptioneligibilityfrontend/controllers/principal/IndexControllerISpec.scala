@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
-import play.api.data.Form
-import play.api.data.Forms.{of, single}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping.yesNoMapping
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
+import play.api.libs.ws.WSResponse
+import play.api.test.Helpers._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.ComponentSpecBase
 
-object AreYouSoleTraderAfterForm {
+class IndexControllerISpec extends ComponentSpecBase {
 
-  val fieldName: String = "yes-no"
+  lazy val result: WSResponse = get("/")
 
-  def areYouSoleTraderAfterForm(startDate: String): Form[YesNo] = Form(
-    single(
-      fieldName -> of(yesNoMapping("are-you-sole-trader-after.error.summary", Seq(startDate)))
-    )
-  )
+  s"GET ${routes.IndexController.index.url}" should {
+    s"return $SEE_OTHER" in {
+      result must have(
+        httpStatus(SEE_OTHER),
+        redirectUri(routes.OverviewController.show.url)
+      )
+    }
+  }
+
 }

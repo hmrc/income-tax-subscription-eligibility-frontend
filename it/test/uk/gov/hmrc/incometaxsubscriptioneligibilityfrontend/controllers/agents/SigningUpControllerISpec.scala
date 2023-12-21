@@ -20,11 +20,11 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.AgentHeading._
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.AgentHowToSignUp.AgentCompleteSignUp
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, agentSuffix}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.AgentHeading._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.AgentSignupTerms.AgentHowToSignUp.AgentCompleteSignUp
 
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
@@ -46,18 +46,18 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         doc.title mustBe s"${AgentHeading.heading}$agentSuffix"
       }
 
-    "return a view" which{
-      "uses the correct template details" in new TemplateViewTest(
-        document = doc,
-        title = heading,
-        isAgent = true,
-        backLink = Some(appConfig.govukGuidanceITSASignUpAgentLink)
-      )(appConfig)
-    }
+      "return a view" which {
+        "uses the correct template details" in new TemplateViewTest(
+          document = doc,
+          title = heading,
+          isAgent = true,
+          backLink = Some(appConfig.govukGuidanceITSASignUpAgentLink)
+        )(appConfig)
+      }
 
-    "return a view with a title" in {
-      doc.title mustBe s"${heading}$agentSuffix"
-    }
+      "return a view with a title" in {
+        doc.title mustBe s"$heading$agentSuffix"
+      }
 
 
       "has main content" which {
@@ -90,7 +90,6 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
         "has a how to sign up section" which {
           "has a heading section" which {
-            import AgentHowToSignUp.Heading._
           }
 
           "has a Get your clients ready section" which {
@@ -160,7 +159,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
             }
 
             "has a first inset para" in {
-              mainContent.selectNth("p",9).text mustBe para3
+              mainContent.selectNth("p", 9).text mustBe para3
             }
 
             "has a second inset para" in {
@@ -199,7 +198,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           }
 
           "has a paragraph" in {
-            mainContent.selectNth("p",12).text mustBe para
+            mainContent.selectNth("p", 12).text mustBe para
           }
 
         }

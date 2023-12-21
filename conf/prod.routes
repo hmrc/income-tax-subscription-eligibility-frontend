@@ -3,6 +3,4 @@
 ->         /report-quarterly/income-and-expenses/sign-up/eligibility/client              agent.Routes
 ->         /                                                                             health.Routes
 
-GET        /admin/metrics                                                                com.kenshoo.play.metrics.MetricsController.metrics
-
 GET        /report-quarterly/income-and-expenses/sign-up/eligibility/assets/*file        controllers.Assets.versioned(path="/public", file)

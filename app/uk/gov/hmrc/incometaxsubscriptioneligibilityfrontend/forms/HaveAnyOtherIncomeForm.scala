@@ -18,14 +18,11 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms
 
 import play.api.data.Form
 import play.api.data.Forms.{of, single}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping.yesNoMapping
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
 
 object HaveAnyOtherIncomeForm {
   val fieldName: String = "yes-no"
-
-  implicit val mapping = YesNoMapping
 
   val haveAnyOtherIncomeForm: Form[YesNo] = Form(
     single(
