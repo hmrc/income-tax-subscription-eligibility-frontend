@@ -21,15 +21,9 @@ import org.jsoup.nodes.{Document, Element}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base, IndividualSignUpTerms, suffix}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AccountingPeriodService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
-import java.time.format.DateTimeFormatter
-
 class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
-
-  private val accountingPeriodService = new AccountingPeriodService()
 
   private val path = "/signing-up"
   lazy val result: WSResponse = get(path)
@@ -149,7 +143,7 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         }
 
         "contains a paragraph after the inset paragraph" in {
-          section2.selectNth("p",3).text mustBe afterInsetPara
+          section2.selectNth("p", 3).text mustBe afterInsetPara
         }
       }
 
