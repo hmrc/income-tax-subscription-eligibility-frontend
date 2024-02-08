@@ -1,13 +1,8 @@
 ## microservice specific routes
 
-->         /hmrc-frontend                                                                hmrcfrontend.Routes
-
 ## Index route
 GET         /                              uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.IndexController.index
 
 ## Signing Up route
 GET         /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.SigningUpController.show
 POST        /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.SigningUpController.submit
-
-## Welsh language support
-GET         /language/:lang                uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents.LanguageSwitchController.switchToLanguage(lang: String)

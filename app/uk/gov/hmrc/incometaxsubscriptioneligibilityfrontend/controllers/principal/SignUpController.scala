@@ -33,7 +33,7 @@ class SignUpController @Inject()(
       Future.successful(
         Ok(signUp(
           backUrl = routes.CheckAccountingPeriodController.show.url,
-          continueUrl = appConfig.incometaxSubscriptionFrontendFirstPageFullUrl
+          continueUrl = appConfig.incomeTaxSubscriptionFrontendFirstPageFullUrl
         ))
       )
   }
