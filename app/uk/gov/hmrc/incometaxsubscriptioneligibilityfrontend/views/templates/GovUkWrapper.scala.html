@@ -18,6 +18,7 @@
 @import uk.gov.hmrc.hmrcfrontend.views.config.StandardBetaBanner
 @import views.html.helper.CSPNonce
 @import uk.gov.hmrc.hmrcfrontend.views.html.helpers.HmrcLayout
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.hmrcstandardpage._
 
 @this(
     hmrcLayout: HmrcLayout,
@@ -31,16 +32,33 @@
     standardBetaBanner: StandardBetaBanner,
     hmrcLanguageSelectHelper: HmrcLanguageSelectHelper,
     hmrcReportTechnicalIssueHelper: HmrcReportTechnicalIssueHelper,
-    hmrcTimeoutDialogHelper: HmrcTimeoutDialogHelper
+    hmrcTimeoutDialogHelper: HmrcTimeoutDialogHelper,
+    hmrcStandardPage: HmrcStandardPage
 )
 
 @(title: String, serviceName: Option[String], serviceUrl: String, optForm: Option[Form[_]] = None, backLink: Option[String] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
 
+@hmrcStandardPage(HmrcStandardPageParams(
+    serviceURLs = ServiceURLs(
+        serviceUrl = Some(serviceUrl),
+        accessibilityStatementUrl = Some("/")
+    ),
+    banners = Banners(
+        phaseBanner = Some(standardBetaBanner(url = appConfig.betaFeedbackUnauthenticatedUrl)),
+        userResearchBanner = Some(UserResearchBanner(url = appConfig.urBannerUrl))
+    ),
+    templateOverrides = TemplateOverrides(
+        additionalHeadBlock = Some(additionalHeadBlock)
+    ),
+    serviceName = serviceName,
+    isWelshTranslationAvailable = true,
+    pageTitle = Some(title),
+    backLink = backLink.map(url => BackLink(href = url))
+))(content)
 
 @additionalHeadBlock = {
     <link href='@controllers.routes.Assets.versioned("stylesheets/application.css")' media="all" rel="stylesheet" type="text/css" />
 }
-
 
 @content = {
 
@@ -58,15 +76,3 @@
     @hmrcReportTechnicalIssueHelper()
 
 }
-
-@hmrcLayout(
-    pageTitle = Some(title),
-    additionalHeadBlock = Some(additionalHeadBlock),
-    isWelshTranslationAvailable = true,
-    serviceName = serviceName,
-    serviceUrl = Some(serviceUrl),
-    backLinkUrl = backLink,
-    signOutUrl = None,
-    phaseBanner = Some(standardBetaBanner(url = appConfig.betaFeedbackUnauthenticatedUrl)),
-    userResearchBannerUrl = Some(appConfig.urBannerUrl)
-)(content)

@@ -35,7 +35,7 @@ class SigningUpController @Inject()(mcc: MessagesControllerComponents, signingUp
   }
 
   val submit: Action[AnyContent] = Action { _ =>
-    Redirect(appConfig.incometaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
+    Redirect(appConfig.incomeTaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
   }
 
   val backLink: String = appConfig.govukGuidanceITSASignUpAgentLink

@@ -30,9 +30,6 @@ POST        /property-start-after             uk.gov.hmrc.incometaxsubscriptione
 GET         /sole-trader-start-after          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.show
 POST        /sole-trader-start-after          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.submit
 
-## Welsh language support
-GET         /language/:lang                   uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.LanguageSwitchController.switchToLanguage(lang: String)
-
 ## Check accounting period
 GET         /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.show
 POST        /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.submit
