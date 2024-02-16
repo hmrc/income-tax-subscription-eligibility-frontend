@@ -54,7 +54,7 @@ to submit their Self Assessment returns using software.
 ## How to test
 
 * Run unit tests: `sbt clean test`
-* Run integration tests: `sbt clean it:test`
+* Run integration tests: `sbt clean it/test`
 * Run performance tests: provided in the repo [income-tax-subscription-performance-tests](https://github.com/hmrc/income-tax-subscription-performance-tests)
 * Run acceptance tests: provided in the repo [income-tax-subscription-acceptance-tests](https://github.com/hmrc/income-tax-subscription-acceptance-tests)
 

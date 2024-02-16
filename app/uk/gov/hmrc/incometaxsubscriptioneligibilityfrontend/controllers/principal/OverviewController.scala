@@ -34,7 +34,7 @@ class OverviewController @Inject()(overview: Overview, mcc: MessagesControllerCo
   val show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(overview(postAction = routes.HaveAnyOtherIncomeController.show))
+        Ok(overview(postAction = routes.CheckAccountingPeriodController.show))
       )
   }
 }
