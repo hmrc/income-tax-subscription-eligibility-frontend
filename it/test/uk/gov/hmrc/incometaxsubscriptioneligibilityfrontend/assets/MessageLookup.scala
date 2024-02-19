@@ -175,60 +175,54 @@ object MessageLookup {
  }
 
   object AgentSignupTerms {
-    object AgentHeading {
-      val heading = "Signing up your clients up for Making Tax Digital for Income Tax"
-      val para1 = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. It’s currently in a voluntary phase for selected self-employed businesses and landlords."
-      val para2 = "You may be able to sign your client up for Making Tax Digital for Income Tax if they:"
-      val bullet1 = "are a sole trader"
-      val bullet2 = "receive income from property"
-      val para3 = "Self-employed people trading through limited companies cannot sign-up for Making Tax Digital for Income Tax."
+
+    object Heading {
+      val heading = "Signing up your clients for Making Tax Digital for Income Tax"
+      val haveIncomeTypePara = "You can sign up your client for Making Tax Digital for Income Tax if they:"
+      val haveIncomeTypeBullet1 = "are a sole trader"
+      val haveIncomeTypeBullet2 = "receive income from either a UK or foreign property"
+      val accountingPeriodPara = "They must also use either:"
+      val accountingPeriodBullet1 = "an accounting period that runs from 6 April to 5 April"
+      val accountingPeriodBullet2 = "accountancy software that supports calendar quarterly periods and their accounting period runs from 1 April to 31 March"
     }
 
-    object AgentHowToSignUp {
-      object Heading {
-        val heading = "How to sign up"
+    object HowToSignUp {
+
+      val heading = "How to sign up"
+
+      object GetReady {
+        val heading = "Get ready to sign up"
+        val mustHavePara = "To sign up your clients, you must have:"
+        val mustHaveBullet1 = "an agent services account"
+        val mustHaveBullet2 = "software that’s compatible with Making Tax Digital for Income Tax"
+        val clientSoftwarePara = "You should also make sure your clients use software that’s compatible with Making Tax Digital for Income Tax."
+
+        val eachClientPara = "To sign up each client you’ll need their:"
+        val eachClientName = "name"
+        val eachClientNino = "National Insurance number"
+        val eachClientDOB = "date of birth"
+        val eachClientBusinessDetails1 = "business trading name and address"
+        val eachClientBusinessDetails2 = "the date their business started trading"
+        val eachClientBusinessDetails3 = "their trade"
+        val eachClientAuthorisation = "Your client will need to authorise you to sign them up."
       }
-      object AgentGetReady {
-        val heading = "Get your clients ready"
-        val para = "Make a list of clients you think may be eligible for Making Tax Digital for Income Tax. If you think they’re eligible and would benefit from joining the voluntary phase, check if they’d like to take part. Your client will need to authorise you to sign them up."
+
+      object CheckEligibility {
+        val heading = "Check your client can sign up"
+        val para = "We’ll check if your client can sign up when you start to sign them up."
+        val cantSignUp = "If they cannot sign up, you must continue submitting their Self Assessment tax returns as normal."
       }
-      object AgentCheckAvailability {
-        val heading = "Check your client is eligible"
-        val para = "Answer the survey to check if your client is eligible."
-      }
-      object AgentGetInformation {
-        val heading = "Prepare your client’s information"
-        val para = "Make sure you’ve got the necessary information to sign up your client. This includes their:"
-        val bullet1 = "name"
-        val bullet2 = "National Insurance number"
-        val bullet3 = "date of birth"
-        val bullet4 = "the date their business started trading"
-      }
-      object AgentConfirmClientDetails {
-        val heading = "Confirm client details"
-        val para1 = "If you find out your client may be eligible, sign in to your HMRC agent account."
-        val para2 = "Depending on their circumstances, you will be offered to sign them up for the:"
-        val currentTaxYear = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-        val nextTaxYear = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-        val currentTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-        val nextTaxYearEnd = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-        val bullet1 = s"current tax year (${currentTaxYear} to ${currentTaxYearEnd})"
-        val bullet2 = s"next tax year (${nextTaxYear} to ${nextTaxYearEnd})"
-        val para3 = "There may be circumstances which stop your client from using Making Tax Digital for Income Tax right now. These may include certain other incomes or activities, or the length of time they’ve been self-employed."
-        val para4 = "If they’re not eligible for Making Tax Digital for Income Tax yet, they should continue to declare their earnings through Self Assessment as usual."
-      }
-      object AgentCompleteSignUp {
+
+      object CompleteSignUp {
         val heading = "Complete sign-up tasks"
         val para = "To sign up your client you need to:"
-        val bullet1 = "confirm the details we have about your client and their business are correct"
-        val bullet2 = "add any other income sources"
-        val bullet3 = "select which year you want to start using Making Tax Digital for Income Tax"
-
+        val bullet1 = "add any sole trader or UK and foreign property business income"
+        val bullet2 = "select to start using Making Tax Digital for Income Tax either this tax year or next tax year"
       }
-      object AgentConfirm {
-        val heading = "Confirm sign-up"
-        val para = "We’ll confirm your client has been signed up. You’ll also be offered to sign up another client."
-
+      object ConfirmSignUp {
+        val heading = "Confirm sign up"
+        val para1 = "We’ll then confirm your client has been signed up."
+        val para2 = "You’ll be asked if you would like to sign up another client."
       }
     }
   }
