@@ -21,7 +21,6 @@ import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.PropertyTradingStartDateForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.implicits.ImplicitDateFormatter
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
@@ -54,7 +53,6 @@ class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: Proper
           formWithErrors, routes.PropertyTradingStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
               eligible = false,
               answer = "yes",
               question = "propertyBusinessStartDate"
@@ -62,7 +60,6 @@ class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: Proper
             Future.successful(Redirect(routes.CannotSignUpController.show))
           case No =>
             auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
               eligible = true,
               answer = "no",
               question = "propertyBusinessStartDate"

@@ -20,17 +20,12 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditModel
 
 object EligibilityAnswerAuditing {
 
-  val eligibilityAnswerAuditType: String = "Eligibility"
-  val eligibilityAnswerIndividual: String = "individual"
-  val eligibilityAnswerAgent: String = "agent"
-
-  case class EligibilityAnswerAuditModel(userType: String,
-                                         eligible: Boolean,
+  case class EligibilityAnswerAuditModel(eligible: Boolean,
                                          answer: String,
                                          question: String) extends AuditModel {
 
     override val detail: Map[String, String] = Map(
-      "userType" -> userType,
+      "userType" -> "individual",
       "eligible" -> eligible.toString,
       "answer" -> answer,
       "question" -> question
@@ -38,7 +33,7 @@ object EligibilityAnswerAuditing {
 
     override val transactionName: Option[String] = None
 
-    override val auditType: String = eligibilityAnswerAuditType
+    override val auditType: String = "Eligibility"
 
   }
 

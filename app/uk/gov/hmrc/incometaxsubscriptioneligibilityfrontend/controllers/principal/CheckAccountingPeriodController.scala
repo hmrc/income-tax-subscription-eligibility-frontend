@@ -17,64 +17,75 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal
 
 import play.api.i18n.I18nSupport
-import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
+import play.api.mvc.{Action, AnyContent, MessagesControllerComponents, Request}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodCheckForm._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodForm.accountingPeriodForm
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.AccountingPeriodCheck
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
 class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: AccountingPeriodCheck,
                                                 auditService: AuditingService,
                                                 mcc: MessagesControllerComponents)
-                                               (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+                                               (implicit val appConfig: AppConfig,
+                                                executionContext: ExecutionContext) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>
       Future.successful(
-        Ok(accountingPeriodCheck(accountingPeriodCheckForm, routes.CheckAccountingPeriodController.submit, backUrl = backUrl))
+        Ok(accountingPeriodCheck(accountingPeriodForm, routes.CheckAccountingPeriodController.submit, backUrl = backUrl))
       )
   }
 
   def submit: Action[AnyContent] = Action.async {
     implicit request =>
-      accountingPeriodCheckForm.bindFromRequest().fold(
-        formWithErrors => Future.successful(BadRequest(accountingPeriodCheck(formWithErrors, routes.CheckAccountingPeriodController.submit, backUrl = backUrl))), {
-          case Yes =>
-            auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
-              eligible = true,
-              answer = "yes",
-              question = "standardAccountingPeriod"
-            ))
-            Future.successful(Redirect(routes.SignUpController.show))
-          case No =>
-            auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
-              eligible = false,
-              answer = "no",
-              question = "standardAccountingPeriod"
-            ))
-            Future.successful(Redirect(routes.CannotSignUpController.show))
+      accountingPeriodForm.bindFromRequest().fold(
+        formWithErrors => Future.successful(BadRequest(accountingPeriodCheck(
+          formWithErrors,
+          routes.CheckAccountingPeriodController.submit,
+          backUrl = backUrl
+        ))), {
+          case SixthAprilToFifthApril =>
+            audit(eligible = true, answer = SixthAprilToFifthApril)
+              .map(_ => Redirect(routes.SignUpController.show))
+          case FirstAprilToThirtyFirstMarch =>
+            audit(eligible = true, answer = FirstAprilToThirtyFirstMarch)
+              .map(_ => Redirect(routes.SignUpController.show))
+          case OtherAccountingPeriod =>
+            audit(eligible = false, answer = OtherAccountingPeriod)
+              .map(_ => Redirect(routes.CannotSignUpController.show))
         }
       )
   }
 
-  def backUrl: String = {
-    if(isEnabled(SignUpEligibilityInterrupt)) {
+  private def backUrl: String = {
+    if (isEnabled(SignUpEligibilityInterrupt)) {
       routes.SigningUpController.show.url
     } else {
       routes.OverviewController.show.url
     }
-
   }
+
+  private def audit(eligible: Boolean, answer: AccountingPeriod)
+                   (implicit request: Request[AnyContent]): Future[Unit] = {
+    auditService.audit(EligibilityAnswerAuditModel(
+      eligible = eligible,
+      answer = answer match {
+        case SixthAprilToFifthApril => "6 april to 5 april"
+        case FirstAprilToThirtyFirstMarch => "1 april to 31 march"
+        case OtherAccountingPeriod => "other"
+      },
+      question = "standardAccountingPeriod"
+    ))
+  }
+
 }

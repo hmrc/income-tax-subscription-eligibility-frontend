@@ -4,6 +4,7 @@ base.yes                                                                = Iawn
 base.no                                                                 = Na
 base.error-heading                                                      = Mae problem wedi codi
 base.update                                                             = Diweddaru
+base.or                                                                 = neu
 
 ## Service name
 principal-service-name.title                                            = Defnyddio meddalwedd i anfon diweddariadau Treth Incwm
@@ -96,11 +97,14 @@ have-any-other-income.not-include-point-2                               = difide
 have-any-other-income.error.summary                                     = Dewiswch ’Iawn’ os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo.
 
 ## Accounting period check
-accounting-period-check.title                                           = A yw’ch holl gyfnodau cyfrifyddu busnes yn rhedeg o 6 Ebrill i 5 Ebrill?
-accounting-period-check.caption                                         = Cwestiynau ynghylch cymhwystra
-accounting-period-check.title.hint                                      = Mae’r flwyddyn dreth yn rhedeg o 6 Ebrill i 5 Ebrill. Mae angen i’ch cyfnod cyfrifyddu ar gyfer eich hunangyflogaeth neu’ch incwm eiddo gyfateb â hyn os hoffech gofrestru ar gyfer y gwasanaeth hwn.
-accounting-period-check.error                                           = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
-accounting-period-check.error.summary                                   = Dewiswch ‘Iawn’ os yw’ch holl gyfnodau cyfrifyddu busnes o 6 Ebrill i 5 Ebrill.
+accounting-period-check.heading                                         = Pa gyfnod cyfrifyddu yr ydych yn ei ddefnyddio ar gyfer eich busnes?
+accounting-period-check.caption                                         = Eligibility questions
+accounting-period-check.para                                            = Dyma’r cyfnod cyfrifyddu rydych chi’n ei ddefnyddio bob blwyddyn wrth roi gwybod am incwm eich busnes a’ch treuliau busnes i CThEF
+accounting-period-check.hint                                            = Er enghraifft, gallai’ch cyfnod cyfrifyddu busnes ddechrau ar 6 Ebrill a dod i ben ar 5 Ebrill y flwyddyn ganlynol (megis, 6 Ebrill 2026 i 5 Ebrill 2027).
+accounting-period-check.sixth-april-to-fifth-april                      = 6 Ebrill i 5 Ebrill
+accounting-period-check.first-april-to-thirty-first-march               = 1 Ebrill i 31 Mawrth
+accounting-period-check.other                                           = Dim un o’r rhain
+accounting-period-check.error                                           = Dewiswch eich cyfnod cyfrifyddu busnes, neu dewiswch ‘Dim un o’r rhain’
 
 ## Cannot Sign Up Page
 cannot-sign-up.heading                                                  = Ni allwch gymryd rhan eto
