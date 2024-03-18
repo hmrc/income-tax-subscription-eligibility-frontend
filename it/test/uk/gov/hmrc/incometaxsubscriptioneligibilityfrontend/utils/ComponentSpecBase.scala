@@ -24,8 +24,8 @@ import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import play.api.{Application, Environment, Mode}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodCheckForm, HaveAnyOtherIncomeForm, PropertyTradingStartDateForm}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodForm, HaveAnyOtherIncomeForm, PropertyTradingStartDateForm}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{AccountingPeriod, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.{AuditStub, WireMockMethods}
 
 trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServerPerSuite with WireMockMethods
@@ -87,10 +87,10 @@ trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServer
     )
   }
 
-  def submitAccountingPeriodCheck(request: Option[YesNo]): WSResponse = {
+  def submitAccountingPeriodCheck(request: Option[AccountingPeriod]): WSResponse = {
     post("/accounting-period-check")(
       request.fold(Map.empty[String, Seq[String]])(
-        model => AccountingPeriodCheckForm.accountingPeriodCheckForm.fill(model).data.map { case (k, v) => (k, Seq(v)) }
+        model => AccountingPeriodForm.accountingPeriodForm.fill(model).data.map { case (k, v) => (k, Seq(v)) }
       )
     )
   }

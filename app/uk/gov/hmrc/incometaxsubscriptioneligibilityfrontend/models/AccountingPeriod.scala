@@ -14,19 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models
 
-import play.api.data.Form
-import play.api.data.Forms.{of, single}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.mappings.YesNoMapping.yesNoMapping
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
+sealed trait AccountingPeriod {
+  def key: String
+}
 
-object AccountingPeriodCheckForm {
-  val fieldName: String = "yes-no"
+object AccountingPeriod {
 
-  val accountingPeriodCheckForm: Form[YesNo] = Form(
-    single(
-      fieldName -> of(yesNoMapping("accounting-period-check.error"))
-    )
-  )
+  case object SixthAprilToFifthApril extends AccountingPeriod {
+    val key: String = "sixth-april-to-fifth-april"
+  }
+
+  case object FirstAprilToThirtyFirstMarch extends AccountingPeriod {
+    val key: String = "first-april-to-thirty-first-march"
+  }
+
+  case object OtherAccountingPeriod extends AccountingPeriod {
+    val key: String = "other"
+  }
+  
 }

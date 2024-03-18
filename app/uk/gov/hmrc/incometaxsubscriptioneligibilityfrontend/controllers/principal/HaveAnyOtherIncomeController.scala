@@ -22,7 +22,6 @@ import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
@@ -51,7 +50,6 @@ class HaveAnyOtherIncomeController @Inject()(auditService: AuditingService,
         formWithErrors => Future.successful(BadRequest(haveAnyOtherIncome(formWithErrors, routes.HaveAnyOtherIncomeController.submit, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
               eligible = false,
               answer = "yes",
               question = "otherIncomeSource"
@@ -59,7 +57,6 @@ class HaveAnyOtherIncomeController @Inject()(auditService: AuditingService,
             Future.successful(Redirect(routes.CannotSignUpController.show))
           case No =>
             auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
               eligible = true,
               answer = "no",
               question = "otherIncomeSource"
@@ -70,7 +67,7 @@ class HaveAnyOtherIncomeController @Inject()(auditService: AuditingService,
   }
 
   def backUrl: String = {
-    if(isEnabled(SignUpEligibilityInterrupt)) {
+    if (isEnabled(SignUpEligibilityInterrupt)) {
       routes.SigningUpController.show.url
     } else {
       routes.OverviewController.show.url

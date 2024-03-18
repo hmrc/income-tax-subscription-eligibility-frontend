@@ -23,7 +23,6 @@ import play.api.mvc.{Action, AnyContent, MessagesControllerComponents, Request}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AreYouSoleTraderAfterForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.implicits.ImplicitDateFormatter
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
@@ -59,7 +58,6 @@ class SoleTraderStartAfterController @Inject()(auditService: AuditingService,
         formWithErrors => Future.successful(BadRequest(areYouSoleTraderAfter(formWithErrors, routes.SoleTraderStartAfterController.submit, startDateLimit.toLongDate, backUrl = backUrl))), {
           case Yes =>
             auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
               eligible = false,
               answer = "yes",
               question = "soleTraderBusinessStartDate"
@@ -67,7 +65,6 @@ class SoleTraderStartAfterController @Inject()(auditService: AuditingService,
             Future.successful(Redirect(routes.CannotSignUpController.show))
           case No =>
             auditService.audit(EligibilityAnswerAuditModel(
-              userType = EligibilityAnswerAuditing.eligibilityAnswerIndividual,
               eligible = true,
               answer = "no",
               question = "soleTraderBusinessStartDate"

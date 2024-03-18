@@ -264,13 +264,16 @@ object MessageLookup {
   }
 
   object CheckAccountingPeriod {
-    val heading = "Do all of your business accounting periods run from 6 April to 5 April?"
-    val hint = "The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property income needs to be the same if you would like to sign up to this service."
+    val heading = "What accounting period do you use for your business?"
+    val para = "This is the accounting period you use each year when reporting your business income and expenses to HMRC."
+    val hint = "For example, your business accounting period might start on 6 April and end on 5 April of the following year (such as, 6 April 2026 to 5 April 2027)."
+    val sixthToFifth = "6 April to 5 April"
+    val firstToThirtyFirst = "1 April to 31 March"
+    val or = "or"
+    val neither = "Neither of these"
     val caption = "This section is Eligibility questions"
-    val yes = "Yes"
-    val no = "No"
     val continue = "Continue"
-    val error = "Select yes if all of your business accounting periods are from 6 April to 5 April."
+    val error = "Select your business accounting period, or select ‘Neither of these’"
   }
 
   object SignUpToPilot {

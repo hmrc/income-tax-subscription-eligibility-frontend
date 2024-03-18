@@ -4,6 +4,7 @@ base.yes                                                                = Yes
 base.no                                                                 = No
 base.error-heading                                                      = There is a problem.
 base.update                                                             = Update
+base.or                                                                 = or
 
 ## Service Name
 principal-service-name.title                                            = Use software to send Income Tax updates
@@ -96,11 +97,14 @@ have-any-other-income.not-include-point-2                               = divide
 have-any-other-income.error.summary                                     = Select yes if you have any sources of income other than self employment or property income.
 
 ## Accounting period check
-accounting-period-check.title                                           = Do all of your business accounting periods run from 6 April to 5 April?
+accounting-period-check.heading                                         = What accounting period do you use for your business?
 accounting-period-check.caption                                         = Eligibility questions
-accounting-period-check.title.hint                                      = The tax year runs from 6 April to 5 April. Your accounting period for your self-employment or property income needs to be the same if you would like to sign up to this service.
-accounting-period-check.error                                           = Select yes if all of your business accounting periods are from 6 April to 5 April.
-accounting-period-check.error.summary                                   = Select yes if all of your business accounting periods are from 6 April to 5 April.
+accounting-period-check.para                                            = This is the accounting period you use each year when reporting your business income and expenses to HMRC.
+accounting-period-check.hint                                            = For example, your business accounting period might start on 6 April and end on 5 April of the following year (such as, 6 April 2026 to 5 April 2027).
+accounting-period-check.sixth-april-to-fifth-april                      = 6 April to 5 April
+accounting-period-check.first-april-to-thirty-first-march               = 1 April to 31 March
+accounting-period-check.other                                           = Neither of these
+accounting-period-check.error                                           = Select your business accounting period, or select ‘Neither of these’
 
 ## Cannot Sign Up Page
 cannot-sign-up.heading                                                  = You cannot take part yet

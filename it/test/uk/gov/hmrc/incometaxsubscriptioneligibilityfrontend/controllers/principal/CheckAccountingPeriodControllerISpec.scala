@@ -22,11 +22,12 @@ import play.api.data.FormError
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, CheckAccountingPeriod => messages}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{CheckAccountingPeriod => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodCheckForm
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodForm
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod.{FirstAprilToThirtyFirstMarch, OtherAccountingPeriod, SixthAprilToFifthApril}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.verifyAuditContains
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
@@ -38,9 +39,9 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
   }
 
   "GET /eligibility/accounting-period-check" should {
-    def result = get("/accounting-period-check")
+    def result: WSResponse = get("/accounting-period-check")
+
     def doc: Document = Jsoup.parse(result.body)
-    def content: Element = doc.mainContent
 
     "return OK" in {
       result must have(
@@ -60,7 +61,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
         new TemplateViewTest(
           document = errorPage,
           title = messages.heading,
-          error = Some(FormError(AccountingPeriodCheckForm.fieldName, messages.error)),
+          error = Some(FormError(AccountingPeriodForm.fieldName, messages.error)),
           backLink = Some(routes.OverviewController.show.url)
         )
       }
@@ -81,7 +82,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
           new TemplateViewTest(
             document = errorPage,
             title = messages.heading,
-            error = Some(FormError(AccountingPeriodCheckForm.fieldName, messages.error)),
+            error = Some(FormError(AccountingPeriodForm.fieldName, messages.error)),
             backLink = Some(routes.SigningUpController.show.url)
           )
         }
@@ -89,82 +90,145 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     }
 
     "have a view with the correct heading" in {
-      doc.getH1Element.text mustBe messages.heading
+      doc.mainContent.getH1Element.text mustBe messages.heading
     }
 
     "have a view with the correct caption" in {
-      doc.getElementsByClass("hmrc-caption").first().text() mustBe messages.caption
+      doc.mainContent.selectHead("p.hmrc-caption").text() mustBe messages.caption
     }
 
-    "have a view with one hint message" in {
-      content.getElementsByClass("govuk-hint").text mustBe messages.hint
+    "have a para describing the question" in {
+      doc.mainContent.selectNth("p", 2).text mustBe messages.para
     }
 
-    "have a view with the correct values displayed in the form" in {
-      val form = content.select("form")
-      val labels = content.select("form").select("label")
+    "have a form" which {
+      def form: Element = doc.mainContent.getForm
 
-      form.isEmpty mustBe false
+      "has the correct attributes" in {
+        form must have(
+          method("POST"),
+          action(routes.CheckAccountingPeriodController.submit.url)
+        )
+      }
 
-      val radios = content.select("input[type=radio]")
+      "has a fieldset" which {
+        def fieldset: Element = form.selectHead("fieldset")
 
-      radios.size() mustBe 2
-      radios.get(0).attr("id") mustBe "yes-no"
-      labels.get(0).text() mustBe commonMessages.yes
+        "has a hidden legend" in {
+          val legend = fieldset.selectHead("legend")
+          legend.text mustBe messages.heading
+          legend.attr("class") contains "govuk-visually-hidden"
+        }
 
-      radios.get(1).attr("id") mustBe "yes-no-2"
-      labels.get(1).text() mustBe commonMessages.no
+        "has a hint" in {
+          val hint: Element = fieldset.selectHead(".govuk-hint")
+          hint.text mustBe messages.hint
+          fieldset.attr("aria-describedby") mustBe hint.id
+        }
 
-      val submitButton = content.select("#continue-button")
+        "has a set of radio buttons" which {
+          def radios: Element = fieldset.selectHead(".govuk-radios")
 
-      submitButton must have(
-        text(commonMessages.continue)
-      )
-    }
+          "has a 6 April to 5 April option" in {
+            val radio: Element = radios.selectNth(".govuk-radios__item", 1)
+            val input: Element = radio.selectHead("input")
+            val label: Element = radio.selectHead("label")
 
-    "have the correct form" in {
-      doc.getForm must have(
-        method("POST"),
-        action(routes.CheckAccountingPeriodController.submit.url)
-      )
+            input.id mustBe AccountingPeriodForm.fieldName
+            input.attr("name") mustBe AccountingPeriodForm.fieldName
+            input.attr("type") mustBe "radio"
+            input.attr("value") mustBe AccountingPeriod.SixthAprilToFifthApril.key
+
+            label.text mustBe messages.sixthToFifth
+            label.attr("for") mustBe input.id
+          }
+          "has a 1 April to 31 March option" in {
+            val radio: Element = radios.selectNth(".govuk-radios__item", 2)
+            val input: Element = radio.selectHead("input")
+            val label: Element = radio.selectHead("label")
+
+            input.id mustBe s"${AccountingPeriodForm.fieldName}-2"
+            input.attr("name") mustBe AccountingPeriodForm.fieldName
+            input.attr("type") mustBe "radio"
+            input.attr("value") mustBe AccountingPeriod.FirstAprilToThirtyFirstMarch.key
+
+            label.text mustBe messages.firstToThirtyFirst
+            label.attr("for") mustBe input.id
+          }
+          "has an or divider" in {
+            radios.selectHead(".govuk-radios__divider").text mustBe messages.or
+          }
+          "has a neither option" in {
+            val radio: Element = radios.selectNth(".govuk-radios__item", 3)
+            val input: Element = radio.selectHead("input")
+            val label: Element = radio.selectHead("label")
+
+            input.id mustBe s"${AccountingPeriodForm.fieldName}-4"
+            input.attr("name") mustBe AccountingPeriodForm.fieldName
+            input.attr("type") mustBe "radio"
+            input.attr("value") mustBe AccountingPeriod.OtherAccountingPeriod.key
+
+            label.text mustBe messages.neither
+            label.attr("for") mustBe input.id
+          }
+        }
+      }
+
+      "has a continue button" in {
+        form.selectHead(".govuk-button").text mustBe messages.continue
+      }
     }
   }
 
-  class PostSetup(answer: Option[YesNo]) {
+  class PostSetup(answer: Option[AccountingPeriod]) {
     val response: WSResponse = submitAccountingPeriodCheck(answer)
   }
 
   "POST /eligibility/accounting-period-check" should {
 
-    "return SEE_OTHER when selecting Yes and send an Audit" in new PostSetup(Some(Yes)) {
-      val expectedAuditContainsYes: JsValue = Json.parse(
-        """{ "userType" : "individual", "eligible" : "true" , "answer" : "yes", "question": "standardAccountingPeriod" }""")
-      verifyAuditContains(expectedAuditContainsYes)
+    "return SEE_OTHER when selecting neither and send an Audit" in new PostSetup(Some(OtherAccountingPeriod)) {
+      val expectedAuditContains: JsValue = Json.parse(
+        """{ "userType" : "individual", "eligible" : "false" , "answer" : "other", "question": "standardAccountingPeriod" }""")
+
+      response must have(
+        httpStatus(SEE_OTHER),
+        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/error/cannot-sign-up"),
+      )
+
+      verifyAuditContains(expectedAuditContains)
+    }
+
+    "return SEE_OTHER when selecting 6 April to 5 April and send an Audit" in new PostSetup(Some(SixthAprilToFifthApril)) {
+      val expectedAuditContains: JsValue = Json.parse(
+        """{ "userType" : "individual", "eligible" : "true" , "answer" : "6 april to 5 april", "question": "standardAccountingPeriod" }""")
+
       response must have(
         httpStatus(SEE_OTHER),
         redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/sign-up-to-pilot"),
       )
+
+      verifyAuditContains(expectedAuditContains)
     }
 
-    "return SEE_OTHER when selecting No and send an Audit" in new PostSetup(Some(No)) {
-      val expectedAuditContainsNo: JsValue = Json.parse(
-        """{ "userType" : "individual", "eligible" : "false" , "answer" : "no", "question": "standardAccountingPeriod" }""")
-      verifyAuditContains(expectedAuditContainsNo)
+    "return SEE_OTHER when selecting 1 April to 31 March and send an Audit" in new PostSetup(Some(FirstAprilToThirtyFirstMarch)) {
+      val expectedAuditContains: JsValue = Json.parse(
+        """{ "userType" : "individual", "eligible" : "true" , "answer" : "1 april to 31 march", "question": "standardAccountingPeriod" }""")
+
       response must have(
         httpStatus(SEE_OTHER),
-        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/error/cannot-sign-up")
+        redirectUri("/report-quarterly/income-and-expenses/sign-up/eligibility/sign-up-to-pilot"),
       )
 
+      verifyAuditContains(expectedAuditContains)
     }
 
     "return BADREQUEST when no Answer is given" in new PostSetup(None) {
       response must have(
         httpStatus(BAD_REQUEST)
       )
-    }
 
-    "have the correct form" in new PostSetup(None) {
-      lazy val doc: Document = Jsoup.parse(response.body)
+      val doc: Document = Jsoup.parse(response.body)
+
       doc.getForm must have(
         method("POST"),
         action(routes.CheckAccountingPeriodController.submit.url)
