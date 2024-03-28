@@ -107,17 +107,13 @@ accounting-period-check.other                                           = Dim un
 accounting-period-check.error                                           = Dewiswch eich cyfnod cyfrifyddu busnes, neu dewiswch ‘Dim un o’r rhain’
 
 ## Cannot Sign Up Page
-cannot-sign-up.heading                                                  = Ni allwch gymryd rhan eto
-cannot-sign-up.para-one                                                 = Rydych wedi rhoi gwybod i ni fod gennych ffynonellau incwm eraill ar wahân i hunangyflogaeth neu eiddo.
-cannot-sign-up.para-two                                                 = Nid yw cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar gael ar hyn o bryd i bobl sy’n cael rhai incwm.
-cannot-sign-up.income.pre-text                                          = Gallai’r rhain hyn gynnwys:
-cannot-sign-up.income.bullet1                                           = incwm TWE fel cyflogai
-cannot-sign-up.income.bullet2                                           = pensiynau neu flwydd-daliadau’r DU
-cannot-sign-up.income.bullet3                                           = buddsoddiadau y tu allan i’r DU
-cannot-sign-up.income.bullet4                                           = enillion cyfalaf
-cannot-sign-up.income.bullet5                                           = budd-daliadau trethadwy’r wladwriaeth (er enghraifft, Profedigaeth neu Lwfans Profedigaeth)
-cannot-sign-up.para-three                                               = Efallai y byddwch yn gallu cofrestru yn y dyfodol.
-cannot-sign-up.send-self-assessment                                     = Bydd angen i chi anfon {0} yn lle hynny, ac efallai y bydd modd i chi gofrestru yn y dyfodol.
+cannot-sign-up.heading                                                  = Ni allwch gofrestru ar hyn o bryd
+cannot-sign-up.para-one                                                 = Nid yw’ch busnes yn defnyddio cyfnod cyfrifyddu sy’n rhedeg o naill ai:
+cannot-sign-up.bullet-one                                               = 1 Ebrill i 31 Mawrth
+cannot-sign-up.bullet-two                                               = 6 Ebrill i 5 Ebrill
+cannot-sign-up.para-two                                                 = Mae Troi Treth yn Ddigidol (MTD) ar gyfer Treth Incwm ond ar gael i bobl sy’n defnyddio’r cyfnodau cyfrifyddu busnes hyn.
+cannot-sign-up.para-three                                               = Yn y dyfodol, mae’n bosibl y caiff y gwasanaeth hwn ei ymestyn i ragor o bobl.
+cannot-sign-up.send-self-assessment                                     = Parhewch i gyflwyno’ch {0} yn ôl yr arfer.
 cannot-sign-up.send-self-assessment.link                                = Ffurflen Dreth Hunanasesiad
 
 ## Sign Up To Pilot Page ##

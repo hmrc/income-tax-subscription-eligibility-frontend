@@ -107,17 +107,13 @@ accounting-period-check.other                                           = Neithe
 accounting-period-check.error                                           = Select your business accounting period, or select ‘Neither of these’
 
 ## Cannot Sign Up Page
-cannot-sign-up.heading                                                  = You cannot take part yet
-cannot-sign-up.para-one                                                 = You have told us you have other income sources aside from self-employment or property.
-cannot-sign-up.para-two                                                 = Making Tax Digital for Income Tax is not currently available to people who receive certain incomes.
-cannot-sign-up.income.pre-text                                          = This could include:
-cannot-sign-up.income.bullet1                                           = PAYE income as an employee
-cannot-sign-up.income.bullet2                                           = UK pensions or annuities
-cannot-sign-up.income.bullet3                                           = investments from outside the UK
-cannot-sign-up.income.bullet4                                           = capital gains
-cannot-sign-up.income.bullet5                                           = taxable state benefits (for example, Bereavement or Carer’s Allowance)
-cannot-sign-up.para-three                                               = You may be able to sign up in the future.
-cannot-sign-up.send-self-assessment                                     = Continue submitting your {0}.
+cannot-sign-up.heading                                                  = You cannot sign up yet
+cannot-sign-up.para-one                                                 = Your business does not use an accounting period that runs from either:
+cannot-sign-up.bullet-one                                               = 1 April to 31 March
+cannot-sign-up.bullet-two                                               = 6 April to 5 April
+cannot-sign-up.para-two                                                 = Making Tax Digital for Income Tax is only available to people who use these business accounting periods.
+cannot-sign-up.para-three                                               = In the future, we may extend this service to more people.
+cannot-sign-up.send-self-assessment                                     = Continue submitting your {0} as normal.
 cannot-sign-up.send-self-assessment.link                                = Self Assessment tax return
 
 ## Sign Up To Pilot Page ##
