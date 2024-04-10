@@ -170,10 +170,6 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
           section3.selectNth("ul li", 2).text mustBe bullet2
         }
 
-        "contains bullet 3" in {
-          section3.selectNth("ul li", 3).text mustBe bullet3
-        }
-
       }
 
       "has a Sign up section" that {
