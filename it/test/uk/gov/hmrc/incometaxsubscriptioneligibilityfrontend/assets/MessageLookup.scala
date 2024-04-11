@@ -136,7 +136,7 @@ object MessageLookup {
    }
 
    object CheckEligibility {
-     val heading = "Check your eligibility"
+     val heading = "Check if you can sign up"
      val paragraph = "Answer the questions to find out if you may be eligible."
    }
 
@@ -159,9 +159,8 @@ object MessageLookup {
    object CompleteSignUp {
      val heading = "Complete sign-up tasks"
      val paragraph1 = "To sign up you need to:"
-     val bullet1 = "confirm the details we have about you and your business are correct"
-     val bullet2 = "add any other income sources"
-     val bullet3 = "select which year you want to start using Making Tax Digital for Income Tax"
+     val bullet1 = "add any sole trader or UK and foreign property business income"
+     val bullet2 = "select which year you want to start using Making Tax Digital for Income Tax"
    }
 
    object SignUp {
