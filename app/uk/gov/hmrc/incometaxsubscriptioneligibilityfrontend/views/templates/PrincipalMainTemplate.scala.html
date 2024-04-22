@@ -23,7 +23,7 @@
     implicit appConfig: AppConfig
 )
 
-@(title: String, optForm: Option[Form[_]] = None, backLink: Option[String]= None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages)
+@(title: String, optForm: Option[Form[_]] = None, backLink: Option[BackLink] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages)
 
 @prefixedTitle = @{
     optForm match {

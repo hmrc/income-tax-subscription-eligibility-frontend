@@ -49,7 +49,8 @@ class SignUpControllerISpec extends ComponentSpecBase with ViewSpec {
 
     "have a view with the correct back link" in {
       doc.getElementsByClass("govuk-back-link").text mustBe commonMessages.backUrl
-      doc.getElementsByClass("govuk-back-link").attr("href") mustBe routes.CheckAccountingPeriodController.show.url
+      doc.getElementsByClass("govuk-back-link").attr("href") mustBe "#"
+      doc.getElementsByClass("govuk-back-link").attr("data-module") mustBe "hmrc-back-link"
     }
   }
 }

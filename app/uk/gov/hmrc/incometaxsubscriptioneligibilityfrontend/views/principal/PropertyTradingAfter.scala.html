@@ -47,7 +47,7 @@
             </ul>
 }
 
-@mainTemplate(title = messages("property-trading-after.title", startDateLimit), optForm = Some(propertyTradingBeforeDateForm), backLink = Some(backUrl)) {
+@mainTemplate(title = messages("property-trading-after.title", startDateLimit), optForm = Some(propertyTradingBeforeDateForm), backLink = Some(BackLink(href = backUrl))) {
 
     @hmrcPageHeading( PageHeading(
         text = messages("property-trading-after.title", startDateLimit),

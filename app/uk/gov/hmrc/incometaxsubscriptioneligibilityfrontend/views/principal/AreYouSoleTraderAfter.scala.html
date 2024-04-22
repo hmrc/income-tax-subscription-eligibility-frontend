@@ -43,7 +43,7 @@
     </p>
 }
 
-@mainTemplate(title = messages("are-you-sole-trader-after.title", startDateLimit), optForm = Some(areYouSoleTraderAfterForm), backLink = Some(backUrl)) {
+@mainTemplate(title = messages("are-you-sole-trader-after.title", startDateLimit), optForm = Some(areYouSoleTraderAfterForm), backLink = Some(BackLink(href = backUrl))) {
 
     @hmrcPageHeading( PageHeading(
         text = messages("are-you-sole-trader-after.title", startDateLimit),
