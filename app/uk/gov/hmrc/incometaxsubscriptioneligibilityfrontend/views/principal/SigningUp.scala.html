@@ -98,7 +98,7 @@
   @break
 }
 
-@mainTemplate(title = messages("individual.signing-up.heading"), backLink = Some(backLink)) {
+@mainTemplate(title = messages("individual.signing-up.heading"), backLink = Some(BackLink(href = backLink))) {
 
   @header
   <h2 class="govuk-heading-l">@messages("individual.signing-up.how-to-sign-up.heading")</h2>

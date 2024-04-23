@@ -28,7 +28,7 @@
 
 @(postAction:Call, currentTaxYear: AccountingPeriodModel, nextTaxYear: AccountingPeriodModel, backLink: String)(implicit request: Request[_], messages: Messages)
 
-@mainTemplate(title = messages("agent.signing-up.heading"), backLink = Some(backLink)) {
+@mainTemplate(title = messages("agent.signing-up.heading"), backLink = Some(BackLink(href = backLink))) {
 
     @header
 

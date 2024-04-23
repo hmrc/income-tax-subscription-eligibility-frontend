@@ -36,7 +36,7 @@
     hmrcStandardPage: HmrcStandardPage
 )
 
-@(title: String, serviceName: Option[String], serviceUrl: String, optForm: Option[Form[_]] = None, backLink: Option[String] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
+@(title: String, serviceName: Option[String], serviceUrl: String, optForm: Option[Form[_]] = None, backLink: Option[BackLink] = None)(contentBlock: Html)(implicit request: RequestHeader, messages: Messages, appConfig: AppConfig)
 
 @hmrcStandardPage(HmrcStandardPageParams(
     serviceURLs = ServiceURLs(
@@ -52,7 +52,7 @@
     serviceName = serviceName,
     isWelshTranslationAvailable = true,
     pageTitle = Some(title),
-    backLink = backLink.map(url => BackLink(href = url))
+    backLink = backLink
 ))(content)
 
 @additionalHeadBlock = {

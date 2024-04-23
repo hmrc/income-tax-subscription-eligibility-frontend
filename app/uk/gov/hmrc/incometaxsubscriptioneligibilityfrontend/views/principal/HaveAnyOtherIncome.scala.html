@@ -53,7 +53,7 @@
 }
 
 
-@mainTemplate(title = messages("have-any-other-income.title"), optForm = Some(haveAnyOtherIncomeForm), backLink = Some(backUrl) ) {
+@mainTemplate(title = messages("have-any-other-income.title"), optForm = Some(haveAnyOtherIncomeForm), backLink = Some(BackLink(href = backUrl))) {
 
     @hmrcPageHeading( PageHeading(
         text = messages("have-any-other-income.title"),

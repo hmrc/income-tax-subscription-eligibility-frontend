@@ -27,7 +27,7 @@
 
 @mainTemplate(
   title = messages("sign-up.title"),
-  backLink = Some(backUrl)
+  backLink = Some(BackLink.mimicsBrowserBackButtonViaJavaScript)
 ) {
  <h1 class="govuk-heading-l">@messages("sign-up.heading")</h1>
 

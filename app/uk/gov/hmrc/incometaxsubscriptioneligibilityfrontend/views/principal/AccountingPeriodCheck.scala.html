@@ -34,7 +34,7 @@
 @mainTemplate(
     title = messages("accounting-period-check.heading"),
     optForm = Some(accountingPeriodForm),
-    backLink = Some(backUrl)
+    backLink = Some(BackLink(href = backUrl))
 ) {
 
     @hmrcPageHeading( PageHeading(
