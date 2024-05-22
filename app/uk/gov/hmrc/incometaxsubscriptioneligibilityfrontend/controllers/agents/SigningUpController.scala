@@ -19,16 +19,16 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents
 import play.api.i18n.I18nSupport
 import play.api.mvc._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
-import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.agents.SigningUp
+import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
 
 @Singleton
-class SigningUpController @Inject()(mcc: MessagesControllerComponents, signingUp: SigningUp)
-                                   (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+class SigningUpController @Inject()(appConfig: AppConfig,
+                                    mcc: MessagesControllerComponents,
+                                    signingUp: SigningUp) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action { implicit request =>
     Ok(signingUp(postAction = routes.SigningUpController.submit, AccountingPeriodUtil.getCurrentTaxYear, AccountingPeriodUtil.getNextTaxYear, backLink))

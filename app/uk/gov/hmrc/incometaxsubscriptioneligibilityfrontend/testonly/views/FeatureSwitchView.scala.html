@@ -14,7 +14,6 @@
  * limitations under the License.
  *@
 
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
@@ -23,8 +22,6 @@
         mainTemplate: PrincipalMainTemplate,
         continueButton: ContinueButton,
         form: FormWithCSRF
-)(
-        implicit appConfig: AppConfig
 )
 
 @(switchNames: Map[FeatureSwitch, Boolean], action: Call)(implicit request: Request[_], messages: Messages)

@@ -16,17 +16,17 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
-import org.mockito.Mockito.{reset, when}
+import org.mockito.Mockito.reset
 import org.scalatest.BeforeAndAfterEach
 import org.scalatestplus.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
 import play.api.Configuration
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitch, FeatureSwitching}
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 
 class FeatureSwitchingSpec extends PlaySpec with MockitoSugar with FeatureSwitching with BeforeAndAfterEach {
+
   val mockServicesConfig: ServicesConfig = mock[ServicesConfig]
   val mockConfig: Configuration = mock[Configuration]
   val appConfig = new AppConfig(mockServicesConfig, mockConfig)
@@ -51,34 +51,35 @@ class FeatureSwitchingSpec extends PlaySpec with MockitoSugar with FeatureSwitch
 
   "List of feature switches" should {
     "be one" in {
-      FeatureSwitch.switches.size mustBe (1)
+      FeatureSwitch.switches.size mustBe 0
     }
   }
 
 
-  "SignUpEligibilityInterrupt" should {
-    "return true if SignUpEligibilityInterrupt feature switch is enabled in sys.props" in {
-      enable(SignUpEligibilityInterrupt)
-      isEnabled(SignUpEligibilityInterrupt) mustBe true
-    }
-    "return false if SignUpEligibilityInterrupt feature switch is disabled in sys.props" in {
-      disable(SignUpEligibilityInterrupt)
-      isEnabled(SignUpEligibilityInterrupt) mustBe false
-    }
+//  "FeatureSwitchName" should {
+//    "return true if FeatureSwitchName feature switch is enabled in sys.props" in {
+//      enable(FeatureSwitchName)
+//      isEnabled(FeatureSwitchName) mustBe true
+//    }
+//    "return false if FeatureSwitchName feature switch is disabled in sys.props" in {
+//      disable(FeatureSwitchName)
+//      isEnabled(FeatureSwitchName) mustBe false
+//    }
+//
+//    "return false if FeatureSwitchName feature switch does not exist" in {
+//      when(mockConfig.getOptional[String]("feature-switch.feature-switch-key")).thenReturn(None)
+//      isEnabled(FeatureSwitchName) mustBe false
+//    }
+//
+//    "return false if FeatureSwitchName feature switch is not in sys.props but is set to 'off' in config" in {
+//      when(mockConfig.getOptional[String]("feature-switch.feature-switch-key")).thenReturn(Some(FEATURE_SWITCH_OFF))
+//      isEnabled(FeatureSwitchName) mustBe false
+//    }
+//
+//    "return true if FeatureSwitchName feature switch is not in sys.props but is set to 'on' in config" in {
+//      when(mockConfig.getOptional[String]("feature-switch.feature-switch-key")).thenReturn(Some(FEATURE_SWITCH_ON))
+//      isEnabled(FeatureSwitchName) mustBe true
+//    }
+//  }
 
-    "return false if SignUpEligibilityInterrupt feature switch does not exist" in {
-      when(mockConfig.getOptional[String]("feature-switch.sign-up-eligibility-interrupt-page")).thenReturn(None)
-      isEnabled(SignUpEligibilityInterrupt) mustBe false
-    }
-
-    "return false if SignUpEligibilityInterrupt feature switch is not in sys.props but is set to 'off' in config" in {
-      when(mockConfig.getOptional[String]("feature-switch.sign-up-eligibility-interrupt-page")).thenReturn(Some(FEATURE_SWITCH_OFF))
-      isEnabled(SignUpEligibilityInterrupt) mustBe false
-    }
-
-    "return true if SignUpEligibilityInterrupt feature switch is not in sys.props but is set to 'on' in config" in {
-      when(mockConfig.getOptional[String]("feature-switch.sign-up-eligibility-interrupt-page")).thenReturn(Some(FEATURE_SWITCH_ON))
-      isEnabled(SignUpEligibilityInterrupt) mustBe true
-    }
-  }
 }

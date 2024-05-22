@@ -22,10 +22,11 @@
 @this(
         mainTemplate: PrincipalMainTemplate,
         hmrcNewTabLinkHelper: HmrcNewTabLinkHelper,
-        form: FormWithCSRF
+        form: FormWithCSRF,
+        appConfig: AppConfig
 )
 
-@(postAction: Call)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@(postAction: Call)(implicit request: Request[_], messages: Messages)
 
 @mainTemplate(
     title = messages("overview.title")
