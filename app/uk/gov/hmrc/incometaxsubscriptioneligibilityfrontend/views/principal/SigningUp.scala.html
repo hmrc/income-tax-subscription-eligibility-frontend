@@ -14,7 +14,6 @@
  * limitations under the License.
  *@
 
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AccountingPeriodService
@@ -30,8 +29,6 @@
   continueButton: ContinueButton,
   govukInsetText: GovukInsetText,
         languageUtils: LanguageUtils
-)(
-  implicit appConfig: AppConfig
 )
 
 @(postAction: Call, currentTaxYear: AccountingPeriodModel, nextTaxYear: AccountingPeriodModel, backLink: String)(implicit request: Request[_], messages: Messages)

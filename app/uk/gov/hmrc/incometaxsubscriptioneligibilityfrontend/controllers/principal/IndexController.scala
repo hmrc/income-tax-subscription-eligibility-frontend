@@ -18,25 +18,15 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.routes
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 
 import javax.inject.{Inject, Singleton}
 
 @Singleton
-class IndexController @Inject()(
-                                 val appConfig: AppConfig,
-                                 mcc: MessagesControllerComponents) extends FrontendController(mcc) with I18nSupport with FeatureSwitching{
+class IndexController @Inject()(mcc: MessagesControllerComponents) extends FrontendController(mcc) with I18nSupport {
 
   val index: Action[AnyContent] = Action { _ =>
-    if (isEnabled(SignUpEligibilityInterrupt)) {
-      Redirect(routes.SigningUpController.show)
-    } else {
-      Redirect(routes.OverviewController.show)
-    }
+    Redirect(routes.SigningUpController.show)
   }
 
 }

@@ -18,18 +18,14 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.principal.Overview
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
-
 @Singleton
-class OverviewController @Inject()(overview: Overview, mcc: MessagesControllerComponents)
-                                  (implicit val appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+class OverviewController @Inject()(overview: Overview, mcc: MessagesControllerComponents) extends FrontendController(mcc) with I18nSupport {
 
   val show: Action[AnyContent] = Action.async {
     implicit request =>

@@ -28,7 +28,7 @@ class IndexControllerISpec extends ComponentSpecBase {
     s"return $SEE_OTHER" in {
       result must have(
         httpStatus(SEE_OTHER),
-        redirectUri(routes.OverviewController.show.url)
+        redirectUri(routes.SigningUpController.show.url)
       )
     }
   }

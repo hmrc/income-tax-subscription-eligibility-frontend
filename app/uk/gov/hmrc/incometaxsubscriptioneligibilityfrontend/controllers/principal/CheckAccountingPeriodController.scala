@@ -18,9 +18,6 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents, Request}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodForm.accountingPeriodForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod._
@@ -36,8 +33,7 @@ import scala.concurrent.{ExecutionContext, Future}
 class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: AccountingPeriodCheck,
                                                 auditService: AuditingService,
                                                 mcc: MessagesControllerComponents)
-                                               (implicit val appConfig: AppConfig,
-                                                executionContext: ExecutionContext) extends FrontendController(mcc) with I18nSupport with FeatureSwitching {
+                                               (implicit executionContext: ExecutionContext) extends FrontendController(mcc) with I18nSupport {
 
   def show: Action[AnyContent] = Action.async {
     implicit request =>
@@ -68,11 +64,7 @@ class CheckAccountingPeriodController @Inject()(accountingPeriodCheck: Accountin
   }
 
   private def backUrl: String = {
-    if (isEnabled(SignUpEligibilityInterrupt)) {
-      routes.SigningUpController.show.url
-    } else {
-      routes.OverviewController.show.url
-    }
+    routes.SigningUpController.show.url
   }
 
   private def audit(eligible: Boolean, answer: AccountingPeriod)

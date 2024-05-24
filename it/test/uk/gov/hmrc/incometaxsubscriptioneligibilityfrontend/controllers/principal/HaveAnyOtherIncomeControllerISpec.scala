@@ -23,22 +23,15 @@ import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{Base => commonMessages, HaveAnyOtherIncome => messages}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.HaveAnyOtherIncomeForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{No, Yes, YesNo}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.{verifyAudit, verifyAuditContains}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
-class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec with FeatureSwitching {
-
-  override def beforeEach(): Unit = {
-    super.beforeEach()
-    disable(SignUpEligibilityInterrupt)
-  }
+class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec {
 
   "GET /eligibility/other-income" should {
-    def result = get("/other-income")
+    def result: WSResponse = get("/other-income")
 
     def doc: Document = Jsoup.parse(result.body)
 
@@ -51,7 +44,11 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
     "have the correct template details" when {
 
       "there is no error" in {
-        new TemplateViewTest(doc, messages.title, backLink = Some(routes.OverviewController.show.url))(appConfig)
+        new TemplateViewTest(
+          doc,
+          messages.title,
+          backLink = Some(routes.SigningUpController.show.url)
+        )(appConfig)
       }
 
       "there is an error" in {
@@ -60,18 +57,8 @@ class HaveAnyOtherIncomeControllerISpec extends ComponentSpecBase with ViewSpec 
           document = errorPage,
           title = messages.title,
           isAgent = false,
-          backLink = Some(routes.OverviewController.show.url),
+          backLink = Some(routes.SigningUpController.show.url),
           error = Some(FormError(HaveAnyOtherIncomeForm.fieldName, messages.error))
-        )
-      }
-
-      "the SignUpEligibilityInterrupt feature switch is enabled" in {
-        enable(SignUpEligibilityInterrupt)
-        new TemplateViewTest(
-          document = doc,
-          title = messages.title,
-          isAgent = false,
-          backLink = Some(routes.SigningUpController.show.url)
         )
       }
 

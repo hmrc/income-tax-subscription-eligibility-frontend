@@ -18,31 +18,18 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.agents
 
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.ComponentSpecBase
 
-class IndexControllerISpec extends ComponentSpecBase with FeatureSwitching {
+class IndexControllerISpec extends ComponentSpecBase {
 
   def result(): WSResponse = get("/client")
 
   "GET /client" when {
-    "interrupt feature switch is not set" should {
-      s"return $SEE_OTHER" in {
-        result() must have(
-          httpStatus(SEE_OTHER),
-          redirectUri(appConfig.incomeTaxSubscriptionFrontendAgentIncomeSourcesPageFullUrl)
-        )
-      }
-    }
-    "interrupt feature switch is set" should {
-      s"return $SEE_OTHER" in {
-        enable(SignUpEligibilityInterrupt)
-        result() must have(
-          httpStatus(SEE_OTHER),
-          redirectUri(routes.SigningUpController.show.url)
-        )
-      }
+    s"return $SEE_OTHER" in {
+      result() must have(
+        httpStatus(SEE_OTHER),
+        redirectUri(routes.SigningUpController.show.url)
+      )
     }
   }
 

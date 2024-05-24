@@ -14,7 +14,6 @@
  * limitations under the License.
  *@
 
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.YesNo
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.PropertyTradingStartDateForm.fieldName
@@ -31,7 +30,7 @@
     form: FormWithCSRF
 )
 
-@(propertyTradingBeforeDateForm: Form[YesNo], postAction: Call, startDateLimit: String, backUrl: String)(implicit request: Request[_], messages: Messages, appConfig: AppConfig)
+@(propertyTradingBeforeDateForm: Form[YesNo], postAction: Call, startDateLimit: String, backUrl: String)(implicit request: Request[_], messages: Messages)
 
 @inputContent = {
         <p class="govuk-body">@messages("property-trading-after.line1")</p>

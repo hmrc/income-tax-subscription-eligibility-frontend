@@ -22,7 +22,6 @@ import play.twirl.api.Html
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.switches
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.{FeatureSwitch, FeatureSwitching}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AuditingService
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.testonly.views.html.FeatureSwitchView
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendController
 
@@ -30,8 +29,7 @@ import javax.inject.Inject
 import scala.collection.immutable.ListMap
 import scala.concurrent.ExecutionContext
 
-class FeatureSwitchController @Inject()(val auditingService: AuditingService,
-                                        featureSwitch: FeatureSwitchView)
+class FeatureSwitchController @Inject()(featureSwitch: FeatureSwitchView)
                                        (implicit val ec: ExecutionContext,
                                         implicit val appConfig: AppConfig,
                                         mcc: MessagesControllerComponents) extends FrontendController(mcc) with FeatureSwitching with I18nSupport {

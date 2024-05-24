@@ -18,7 +18,6 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.princip
 
 import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.PropertyTradingStartDateForm._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.implicits.ImplicitDateFormatter
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.audits.EligibilityAnswerAuditing.EligibilityAnswerAuditModel
@@ -36,7 +35,7 @@ import scala.concurrent.Future
 class PropertyTradingStartAfterController @Inject()(propertyTradingAfter: PropertyTradingAfter,
                                                     auditService: AuditingService, mcc: MessagesControllerComponents,
                                                     val languageUtils: LanguageUtils)
-                                                   (implicit appConfig: AppConfig) extends FrontendController(mcc) with I18nSupport with ImplicitDateFormatter {
+  extends FrontendController(mcc) with I18nSupport with ImplicitDateFormatter {
 
   private def startDateLimit: LocalDate = LocalDate.now.minusYears(1)
 

@@ -23,20 +23,13 @@ import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{CheckAccountingPeriod => messages}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitch.SignUpEligibilityInterrupt
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.featureswitch.FeatureSwitching
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod.{FirstAprilToThirtyFirstMarch, OtherAccountingPeriod, SixthAprilToFifthApril}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.AuditStub.verifyAuditContains
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.{ComponentSpecBase, ViewSpec}
 
-class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSpec with FeatureSwitching {
-
-  override def beforeEach(): Unit = {
-    super.beforeEach()
-    disable(SignUpEligibilityInterrupt)
-  }
+class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSpec {
 
   "GET /eligibility/accounting-period-check" should {
     def result: WSResponse = get("/accounting-period-check")
@@ -49,12 +42,14 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       )
     }
 
-    "have the correct template details with feature switch disabled" when {
-      "there is no error" in new TemplateViewTest(
-        document = doc,
-        title = messages.heading,
-        backLink = Some(routes.OverviewController.show.url)
-      )
+    "have the correct template details" when {
+      "there is no error" in {
+        new TemplateViewTest(
+          document = doc,
+          title = messages.heading,
+          backLink = Some(routes.SigningUpController.show.url)
+        )
+      }
 
       "there is an error" in {
         val errorPage: Document = Jsoup.parse(submitAccountingPeriodCheck(None).body)
@@ -62,30 +57,8 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
           document = errorPage,
           title = messages.heading,
           error = Some(FormError(AccountingPeriodForm.fieldName, messages.error)),
-          backLink = Some(routes.OverviewController.show.url)
+          backLink = Some(routes.SigningUpController.show.url)
         )
-      }
-
-      "have the correct template details with feature switch enabled" when {
-        "there is no error" in {
-          enable(SignUpEligibilityInterrupt)
-          new TemplateViewTest(
-            document = doc,
-            title = messages.heading,
-            backLink = Some(routes.SigningUpController.show.url)
-          )
-        }
-
-        "there is an error" in {
-          enable(SignUpEligibilityInterrupt)
-          val errorPage: Document = Jsoup.parse(submitAccountingPeriodCheck(None).body)
-          new TemplateViewTest(
-            document = errorPage,
-            title = messages.heading,
-            error = Some(FormError(AccountingPeriodForm.fieldName, messages.error)),
-            backLink = Some(routes.SigningUpController.show.url)
-          )
-        }
       }
     }
 
