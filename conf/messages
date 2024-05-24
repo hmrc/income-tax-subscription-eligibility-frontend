@@ -42,59 +42,6 @@ individual.signing-up.how-to-sign-up.complete-sign-up.bullet2           = select
 individual.signing-up.how-to-sign-up.sign-up.heading                    = Sign up
 individual.signing-up.how-to-sign-up.sign-up.para                       = You’ll be told you have successfully signed up for Making Tax Digital for Income Tax.
 
-## Overview Page Content
-overview.title                                                          = The way you complete Self Assessment is changing
-overview.heading                                                        = The way you complete Self Assessment is changing
-overview.line-1                                                         = This is a pilot to sign up for a new way for sole trader businesses (self-employed) and landlords to send income tax updates and returns to HMRC.
-overview.line-2                                                         = You will need to use compatible software to:
-overview.bullet-compatible-software-line-1                              = keep your business records up to date
-overview.bullet-compatible-software-line-2                              = send updates about your business records to HMRC every quarter
-overview.bullet-compatible-software-line-3                              = file your Self Assessment tax return
-overview.line-3                                                         = This will replace filing a Self Assessment tax return and you can choose your software once you have signed up. {0}
-overview.link-text                                                      = Find software that’s compatible with Making Tax Digital for Income Tax
-overview.heading-2                                                      = Before you start
-overview.line-4                                                         = To sign up to this pilot, you will need your:
-overview.bullet-before-start-line-1                                     = Government Gateway user ID and password
-overview.bullet-before-start-line-2                                     = National Insurance number
-overview.bullet-before-start-line-3                                     = business start dates and registered addresses
-overview.bullet-before-start-line-4                                     = business accounting year information
-overview.inset-text                                                     = You will need to use the same Government Gateway user ID and password that you use for your current Self Assessment account. If you do not have a user ID yet, you can create one when you use the service.
-
-## Are you a sole trader after page ##
-are-you-sole-trader-after.title                                         = Did your sole trader business begin on or after  {0}?
-are-you-sole-trader-after.heading                                       = Did your sole trader business begin on or after  {0}?
-are-you-sole-trader-after.caption                                       = Eligibility questions
-are-you-sole-trader-after.para                                          = If you’re a sole trader, you run your own business as an individual and are {0}
-are-you-sole-trader-after.para-link                                     = self-employed
-are-you-sole-trader-after.error.summary                                 = Select yes if you are a sole trader that began trading on or after {0}.
-
-## Property Trading After Date page ##
-property-trading-after.title                                            = Did you start renting out a property on or after  {0}?
-property-trading-after.heading                                          = Did you start renting out a property on or after  {0}?
-property-trading-after.caption                                          = Eligibility questions
-property-trading-after.line1                                            = This includes being a landlord or using a letting agency for:
-property-trading-after.line2                                            = UK properties
-property-trading-after.line3                                            = foreign properties
-property-trading-after.line4                                            = holiday properties
-property-trading-after.line5                                            = This does not include renting out:
-property-trading-after.line6                                            = a room
-property-trading-after.line7                                            = part of your property
-property-trading-after.error                                            = Select yes if you own a property business that began trading on or after {0}.
-
-## Do you have any other income page
-have-any-other-income.title                                             = Apart from self-employment or property, do you have any other sources of income?
-have-any-other-income.caption                                           = Eligibility questions
-have-any-other-income.include                                           = This could include:
-have-any-other-income.not-include                                       = This does not include:
-have-any-other-income.include-point-1                                   = PAYE income as an employee
-have-any-other-income.include-point-2                                   = UK pensions or annuities
-have-any-other-income.include-point-3                                   = investments from outside the UK
-have-any-other-income.include-point-4                                   = capital gains
-have-any-other-income.include-point-5                                   = taxable state benefits
-have-any-other-income.not-include-point-1                               = bank and building society interest
-have-any-other-income.not-include-point-2                               = dividends
-have-any-other-income.error.summary                                     = Select yes if you have any sources of income other than self employment or property income.
-
 ## Accounting period check
 accounting-period-check.heading                                         = What accounting period do you use for your business?
 accounting-period-check.caption                                         = Eligibility questions

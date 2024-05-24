@@ -22,6 +22,7 @@ import javax.inject.Singleton
 
 @Singleton
 class AccountingPeriodService {
+
   private val SIXTH = 6
 
   def currentTaxYear: String = {

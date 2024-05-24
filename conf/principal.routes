@@ -1,8 +1,5 @@
-
 ## microservice specific routes
-
 ->         /hmrc-frontend                                                                hmrcfrontend.Routes
-
 GET        /assets/*file                                                                 controllers.Assets.versioned(path="/public", file: Asset)
 
 ## Index route
@@ -12,27 +9,12 @@ GET         /                                 uk.gov.hmrc.incometaxsubscriptione
 GET         /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SigningUpController.show
 POST        /signing-up                    uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SigningUpController.submit
 
-
-## Have you got other income
-GET         /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.show
-POST        /other-income                     uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.HaveAnyOtherIncomeController.submit
-
-GET         /error/cannot-sign-up             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CannotSignUpController.show
-
-## Overview
-GET         /overview                         uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.OverviewController.show
-
-## Property date check
-GET         /property-start-after             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.show
-POST        /property-start-after             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.PropertyTradingStartAfterController.submit
-
-## Are you sole trader after
-GET         /sole-trader-start-after          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.show
-POST        /sole-trader-start-after          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SoleTraderStartAfterController.submit
-
 ## Check accounting period
 GET         /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.show
 POST        /accounting-period-check          uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CheckAccountingPeriodController.submit
+
+## Cannot sign up
+GET         /error/cannot-sign-up             uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.CannotSignUpController.show
 
 ## Sign up to pilot
 GET         /sign-up-to-pilot                 uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.controllers.principal.SignUpController.show
