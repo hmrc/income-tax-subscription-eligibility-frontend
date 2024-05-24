@@ -46,9 +46,6 @@ class AppConfig @Inject()(config: ServicesConfig, val configuration: Configurati
   lazy val govukGuidanceITSASignUpAgentLink: String = s"$govUkUrl/guidance/sign-up-your-client-for-making-tax-digital-for-income-tax"
   lazy val urBannerUrl: String = loadConfig("urBannerUrl.url")
 
-  lazy val guidanceUrl: String = s"$govUkUrl/guidance/use-software-to-send-income-tax-updates"
-  lazy val workingForYourselfUrl: String = s"$govUkUrl/working-for-yourself"
-
   lazy val betaFeedbackUnauthenticatedUrl: String =
     s"$contactHost/contact/beta-feedback-unauthenticated?service=$contactFormServiceIdentifier"
 

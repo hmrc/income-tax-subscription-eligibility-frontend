@@ -3,18 +3,3 @@ $hmrc-assets-path: "/report-quarterly/income-and-expenses/sign-up/eligibility/as
 
 @import "lib/govuk-frontend/dist/govuk/all";
 @import "lib/hmrc-frontend/hmrc/all";
-
-.app-reference-number {
-  display: block;
-  font-weight: bold;
-}
-
-body:not(.js-enabled) {
-    a.govuk-back-link[href*="javascript"] {
-      display: none;
-    }
-}
-
-.govuk-list--bold-marker > li::marker {
-  font-weight: bold;
-}

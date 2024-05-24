@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package models.common
+package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.common
 
 import models.DateModel
 import play.api.libs.json.{Json, OFormat}
@@ -27,14 +27,6 @@ case class AccountingPeriodModel(startDate: DateModel, endDate: DateModel) {
   lazy val taxStartYear: Int = AccountingPeriodUtil.getTaxStartYear(this)
   lazy val taxEndYear: Int = AccountingPeriodUtil.getTaxEndYear(this)
   lazy val taxEndYearShort: Int = taxEndYear % 100
-  lazy val adjustedTaxYear: AccountingPeriodModel =
-    if (taxEndYear <= 2018) {
-      val nextStartDate = this.endDate.toLocalDate.plusDays(1)
-      val nextEndDate = nextStartDate.plusYears(1).minusDays(1)
-      AccountingPeriodModel(DateModel.dateConvert(nextStartDate), DateModel.dateConvert(nextEndDate))
-    }
-    else this
-  val toShortTaxYear: String = s"${startDate.year.takeRight(2)}-${endDate.year.takeRight(2)}"
 }
 
 object AccountingPeriodModel {

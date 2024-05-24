@@ -42,59 +42,6 @@ individual.signing-up.how-to-sign-up.complete-sign-up.bullet2           = dewisw
 individual.signing-up.how-to-sign-up.sign-up.heading                    = Cofrestru
 individual.signing-up.how-to-sign-up.sign-up.para                       = Byddwch yn cael gwybod eich bod wedi cael eich cofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm.
 
-## Overview Page Content
-overview.title                                                          = Mae’r ffordd rydych yn llenwi Hunanasesiad yn newid
-overview.heading                                                        = Mae’r ffordd rydych yn llenwi Hunanasesiad yn newid
-overview.line-1                                                         = Cynllun peilot yw hwn ar gyfer cofrestru am ddull newydd ar gyfer busnesau unig fasnachwyr (hunangyflogedig) a landlordiaid i anfon diweddariadau Treth Incwm a Ffurflenni Treth i CThEF.
-overview.line-2                                                         = Bydd angen i chi ddefnyddio meddalwedd sy’n cydweddu er mwyn gwneud y canlynol:
-overview.bullet-compatible-software-line-1                              = cadw eich cofnodion i’r funud
-overview.bullet-compatible-software-line-2                              = anfon diweddariadau ynghylch eich cofnodion busnes i CThEF bob chwarter
-overview.bullet-compatible-software-line-3                              = cyflwyno’ch Ffurflen Dreth Hunanasesiad
-overview.line-3                                                         = Bydd hyn y disodli cyflwyno Ffurflen Dreth Hunanasesiad, a gallwch ddewis eich meddalwedd unwaith eich bod yn cofrestru. {0}
-overview.link-text                                                      = Dewch o hyd i feddalwedd sy’n cydweddu â Throi Treth yn Ddigidol ar gyfer Treth Incwm
-overview.heading-2                                                      = Cyn i chi ddechrau
-overview.line-4                                                         = Bydd angen y canlynol arnoch er mwyn cofrestru ar gyfer y cynllun peilot:
-overview.bullet-before-start-line-1                                     = eich Dynodydd Defnyddiwr (ID) a chyfrinair ar gyfer Porth y Llywodraeth
-overview.bullet-before-start-line-2                                     = rhif Yswiriant Gwladol
-overview.bullet-before-start-line-3                                     = dyddiadau dechrau’ch busnes a chyfeiriadau cofrestredig eich busnes
-overview.bullet-before-start-line-4                                     = gwybodaeth am flwyddyn gyfrifyddu’r busnes
-overview.inset-text                                                     = Bydd angen i chi ddefnyddio’r un Dynodydd Defnyddiwr (ID) a chyfrinair ar gyfer Porth y Llywodraeth a ddefnyddiwch ar gyfer eich cyfrif Hunanasesiad presennol. Os nad oes gennych Ddynodydd Defnyddiwr (ID) eto, gallwch greu un pan fyddwch yn defnyddio’r gwasanaeth.
-
-## Are you a sole trader after page ##
-are-you-sole-trader-after.title                                         = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
-are-you-sole-trader-after.heading                                       = A ddechreuodd eich busnes unig fasnachwr ar neu ar ôl {0}?
-are-you-sole-trader-after.caption                                       = GCwestiynau ynghylch cymhwystra
-are-you-sole-trader-after.para                                          = Os ydych yn unig fasnachwr, rydych yn rhedeg eich busnes eich hun fel unigolyn ac yn {0}
-are-you-sole-trader-after.para-link                                     = hunangyflogedig
-are-you-sole-trader-after.error.summary                                 = Dewiswch ‘Iawn’ os ydych yn unig fasnachwr a ddechreuodd fasnachu ar neu ar ôl {0}.
-
-## Property Trading Before Date page ##
-property-trading-after.title                                            = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
-property-trading-after.heading                                          = A wnaethoch ddechrau rhoi eiddo ar osod ar neu ôl  {0}?
-property-trading-after.caption                                          = Cwestiynau ynghylch cymhwystra
-property-trading-after.line1                                            = Mae hyn yn cynnwys bod yn landlord neu ddefnyddio asiantaeth gosod eiddo ar gyfer:
-property-trading-after.line2                                            = eiddo yn y DU
-property-trading-after.line3                                            = eiddo tramor
-property-trading-after.line4                                            = eiddo gwyliau
-property-trading-after.line5                                            = Nid yw hyn yn cynnwys rhoi’r canlynol ar osod:
-property-trading-after.line6                                            = ystafell
-property-trading-after.line7                                            = rhan o’ch eiddo
-property-trading-after.error                                            = Dewiswch ‘Iawn’ os ydych yn berchen ar fusnes eiddo a ddechreuodd fasnachu ar neu ar ôl {0}.
-
-## Do you have any other income page
-have-any-other-income.title                                             = Ar wahân i hunangyflogaeth neu eiddo, a oes gennych unrhyw ffynonellau eraill o incwm?
-have-any-other-income.caption                                           = Cwestiynau ynghylch cymhwystra
-have-any-other-income.include                                           = Gallai hyn gynnwys:
-have-any-other-income.not-include                                       = Nid yw hyn yn cynnwys:
-have-any-other-income.include-point-1                                   = incwm TWE fel cyflogai
-have-any-other-income.include-point-2                                   = pensiynau neu flwydd-daliadau’r DU
-have-any-other-income.include-point-3                                   = buddsoddiadau y tu allan i’r DU
-have-any-other-income.include-point-4                                   = enillion cyfalaf
-have-any-other-income.include-point-5                                   = budd-daliadau trethadwy’r Wladwriaeth
-have-any-other-income.not-include-point-1                               = llog banc neu gymdeithas adeiladu
-have-any-other-income.not-include-point-2                               = difidendau
-have-any-other-income.error.summary                                     = Dewiswch ’Iawn’ os oes gennych unrhyw ffynonellau incwm heblaw hunangyflogaeth neu incwm o eiddo.
-
 ## Accounting period check
 accounting-period-check.heading                                         = Pa gyfnod cyfrifyddu yr ydych yn ei ddefnyddio ar gyfer eich busnes?
 accounting-period-check.caption                                         = Eligibility questions

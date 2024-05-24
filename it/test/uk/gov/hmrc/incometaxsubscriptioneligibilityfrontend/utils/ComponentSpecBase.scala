@@ -24,8 +24,8 @@ import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
 import play.api.{Application, Environment, Mode}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.{AccountingPeriodForm, HaveAnyOtherIncomeForm, PropertyTradingStartDateForm}
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.{AccountingPeriod, YesNo}
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodForm
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils.servicemocks.{AuditStub, WireMockMethods}
 
 trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServerPerSuite with WireMockMethods
@@ -91,30 +91,6 @@ trait ComponentSpecBase extends PlaySpec with CustomMatchers with GuiceOneServer
     post("/accounting-period-check")(
       request.fold(Map.empty[String, Seq[String]])(
         model => AccountingPeriodForm.accountingPeriodForm.fill(model).data.map { case (k, v) => (k, Seq(v)) }
-      )
-    )
-  }
-
-  def submitHaveAnyOtherIncome(request: Option[YesNo]): WSResponse = {
-    post("/other-income")(
-      request.fold(Map.empty[String, Seq[String]])(
-        model => HaveAnyOtherIncomeForm.haveAnyOtherIncomeForm.fill(model).data.map { case (k, v) => (k, Seq(v)) }
-      )
-    )
-  }
-
-  def submitPropertyTradingStartAfter(request: Option[YesNo]): WSResponse = {
-    post("/property-start-after")(
-      request.fold(Map.empty[String, Seq[String]])(
-        model => PropertyTradingStartDateForm.propertyTradingStartDateForm("").fill(model).data.map { case (k, v) => (k, Seq(v)) }
-      )
-    )
-  }
-
-  def submitSoleTraderStartAfter(request: Option[YesNo]): WSResponse = {
-    post("/sole-trader-start-after")(
-      request.fold(Map.empty[String, Seq[String]])(
-        model => PropertyTradingStartDateForm.propertyTradingStartDateForm("").fill(model).data.map { case (k, v) => (k, Seq(v)) }
       )
     )
   }

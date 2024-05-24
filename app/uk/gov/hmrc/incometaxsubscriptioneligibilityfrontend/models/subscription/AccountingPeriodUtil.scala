@@ -17,7 +17,7 @@
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription
 
 import models.DateModel
-import models.common.AccountingPeriodModel
+import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.common.AccountingPeriodModel
 
 import java.time.LocalDate
 
@@ -41,18 +41,20 @@ object AccountingPeriodUtil {
     }
 
   def getTaxStartYear(accountingPeriodModel: AccountingPeriodModel): Int = getTaxStartYear(accountingPeriodModel.startDate.toLocalDate)
+
   def getTaxEndYear(accountingPeriodModel: AccountingPeriodModel): Int = getTaxEndYear(accountingPeriodModel.endDate.toLocalDate)
 
   def getCurrentTaxEndYear: Int = getTaxEndYear(LocalDate.now())
 
   def getCurrentTaxYearStartDate: DateModel = DateModel(sixth.toString, april.toString, (getCurrentTaxEndYear - 1).toString)
+
   def getCurrentTaxYearEndDate: DateModel = DateModel(fifth.toString, april.toString, getCurrentTaxEndYear.toString)
 
   def getCurrentTaxYear: AccountingPeriodModel = AccountingPeriodModel(getCurrentTaxYearStartDate, getCurrentTaxYearEndDate)
+
   def getNextTaxYear: AccountingPeriodModel = AccountingPeriodModel(getCurrentTaxYearStartDate.plusYears(1), getCurrentTaxYearEndDate.plusYears(1))
 
   def getCurrentTaxYearRange: String = s"${getCurrentTaxYear.taxStartYear}-${getCurrentTaxYear.taxEndYearShort}"
-  def getNextTaxYearRange: String = s"${getNextTaxYear.taxStartYear}-${getNextTaxYear.taxEndYearShort}"
 
   implicit object LocalDateOrdering extends Ordering[LocalDate] {
     override def compare(x: LocalDate, y: LocalDate): Int = x.compareTo(y)
