@@ -51,51 +51,26 @@ object MessageLookup {
     object Heading {
       val paraOne: String = "Making Tax Digital for Income Tax is a new way of reporting income to HMRC. " +
         "It’s currently in a voluntary phase for selected self-employed businesses and landlords."
-
-      object Inset {
-        val paraOne = "Signing up for Making Tax Digital for Income Tax is voluntary at the moment. However, if your total qualifying income is more than:"
-        val bulletOne = "£50,000 or more for April 2026"
-        val bulletTwo = "£30,000 or more for April 2027"
-        val paraTwo = "You can still choose to voluntarily sign up."
-      }
-
-      val paraTwo = "You may be able to sign up for Making Tax Digital for Income Tax if you:"
-      val bulletOne = "are a sole trader"
-      val bulletTwo = "receive income from property"
     }
 
-    object CheckEligibility {
-      val heading = "Check if you can sign up"
-      val paragraph = "Answer the questions to find out if you may be eligible."
+    object beforeYouSignUp {
+      val heading = "Before you sign up"
+      val paraOne = "To sign up, you must be a sole trader or get income from either a UK or foreign property."
+      val paraTwoLinkText = "software that’s compatible with Making Tax Digital for Income Tax (opens in new tab)."
+      val paraTwo = s"You must also use $paraTwoLinkText"
     }
 
-    object HMRCAccount {
-      val heading = "Sign in to your HMRC account"
-      val paragraph1 = "If you find out you may be eligible, sign in to your HMRC account."
-      val paragraph2 = "Depending on your circumstances, you will be offered to sign up for the:"
-      val currentTaxYear: String = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-      val nextTaxYear: String = AccountingPeriodUtil.getCurrentTaxYearStartDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-      val currentTaxYearEnd: String = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-      val nextTaxYearEnd: String = AccountingPeriodUtil.getCurrentTaxYearEndDate.toLocalDate.plusYears(1).format(DateTimeFormatter.ofPattern("d MMMM YYYY"))
-      val bullet1 = s"current tax year ($currentTaxYear to $currentTaxYearEnd)"
-      val bullet2 = s"next tax year ($nextTaxYear to $nextTaxYearEnd)"
-      val insetPara: String = "There may be circumstances which stop you from using Making Tax Digital for Income Tax at the moment. " +
-        "These may include certain other incomes or activities, or the length of time you’ve been self-employed."
-      val afterInsetPara: String = "If you’re not eligible for Making Tax Digital for Income Tax yet, " +
-        "continue to submit your annual Self Assessment as normal."
+    object soleTrader {
+      val heading = "Sole trader"
+      val paraOne = "You’re a sole trader if you run your own business as an individual and work for yourself. This is also known as being self-employed."
+      val paraTwo = "You’re not a sole trader if your only business income is from a limited company."
     }
 
-    object CompleteSignUp {
-      val heading = "Complete sign-up tasks"
-      val paragraph1 = "To sign up you need to:"
-      val bullet1 = "add any sole trader or UK and foreign property business income"
-      val bullet2 = "select which year you want to start using Making Tax Digital for Income Tax"
+    object incomeProperty {
+      val heading = "Income from property"
+      val paraOne = "You can sign up if you get income from property in the UK or from property in another country. For example, letting houses, flats or holiday homes either on a long or short term basis."
     }
 
-    object SignUp {
-      val heading = "Sign up"
-      val paragraph = "You’ll be told you have successfully signed up for Making Tax Digital for Income Tax."
-    }
   }
 
   object AgentSignupTerms {
