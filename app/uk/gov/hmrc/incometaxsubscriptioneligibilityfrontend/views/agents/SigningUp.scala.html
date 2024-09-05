@@ -17,117 +17,59 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.AgentMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.common.AccountingPeriodModel
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
 @this(
         mainTemplate: AgentMainTemplate,
         form: FormWithCSRF,
-        continueButton: ContinueButton,
-        govukInsetText: GovukInsetText,
-        govukDetails: GovukDetails
+        hmrcNewTabLinkHelper: HmrcNewTabLinkHelper,
+        continueButton: ContinueButton
 )
 
 @(postAction:Call, currentTaxYear: AccountingPeriodModel, nextTaxYear: AccountingPeriodModel, backLink: String)(implicit request: Request[_], messages: Messages)
 
+@beforeSignUp = {
+  <h2 class="govuk-heading-m">@messages("agent.signing-up.before-sign-up.heading")</h2>
+  <p class="govuk-body">@messages("agent.signing-up.before-sign-up.para-1")</p>
+  <p class="govuk-body">
+    @Html(messages(
+    key = "agent.signing-up.before-sign-up.para-2",
+    args = hmrcNewTabLinkHelper(NewTabLinkHelper(messages("agent.signing-up.before-sign-up.para-2.link-text"), Some(messages("agent.signing-up.before-sign-up.para-2.link-href"))))
+    ))
+  </p>
+  <p class="govuk-body">@messages("agent.signing-up.before-sign-up.para-3")</p>
+}
+
+@accountingPeriod = {
+  <h2 class="govuk-heading-m">@messages("agent.signing-up.accounting-period.heading")</h2>
+  <p class="govuk-body">@messages("agent.signing-up.accounting-period.para-1")</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>@messages("agent.signing-up.accounting-period.bullet-1")</li>
+    <li>@messages("agent.signing-up.accounting-period.bullet-2")</li>
+  </ul>
+}
+
+@checkSignUp = {
+  <h2 class="govuk-heading-m">@messages("agent.signing-up.check-sign-up.heading")</h2>
+  <p class="govuk-body">@messages("agent.signing-up.check-sign-up.para-1")</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>@messages("agent.signing-up.check-sign-up.bullet-1")</li>
+    <li>@messages("agent.signing-up.check-sign-up.bullet-2")</li>
+    <li>@messages("agent.signing-up.check-sign-up.bullet-3")</li>
+  </ul>
+  <p class="govuk-body">@messages("agent.signing-up.check-sign-up.para-2")</p>
+}
+
 @mainTemplate(title = messages("agent.signing-up.heading"), backLink = Some(BackLink(href = backLink))) {
 
-    @header
-
-    @govukDetails(Details(
-        summary = Text(messages("agent.signing-up.how-to.heading")),
-        content = HtmlContent(detailsContent)
-    ))
-
-    @form(action = postAction) {
-      @continueButton()
-    }
+  <h1 class="govuk-heading-l">@messages("agent.signing-up.heading")</h1>
+  @beforeSignUp
+  @accountingPeriod
+  @checkSignUp
+  @form(action = postAction) {
+    @continueButton()
+  }
 
 }
 
-@header = {
 
-    <h1 class="govuk-heading-l">@messages("agent.signing-up.heading")</h1>
-
-    <p class="govuk-body">@messages("agent.signing-up.have-income-type.para")</p>
-
-    <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("agent.signing-up.have-income-type.bullet-one")</li>
-        <li>@messages("agent.signing-up.have-income-type.bullet-two")</li>
-    </ul>
-
-    <p class="govuk-body">@messages("agent.signing-up.accounting-period.para")</p>
-
-    <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("agent.signing-up.accounting-period.bullet-one")</li>
-        <li>@messages("agent.signing-up.accounting-period.bullet-two")</li>
-    </ul>
-
-}
-
-@detailsContent = {
-
-    <ol class="govuk-list govuk-list--number govuk-list--bold-marker">
-        <li>@getReady</li>
-        <li>@checkEligibility</li>
-        <li>@completeSignUp</li>
-        <li>@confirm</li>
-    </ol>
-
-}
-
-@getReady = {
-
-    <h2 class="govuk-heading-s">@messages("agent.signing-up.how-to.get-ready.heading")</h2>
-
-    <p class="govuk-body">@messages("agent.signing-up.how-to.get-ready.must-have.para")</p>
-    <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("agent.signing-up.how-to.get-ready.must-have.bullet-one")</li>
-        <li>@messages("agent.signing-up.how-to.get-ready.must-have.bullet-two")</li>
-    </ul>
-    <p class="govuk-body">@messages("agent.signing-up.how-to.get-ready.client-software")</p>
-
-    <p class="govuk-body">@messages("agent.signing-up.how-to.get-ready.each-client.para")</p>
-    <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("agent.signing-up.how-to.get-ready.each-client.name")</li>
-        <li>@messages("agent.signing-up.how-to.get-ready.each-client.nino")</li>
-        <li>@messages("agent.signing-up.how-to.get-ready.each-client.dob")</li>
-        <li>@messages("agent.signing-up.how-to.get-ready.each-client.business-details-one")</li>
-        <li>@messages("agent.signing-up.how-to.get-ready.each-client.business-details-two")</li>
-        <li>@messages("agent.signing-up.how-to.get-ready.each-client.business-details-three")</li>
-    </ul>
-    <p class="govuk-body">@messages("agent.signing-up.how-to.get-ready.each-client.authorisation")</p>
-
-}
-
-@checkEligibility = {
-
-    <h2 class="govuk-heading-s">@messages("agent.signing-up.how-to.check-eligible.heading")</h2>
-
-    <p class="govuk-body">@messages("agent.signing-up.how-to.check-eligible.para")</p>
-
-    @govukInsetText(InsetText(
-        content = Text(messages("agent.signing-up.how-to.check-eligible.cant-sign-up"))
-    ))
-
-}
-
-@completeSignUp = {
-
-    <h2 class="govuk-heading-s">@messages("agent.signing-up.how-to.complete-sign-up.heading")</h2>
-
-    <p class="govuk-body">@messages("agent.signing-up.how-to.complete-sign-up.instructions.para")</p>
-    <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("agent.signing-up.how-to.complete-sign-up.instructions.bullet-one")</li>
-        <li>@messages("agent.signing-up.how-to.complete-sign-up.instructions.bullet-two")</li>
-    </ul>
-
-}
-
-@confirm = {
-
-    <h2 class="govuk-heading-s">@messages("agent.signing-up.how-to.confirm-sign-up.heading")</h2>
-
-    <p class="govuk-body">@messages("agent.signing-up.how-to.confirm-sign-up.para-one")</p>
-
-    <p class="govuk-body">@messages("agent.signing-up.how-to.confirm-sign-up.para-two")</p>
-
-}
