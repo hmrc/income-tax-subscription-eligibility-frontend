@@ -20,6 +20,7 @@
 @import uk.gov.hmrc.play.language.LanguageUtils
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.common.AccountingPeriodModel
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
 @this(
   mainTemplate: PrincipalMainTemplate,
@@ -28,86 +29,44 @@
   govukNotificationBanner : GovukNotificationBanner,
   continueButton: ContinueButton,
   govukInsetText: GovukInsetText,
-        languageUtils: LanguageUtils
+  languageUtils: LanguageUtils,
+  hmrcNewTabLinkHelper: HmrcNewTabLinkHelper
 )
 
 @(postAction: Call, currentTaxYear: AccountingPeriodModel, nextTaxYear: AccountingPeriodModel, backLink: String)(implicit request: Request[_], messages: Messages)
 
-@header = {
-  <h1 class="govuk-heading-xl">@messages("individual.signing-up.heading")</h1>
-  <p class="govuk-body">@messages("individual.signing-up.header-section.para-1")</p>
-  @govukInsetText(InsetText(
-    content = HtmlContent(insetText)
-  ))
-  <p class="govuk-body">@messages("individual.signing-up.header-section.para-2")</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>@messages("individual.signing-up.header-section.bullet-1")</li>
-    <li>@messages("individual.signing-up.header-section.bullet-2")</li>
-  </ul>
+@beforeYouSignUp = {
+  <h2 class="govuk-heading-m">@messages("individual.signing-up.before-you-signup.heading")</h2>
+  <p class="govuk-body">@messages("individual.signing-up.before-you-signup.para-1")</p>
+  <p class="govuk-body">
+    @Html(messages(
+    key = "individual.signing-up.before-you-signup.para-2",
+    args = hmrcNewTabLinkHelper(NewTabLinkHelper(messages("individual.signing-up.before-you-signup.para-2.link-text"), Some(messages("individual.signing-up.before-you-signup.para-2.link-href"))))
+    ))
+  </p>
 }
 
-@insetText = {
-  <p class="govuk-body">@messages("individual.signing-up.header-section.inset.para-1")</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>@messages("individual.signing-up.header-section.inset.bullet-1")</li>
-    <li>@messages("individual.signing-up.header-section.inset.bullet-2")</li>
-  </ul>
+@soleTrader = {
+  <h3 class="govuk-heading-s">@messages("individual.signing-up.sole-trader.heading")</h3>
+  <p class="govuk-body">@messages("individual.signing-up.sole-trader.para-1")</p>
+  <p class="govuk-body">@messages("individual.signing-up.sole-trader.para-2")</p>
 }
 
-@break = {
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
-}
-
-@checkEligibility = {
-  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.check-eligibility.heading")</h3>
-  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.check-eligibility.para")</p>
-  @break
-}
-
-@hmrcAccount = {
-  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.hmrc-account.heading")</h3>
-  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para1")</p>
-  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.hmrc-account.para2")</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet1", languageUtils.Dates.formatDate(currentTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(currentTaxYear.endDate.toLocalDate))</li>
-    <li>@messages("individual.signing-up.how-to-sign-up.hmrc-account.bullet2", languageUtils.Dates.formatDate(nextTaxYear.startDate.toLocalDate), languageUtils.Dates.formatDate(nextTaxYear.endDate.toLocalDate))</li>
-  </ul>
-  <div class="govuk-inset-text" id="inset-text">
-    @messages("individual.signing-up.how-to-sign-up.hmrc-account.inset-para")
-  </div>
-  <p>@messages("individual.signing-up.how-to-sign-up.hmrc-account.after-inset-para")</p>
-  @break
-}
-
-@completeSignUp = {
-  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.complete-sign-up.heading")</h3>
-  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.complete-sign-up.para")</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>@messages("individual.signing-up.how-to-sign-up.complete-sign-up.bullet1")</li>
-    <li>@messages("individual.signing-up.how-to-sign-up.complete-sign-up.bullet2")</li>
-  </ul>
-  @break
-}
-
-@signUp = {
-  <h3 class="govuk-heading-s">@messages("individual.signing-up.how-to-sign-up.sign-up.heading")</h3>
-  <p class="govuk-body">@messages("individual.signing-up.how-to-sign-up.sign-up.para")</p>
-  @break
+@incomeProperty = {
+  <h3 class="govuk-heading-s">@messages("individual.signing-up.income-property.heading")</h3>
+  <p class="govuk-body">@messages("individual.signing-up.income-property.para-1")</p>
 }
 
 @mainTemplate(title = messages("individual.signing-up.heading"), backLink = Some(BackLink(href = backLink))) {
 
-  @header
-  <h2 class="govuk-heading-l">@messages("individual.signing-up.how-to-sign-up.heading")</h2>
-  <div class="govuk-body">
-    <ol class="govuk-list govuk-list--number govuk-list--bold-marker">
-      <li>@checkEligibility</li>
-      <li>@hmrcAccount</li>
-      <li>@completeSignUp</li>
-      <li>@signUp</li>
-    </ol>
-    @form(action = postAction) {
-      @continueButton()
-    }
-  </div>
+  <h1 class="govuk-heading-l">@messages("individual.signing-up.heading")</h1>
+
+   <div class="govuk-body">
+     @beforeYouSignUp
+     @soleTrader
+     @incomeProperty
+     @form(action = postAction) {
+       @continueButton()
+     }
+   </div>
 }

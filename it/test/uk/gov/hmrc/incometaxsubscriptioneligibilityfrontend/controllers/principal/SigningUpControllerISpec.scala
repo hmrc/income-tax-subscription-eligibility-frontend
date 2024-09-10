@@ -56,135 +56,48 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         doc.mainContent.getH1Element.text mustBe IndividualSignUpTerms.heading
       }
 
-      import IndividualSignUpTerms.Heading._
-      "has a first paragraph" in {
-        doc.mainContent.selectHead("p").text mustBe paraOne
+      "has a before you sign up section" that {
+        import IndividualSignUpTerms.beforeYouSignUp._
+
+        "has a heading" in {
+          doc.mainContent.selectHead("h2").text mustBe heading
+        }
+
+        "Has first paragraph" in {
+          doc.mainContent.selectNth("p", 1).text mustBe paraOne
+        }
+
+        "has a second paragraph" in {
+          doc.mainContent.selectNth("p", 2).text mustBe paraTwo
+        }
+
       }
 
-      "has an inset text" which {
-        def inset: Element = doc.mainContent.selectHead(".govuk-inset-text")
+      "has a sole trader section" that {
+        import IndividualSignUpTerms.soleTrader._
 
-        import IndividualSignUpTerms.Heading.Inset._
+        "has a heading" in {
+          doc.mainContent.selectHead("h3").text mustBe heading
+        }
+
         "has a first paragraph" in {
-          inset.selectHead("p").text mustBe paraOne
+          doc.mainContent.selectNth("p", 3).text mustBe paraOne
         }
-        "has a bullet list" which {
-          def bulletList: Element = inset.selectHead("ul")
 
-          "has a first bullet" in {
-            bulletList.selectNth("li", 1).text mustBe bulletOne
-          }
-          "has a second bullet" in {
-            bulletList.selectNth("li", 2).text mustBe bulletTwo
-          }
+        "has a second paragraph" in {
+          doc.mainContent.selectNth("p", 4).text mustBe paraTwo
         }
       }
 
-      "has a second paragraph" in {
-        doc.mainContent.selectNth("p", 3).text mustBe paraTwo
-      }
+      "has a income from properties section" that {
+        import IndividualSignUpTerms.incomeProperty._
 
-      "has a bullet list" which {
-        def bulletList: Element = doc.mainContent.selectNth("ul", 2)
-
-        "has a first bullet" in {
-          bulletList.selectNth("li", 1).text mustBe bulletOne
-        }
-        "has a second bullet" in {
-          bulletList.selectNth("li", 2).text mustBe bulletTwo
-        }
-      }
-
-      "has a Check your eligibility section" that {
-        val section1 =
-          doc
-            .mainContent
-            .selectNth("ol > li", 1)
-
-        import IndividualSignUpTerms.CheckEligibility._
-        "contains a header" in {
-          section1.selectHead("h3").text mustBe heading
+        "has a heading" in {
+          doc.mainContent.selectNth("h3", 2).text mustBe heading
         }
 
-        "contains a paragraph" in {
-          section1.selectHead("p").text mustBe paragraph
-        }
-      }
-
-      "has a Sign in to your HMRC account section" that {
-        val section2 =
-          doc
-            .mainContent
-            .selectNth("ol > li", 2)
-
-        import IndividualSignUpTerms.HMRCAccount._
-        "contains a header" in {
-          section2.selectHead("h3").text mustBe heading
-        }
-
-        "contains paragraph 1" in {
-          section2.selectNth("p", 1).text mustBe paragraph1
-        }
-
-        "contains paragraph 2" in {
-          section2.selectNth("p", 2).text mustBe paragraph2
-        }
-
-        "contains bullet 1" in {
-          section2.selectNth("ul li", 1).text mustBe bullet1
-        }
-
-        "contains bullet 2" in {
-          section2.selectNth("ul li", 2).text mustBe bullet2
-        }
-
-        "contains inset paragraph " in {
-          section2.selectHead(".govuk-inset-text").text mustBe insetPara
-        }
-
-        "contains a paragraph after the inset paragraph" in {
-          section2.selectNth("p", 3).text mustBe afterInsetPara
-        }
-      }
-
-      "has a Complete sign-up tasks section" that {
-        val section3 =
-          doc
-            .mainContent
-            .selectNth("ol > li", 3)
-
-        import IndividualSignUpTerms.CompleteSignUp._
-        "contains a header" in {
-          section3.selectHead("h3").text mustBe heading
-        }
-
-        "contains paragraph 1" in {
-          section3.selectNth("p", 1).text mustBe paragraph1
-        }
-
-        "contains bullet 1" in {
-          section3.selectNth("ul li", 1).text mustBe bullet1
-        }
-
-        "contains bullet 2" in {
-          section3.selectNth("ul li", 2).text mustBe bullet2
-        }
-
-      }
-
-      "has a Sign up section" that {
-        val section4 =
-          doc
-            .mainContent
-            .selectNth("ol > li", 4)
-
-        import IndividualSignUpTerms.SignUp._
-        "contains a header" in {
-          section4.selectHead("h3").text mustBe heading
-        }
-
-        "contains a paragraph" in {
-          section4.selectHead("p").text mustBe paragraph
+        "has a paragraph" in {
+          doc.mainContent.selectNth("p", 5).text mustBe paraOne
         }
       }
 

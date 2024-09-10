@@ -18,29 +18,16 @@ agent-base.title.error                                                  = Gwall:
 
 # Individual Signing Up Page
 individual.signing-up.heading                                           = Cofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-individual.signing-up.header-section.para-1                             = Mae’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm yn ffordd newydd o roi gwybod i CThEF am incwm. Ar hyn o bryd, mae’r cynllun mewn cyfnod gwirfoddol i rai busnesau a landlordiaid hunangyflogedig.
-individual.signing-up.header-section.inset.para-1                       = Mae cofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm yn wirfoddol ar hyn o bryd. Fodd bynnag, os yw cyfanswm eich incwm cymwys yn fwy na:
-individual.signing-up.header-section.inset.bullet-1                     = £50,000 ar gyfer Ebrill 2026
-individual.signing-up.header-section.inset.bullet-2                     = £30,000 ar gyfer Ebrill 2027
-individual.signing-up.header-section.para-2                             = Efallai y gallwch gofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm os ydych:
-individual.signing-up.header-section.bullet-1                           = yn unig fasnachwr
-individual.signing-up.header-section.bullet-2                           = yn cael incwm o eiddo
-individual.signing-up.how-to-sign-up.heading                            = Sut i gofrestru
-individual.signing-up.how-to-sign-up.check-eligibility.heading          = Gwirio a allwch chi gofrestru
-individual.signing-up.how-to-sign-up.check-eligibility.para             = Atebwch y cwestiynau i weld a allech fod yn gymwys.
-individual.signing-up.how-to-sign-up.hmrc-account.heading               = Mewngofnodi i’ch cyfrif CThEF
-individual.signing-up.how-to-sign-up.hmrc-account.para1                 = Os byddwch yn darganfod y gallech fod yn gymwys, mewngofnodwch i’ch cyfrif CThEF.
-individual.signing-up.how-to-sign-up.hmrc-account.para2                 = Yn dibynnu ar eich amgylchiadau, byddwch yn cael y cyfle i gofrestru ar gyfer:
-individual.signing-up.how-to-sign-up.hmrc-account.bullet1               = Y flwyddyn dreth gyfredo  ({0} to {1})
-individual.signing-up.how-to-sign-up.hmrc-account.bullet2               = Y flwyddyn dreth nesaf  ({0} to {1})
-individual.signing-up.how-to-sign-up.hmrc-account.inset-para            = Efallai y bydd amgylchiadau a fydd yn golygu na allwch ddefnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm ar hyn o bryd. Gall yr amgylchiadau hyn gynnwys mathau penodol eraill o incwm neu weithgareddau, neu’r cyfnod o amser rydych wedi bod yn hunangyflogedig.
-individual.signing-up.how-to-sign-up.hmrc-account.after-inset-para      = Os nad ydych yn gymwys ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm eto, parhewch i gyflwyno’ch Hunanasesiad blynyddol yn ôl yr arfer.
-individual.signing-up.how-to-sign-up.complete-sign-up.heading           = Cwblhau tasgau cofrestru
-individual.signing-up.how-to-sign-up.complete-sign-up.para              = I gofrestru mae angen i chi wneud y canlynol:
-individual.signing-up.how-to-sign-up.complete-sign-up.bullet1           = ychwanegu unrhyw incwm o unig fasnachu neu unrhyw incwm o fusnes eiddo yn y DU a busnes eiddo tramor
-individual.signing-up.how-to-sign-up.complete-sign-up.bullet2           = dewiswch ym mha flwyddyn rydych am ddechrau defnyddio’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-individual.signing-up.how-to-sign-up.sign-up.heading                    = Cofrestru
-individual.signing-up.how-to-sign-up.sign-up.para                       = Byddwch yn cael gwybod eich bod wedi cael eich cofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm.
+individual.signing-up.before-you-signup.heading                         = Cyn i chi gofrestru
+individual.signing-up.before-you-signup.para-1                          = I gofrestru, mae’n rhaid i chi fod yn unig fasnachwr neu’n cael incwm naill ai o eiddo yn y DU neu o eiddo tramor.
+individual.signing-up.before-you-signup.para-2                          = Gallwch hefyd defnyddio {0}.
+individual.signing-up.before-you-signup.para-2.link-text                = meddalwedd sy’n cydweddu â’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
+individual.signing-up.before-you-signup.para-2.link-href                = https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax
+individual.signing-up.sole-trader.heading                               = Unig fasnachwr
+individual.signing-up.sole-trader.para-1                                = Rydych yn unig fasnachwr os ydych yn rhedeg eich busnes eich hun fel unigolyn ac yn gweithio i chi’ch hun. Enw arall ar hyn yw bod yn hunangyflogedig.
+individual.signing-up.sole-trader.para-2                                = Nid ydych yn unig fasnachwr os daw eich incwm busnes o gwmni cyfyngedig yn unig.
+individual.signing-up.income-property.heading                           = Incwm o eiddo
+individual.signing-up.income-property.para-1                            = Gallwch gofrestru os ydych yn cael incwm o eiddo yn y DU neu o’r eiddo mewn gwlad arall. Er enghraifft, incwm o roi tai, fflatiau, neu gartrefi gwyliau ar osod a hynny ar sail tymor hir neu dymor byr.
 
 ## Accounting period check
 accounting-period-check.heading                                         = Pa gyfnod cyfrifyddu yr ydych yn ei ddefnyddio ar gyfer eich busnes?
