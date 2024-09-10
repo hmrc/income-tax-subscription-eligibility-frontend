@@ -102,53 +102,30 @@ object MessageLookup {
 
     object Heading {
       val heading = "Signing up your clients for Making Tax Digital for Income Tax"
-      val haveIncomeTypePara = "You can sign up your client for Making Tax Digital for Income Tax if they:"
-      val haveIncomeTypeBullet1 = "are a sole trader"
-      val haveIncomeTypeBullet2 = "receive income from either a UK or foreign property"
-      val accountingPeriodPara = "They must also use either:"
-      val accountingPeriodBullet1 = "an accounting period that runs from 6 April to 5 April"
-      val accountingPeriodBullet2 = "accountancy software that supports calendar quarterly periods and their accounting period runs from 1 April to 31 March"
     }
 
-    object HowToSignUp {
+    object BeforeSignUp {
+      val heading = "Before you sign up your clients"
+      val paraOne = "To sign up your clients, you must have their authorisation in your agent services account."
+      val paraTwoLinkText = "software that’s compatible with Making Tax Digital for Income Tax (opens in new tab)"
+      val paraTwo = s"Make sure you or your clients use $paraTwoLinkText."
+      val paraThree = "Make sure your client is a sole trader or gets income from property (inside or outside the UK)."
+    }
 
-      val heading = "How to sign up"
+    object AccountingPeriod {
+      val heading = "Accounting period"
+      val paraOne = "Make sure your client uses either:"
+      val bulletOne = "an accounting period that runs from 6 April to 5 April"
+      val bulletTwo = "an accounting period that runs from 1 April to 31 March (and their compatible software supports calendar update periods)"
+    }
 
-      object GetReady {
-        val heading = "Get ready to sign up"
-        val mustHavePara = "To sign up your clients, you must have:"
-        val mustHaveBullet1 = "an agent services account"
-        val mustHaveBullet2 = "software that’s compatible with Making Tax Digital for Income Tax"
-        val clientSoftwarePara = "You should also make sure your clients use software that’s compatible with Making Tax Digital for Income Tax."
-
-        val eachClientPara = "To sign up each client you’ll need their:"
-        val eachClientName = "name"
-        val eachClientNino = "National Insurance number"
-        val eachClientDOB = "date of birth"
-        val eachClientBusinessDetails1 = "business trading name and address"
-        val eachClientBusinessDetails2 = "the date their business started trading"
-        val eachClientBusinessDetails3 = "their trade"
-        val eachClientAuthorisation = "Your client will need to authorise you to sign them up."
-      }
-
-      object CheckEligibility {
-        val heading = "Check your client can sign up"
-        val para = "We’ll check if your client can sign up when you start to sign them up."
-        val cantSignUp = "If they cannot sign up, you must continue submitting their Self Assessment tax returns as normal."
-      }
-
-      object CompleteSignUp {
-        val heading = "Complete sign-up tasks"
-        val para = "To sign up your client you need to:"
-        val bullet1 = "add any sole trader or UK and foreign property business income"
-        val bullet2 = "select to start using Making Tax Digital for Income Tax either this tax year or next tax year"
-      }
-
-      object ConfirmSignUp {
-        val heading = "Confirm sign up"
-        val para1 = "We’ll then confirm your client has been signed up."
-        val para2 = "You’ll be asked if you would like to sign up another client."
-      }
+    object CheckSignUp {
+      val heading = "We will check if you can sign up each client"
+      val paraOne = "When you continue, you’ll need to enter these details for one of your clients:"
+      val bulletOne = "name"
+      val bulletTwo = "National Insurance number"
+      val bulletThree = "date of birth"
+      val paraTwo = "We’ll check that client’s record and tell you if you can sign them up."
     }
   }
 
