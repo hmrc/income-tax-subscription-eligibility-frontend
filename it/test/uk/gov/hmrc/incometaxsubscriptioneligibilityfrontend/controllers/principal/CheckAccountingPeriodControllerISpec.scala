@@ -33,7 +33,6 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
 
   "GET /eligibility/accounting-period-check" should {
     def result: WSResponse = get("/accounting-period-check")
-
     def doc: Document = Jsoup.parse(result.body)
 
     "return OK" in {
@@ -62,12 +61,12 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
       }
     }
 
-    "have a view with the correct heading" in {
-      doc.mainContent.getH1Element.text mustBe messages.heading
-    }
-
-    "have a view with the correct caption" in {
-      doc.mainContent.selectHead("p.hmrc-caption").text() mustBe messages.caption
+    "have the correct heading and caption" in {
+      doc.mainContent.mustHaveHeadingAndCaption(
+        heading = messages.heading,
+        caption = messages.caption,
+        isSection = true
+      )
     }
 
     "have a para describing the question" in {
