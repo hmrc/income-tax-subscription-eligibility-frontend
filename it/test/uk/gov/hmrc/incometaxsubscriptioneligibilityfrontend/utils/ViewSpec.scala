@@ -18,8 +18,10 @@ package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.utils
 
 import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
+import org.scalatest.Checkpoints.Checkpoint
 import org.scalatest.matchers.must.Matchers
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
+import org.scalatest.{Assertion, Succeeded}
 import play.api.data.FormError
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 
@@ -45,9 +47,9 @@ trait ViewSpec extends Matchers {
     private val serviceName: String = if (isAgent) "Use software to report your client’s Income Tax" else "Use software to send Income Tax updates"
     private val serviceNameUrl: String = if (isAgent) appConfig.govukGuidanceITSASignUpAgentLink else appConfig.govukGuidanceITSASignUpIndivLink
 
-    document.getElementsByClass("hmrc-header__service-name").text() mustBe serviceName
+    document.getElementsByClass("govuk-header__service-name").text() mustBe serviceName
 
-    document.getElementsByClass("hmrc-header__service-name--linked").attr("href") mustBe serviceNameUrl
+    document.getElementsByClass("govuk-header__service-name").attr("href") mustBe serviceNameUrl
 
     backLink.fold(document.selectOptionally(".govuk-back-link") mustBe None) { href =>
       val link = document.selectHead(".govuk-back-link")
@@ -120,6 +122,34 @@ trait ViewSpec extends Matchers {
     def getFieldErrorMessage(id: String): Elements = element.select(s"""a[id=$id-error-summary]""")
 
     def getBulletPointList: Elements = element.select("ul[class=list list-bullet]")
+
+  }
+
+  implicit class ElementTests(element: Element) {
+
+    def mustHaveHeadingAndCaption(heading: String, caption: String, isSection: Boolean): Assertion = {
+      val checkpoint: Checkpoint = new Checkpoint()
+
+      checkpoint {
+        element.selectHead("h1.govuk-heading-l").text mustBe heading
+      }
+
+      if (isSection) {
+        checkpoint {
+          element.selectHead(".govuk-caption-l").text mustBe s"This section is $caption"
+        }
+        checkpoint {
+          element.selectHead(".govuk-caption-l").selectHead("span.govuk-visually-hidden").text mustBe "This section is"
+        }
+      } else {
+        checkpoint {
+          element.selectHead("span.govuk-caption-l").text mustBe caption
+        }
+      }
+
+      checkpoint.reportAll()
+      Succeeded
+    }
 
   }
 

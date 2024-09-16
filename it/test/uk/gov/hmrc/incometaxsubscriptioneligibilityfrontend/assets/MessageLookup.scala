@@ -112,7 +112,7 @@ object MessageLookup {
     val firstToThirtyFirst = "1 April to 31 March"
     val or = "or"
     val neither = "Neither of these"
-    val caption = "This section is Eligibility questions"
+    val caption = "Eligibility questions"
     val continue = "Continue"
     val error = "Select your business accounting period, or select ‘Neither of these’"
   }

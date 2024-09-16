@@ -22,7 +22,7 @@
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 
 @this(
-        hmrcPageHeading: HmrcPageHeading,
+        pageHeadingHelper: PageHeadingHelper,
         mainTemplate: PrincipalMainTemplate,
         form: FormWithCSRF,
         radioHelper: RadioHelper,
@@ -37,10 +37,11 @@
     backLink = Some(BackLink(href = backUrl))
 ) {
 
-    @hmrcPageHeading( PageHeading(
-        text = messages("accounting-period-check.heading"),
-        section = Some(messages("accounting-period-check.caption"))
-    ))
+    @pageHeadingHelper(
+        heading = messages("accounting-period-check.heading"),
+        caption = messages("accounting-period-check.caption"),
+        isSection = true
+    )
 
     <p class="govuk-body">@messages("accounting-period-check.para")</p>
 
