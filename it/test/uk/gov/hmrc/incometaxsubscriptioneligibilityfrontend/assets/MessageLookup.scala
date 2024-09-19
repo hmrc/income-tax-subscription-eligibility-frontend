@@ -108,7 +108,6 @@ object MessageLookup {
     val heading = "What accounting period do you use for your business?"
     val paraOne = "This is the accounting period you use each year when reporting your business income and expenses to HMRC."
     val paraTwo = "Your accounting period runs from the date your books or accounts start. It ends on the date your books or accounts are made up to."
-    val hint = "For example, your business accounting period might start on 6 April and end on 5 April of the following year (such as, 6 April 2026 to 5 April 2027)."
     val sixthToFifth = "6 April to 5 April"
     val sixthToFifthHint = "Your books or accounts start on 6 April and are made up to 5 April of the following year (such as, 6 April 2026 to 5 April 2027)"
     val firstToThirtyFirst = "1 April to 31 March"
