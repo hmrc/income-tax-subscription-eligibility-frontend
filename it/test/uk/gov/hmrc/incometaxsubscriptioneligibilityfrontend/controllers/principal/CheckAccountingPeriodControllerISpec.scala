@@ -62,15 +62,15 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
     }
 
     "have the correct heading and caption" in {
-      doc.mainContent.mustHaveHeadingAndCaption(
-        heading = messages.heading,
-        caption = messages.caption,
-        isSection = true
-      )
+      doc.mainContent.getH1Element.text mustBe messages.heading
     }
 
-    "have a para describing the question" in {
-      doc.mainContent.selectNth("p", 2).text mustBe messages.para
+    "have a first para" in {
+      doc.mainContent.selectNth("p", 1).text mustBe messages.paraOne
+    }
+
+    "have a second para" in {
+      doc.mainContent.selectNth("p", 2).text mustBe messages.paraTwo
     }
 
     "have a form" which {
@@ -92,12 +92,6 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
           legend.attr("class") contains "govuk-visually-hidden"
         }
 
-        "has a hint" in {
-          val hint: Element = fieldset.selectHead(".govuk-hint")
-          hint.text mustBe messages.hint
-          fieldset.attr("aria-describedby") mustBe hint.id
-        }
-
         "has a set of radio buttons" which {
           def radios: Element = fieldset.selectHead(".govuk-radios")
 
@@ -105,6 +99,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
             val radio: Element = radios.selectNth(".govuk-radios__item", 1)
             val input: Element = radio.selectHead("input")
             val label: Element = radio.selectHead("label")
+            val hint: Element = fieldset.selectHead(".govuk-hint")
 
             input.id mustBe AccountingPeriodForm.fieldName
             input.attr("name") mustBe AccountingPeriodForm.fieldName
@@ -113,11 +108,15 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
 
             label.text mustBe messages.sixthToFifth
             label.attr("for") mustBe input.id
+
+            hint.text mustBe messages.sixthToFifthHint
+            hint.id mustBe fieldset.selectHead("input").attr("aria-describedby")
           }
           "has a 1 April to 31 March option" in {
             val radio: Element = radios.selectNth(".govuk-radios__item", 2)
             val input: Element = radio.selectHead("input")
             val label: Element = radio.selectHead("label")
+            val hint: Element = fieldset.selectNth(".govuk-hint", 2)
 
             input.id mustBe s"${AccountingPeriodForm.fieldName}-2"
             input.attr("name") mustBe AccountingPeriodForm.fieldName
@@ -126,6 +125,9 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
 
             label.text mustBe messages.firstToThirtyFirst
             label.attr("for") mustBe input.id
+
+            hint.text mustBe messages.firstToThirtyFirstHint
+            hint.id mustBe fieldset.selectNth("input", 2).attr("aria-describedby")
           }
           "has an or divider" in {
             radios.selectHead(".govuk-radios__divider").text mustBe messages.or
