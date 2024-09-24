@@ -37,28 +37,26 @@
     backLink = Some(BackLink(href = backUrl))
 ) {
 
-    @pageHeadingHelper(
-        heading = messages("accounting-period-check.heading"),
-        caption = messages("accounting-period-check.caption"),
-        isSection = true
-    )
+    <h1 class="govuk-heading-l">@messages("accounting-period-check.heading")</h1>
 
-    <p class="govuk-body">@messages("accounting-period-check.para")</p>
+    <p class="govuk-body">@messages("accounting-period-check.para-1")</p>
+    <p class="govuk-body">@messages("accounting-period-check.para-2")</p>
 
     @form(action = postAction) {
         @radioHelper(
             field = accountingPeriodForm(fieldName),
             legend = messages("accounting-period-check.heading"),
             isPageHeading = false,
-            hint = Some(messages("accounting-period-check.hint")),
             radioItems = Seq(
                 RadioItem(
                     content = Text(messages(s"accounting-period-check.${SixthAprilToFifthApril.key}")),
-                    value = Some(SixthAprilToFifthApril.key)
+                    value = Some(SixthAprilToFifthApril.key),
+                    hint = Some(Hint(content = Text(Messages(s"accounting-period-check.${SixthAprilToFifthApril.key}.hint"))))
                 ),
                 RadioItem(
                     content = Text(messages(s"accounting-period-check.${FirstAprilToThirtyFirstMarch.key}")),
-                    value = Some(FirstAprilToThirtyFirstMarch.key)
+                    value = Some(FirstAprilToThirtyFirstMarch.key),
+                    hint = Some(Hint(content = Text(Messages(s"accounting-period-check.${FirstAprilToThirtyFirstMarch.key}.hint"))))
                 ),
                 RadioItem(
                     divider = Some(messages("base.or"))
