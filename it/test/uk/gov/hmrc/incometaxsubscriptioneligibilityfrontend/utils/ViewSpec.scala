@@ -23,6 +23,8 @@ import org.scalatest.matchers.must.Matchers
 import org.scalatest.matchers.{HavePropertyMatchResult, HavePropertyMatcher}
 import org.scalatest.{Assertion, Succeeded}
 import play.api.data.FormError
+import uk.gov.hmrc.govukfrontend.views.Aliases.Text
+import uk.gov.hmrc.govukfrontend.views.viewmodels.radios.RadioItem
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.config.AppConfig
 
 import scala.jdk.CollectionConverters._
@@ -151,6 +153,122 @@ trait ViewSpec extends Matchers {
       Succeeded
     }
 
+    def mustHaveRadioInput(selector: String)(name: String,
+                                             legend: String,
+                                             isHeading: Boolean,
+                                             isLegendHidden: Boolean,
+                                             hint: Option[String],
+                                             errorMessage: Option[String],
+                                             radioContents: Seq[RadioItem],
+                                             isInline: Boolean = false): Assertion = {
+
+      val checkpoint: Checkpoint = new Checkpoint()
+      val radioFieldSet: Element = element.selectHead(selector)
+
+      validateFieldSetLegend(radioFieldSet, legend, isHeading, isLegendHidden, checkpoint)
+
+      hint.foreach{ hint =>
+        val radioFieldSetHint: Element = radioFieldSet.selectHead(".govuk-hint")
+        checkpoint {
+          radioFieldSet.attr("aria-describedby") must include(radioFieldSetHint.attr("id"))
+        }
+        checkpoint {
+          radioFieldSetHint.text mustBe hint
+        }
+      }
+
+      errorMessage.foreach{ errorMessage =>
+        val radioFieldSetError: Element = radioFieldSet.selectHead(".govuk-error-message")
+        checkpoint {
+          radioFieldSet.attr("aria-describedby") must include(radioFieldSetError.attr("id"))
+        }
+        checkpoint {
+          radioFieldSetError.text must include (errorMessage)
+        }
+      }
+
+      val radioField: Element = if (isInline) element.selectHead(".govuk-radios--inline") else element.selectHead(".govuk-radios")
+
+      radioContents.zipWithIndex foreach { case (radioContent, index) =>
+        if (radioContent.divider.isDefined) {
+          validateRadioDivider(radioField, radioContent, index, checkpoint)
+        } else {
+          validateRadioItem(radioField, name, radioContent, index, checkpoint)
+        }
+      }
+      checkpoint.reportAll()
+      Succeeded
+    }
+
+    private def validateFieldSetLegend(radioFieldSet: Element,
+                                       legend: String,
+                                       isHeading: Boolean,
+                                       isLegendHidden: Boolean,
+                                       checkpoint: Checkpoint): Unit = {
+      val radioFieldSetLegend: Element = radioFieldSet.selectHead("legend")
+      if (isHeading) {
+        checkpoint {
+          radioFieldSetLegend.getH1Element.text mustBe legend
+        }
+      } else {
+        checkpoint {
+          radioFieldSetLegend.text mustBe legend
+        }
+        if (isLegendHidden) {
+          checkpoint {
+            radioFieldSetLegend.attr("class") must include("govuk-visually-hidden")
+          }
+        } else {
+          checkpoint {
+            radioFieldSetLegend.attr("class") mustNot include("govuk-visually-hidden")
+          }
+        }
+      }
+    }
+
+    private def validateRadioItem(radioField: Element, name: String, radioItem: RadioItem, index: Int, checkpoint: Checkpoint): Unit = {
+      val radioItemElement: Element = radioField.child(index)
+      val radioInput: Element = radioItemElement.selectHead("input")
+      val radioLabel: Element = radioItemElement.selectHead("label")
+      val radioInputId: String = if (index == 0) name else s"$name-${index + 1}"
+
+      checkpoint {
+        radioItemElement.className() mustBe "govuk-radios__item"
+      }
+      checkpoint {
+        radioInput.attr("id") mustBe radioInputId
+      }
+      checkpoint {
+        radioInput.attr("name") mustBe name
+      }
+      checkpoint {
+        radioInput.attr("type") mustBe "radio"
+      }
+      checkpoint {
+        radioInput.attr("value") mustBe radioItem.value.getOrElse("")
+      }
+      checkpoint {
+        radioLabel.attr("for") mustBe radioInput.attr("id")
+      }
+      checkpoint {
+        Text(radioLabel.text) mustBe radioItem.content
+      }
+      radioItem.hint.foreach { hint =>
+        checkpoint {
+          Text(radioItemElement.selectHead(".govuk-radios__hint").text) mustBe hint.content
+        }
+      }
+    }
+
+    private def validateRadioDivider(radioField: Element, radioDivider: RadioItem, index: Int, checkpoint: Checkpoint): Unit = {
+      val dividerElement: Element = radioField.child(index)
+      checkpoint {
+        dividerElement.className() mustBe "govuk-radios__divider"
+      }
+      checkpoint {
+        dividerElement.text() mustBe radioDivider.divider.get
+      }
+    }
   }
 
   def value(value: String): HavePropertyMatcher[Elements, String] =

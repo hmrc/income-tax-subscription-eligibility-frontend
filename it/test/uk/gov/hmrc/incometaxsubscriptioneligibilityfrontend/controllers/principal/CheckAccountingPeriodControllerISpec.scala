@@ -22,6 +22,8 @@ import play.api.data.FormError
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.WSResponse
 import play.api.test.Helpers._
+import uk.gov.hmrc.govukfrontend.views.Aliases.{Hint, Text}
+import uk.gov.hmrc.govukfrontend.views.viewmodels.radios.RadioItem
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets.MessageLookup.{CheckAccountingPeriod => messages}
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.forms.AccountingPeriodForm
 import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.AccountingPeriod
@@ -33,6 +35,7 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
 
   "GET /eligibility/accounting-period-check" should {
     def result: WSResponse = get("/accounting-period-check")
+
     def doc: Document = Jsoup.parse(result.body)
 
     "return OK" in {
@@ -83,68 +86,52 @@ class CheckAccountingPeriodControllerISpec extends ComponentSpecBase with ViewSp
         )
       }
 
-      "has a fieldset" which {
-        def fieldset: Element = form.selectHead("fieldset")
-
-        "has a hidden legend" in {
-          val legend = fieldset.selectHead("legend")
-          legend.text mustBe messages.heading
-          legend.attr("class") contains "govuk-visually-hidden"
+      "has the correct radio inputs" when {
+        val radioItems: Seq[RadioItem] = Seq(
+          RadioItem(
+            content = Text(messages.sixthToFifth),
+            value = Some(AccountingPeriod.SixthAprilToFifthApril.key),
+            hint = Some(Hint(content = Text(messages.sixthToFifthHint))),
+          ),
+          RadioItem(
+            content = Text(messages.firstToThirtyFirst),
+            value = Some(AccountingPeriod.FirstAprilToThirtyFirstMarch.key),
+            hint = Some(Hint(content = Text(messages.firstToThirtyFirstHint))),
+          ),
+          RadioItem(
+            divider = Some(messages.or)
+          ),
+          RadioItem(
+            content = Text(messages.neither),
+            value = Some(AccountingPeriod.OtherAccountingPeriod.key),
+          )
+        )
+        "there is no error" in {
+          doc.mustHaveRadioInput(
+            selector = "fieldset"
+          )(
+            name = AccountingPeriodForm.fieldName,
+            legend = messages.heading,
+            isHeading = false,
+            isLegendHidden = true,
+            hint = None,
+            errorMessage = None,
+            radioContents = radioItems
+          )
         }
-
-        "has a set of radio buttons" which {
-          def radios: Element = fieldset.selectHead(".govuk-radios")
-
-          "has a 6 April to 5 April option" in {
-            val radio: Element = radios.selectNth(".govuk-radios__item", 1)
-            val input: Element = radio.selectHead("input")
-            val label: Element = radio.selectHead("label")
-            val hint: Element = fieldset.selectHead(".govuk-hint")
-
-            input.id mustBe AccountingPeriodForm.fieldName
-            input.attr("name") mustBe AccountingPeriodForm.fieldName
-            input.attr("type") mustBe "radio"
-            input.attr("value") mustBe AccountingPeriod.SixthAprilToFifthApril.key
-
-            label.text mustBe messages.sixthToFifth
-            label.attr("for") mustBe input.id
-
-            hint.text mustBe messages.sixthToFifthHint
-            hint.id mustBe fieldset.selectHead("input").attr("aria-describedby")
-          }
-          "has a 1 April to 31 March option" in {
-            val radio: Element = radios.selectNth(".govuk-radios__item", 2)
-            val input: Element = radio.selectHead("input")
-            val label: Element = radio.selectHead("label")
-            val hint: Element = fieldset.selectNth(".govuk-hint", 2)
-
-            input.id mustBe s"${AccountingPeriodForm.fieldName}-2"
-            input.attr("name") mustBe AccountingPeriodForm.fieldName
-            input.attr("type") mustBe "radio"
-            input.attr("value") mustBe AccountingPeriod.FirstAprilToThirtyFirstMarch.key
-
-            label.text mustBe messages.firstToThirtyFirst
-            label.attr("for") mustBe input.id
-
-            hint.text mustBe messages.firstToThirtyFirstHint
-            hint.id mustBe fieldset.selectNth("input", 2).attr("aria-describedby")
-          }
-          "has an or divider" in {
-            radios.selectHead(".govuk-radios__divider").text mustBe messages.or
-          }
-          "has a neither option" in {
-            val radio: Element = radios.selectNth(".govuk-radios__item", 3)
-            val input: Element = radio.selectHead("input")
-            val label: Element = radio.selectHead("label")
-
-            input.id mustBe s"${AccountingPeriodForm.fieldName}-4"
-            input.attr("name") mustBe AccountingPeriodForm.fieldName
-            input.attr("type") mustBe "radio"
-            input.attr("value") mustBe AccountingPeriod.OtherAccountingPeriod.key
-
-            label.text mustBe messages.neither
-            label.attr("for") mustBe input.id
-          }
+        "there is an error" in {
+          val errorPage: Document = Jsoup.parse(submitAccountingPeriodCheck(None).body)
+          errorPage.mustHaveRadioInput(
+            selector = "fieldset"
+          )(
+            name = AccountingPeriodForm.fieldName,
+            legend = messages.heading,
+            isHeading = false,
+            isLegendHidden = true,
+            hint = None,
+            errorMessage = Some(messages.error),
+            radioContents = radioItems
+          )
         }
       }
 
