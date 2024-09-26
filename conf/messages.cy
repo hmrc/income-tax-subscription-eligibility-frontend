@@ -38,7 +38,7 @@ accounting-period-check.sixth-april-to-fifth-april.hint                  = Mae e
 accounting-period-check.first-april-to-thirty-first-march                 = 1 Ebrill i 31 Mawrth
 accounting-period-check.first-april-to-thirty-first-march.hint            = Mae eich llyfrau neu’ch cyfrifon yn dechrau ar 1 Ebrill ac yn cau ar 31 Mawrth y flwyddyn ganlynol (er enghraifft, 1 Ebrill 2026 i 31 Mawrth 2027)
 accounting-period-check.other                                           = Dim un o’r rhain
-accounting-period-check.error                                           = Ewch i’r gwasanaeth ‘Rhoi gwybod am broblem dechnegol’ (gan gyfeirio yn ôl at URL y dudalen hon)
+accounting-period-check.error                                           = Dewiswch a yw’ch cyfnod cyfrifyddu yn rhedeg o 6 Ebrill i 5 Ebrill, 1 Ebrill i 31 Mawrth, neu dim un o’r rhain
 
 ## Cannot Sign Up Page
 cannot-sign-up.heading                                                  = Ni allwch gofrestru ar hyn o bryd
