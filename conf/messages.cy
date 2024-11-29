@@ -20,14 +20,18 @@ agent-base.title.error                                                  = Gwall:
 individual.signing-up.heading                                           = Cofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
 individual.signing-up.before-you-signup.heading                         = Cyn i chi gofrestru
 individual.signing-up.before-you-signup.para-1                          = I gofrestru, mae’n rhaid i chi fod yn unig fasnachwr neu’n cael incwm naill ai o eiddo yn y DU neu o eiddo tramor.
-individual.signing-up.before-you-signup.para-2                          = Gallwch hefyd defnyddio {0}.
+individual.signing-up.before-you-signup.para-2                          = Mae’n rhaid i chi hefyd defnyddio {0}.
 individual.signing-up.before-you-signup.para-2.link-text                = meddalwedd sy’n cydweddu â’r cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-individual.signing-up.before-you-signup.para-2.link-href                = https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax
+individual.signing-up.before-you-signup.para-2.link-href                = https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax.cy
 individual.signing-up.sole-trader.heading                               = Unig fasnachwr
 individual.signing-up.sole-trader.para-1                                = Rydych yn unig fasnachwr os ydych yn rhedeg eich busnes eich hun fel unigolyn ac yn gweithio i chi’ch hun. Enw arall ar hyn yw bod yn hunangyflogedig.
 individual.signing-up.sole-trader.para-2                                = Nid ydych yn unig fasnachwr os daw eich incwm busnes o gwmni cyfyngedig yn unig.
 individual.signing-up.income-property.heading                           = Incwm o eiddo
-individual.signing-up.income-property.para-1                            = Gallwch gofrestru os ydych yn cael incwm o eiddo yn y DU neu o’r eiddo mewn gwlad arall. Er enghraifft, incwm o roi tai, fflatiau, neu gartrefi gwyliau ar osod a hynny ar sail tymor hir neu dymor byr.
+individual.signing-up.income-property.para-1                            = Gallwch gofrestru os ydych yn cael incwm o eiddo yn y DU neu o’r eiddo sydd mewn gwlad arall. Er enghraifft, incwm o roi tai, fflatiau, neu gartrefi gwyliau ar osod, a hynny ar sail tymor hir neu dymor byr.
+individual.signing-up.identity-verification.heading                            = Mae’n bosibl y bydd angen i ni wirio pwy ydych
+individual.signing-up.identity-verification.para-1                             = I gadarnhau pwy ydych, gallwch wneud y naill neu’r llal o’r canlynol:
+individual.signing-up.identity-verification.bullet-1                           = defnyddio ap i’ch paru â’ch ID ffotograffig
+individual.signing-up.identity-verification.bullet-2                           = ateb cwestiynau ynghylch yr wybodaeth sydd gennym amdanoch
 
 ## Accounting period check
 accounting-period-check.heading                                         = Pa gyfnod cyfrifyddu yr ydych yn ei ddefynyddio ar gyfer eich busnes?

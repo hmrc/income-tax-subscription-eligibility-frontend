@@ -101,6 +101,26 @@ class SigningUpControllerISpec extends ComponentSpecBase with ViewSpec {
         }
       }
 
+      "has an identity verification section" that {
+        import IndividualSignUpTerms.identityVerification._
+        "has a heading" in {
+          doc.mainContent.selectNth("h2", 2).text mustBe heading
+        }
+        "has a paragraph" in {
+          doc.mainContent.selectNth("p", 6).text mustBe paraOne
+        }
+        "has a bullet list" which {
+          val bulletList: Element = doc.mainContent.selectHead("ul")
+          "has a first point" in {
+            bulletList.selectNth("li", 1).text mustBe bulletOne
+
+          }
+          "has a second point" in {
+            bulletList.selectNth("li", 2).text mustBe bulletTwo
+          }
+        }
+      }
+
       "has a form" which {
         def form: Element = doc.getForm
 

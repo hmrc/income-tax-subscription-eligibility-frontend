@@ -16,10 +16,6 @@
 
 package uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.assets
 
-import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
-
-import java.time.format.DateTimeFormatter
-
 object MessageLookup {
   val suffix = " - Use software to send Income Tax updates - GOV.UK"
   val agentSuffix = " - Use software to report your client’s Income Tax - GOV.UK"
@@ -56,8 +52,8 @@ object MessageLookup {
     object beforeYouSignUp {
       val heading = "Before you sign up"
       val paraOne = "To sign up, you must be a sole trader or get income from either a UK or foreign property."
-      val paraTwoLinkText = "software that’s compatible with Making Tax Digital for Income Tax (opens in new tab)."
-      val paraTwo = s"You must also use $paraTwoLinkText"
+      val paraTwoLinkText = "software that works with Making Tax Digital for Income Tax (opens in new tab)"
+      val paraTwo = s"You must also use $paraTwoLinkText."
     }
 
     object soleTrader {
@@ -68,7 +64,14 @@ object MessageLookup {
 
     object incomeProperty {
       val heading = "Income from property"
-      val paraOne = "You can sign up if you get income from property in the UK or from property in another country. For example, letting houses, flats or holiday homes either on a long or short term basis."
+      val paraOne = "You can sign up if you get income from property in the UK or from property in another country. For example, letting houses, flats or holiday homes, on a long or short term basis."
+    }
+
+    object identityVerification {
+      val heading = "We may need to check your identity"
+      val paraOne = "To confirm your identity, you can either:"
+      val bulletOne = "use an app to match you to your photo ID"
+      val bulletTwo = "answer questions about information we hold about you"
     }
 
   }

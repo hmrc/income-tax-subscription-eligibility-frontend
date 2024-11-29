@@ -21,13 +21,17 @@ individual.signing-up.heading                                           = Signin
 individual.signing-up.before-you-signup.heading                         = Before you sign up
 individual.signing-up.before-you-signup.para-1                          = To sign up, you must be a sole trader or get income from either a UK or foreign property.
 individual.signing-up.before-you-signup.para-2                          = You must also use {0}.
-individual.signing-up.before-you-signup.para-2.link-text                = software that’s compatible with Making Tax Digital for Income Tax
+individual.signing-up.before-you-signup.para-2.link-text                = software that works with Making Tax Digital for Income Tax
 individual.signing-up.before-you-signup.para-2.link-href                = https://www.gov.uk/guidance/find-software-thats-compatible-with-making-tax-digital-for-income-tax
 individual.signing-up.sole-trader.heading                               = Sole trader
 individual.signing-up.sole-trader.para-1                                = You’re a sole trader if you run your own business as an individual and work for yourself. This is also known as being self-employed.
 individual.signing-up.sole-trader.para-2                                = You’re not a sole trader if your only business income is from a limited company.
 individual.signing-up.income-property.heading                           = Income from property
-individual.signing-up.income-property.para-1                            = You can sign up if you get income from property in the UK or from property in another country. For example, letting houses, flats or holiday homes either on a long or short term basis.
+individual.signing-up.income-property.para-1                            = You can sign up if you get income from property in the UK or from property in another country. For example, letting houses, flats or holiday homes, on a long or short term basis.
+individual.signing-up.identity-verification.heading                            = We may need to check your identity
+individual.signing-up.identity-verification.para-1                             = To confirm your identity, you can either:
+individual.signing-up.identity-verification.bullet-1                           = use an app to match you to your photo ID
+individual.signing-up.identity-verification.bullet-2                           = answer questions about information we hold about you
 
 ## Accounting period check
 accounting-period-check.heading                                         = What accounting period do you use for your business?

@@ -16,20 +16,13 @@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.services.AccountingPeriodService
-@import uk.gov.hmrc.play.language.LanguageUtils
-@import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.subscription.AccountingPeriodUtil
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.models.common.AccountingPeriodModel
 @import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
 @this(
   mainTemplate: PrincipalMainTemplate,
-  accountingPeriodService: AccountingPeriodService,
   form: FormWithCSRF,
-  govukNotificationBanner : GovukNotificationBanner,
   continueButton: ContinueButton,
-  govukInsetText: GovukInsetText,
-  languageUtils: LanguageUtils,
   hmrcNewTabLinkHelper: HmrcNewTabLinkHelper
 )
 
@@ -57,6 +50,15 @@
   <p class="govuk-body">@messages("individual.signing-up.income-property.para-1")</p>
 }
 
+@identityCheck = {
+    <h2 class="govuk-heading-m">@messages("individual.signing-up.identity-verification.heading")</h2>
+    <p class="govuk-body">@messages("individual.signing-up.identity-verification.para-1")</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>@messages("individual.signing-up.identity-verification.bullet-1")</li>
+        <li>@messages("individual.signing-up.identity-verification.bullet-2")</li>
+    </ul>
+}
+
 @mainTemplate(title = messages("individual.signing-up.heading"), backLink = Some(BackLink(href = backLink))) {
 
   <h1 class="govuk-heading-l">@messages("individual.signing-up.heading")</h1>
@@ -65,6 +67,7 @@
      @beforeYouSignUp
      @soleTrader
      @incomeProperty
+     @identityCheck
      @form(action = postAction) {
        @continueButton()
      }
