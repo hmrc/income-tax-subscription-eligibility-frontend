@@ -38,8 +38,21 @@ class SignUpControllerISpec extends ComponentSpecBase with ViewSpec {
       content.getH1Element.text mustBe messages.heading
     }
 
-    "have a view with the correct paragraph" in {
-      content.getParagraphs.text mustBe messages.paragraph
+    "have a view with the correct first paragraph" in {
+      content.selectNth("p", 1).text mustBe messages.paraOne
+    }
+
+    "have a view with the correct second paragraph" in {
+      content.selectNth("p", 2).text mustBe messages.paraTwo
+    }
+
+    "have a view with the correct inset link" in {
+      content.selectNth("a", 1).text mustBe messages.insetText
+      content.selectNth("a", 1).attr("href") mustBe messages.insetHref
+    }
+
+    "have a view with the correct third paragraph" in {
+      content.selectNth("p", 3).text mustBe messages.paraThree
     }
 
     "have a view with the correct continue button" in {

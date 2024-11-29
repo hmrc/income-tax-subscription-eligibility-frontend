@@ -16,23 +16,37 @@
 
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.helpers.ContinueButton
 @import uk.gov.hmrc.incometaxsubscriptioneligibilityfrontend.views.html.templates.PrincipalMainTemplate
+@import uk.gov.hmrc.hmrcfrontend.views.viewmodels.newtablinkhelper.NewTabLinkHelper
 
 @this(
   mainTemplate: PrincipalMainTemplate,
-  continueButton: ContinueButton
+  continueButton: ContinueButton,
+  govukInsetText: GovukInsetText,
+  hmrcNewTabLinkHelper: HmrcNewTabLinkHelper
 )
 
 @(backUrl: String, continueUrl: String)(implicit request: Request[_], messages: Messages)
 
 @mainTemplate(
-  title = messages("sign-up.title"),
-  backLink = Some(BackLink.mimicsBrowserBackButtonViaJavaScript)
+    title = messages("sign-up.heading"),
+    backLink = Some(BackLink.mimicsBrowserBackButtonViaJavaScript)
 ) {
- <h1 class="govuk-heading-l">@messages("sign-up.heading")</h1>
+    <h1 class="govuk-heading-l">@messages("sign-up.heading")</h1>
 
- <p class="govuk-body">@messages("sign-up.paragraph")</p>
+    <p class="govuk-body">@messages("sign-up.para-1")</p>
+    <p class="govuk-body">@messages("sign-up.para-2")</p>
 
- <div>
- @continueButton(href = Some(continueUrl))
- </div>
+    @govukInsetText(InsetText(
+        content = HtmlContent(hmrcNewTabLinkHelper(NewTabLinkHelper(
+            text = messages("sign-up.inset"),
+            href = Some(messages("sign-up.inset.href")))))
+    ))
+
+    <p class="govuk-body">@messages("sign-up.para-3")</p>
+
+    <div>
+        @continueButton(href = Some(continueUrl))
+    </div>
 }
+
+

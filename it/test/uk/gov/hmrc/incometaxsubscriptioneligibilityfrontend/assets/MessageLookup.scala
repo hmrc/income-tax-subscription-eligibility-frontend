@@ -40,6 +40,16 @@ object MessageLookup {
     val sendSelfAssessmentHref = "https://www.gov.uk/self-assessment-tax-returns/sending-return"
   }
 
+  object SignUpToPilot {
+    val heading = "You may be able to sign up"
+    val paraOne = "Based on your business accounting period, you may be able to sign up for Making Tax Digital for Income Tax."
+    val paraTwo = "When you continue, we’ll check your tax record and let you know if you can continue to sign up."
+    val insetText = "Other allowances or income sources may stop you from signing up (opens in new tab)"
+    val insetHref = "https://www.gov.uk/guidance/sign-up-your-client-for-making-tax-digital-for-income-tax#who-cannot-sign-up-voluntarily"
+    val paraThree: String = "To continue, sign in using the Government Gateway user ID you use for your Self Assessment tax return. " +
+      "We’ll check your tax record and let you know if you can continue to sign up."
+  }
+
   object IndividualSignUpTerms {
     val heading = "Signing up for Making Tax Digital for Income Tax"
     val subheading = "How to sign up"
@@ -122,8 +132,5 @@ object MessageLookup {
     val error = "Select if your accounting period runs from 6 April to 5 April, 1 April to 31 March, or neither of these"
   }
 
-  object SignUpToPilot {
-    val heading = "Continue your sign up for Making Tax Digital for Income Tax"
-    val paragraph = "Based on your answers, you can continue to sign up for Making Tax Digital for Income Tax."
-  }
+
 }
