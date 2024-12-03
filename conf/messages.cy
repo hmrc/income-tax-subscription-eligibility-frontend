@@ -55,9 +55,12 @@ cannot-sign-up.send-self-assessment                                     = Parhew
 cannot-sign-up.send-self-assessment.link                                = Ffurflen Dreth Hunanasesiad
 
 ## Sign Up To Pilot Page ##
-sign-up.title                                                           = Parhau i gofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-sign-up.heading                                                         = Parhau i gofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
-sign-up.paragraph                                                       = Ar sail eich atebion, gallwch barhau i gofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
+sign-up.heading                                                         = Mae’n bosibl y byddwch yn gallu cofrestru
+sign-up.para-1                                                          = Yn seiliedig ar eich cyfnod cyfrifyddu busnes, mae’n bosibl y byddwch yn gallu cofrestru ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm.
+sign-up.para-2                                                          = Pan fyddwch yn mynd yn eich blaen, byddwn yn gwirio’ch cofnod treth ac yn rhoi gwybod i chi os gallwch barhau i gofrestru.
+sign-up.inset                                                      = Mae’n bosibl y bydd lwfansau eraill neu ffynonellau eraill o incwm yn eich rhwystro rhag cofrestru
+sign-up.inset.href                                                 = https://www.gov.uk/guidance/sign-up-your-client-for-making-tax-digital-for-income-tax.cy#pwy-na-all-gofrestrun-wirfoddol
+sign-up.para-3                                                          = I fynd yn eich blaen, mewngofnodwch gan ddefnyddio’r Dynodydd Defnyddiwr (ID) Porth y Llywodraeth yr ydych yn ei ddefnyddio ar gyfer eich Ffurflen Dreth Hunanasesiad. Byddwn yn gwirio’ch cofnod treth ac yn rhoi gwybod i chi os gallwch barhau i gofrestru.
 
 ## Agent Signing Up Page ##
 agent.signing-up.heading                                                = Cofrestru’ch cleientiaid ar gyfer y cynllun Troi Treth yn Ddigidol ar gyfer Treth Incwm
